@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "required": ["id","certId","moduleId","domain","difficulty",
+               "type","question","options","correct","explanation"],
+  "properties": {
+    "id":          { "type": "string", "pattern": "^[a-z0-9-]+-[0-9]{4}$",
+                     "description": "format: certid-moduleid-NNNN e.g. clf-c02-m1-0001" },
+    "certId":      { "type": "string", "description": "must match a certification id" },
+    "moduleId":    { "type": "integer" },
+    "domain":      { "type": "string", "description": "official domain name from exam guide" },
+    "difficulty":  { "type": "integer", "enum": [1, 2, 3] },
+    "type":        { "type": "string", "enum": ["single", "multiple"] },
+    "question":    { "type": "string", "minLength": 20 },
+    "options":     { "type": "array", "minItems": 4, "maxItems": 4 },
+    "correct":     { "type": "array", "items": { "type": "integer" },
+                     "description": "indices of correct options (0-based)" },
+    "explanation": { "type": "string", "minLength": 30 },
+    "keywords":    { "type": "array", "items": { "type": "string" } },
+    "examTip":     { "type": "string" }
+  }
+}

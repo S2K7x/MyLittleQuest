@@ -1,0 +1,192 @@
+[
+  {
+    "id": "clf-c02-m1-0001",
+    "certId": "aws-clf-c02",
+    "moduleId": 1,
+    "domain": "Cloud Concepts",
+    "difficulty": 1,
+    "type": "single",
+    "question": "Which of the following is NOT one of the six advantages of cloud computing as defined by AWS?",
+    "options": [
+      "Trade upfront expense for variable expense",
+      "Benefit from massive economies of scale",
+      "Eliminate the need for capacity planning",
+      "Stop guessing capacity"
+    ],
+    "correct": [2],
+    "explanation": "The six advantages of cloud computing are: (1) Trade upfront expense for variable expense, (2) Benefit from massive economies of scale, (3) Stop guessing capacity, (4) Increase speed and agility, (5) Stop spending money running and maintaining data centers, (6) Go global in minutes. 'Eliminate the need for capacity planning' is a misstatement — you still plan capacity, you just don't need to provision hardware upfront.",
+    "keywords": ["cloud advantages", "six advantages", "cloud benefits"],
+    "examTip": "Memorize all 6 advantages exactly as AWS phrases them. 'Stop guessing capacity' (not 'eliminate capacity planning') is the common trap."
+  },
+  {
+    "id": "clf-c02-m1-0002",
+    "certId": "aws-clf-c02",
+    "moduleId": 1,
+    "domain": "Cloud Concepts",
+    "difficulty": 1,
+    "type": "single",
+    "question": "What are the three cloud deployment models?",
+    "options": [
+      "Public, Private, Hybrid",
+      "Cloud, On-premises, Virtual",
+      "IaaS, PaaS, SaaS",
+      "Global, Regional, Local"
+    ],
+    "correct": [0],
+    "explanation": "The three cloud deployment models are Public cloud (infrastructure owned by cloud provider), Private cloud (infrastructure dedicated to one organization), and Hybrid cloud (combination of public and private). IaaS/PaaS/SaaS are cloud service models, not deployment models.",
+    "keywords": ["deployment models", "public cloud", "private cloud", "hybrid cloud"],
+    "examTip": "Deployment models = WHERE infrastructure runs. Service models = WHAT kind of service. Don't confuse the two."
+  },
+  {
+    "id": "clf-c02-m1-0003",
+    "certId": "aws-clf-c02",
+    "moduleId": 1,
+    "domain": "Cloud Concepts",
+    "difficulty": 2,
+    "type": "single",
+    "question": "A company is migrating an application to AWS and wants to keep some workloads on-premises for compliance reasons while running others in the cloud. Which deployment model does this describe?",
+    "options": [
+      "Public cloud",
+      "Private cloud",
+      "Hybrid cloud",
+      "Multi-cloud"
+    ],
+    "correct": [2],
+    "explanation": "A hybrid cloud deployment extends a company's existing infrastructure into the cloud while keeping some workloads on-premises. This is the correct model when compliance, data sovereignty, or latency requirements force some systems to remain on-premises.",
+    "keywords": ["hybrid cloud", "deployment model", "on-premises", "compliance"],
+    "examTip": "Hybrid = on-premises + cloud connected. Multi-cloud = multiple cloud providers. The CLF-C02 exam focuses on hybrid as a valid deployment model, not multi-cloud."
+  },
+  {
+    "id": "clf-c02-m1-0004",
+    "certId": "aws-clf-c02",
+    "moduleId": 1,
+    "domain": "Cloud Concepts",
+    "difficulty": 1,
+    "type": "single",
+    "question": "Which pillar of the AWS Well-Architected Framework focuses on the ability of a workload to perform its intended function correctly and consistently?",
+    "options": [
+      "Reliability",
+      "Performance Efficiency",
+      "Operational Excellence",
+      "Security"
+    ],
+    "correct": [0],
+    "explanation": "Reliability focuses on the ability of a workload to perform its intended function correctly and consistently over time. It includes concepts like recovering from failures, dynamically acquiring computing resources to meet demand, and mitigating disruptions. Performance Efficiency is about using computing resources efficiently, not about correctness.",
+    "keywords": ["Well-Architected Framework", "reliability", "pillars"],
+    "examTip": "Reliability = 'it works when you expect it to'. Don't confuse with Performance Efficiency = 'it works fast with the right resources'."
+  },
+  {
+    "id": "clf-c02-m1-0005",
+    "certId": "aws-clf-c02",
+    "moduleId": 1,
+    "domain": "Cloud Concepts",
+    "difficulty": 1,
+    "type": "multiple",
+    "question": "Which of the following are pillars of the AWS Well-Architected Framework? (Select TWO)",
+    "options": [
+      "Operational Excellence",
+      "Cost Management",
+      "Sustainability",
+      "Automation"
+    ],
+    "correct": [0, 2],
+    "explanation": "The 6 pillars of the AWS Well-Architected Framework are: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, and Sustainability (added in 2021). 'Cost Management' is not a pillar (Cost Optimization is). 'Automation' is a principle within pillars, not a pillar itself.",
+    "keywords": ["Well-Architected Framework", "pillars", "sustainability", "operational excellence"],
+    "examTip": "The 6 pillars: OE, S, R, PE, CO, Su. Remember 'OSRPCS' or 'CROPS+E'. Sustainability is the newest pillar added in 2021 — frequently tested."
+  },
+  {
+    "id": "clf-c02-m1-0006",
+    "certId": "aws-clf-c02",
+    "moduleId": 1,
+    "domain": "Cloud Concepts",
+    "difficulty": 2,
+    "type": "single",
+    "question": "A company wants to migrate to AWS and needs to understand which perspective of the AWS Cloud Adoption Framework (CAF) addresses the alignment of IT strategy with business strategy.",
+    "options": [
+      "Platform perspective",
+      "Business perspective",
+      "Governance perspective",
+      "Operations perspective"
+    ],
+    "correct": [1],
+    "explanation": "The Business perspective of the AWS CAF ensures that IT is aligned with business needs and that business investments in cloud accelerate digital transformation. It covers business strategy, outcomes, and portfolio management. The Governance perspective focuses on risk management and compliance, not business-IT alignment.",
+    "keywords": ["Cloud Adoption Framework", "CAF", "business perspective", "perspectives"],
+    "examTip": "CAF has 6 perspectives: Business, People, Governance, Platform, Security, Operations. The Business perspective = IT-to-business alignment. Don't confuse with Governance = risk & compliance."
+  },
+  {
+    "id": "clf-c02-m1-0007",
+    "certId": "aws-clf-c02",
+    "moduleId": 1,
+    "domain": "Cloud Concepts",
+    "difficulty": 2,
+    "type": "single",
+    "question": "A company is planning a cloud migration and identifies an application that can be moved to AWS with minimal changes by simply moving it 'as-is'. Which of the 7 Rs migration strategy does this represent?",
+    "options": [
+      "Replatform",
+      "Refactor",
+      "Rehost",
+      "Repurchase"
+    ],
+    "correct": [2],
+    "explanation": "Rehost (also called 'lift and shift') involves moving an application to the cloud without making any changes. This is the fastest migration path. Replatform makes minor optimizations (e.g., moving to a managed database). Refactor involves re-architecting the application. Repurchase means switching to a different product, typically SaaS.",
+    "keywords": ["7 Rs", "migration", "rehost", "lift and shift", "migration strategies"],
+    "examTip": "Rehost = lift-and-shift (no changes). Replatform = lift-tinker-and-shift (minor changes). Refactor = re-architect (significant changes). Know these three cold."
+  },
+  {
+    "id": "clf-c02-m1-0008",
+    "certId": "aws-clf-c02",
+    "moduleId": 1,
+    "domain": "Cloud Concepts",
+    "difficulty": 3,
+    "type": "single",
+    "question": "A company has a legacy application with a license that cannot be moved to the cloud and is not cost-effective to replace. Which 7 Rs migration strategy should they apply?",
+    "options": [
+      "Retire",
+      "Retain",
+      "Repurchase",
+      "Relocate"
+    ],
+    "correct": [1],
+    "explanation": "Retain (also called Revisit) means keeping the application on-premises because migration doesn't make business sense right now — often due to licensing restrictions, compliance requirements, or insufficient business justification. Retire means decommissioning the application entirely. Repurchase means replacing it with a SaaS product. Relocate is a newer 7R that applies to VMware on AWS scenarios.",
+    "keywords": ["7 Rs", "retain", "migration strategy", "license restrictions"],
+    "examTip": "Retain is often confused with Retire. Retain = 'keep as-is, revisit later'. Retire = 'shut it down'. If it can't be moved AND can't be replaced = Retain."
+  },
+  {
+    "id": "clf-c02-m1-0009",
+    "certId": "aws-clf-c02",
+    "moduleId": 1,
+    "domain": "Cloud Concepts",
+    "difficulty": 2,
+    "type": "single",
+    "question": "Which AWS global infrastructure component provides the lowest latency to end users by caching content at edge locations?",
+    "options": [
+      "AWS Region",
+      "Availability Zone",
+      "AWS Local Zone",
+      "Amazon CloudFront"
+    ],
+    "correct": [3],
+    "explanation": "Amazon CloudFront is AWS's Content Delivery Network (CDN) that uses a global network of edge locations to cache and serve content closer to users, providing the lowest latency. AWS Local Zones extend AWS infrastructure closer to specific metropolitan areas for latency-sensitive applications but are not the same as CloudFront edge caching. Regions and AZs are core infrastructure, not edge caching.",
+    "keywords": ["CloudFront", "edge locations", "CDN", "latency", "global infrastructure"],
+    "examTip": "Edge locations = CloudFront + Route 53. There are far more edge locations (~450) than Regions (~30) or AZs (~100). The question tests whether you know CloudFront is the service, not just 'edge location'."
+  },
+  {
+    "id": "clf-c02-m1-0010",
+    "certId": "aws-clf-c02",
+    "moduleId": 1,
+    "domain": "Cloud Concepts",
+    "difficulty": 3,
+    "type": "single",
+    "question": "A company wants to maximize the benefit of cloud computing's elasticity. Which design principle from the AWS Well-Architected Framework best supports this goal?",
+    "options": [
+      "Automate to make architectural experimentation easier",
+      "Scale horizontally to increase aggregate workload availability",
+      "Stop guessing on your capacity needs",
+      "Drive architectures using data"
+    ],
+    "correct": [2],
+    "explanation": "The Performance Efficiency pillar's design principle 'Stop guessing on your capacity needs' directly aligns with leveraging cloud elasticity — you provision exactly what you need, scale automatically, and pay only for what you use. Scaling horizontally is also a relevant principle but it addresses availability, not elasticity per se. The 'stop guessing capacity' principle is what replaces traditional capacity planning.",
+    "keywords": ["elasticity", "Well-Architected Framework", "Performance Efficiency", "capacity planning"],
+    "examTip": "Elasticity = ability to scale in AND out automatically based on demand. 'Stop guessing capacity' is the principle that enables it. This is distinct from 'scalability' which only implies growing."
+  }
+]

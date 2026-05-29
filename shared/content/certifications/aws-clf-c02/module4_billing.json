@@ -1,0 +1,192 @@
+[
+  {
+    "id": "clf-c02-m4-0001",
+    "certId": "aws-clf-c02",
+    "moduleId": 4,
+    "domain": "Billing, Pricing & Support",
+    "difficulty": 1,
+    "type": "single",
+    "question": "Which AWS Support plan is the minimum plan that provides access to a Technical Account Manager (TAM)?",
+    "options": [
+      "Developer",
+      "Business",
+      "Enterprise On-Ramp",
+      "Enterprise"
+    ],
+    "correct": [3],
+    "explanation": "A dedicated Technical Account Manager (TAM) is only available with the Enterprise Support plan. Enterprise On-Ramp provides access to a pool of TAMs (not a dedicated one). Business and Developer plans do not include TAM access. The TAM provides proactive guidance and acts as your primary point of contact at AWS.",
+    "keywords": ["TAM", "Technical Account Manager", "Enterprise Support", "support plans"],
+    "examTip": "TAM (dedicated) = Enterprise only. Enterprise On-Ramp = pool of TAMs (not dedicated). Business = no TAM. Remember: the higher the plan, the more human access you get. Developer = email only during business hours."
+  },
+  {
+    "id": "clf-c02-m4-0002",
+    "certId": "aws-clf-c02",
+    "moduleId": 4,
+    "domain": "Billing, Pricing & Support",
+    "difficulty": 2,
+    "type": "single",
+    "question": "A company's production system has gone down and is causing critical business impact. They need immediate phone and chat access to AWS support engineers. What is the minimum AWS Support plan that provides this?",
+    "options": [
+      "Basic",
+      "Developer",
+      "Business",
+      "Enterprise"
+    ],
+    "correct": [2],
+    "explanation": "The Business Support plan is the minimum plan that provides 24/7 phone, email, and chat access to Cloud Support Engineers. Developer plan only provides email access during business hours. Basic plan has no technical support. The Business plan also provides a 1-hour response time for production system down cases. Enterprise provides 15-minute response for business-critical systems.",
+    "keywords": ["Business support", "phone support", "24/7", "production down", "support plans"],
+    "examTip": "Business = minimum for 24/7 phone + chat. Developer = email only, business hours. Basic = no tech support. Response time for 'production system down': Business = 1hr, Enterprise On-Ramp = 30min, Enterprise = 15min."
+  },
+  {
+    "id": "clf-c02-m4-0003",
+    "certId": "aws-clf-c02",
+    "moduleId": 4,
+    "domain": "Billing, Pricing & Support",
+    "difficulty": 1,
+    "type": "single",
+    "question": "Which AWS tool allows users to estimate the cost of a new AWS architecture before deploying any resources?",
+    "options": [
+      "AWS Cost Explorer",
+      "AWS Budgets",
+      "AWS Pricing Calculator",
+      "AWS Cost and Usage Report"
+    ],
+    "correct": [2],
+    "explanation": "AWS Pricing Calculator (formerly the Simple Monthly Calculator) lets you estimate the cost of AWS services for a new architecture before deployment. Cost Explorer analyzes historical spending. AWS Budgets sets spending thresholds and sends alerts. AWS Cost and Usage Report provides the most detailed billing data for historical usage.",
+    "keywords": ["Pricing Calculator", "cost estimation", "pre-deployment", "architecture cost"],
+    "examTip": "Pricing Calculator = estimate FUTURE costs for a NEW architecture. Cost Explorer = analyze PAST spending trends. Budgets = set ALERTS when spending exceeds thresholds. These three are frequently confused."
+  },
+  {
+    "id": "clf-c02-m4-0004",
+    "certId": "aws-clf-c02",
+    "moduleId": 4,
+    "domain": "Billing, Pricing & Support",
+    "difficulty": 2,
+    "type": "single",
+    "question": "A company wants to receive an alert when their monthly AWS spending exceeds $5,000. Which service should they use?",
+    "options": [
+      "AWS Cost Explorer",
+      "AWS Pricing Calculator",
+      "AWS Budgets",
+      "AWS Trusted Advisor"
+    ],
+    "correct": [2],
+    "explanation": "AWS Budgets allows you to set custom cost and usage budgets and receive alerts via SNS or email when thresholds are exceeded. You can set cost budgets, usage budgets, and reservation budgets. Cost Explorer is for analyzing past costs, not setting alerts. Pricing Calculator estimates future costs. Trusted Advisor gives best-practice recommendations, not spending alerts.",
+    "keywords": ["AWS Budgets", "cost alerts", "spending threshold", "billing alerts"],
+    "examTip": "Budgets = ALERT when you go OVER a threshold. Cost Explorer = UNDERSTAND where you've SPENT. Budget alerts can also be set for forecasted spend, not just actual spend."
+  },
+  {
+    "id": "clf-c02-m4-0005",
+    "certId": "aws-clf-c02",
+    "moduleId": 4,
+    "domain": "Billing, Pricing & Support",
+    "difficulty": 2,
+    "type": "single",
+    "question": "A company has multiple AWS accounts and wants to consolidate billing and potentially receive volume discounts. Which AWS service provides this capability?",
+    "options": [
+      "AWS IAM",
+      "AWS Organizations",
+      "AWS Control Tower",
+      "AWS Service Catalog"
+    ],
+    "correct": [1],
+    "explanation": "AWS Organizations allows you to consolidate multiple AWS accounts into an organization, providing a single bill for all accounts and enabling volume pricing discounts as usage aggregates across accounts. Service Control Policies (SCPs) restrict what member accounts can do. Control Tower is built on top of Organizations and provides a landing zone for governance. IAM is for identity management within a single account.",
+    "keywords": ["Organizations", "consolidated billing", "multiple accounts", "volume discounts"],
+    "examTip": "Organizations = manage multiple accounts + consolidated billing + volume discounts. Control Tower = 'Organizations+' with governance guardrails and landing zone. Use Organizations when the question is just about billing consolidation."
+  },
+  {
+    "id": "clf-c02-m4-0006",
+    "certId": "aws-clf-c02",
+    "moduleId": 4,
+    "domain": "Billing, Pricing & Support",
+    "difficulty": 3,
+    "type": "single",
+    "question": "A company uses AWS Organizations. A developer in a member account attempts to launch EC2 instances in a region that the management account has restricted. What AWS feature prevents this action?",
+    "options": [
+      "IAM Permission Boundaries",
+      "AWS Config Rules",
+      "Service Control Policies (SCPs)",
+      "Resource-based Policies"
+    ],
+    "correct": [2],
+    "explanation": "Service Control Policies (SCPs) are a feature of AWS Organizations that set the maximum permissions for member accounts. They act as guardrails and can restrict specific AWS services, actions, or regions across all accounts in an organizational unit. Even if a member account's IAM allows launching EC2 in a restricted region, the SCP will block it. SCPs do NOT apply to the management (root) account itself.",
+    "keywords": ["SCP", "Service Control Policies", "Organizations", "guardrails", "restrict regions"],
+    "examTip": "SCPs = guardrails that set MAXIMUM permissions for member accounts. SCPs don't grant permissions — they restrict what can be granted. IMPORTANT: SCPs do NOT apply to the management account. The management account can always do everything."
+  },
+  {
+    "id": "clf-c02-m4-0007",
+    "certId": "aws-clf-c02",
+    "moduleId": 4,
+    "domain": "Billing, Pricing & Support",
+    "difficulty": 1,
+    "type": "single",
+    "question": "Which of the following is always free as part of the AWS Free Tier, with no time expiration?",
+    "options": [
+      "750 hours/month of EC2 t2.micro",
+      "5GB of Amazon S3 storage",
+      "1 million requests/month to AWS Lambda",
+      "AWS Cost Explorer"
+    ],
+    "correct": [2],
+    "explanation": "AWS Lambda's 1 million free requests per month and 400,000 GB-seconds of compute time per month are part of the 'Always Free' tier — they never expire. EC2 t2.micro (750 hours/month) and S3 5GB are part of the '12 Months Free' tier that expires after 12 months. AWS Cost Explorer is free to use but not a compute service with a free tier.",
+    "keywords": ["Free Tier", "Always Free", "Lambda", "12 months", "free tier types"],
+    "examTip": "3 types of Free Tier: Always Free (Lambda, DynamoDB 25GB, etc. — never expires), 12 Months Free (EC2, S3, RDS — first 12 months only), Trials (short-term specific service trials). Lambda is the most commonly tested 'Always Free' service."
+  },
+  {
+    "id": "clf-c02-m4-0008",
+    "certId": "aws-clf-c02",
+    "moduleId": 4,
+    "domain": "Billing, Pricing & Support",
+    "difficulty": 2,
+    "type": "single",
+    "question": "A company wants to analyze their AWS spending patterns over the past 6 months and visualize usage trends to identify cost optimization opportunities. Which service should they use?",
+    "options": [
+      "AWS Budgets",
+      "AWS Pricing Calculator",
+      "AWS Cost Explorer",
+      "AWS Cost and Usage Report"
+    ],
+    "correct": [2],
+    "explanation": "AWS Cost Explorer provides an interactive interface to visualize, understand, and manage AWS costs and usage over time (up to 13 months of historical data). It offers graphs, filters by service/region/tag, and identifies savings opportunities like Reserved Instance recommendations. AWS Budgets is for setting alerts. Pricing Calculator estimates future costs. Cost and Usage Report provides raw CSV data — detailed but not visual.",
+    "keywords": ["Cost Explorer", "cost analysis", "spending patterns", "visualization", "historical costs"],
+    "examTip": "Cost Explorer = interactive VISUALIZATION of historical costs + RI purchase recommendations. Cost and Usage Report (CUR) = most granular raw data (CSV). Budgets = proactive ALERTS. If the question says 'analyze trends' or 'visualize', it's Cost Explorer."
+  },
+  {
+    "id": "clf-c02-m4-0009",
+    "certId": "aws-clf-c02",
+    "moduleId": 4,
+    "domain": "Billing, Pricing & Support",
+    "difficulty": 3,
+    "type": "single",
+    "question": "A company currently uses On-Demand EC2 instances for a variety of workloads across different instance families. They want the most flexible discount option that applies across any EC2 instance family, size, and region, with a 1 or 3-year commitment. Which option should they choose?",
+    "options": [
+      "EC2 Instance Savings Plans",
+      "Compute Savings Plans",
+      "Standard Reserved Instances",
+      "Convertible Reserved Instances"
+    ],
+    "correct": [1],
+    "explanation": "Compute Savings Plans offer the most flexibility — they apply automatically to any EC2 instance regardless of family, size, region, OS, or tenancy, as well as to Fargate and Lambda. They provide up to 66% savings. EC2 Instance Savings Plans offer up to 72% savings but are locked to a specific instance family in a specific region. Standard Reserved Instances are the least flexible (locked to instance family, region, OS). Convertible RIs allow changes but have less discount.",
+    "keywords": ["Savings Plans", "Compute Savings Plans", "EC2 Instance Savings Plans", "Reserved Instances", "flexibility"],
+    "examTip": "Compute Savings Plans = MOST flexible (any instance type, region, Fargate, Lambda), 66% max discount. EC2 Instance Savings Plans = specific family/region, 72% max discount. More flexibility = less discount. The tradeoff is always flexibility vs. savings depth."
+  },
+  {
+    "id": "clf-c02-m4-0010",
+    "certId": "aws-clf-c02",
+    "moduleId": 4,
+    "domain": "Billing, Pricing & Support",
+    "difficulty": 2,
+    "type": "single",
+    "question": "Which AWS service provides recommendations to help reduce costs by identifying idle and underutilized resources, and also checks for security gaps and service limits?",
+    "options": [
+      "AWS Cost Explorer",
+      "AWS Trusted Advisor",
+      "AWS Compute Optimizer",
+      "AWS Config"
+    ],
+    "correct": [1],
+    "explanation": "AWS Trusted Advisor provides real-time recommendations across five categories: Cost Optimization, Performance, Security, Fault Tolerance, and Service Limits. It can identify idle EC2 instances, underutilized EBS volumes, security group misconfigurations, and approaching service limits. AWS Compute Optimizer specifically focuses on right-sizing EC2, Lambda, and EBS. Cost Explorer analyzes spending. AWS Config tracks compliance.",
+    "keywords": ["Trusted Advisor", "cost optimization", "security", "idle resources", "service limits"],
+    "examTip": "Trusted Advisor checks 5 areas: Cost, Performance, Security, Fault Tolerance, Service Limits. Full access to all checks requires Business or Enterprise support. Basic/Developer only get 7 core security checks and service limit checks."
+  }
+]

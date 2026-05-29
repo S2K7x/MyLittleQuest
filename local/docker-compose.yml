@@ -1,0 +1,27 @@
+services:
+  app:
+    build:
+      context: ../
+      dockerfile: local/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      # Persist SQLite database across restarts
+      - quest-data:/app/data
+      # Live content mount: new questions added on host appear immediately
+      # without rebuilding the image (certifications.js reads from this path)
+      - ../shared/content:/app/shared/content:ro
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DB_PATH=/app/data/quest.db
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  quest-data:

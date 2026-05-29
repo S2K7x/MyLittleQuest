@@ -1,0 +1,192 @@
+[
+  {
+    "id": "clf-c02-m3-0001",
+    "certId": "aws-clf-c02",
+    "moduleId": 3,
+    "domain": "Cloud Technology & Services",
+    "difficulty": 1,
+    "type": "single",
+    "question": "A company needs to run a workload that can be interrupted and requires the lowest possible EC2 compute cost. Which EC2 pricing model should they use?",
+    "options": [
+      "On-Demand Instances",
+      "Reserved Instances",
+      "Spot Instances",
+      "Dedicated Hosts"
+    ],
+    "correct": [2],
+    "explanation": "Spot Instances offer up to 90% discount compared to On-Demand prices. However, AWS can reclaim them with a 2-minute warning when the capacity is needed. This makes them ideal for fault-tolerant, stateless, or flexible workloads such as batch processing, data analysis, or CI/CD. On-Demand is pay-as-you-go with no commitment. Reserved provides up to 72% discount for 1-3 year commitments. Dedicated Hosts are physical servers dedicated to your use.",
+    "keywords": ["EC2", "Spot Instances", "pricing", "cost optimization", "interruptible"],
+    "examTip": "Spot = cheapest (up to 90% off) but interruptible. For fault-tolerant batch jobs, always choose Spot. If the question says 'cannot be interrupted', Spot is WRONG."
+  },
+  {
+    "id": "clf-c02-m3-0002",
+    "certId": "aws-clf-c02",
+    "moduleId": 3,
+    "domain": "Cloud Technology & Services",
+    "difficulty": 2,
+    "type": "single",
+    "question": "A company runs a database server that must be available 24/7 for the next 3 years. Which EC2 pricing model offers the best cost savings?",
+    "options": [
+      "On-Demand Instances",
+      "Spot Instances",
+      "Reserved Instances",
+      "Scheduled Instances"
+    ],
+    "correct": [2],
+    "explanation": "Reserved Instances provide up to 72% discount compared to On-Demand when you commit to 1 or 3 years. For a database that must run 24/7 with predictable usage, Reserved Instances offer the best long-term savings. Spot Instances would be inappropriate because databases cannot tolerate interruptions. On-Demand has no discount. Scheduled Instances (a legacy offering) only ran during specific time windows.",
+    "keywords": ["Reserved Instances", "EC2 pricing", "cost savings", "database", "commitment"],
+    "examTip": "Reserved = best for steady-state, always-on workloads with predictable usage (databases, web servers). 1-year = less discount, 3-year = max discount. All Upfront > Partial Upfront > No Upfront in terms of discount."
+  },
+  {
+    "id": "clf-c02-m3-0003",
+    "certId": "aws-clf-c02",
+    "moduleId": 3,
+    "domain": "Cloud Technology & Services",
+    "difficulty": 1,
+    "type": "single",
+    "question": "Which Amazon S3 storage class is designed for data that is accessed infrequently but must be retrieved quickly when needed, at a lower cost than S3 Standard?",
+    "options": [
+      "S3 Standard",
+      "S3 Standard-IA",
+      "S3 Glacier Instant Retrieval",
+      "S3 One Zone-IA"
+    ],
+    "correct": [1],
+    "explanation": "S3 Standard-IA (Infrequent Access) is designed for data accessed less frequently but requiring rapid access when needed. It has lower storage costs than S3 Standard but includes a retrieval fee and a 30-day minimum storage duration. S3 Glacier Instant Retrieval is for archival data accessed once per quarter. S3 One Zone-IA stores data in a single AZ (lower cost but less resilient).",
+    "keywords": ["S3", "Standard-IA", "storage classes", "infrequent access"],
+    "examTip": "S3 Standard-IA = cheaper storage cost + retrieval fee. Good for backups or DR data. Remember: ALL S3 IA classes have a 30-day minimum. One Zone-IA = only 1 AZ = cheaper but less durable."
+  },
+  {
+    "id": "clf-c02-m3-0004",
+    "certId": "aws-clf-c02",
+    "moduleId": 3,
+    "domain": "Cloud Technology & Services",
+    "difficulty": 2,
+    "type": "single",
+    "question": "A company needs to archive data that is accessed less than once a year and can tolerate retrieval times of several hours. Which S3 storage class is most cost-effective?",
+    "options": [
+      "S3 Standard-IA",
+      "S3 Glacier Instant Retrieval",
+      "S3 Glacier Flexible Retrieval",
+      "S3 Glacier Deep Archive"
+    ],
+    "correct": [3],
+    "explanation": "S3 Glacier Deep Archive is the lowest-cost storage in AWS, designed for data that is retained for 7-10 years and accessed very rarely (once or twice a year). Retrieval times are 12-48 hours. S3 Glacier Flexible Retrieval costs more but retrieves in minutes to hours. Glacier Instant Retrieval retrieves in milliseconds (but costs more). Standard-IA is not archival-grade.",
+    "keywords": ["S3 Glacier", "Deep Archive", "archival", "storage classes", "cost optimization"],
+    "examTip": "Glacier Deep Archive = cheapest S3 storage possible, but 12-48 hour retrieval. If the question says 'archive', 'rarely accessed', and 'tolerate hours of retrieval time', Deep Archive is the answer."
+  },
+  {
+    "id": "clf-c02-m3-0005",
+    "certId": "aws-clf-c02",
+    "moduleId": 3,
+    "domain": "Cloud Technology & Services",
+    "difficulty": 2,
+    "type": "single",
+    "question": "A company runs a relational database workload that requires automated failover to a standby instance in a different Availability Zone in case of an outage. Which Amazon RDS feature provides this?",
+    "options": [
+      "RDS Read Replicas",
+      "RDS Multi-AZ deployment",
+      "RDS automated backups",
+      "RDS Performance Insights"
+    ],
+    "correct": [1],
+    "explanation": "RDS Multi-AZ deployment creates a synchronous standby replica in a different AZ. If the primary instance fails, RDS automatically fails over to the standby within typically 1-2 minutes. Read Replicas are asynchronous replicas used for read scaling, not failover. Automated backups provide point-in-time recovery but don't provide instant failover. Performance Insights is a monitoring tool.",
+    "keywords": ["RDS", "Multi-AZ", "failover", "high availability", "standby"],
+    "examTip": "Multi-AZ = HIGH AVAILABILITY (automatic failover, synchronous). Read Replicas = READ SCALING (improve read performance, asynchronous). These serve different purposes — Multi-AZ is for DR, Read Replicas for performance."
+  },
+  {
+    "id": "clf-c02-m3-0006",
+    "certId": "aws-clf-c02",
+    "moduleId": 3,
+    "domain": "Cloud Technology & Services",
+    "difficulty": 1,
+    "type": "single",
+    "question": "A company needs a NoSQL database that provides single-digit millisecond performance at any scale. Which AWS service should they use?",
+    "options": [
+      "Amazon RDS",
+      "Amazon Aurora",
+      "Amazon DynamoDB",
+      "Amazon Redshift"
+    ],
+    "correct": [2],
+    "explanation": "Amazon DynamoDB is a fully managed NoSQL key-value and document database that provides single-digit millisecond performance at any scale. RDS and Aurora are relational SQL databases. Redshift is a data warehouse for analytics and OLAP workloads, not for transactional NoSQL use cases.",
+    "keywords": ["DynamoDB", "NoSQL", "key-value", "single-digit millisecond", "database"],
+    "examTip": "DynamoDB = NoSQL, serverless, millisecond latency, infinite scale. RDS/Aurora = SQL/relational. Redshift = analytics/data warehouse. If the question says 'NoSQL' or 'key-value', answer is DynamoDB."
+  },
+  {
+    "id": "clf-c02-m3-0007",
+    "certId": "aws-clf-c02",
+    "moduleId": 3,
+    "domain": "Cloud Technology & Services",
+    "difficulty": 3,
+    "type": "single",
+    "question": "A company wants to filter incoming HTTP traffic at the application layer and block SQL injection and cross-site scripting attacks. Which AWS service should they use?",
+    "options": [
+      "Security Groups",
+      "Network ACL (NACL)",
+      "AWS WAF",
+      "AWS Shield"
+    ],
+    "correct": [2],
+    "explanation": "AWS WAF (Web Application Firewall) operates at layer 7 (application layer) and can inspect HTTP/HTTPS requests to block SQL injection, cross-site scripting, and other common web exploits. Security Groups operate at layer 4 (transport layer) and only control traffic based on IP/port. NACLs also operate at the network layer. AWS Shield protects against DDoS (volume attacks), not application-layer exploits.",
+    "keywords": ["WAF", "SQL injection", "XSS", "application layer", "layer 7", "security"],
+    "examTip": "WAF = layer 7 (HTTP/HTTPS inspection, web attacks). Shield = DDoS protection. Security Groups = layer 4 (IP/port). NACLs = layer 4 (stateless). WAF is the ONLY one that can inspect HTTP request content."
+  },
+  {
+    "id": "clf-c02-m3-0008",
+    "certId": "aws-clf-c02",
+    "moduleId": 3,
+    "domain": "Cloud Technology & Services",
+    "difficulty": 2,
+    "type": "single",
+    "question": "What is the key difference between a Security Group and a Network ACL (NACL) in AWS?",
+    "options": [
+      "Security Groups are stateless; NACLs are stateful",
+      "Security Groups are stateful; NACLs are stateless",
+      "Security Groups apply to VPCs; NACLs apply to subnets",
+      "Security Groups evaluate deny rules first; NACLs evaluate allow rules first"
+    ],
+    "correct": [1],
+    "explanation": "Security Groups are STATEFUL: if you allow inbound traffic, the return outbound traffic is automatically allowed. NACLs are STATELESS: you must explicitly allow both inbound AND outbound traffic. Security Groups apply at the instance level (ENI), while NACLs apply at the subnet level. NACLs support both Allow and Deny rules; Security Groups only support Allow rules (implicit deny).",
+    "keywords": ["Security Group", "NACL", "stateful", "stateless", "VPC", "network security"],
+    "examTip": "SG = stateful (return traffic automatic) + instance level + allow rules only. NACL = stateless (must allow both directions) + subnet level + allow AND deny rules. This distinction is tested heavily."
+  },
+  {
+    "id": "clf-c02-m3-0009",
+    "certId": "aws-clf-c02",
+    "moduleId": 3,
+    "domain": "Cloud Technology & Services",
+    "difficulty": 2,
+    "type": "single",
+    "question": "A company needs to run a containerized application without managing any underlying servers or clusters. Which AWS service allows this?",
+    "options": [
+      "Amazon EC2",
+      "Amazon ECS on EC2",
+      "AWS Fargate",
+      "AWS Lambda"
+    ],
+    "correct": [2],
+    "explanation": "AWS Fargate is a serverless compute engine for containers that works with both ECS and EKS. With Fargate, you don't provision, configure, or scale EC2 instances — you just define your container task and Fargate handles the infrastructure. EC2 requires managing servers. ECS on EC2 requires managing the EC2 cluster. Lambda is serverless but for function-based workloads, not containerized applications.",
+    "keywords": ["Fargate", "containers", "serverless", "ECS", "EKS", "no servers"],
+    "examTip": "Fargate = containers WITHOUT managing servers. ECS/EKS on EC2 = containers WITH server management. Lambda = event-driven FUNCTIONS (not containers, though Lambda can use container images)."
+  },
+  {
+    "id": "clf-c02-m3-0010",
+    "certId": "aws-clf-c02",
+    "moduleId": 3,
+    "domain": "Cloud Technology & Services",
+    "difficulty": 3,
+    "type": "single",
+    "question": "A company needs to transfer 80TB of data from their on-premises data center to AWS. Their internet connection is limited to 100Mbps and they need the transfer completed within 2 weeks. What is the most practical solution?",
+    "options": [
+      "Use AWS Direct Connect to transfer the data",
+      "Use AWS Snowball Edge to physically ship the data",
+      "Use S3 Transfer Acceleration to speed up the upload",
+      "Compress the data and upload using the AWS CLI"
+    ],
+    "correct": [1],
+    "explanation": "At 100Mbps, uploading 80TB would take approximately 74 days (80TB / (100Mbps × 86400s/day ÷ 8)) — far exceeding the 2-week deadline. AWS Snowball Edge is a physical device that ships to your location; you load 80TB onto it and ship it back to AWS, where data is ingested within days. Direct Connect takes weeks to set up and still wouldn't be fast enough. S3 Transfer Acceleration and CLI compression optimize internet transfers but can't overcome the bandwidth limitation.",
+    "keywords": ["Snowball", "data transfer", "Snow Family", "80TB", "bandwidth limitations"],
+    "examTip": "Calculate transfer time: if it takes longer than a week by internet, use Snow Family. Snowcone < 14TB, Snowball Edge up to 80TB/device, Snowmobile for exabytes. 'Large data + limited bandwidth + deadline' = Snowball."
+  }
+]

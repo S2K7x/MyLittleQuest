@@ -1,0 +1,192 @@
+[
+  {
+    "id": "clf-c02-m2-0001",
+    "certId": "aws-clf-c02",
+    "moduleId": 2,
+    "domain": "Security & Compliance",
+    "difficulty": 1,
+    "type": "single",
+    "question": "Under the AWS Shared Responsibility Model, which of the following is the customer's responsibility?",
+    "options": [
+      "Physical security of AWS data centers",
+      "Patching the hypervisor",
+      "Configuring security groups for EC2 instances",
+      "Managing the AWS global network infrastructure"
+    ],
+    "correct": [2],
+    "explanation": "Under the Shared Responsibility Model, customers are responsible for security 'in' the cloud — this includes configuring security groups, managing IAM users and permissions, encrypting data, and patching guest OS on EC2. AWS is responsible for security 'of' the cloud — physical data centers, hypervisor patching, and the global network infrastructure.",
+    "keywords": ["Shared Responsibility Model", "customer responsibility", "security groups", "EC2"],
+    "examTip": "AWS = security OF the cloud (physical, hypervisor, network). Customer = security IN the cloud (OS, apps, data, IAM, network config). For managed services like RDS, AWS takes more responsibility (OS patching)."
+  },
+  {
+    "id": "clf-c02-m2-0002",
+    "certId": "aws-clf-c02",
+    "moduleId": 2,
+    "domain": "Security & Compliance",
+    "difficulty": 2,
+    "type": "single",
+    "question": "A company uses Amazon RDS. Under the AWS Shared Responsibility Model, which task is AWS responsible for?",
+    "options": [
+      "Creating database users and managing permissions",
+      "Encrypting data stored in the database",
+      "Patching the database engine software",
+      "Configuring database parameter groups"
+    ],
+    "correct": [2],
+    "explanation": "For managed services like Amazon RDS, AWS takes additional responsibility including patching the database engine software and underlying OS. The customer remains responsible for: managing database users, setting up encryption (though AWS provides the tools), and configuring parameter groups. This is different from EC2 where the customer patches the OS.",
+    "keywords": ["Shared Responsibility Model", "RDS", "managed services", "database patching"],
+    "examTip": "For managed services (RDS, Lambda, DynamoDB), AWS handles OS/engine patching. For EC2, you patch everything above the hypervisor. The more managed the service, the more AWS handles."
+  },
+  {
+    "id": "clf-c02-m2-0003",
+    "certId": "aws-clf-c02",
+    "moduleId": 2,
+    "domain": "Security & Compliance",
+    "difficulty": 1,
+    "type": "single",
+    "question": "Which IAM entity is best suited for granting permissions to an AWS service (such as EC2) to access another AWS service (such as S3)?",
+    "options": [
+      "IAM User",
+      "IAM Group",
+      "IAM Role",
+      "IAM Policy"
+    ],
+    "correct": [2],
+    "explanation": "IAM Roles are used to grant permissions to AWS services, applications, or other accounts. An EC2 instance with an IAM role can assume that role's permissions to access S3 without storing credentials. IAM Users are for humans/applications using long-term credentials. IAM Groups organize users. IAM Policies define permissions but cannot be directly assigned to services — they must be attached to a user, group, or role.",
+    "keywords": ["IAM", "IAM role", "service permissions", "EC2", "S3"],
+    "examTip": "Use Roles for: AWS services-to-services, cross-account access, and federation. Never hardcode access keys in EC2 — use an instance profile (a role attached to EC2) instead."
+  },
+  {
+    "id": "clf-c02-m2-0004",
+    "certId": "aws-clf-c02",
+    "moduleId": 2,
+    "domain": "Security & Compliance",
+    "difficulty": 1,
+    "type": "single",
+    "question": "What is the correct order of components in IAM access control?",
+    "options": [
+      "Users → Groups → Roles → Policies",
+      "Policies → Roles → Groups → Users",
+      "Users are added to Groups; Policies are attached to Users, Groups, or Roles",
+      "Groups contain Roles; Roles contain Policies"
+    ],
+    "correct": [2],
+    "explanation": "In IAM: Users represent individual identities. Groups are collections of users that make it easy to manage permissions. Policies are JSON documents that define permissions. Policies can be attached directly to Users, Groups, or Roles. Roles are assumed by trusted entities (services, users, applications). Groups cannot contain other groups or roles.",
+    "keywords": ["IAM", "users", "groups", "roles", "policies", "IAM structure"],
+    "examTip": "Remember U-G-R-P: Users go in Groups. Policies attach to Users, Groups, or Roles. Groups CANNOT be nested or contain Roles. Roles are assumed, not assigned permanently."
+  },
+  {
+    "id": "clf-c02-m2-0005",
+    "certId": "aws-clf-c02",
+    "moduleId": 2,
+    "domain": "Security & Compliance",
+    "difficulty": 2,
+    "type": "single",
+    "question": "A security team wants to continuously monitor their AWS environment for threats such as unusual API calls, compromised instances, and unauthorized access. Which AWS service should they use?",
+    "options": [
+      "AWS Inspector",
+      "Amazon Macie",
+      "Amazon GuardDuty",
+      "AWS Config"
+    ],
+    "correct": [2],
+    "explanation": "Amazon GuardDuty is a threat detection service that continuously monitors for malicious activity and unauthorized behavior to protect AWS accounts, workloads, and data. It analyzes CloudTrail logs, VPC Flow Logs, and DNS logs. AWS Inspector assesses EC2 instances and container images for software vulnerabilities. Amazon Macie uses machine learning to discover and protect sensitive data in S3. AWS Config records resource configurations.",
+    "keywords": ["GuardDuty", "threat detection", "security monitoring", "Inspector", "Macie"],
+    "examTip": "GuardDuty = threat DETECTION (what bad actor is doing). Inspector = vulnerability ASSESSMENT (what's wrong with your software). Macie = sensitive DATA discovery in S3. These three are frequently confused in exam questions."
+  },
+  {
+    "id": "clf-c02-m2-0006",
+    "certId": "aws-clf-c02",
+    "moduleId": 2,
+    "domain": "Security & Compliance",
+    "difficulty": 2,
+    "type": "single",
+    "question": "Which AWS service uses machine learning to automatically discover, classify, and protect sensitive data stored in Amazon S3?",
+    "options": [
+      "Amazon GuardDuty",
+      "Amazon Macie",
+      "AWS Shield",
+      "Amazon Inspector"
+    ],
+    "correct": [1],
+    "explanation": "Amazon Macie is a data security service that uses machine learning to automatically discover sensitive data (like PII, financial data, credentials) in Amazon S3, classify it, and provide alerts about potential data exposure. It is specifically focused on S3 data protection. GuardDuty is for threat detection, Shield is for DDoS protection, and Inspector is for vulnerability assessment.",
+    "keywords": ["Macie", "S3", "data classification", "sensitive data", "PII", "machine learning"],
+    "examTip": "Macie = sensitive data in S3 (PII, credit cards, passwords). If the question mentions 'S3' and 'sensitive data' or 'data classification', the answer is almost always Macie."
+  },
+  {
+    "id": "clf-c02-m2-0007",
+    "certId": "aws-clf-c02",
+    "moduleId": 2,
+    "domain": "Security & Compliance",
+    "difficulty": 3,
+    "type": "single",
+    "question": "A company needs to automatically assess EC2 instances for common vulnerabilities and exposures (CVEs) and unintended network exposure. Which service provides this capability?",
+    "options": [
+      "Amazon GuardDuty",
+      "AWS Security Hub",
+      "Amazon Inspector",
+      "AWS Trusted Advisor"
+    ],
+    "correct": [2],
+    "explanation": "Amazon Inspector automatically discovers and scans running EC2 instances and container images in ECR for software vulnerabilities (CVEs) and unintended network exposure. It provides a risk score to help prioritize remediation. GuardDuty detects threats from behavior analysis. Security Hub aggregates findings from multiple services. Trusted Advisor provides general best practice recommendations, not deep vulnerability scanning.",
+    "keywords": ["Inspector", "CVE", "vulnerability assessment", "EC2", "network exposure"],
+    "examTip": "Inspector v2 (current) = automated vulnerability management for EC2 AND ECR images. The key differentiator from GuardDuty: Inspector finds KNOWN vulnerabilities (CVEs), GuardDuty finds SUSPICIOUS BEHAVIOR."
+  },
+  {
+    "id": "clf-c02-m2-0008",
+    "certId": "aws-clf-c02",
+    "moduleId": 2,
+    "domain": "Security & Compliance",
+    "difficulty": 1,
+    "type": "single",
+    "question": "What AWS service provides DDoS protection automatically for all AWS customers at no additional cost?",
+    "options": [
+      "AWS WAF",
+      "AWS Shield Standard",
+      "AWS Shield Advanced",
+      "Amazon CloudFront"
+    ],
+    "correct": [1],
+    "explanation": "AWS Shield Standard is automatically enabled for all AWS customers at no additional cost. It provides protection against the most common and frequently occurring network and transport layer DDoS attacks. AWS Shield Advanced is a paid service that provides additional protections, 24/7 DDoS response team access, and financial protection against scaling charges from DDoS attacks. AWS WAF protects against web exploits (layer 7), not DDoS specifically.",
+    "keywords": ["Shield", "DDoS", "Shield Standard", "Shield Advanced", "DDoS protection"],
+    "examTip": "Shield Standard = FREE, automatic, protects against layer 3/4 DDoS. Shield Advanced = PAID (~$3000/month), protects against larger/sophisticated attacks, includes DDoS Response Team (DRT) access."
+  },
+  {
+    "id": "clf-c02-m2-0009",
+    "certId": "aws-clf-c02",
+    "moduleId": 2,
+    "domain": "Security & Compliance",
+    "difficulty": 2,
+    "type": "single",
+    "question": "A company must ensure all API calls made to their AWS account are logged for audit purposes. Which AWS service provides this capability?",
+    "options": [
+      "Amazon CloudWatch",
+      "AWS CloudTrail",
+      "AWS Config",
+      "Amazon GuardDuty"
+    ],
+    "correct": [1],
+    "explanation": "AWS CloudTrail records API calls made to your AWS account, providing a history of AWS API calls including the identity of the API caller, the time of the API call, the source IP, and the request and response elements. This is the primary service for audit logs. CloudWatch monitors performance metrics and logs. AWS Config tracks resource configuration changes. GuardDuty uses CloudTrail data to detect threats but doesn't itself store the raw API logs.",
+    "keywords": ["CloudTrail", "API logging", "audit", "compliance"],
+    "examTip": "CloudTrail = WHO did WHAT and WHEN (API audit trail). CloudWatch = system metrics and application logs. CloudTrail is enabled by default but you need to create a trail to store logs to S3 for long-term retention."
+  },
+  {
+    "id": "clf-c02-m2-0010",
+    "certId": "aws-clf-c02",
+    "moduleId": 2,
+    "domain": "Security & Compliance",
+    "difficulty": 3,
+    "type": "single",
+    "question": "A regulated company needs to demonstrate that their AWS environment meets specific compliance requirements such as PCI DSS. Which AWS service provides on-demand access to AWS compliance documentation and audit reports?",
+    "options": [
+      "AWS Trusted Advisor",
+      "AWS Config",
+      "AWS Artifact",
+      "AWS Security Hub"
+    ],
+    "correct": [2],
+    "explanation": "AWS Artifact is a self-service portal for on-demand access to AWS security and compliance documentation, including AWS ISO certifications, PCI DSS reports, SOC reports, and other compliance documents. It also lets you manage and accept AWS agreements like the Business Associate Addendum (BAA) for HIPAA. Trusted Advisor gives best-practice recommendations. AWS Config tracks configuration compliance. Security Hub aggregates security findings.",
+    "keywords": ["Artifact", "compliance", "PCI DSS", "audit reports", "certifications"],
+    "examTip": "AWS Artifact = compliance DOCUMENTS and REPORTS (the paperwork). Not to be confused with AWS Config (tracks configuration compliance) or Security Hub (aggregates findings). Think: Artifact = the actual PDF compliance reports."
+  }
+]

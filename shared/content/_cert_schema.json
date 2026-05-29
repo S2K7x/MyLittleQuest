@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "required": ["id","name","provider","code","color","icon",
+               "passingScore","passingScoreMax","totalQuestions",
+               "durationMinutes","modules"],
+  "properties": {
+    "id":               { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "name":             { "type": "string" },
+    "provider":         { "type": "string" },
+    "code":             { "type": "string" },
+    "color":            { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+    "icon":             { "type": "string", "description": "emoji or icon name" },
+    "passingScore":     { "type": "integer" },
+    "passingScoreMax":  { "type": "integer" },
+    "totalQuestions":   { "type": "integer" },
+    "durationMinutes":  { "type": "integer" },
+    "difficulty":       { "type": "string", "enum": ["beginner","associate","professional","specialty"] },
+    "modules": {
+      "type": "array",
+      "items": {
+        "required": ["id","name","weight"],
+        "properties": {
+          "id":     { "type": "integer" },
+          "name":   { "type": "string" },
+          "weight": { "type": "integer", "description": "% of exam" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "aws-clf-c02",
+  "name": "AWS Cloud Practitioner",
+  "provider": "Amazon Web Services",
+  "code": "CLF-C02",
+  "color": "#FF9900",
+  "icon": "☁️",
+  "difficulty": "beginner",
+  "passingScore": 700,
+  "passingScoreMax": 1000,
+  "totalQuestions": 65,
+  "durationMinutes": 90,
+  "modules": [
+    { "id": 1, "name": "Cloud Concepts", "weight": 24 },
+    { "id": 2, "name": "Security & Compliance", "weight": 30 },
+    { "id": 3, "name": "Cloud Technology & Services", "weight": 34 },
+    { "id": 4, "name": "Billing, Pricing & Support", "weight": 12 }
+  ]
+}
