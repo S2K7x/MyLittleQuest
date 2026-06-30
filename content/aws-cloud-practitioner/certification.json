@@ -1,0 +1,13 @@
+{
+  "name": "AWS Certified Cloud Practitioner",
+  "code": "CLF-C02",
+  "slug": "aws-cloud-practitioner",
+  "exam_domains": [
+    { "id": "domain-1", "name": "Cloud Concepts", "weight": 0.24 },
+    { "id": "domain-2", "name": "Security and Compliance", "weight": 0.30 },
+    { "id": "domain-3", "name": "Cloud Technology and Services", "weight": 0.34 },
+    { "id": "domain-4", "name": "Billing, Pricing, and Support", "weight": 0.12 }
+  ],
+  "exam_guide_url": "https://d1.awsstatic.com/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Exam-Guide.pdf",
+  "status": "not_started"
+}
