@@ -1,4 +1,4 @@
-import { getCertification } from "@/lib/content";
+import { getAllAssets, getCertification } from "@/lib/content";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -10,6 +10,8 @@ export default async function CertifPage({ params }: Props) {
   const { slug } = await params;
   const cert = getCertification(slug);
   if (!cert) notFound();
+
+  const hasContent = getAllAssets(slug).length > 0;
 
   return (
     <main className="min-h-screen px-4 py-10 max-w-lg mx-auto">
@@ -44,9 +46,18 @@ export default async function CertifPage({ params }: Props) {
         </ul>
       </section>
 
-      <p className="text-center text-xs text-gray-300">
-        Contenu en cours de génération…
-      </p>
+      {hasContent ? (
+        <Link
+          href={`/certif/${slug}/play`}
+          className="block w-full py-4 bg-blue-600 text-white rounded-2xl font-semibold text-sm text-center active:bg-blue-700 touch-manipulation"
+        >
+          Commencer une session
+        </Link>
+      ) : (
+        <p className="text-center text-xs text-gray-300">
+          Contenu en cours de génération…
+        </p>
+      )}
     </main>
   );
 }

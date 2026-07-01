@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FEEDBACK } from "@/lib/ui/feedback";
 
 interface QcmPayload {
   question: string;
@@ -11,20 +12,22 @@ interface QcmPayload {
 
 interface Props {
   payload: QcmPayload;
-  onNext?: () => void;
+  onAnswer: (wasCorrect: boolean) => void;
+  onNext: () => void;
 }
 
-export default function QcmGame({ payload, onNext }: Props) {
+export default function QcmGame({ payload, onAnswer, onNext }: Props) {
   const [selected, setSelected] = useState<number | null>(null);
   const answered = selected !== null;
 
   function handleChoice(index: number) {
     if (answered) return;
     setSelected(index);
+    onAnswer(index === payload.correct_index);
   }
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5 animate-fade-in">
       <p className="text-base font-medium text-gray-900 leading-snug">
         {payload.question}
       </p>
@@ -35,14 +38,13 @@ export default function QcmGame({ payload, onNext }: Props) {
             "w-full text-left px-4 py-4 rounded-2xl border text-sm transition-colors touch-manipulation ";
 
           if (!answered) {
-            className += "bg-white border-gray-200 active:bg-gray-50";
+            className += FEEDBACK.neutralActive;
           } else if (i === payload.correct_index) {
-            className +=
-              "bg-green-50 border-green-400 text-green-800 font-medium";
+            className += `${FEEDBACK.correct} font-medium`;
           } else if (i === selected) {
-            className += "bg-red-50 border-red-400 text-red-800";
+            className += FEEDBACK.incorrect;
           } else {
-            className += "bg-white border-gray-100 text-gray-300";
+            className += FEEDBACK.neutralDisabled;
           }
 
           return (
@@ -61,7 +63,7 @@ export default function QcmGame({ payload, onNext }: Props) {
         </div>
       )}
 
-      {answered && onNext && (
+      {answered && (
         <button
           className="w-full py-4 bg-blue-600 text-white rounded-2xl font-semibold text-sm active:bg-blue-700 touch-manipulation"
           onClick={onNext}
