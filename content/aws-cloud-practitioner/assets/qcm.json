@@ -1,1 +1,88 @@
-[]
+[
+  {
+    "id": "qcm-cloud-01",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Quel avantage du cloud décrit le fait de payer les ressources uniquement quand on les consomme, au lieu d'investir massivement à l'avance dans des serveurs ?",
+      "choices": [
+        "Échanger une dépense fixe contre une dépense variable",
+        "Bénéficier d'économies d'échelle massives",
+        "Se déployer mondialement en quelques minutes",
+        "Arrêter de deviner sa capacité"
+      ],
+      "correct_index": 0,
+      "explanation": "Échanger une dépense fixe (CapEx) contre une dépense variable (OpEx) signifie ne payer que ce que l'on consomme, plutôt que d'investir en amont dans des datacenters et serveurs."
+    }
+  },
+  {
+    "id": "qcm-cloud-02",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Un service qui offre le plus haut niveau de flexibilité et de contrôle sur les ressources IT, comme Amazon EC2, relève de quel modèle de service cloud ?",
+      "choices": [
+        "SaaS (Software as a Service)",
+        "PaaS (Platform as a Service)",
+        "IaaS (Infrastructure as a Service)",
+        "FaaS (Function as a Service)"
+      ],
+      "correct_index": 2,
+      "explanation": "IaaS fournit le plus haut niveau de flexibilité et de contrôle sur les ressources IT ; Amazon EC2 en est l'exemple typique. PaaS (ex : Elastic Beanstalk) masque l'infrastructure, SaaS fournit un produit fini."
+    }
+  },
+  {
+    "id": "qcm-cloud-03",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Combien de piliers composent l'AWS Well-Architected Framework ?",
+      "choices": ["Quatre", "Cinq", "Six", "Sept"],
+      "correct_index": 2,
+      "explanation": "Le framework compte six piliers : excellence opérationnelle, sécurité, fiabilité, efficacité des performances, optimisation des coûts et durabilité."
+    }
+  },
+  {
+    "id": "qcm-cloud-04",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Une équipe migre une application vers AWS en la déplaçant telle quelle, sans aucune modification de code (« lift and shift »). Quelle stratégie de migration parmi les 7 R utilise-t-elle ?",
+      "choices": ["Refactor", "Rehost", "Repurchase", "Retire"],
+      "correct_index": 1,
+      "explanation": "Rehost, aussi appelé « lift and shift », consiste à déplacer une application vers le cloud sans la modifier. Refactor remanie l'architecture, Repurchase change de produit (souvent vers du SaaS), Retire décommissionne."
+    }
+  },
+  {
+    "id": "qcm-cloud-05",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quelle pratique consiste à ajuster les types et tailles d'instances aux besoins réels de performance et de capacité, au coût le plus bas possible ?",
+      "choices": [
+        "Le lift and shift",
+        "Le right-sizing",
+        "L'économie d'échelle",
+        "Le déploiement hybride"
+      ],
+      "correct_index": 1,
+      "explanation": "Le right-sizing (dimensionnement adapté) fait correspondre les instances aux besoins réels au coût le plus bas ; combiné à l'automatisation, il évite la sur-provision et réduit la facture."
+    }
+  },
+  {
+    "id": "qcm-cloud-06",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Autour de combien de perspectives l'AWS Cloud Adoption Framework (CAF) organise-t-il ses recommandations ?",
+      "choices": [
+        "Trois perspectives",
+        "Six perspectives",
+        "Sept perspectives",
+        "Dix perspectives"
+      ],
+      "correct_index": 1,
+      "explanation": "Le CAF s'organise en six perspectives : Business, People, Governance, Platform, Security et Operations."
+    }
+  }
+]

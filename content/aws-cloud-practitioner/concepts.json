@@ -1,1 +1,110 @@
-[]
+[
+  {
+    "id": "cloud-benefits-six-advantages",
+    "domain": "Cloud Concepts",
+    "title": "Les six avantages du cloud computing",
+    "core_explanation": "AWS résume la proposition de valeur du cloud en six avantages : (1) échanger une dépense fixe contre une dépense variable, (2) bénéficier d'économies d'échelle massives, (3) arrêter de deviner sa capacité, (4) gagner en vitesse et en agilité, (5) arrêter de dépenser pour exploiter et entretenir des datacenters, (6) se déployer mondialement en quelques minutes. Ces avantages structurent la plupart des questions du Domaine 1 sur la valeur métier du cloud.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+    "generated_at": "2026-07-01T02:00:00Z"
+  },
+  {
+    "id": "cloud-capex-vs-opex",
+    "domain": "Cloud Concepts",
+    "title": "Dépense fixe (CapEx) contre dépense variable (OpEx)",
+    "core_explanation": "Avec une infrastructure sur site, on investit lourdement en amont dans des datacenters et des serveurs avant de savoir comment ils seront utilisés : c'est une dépense d'investissement (CapEx). Le cloud transforme cela en dépense variable (OpEx) : on ne paie que lorsqu'on consomme des ressources, et uniquement à hauteur de ce qu'on consomme. C'est le premier des six avantages du cloud.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+    "generated_at": "2026-07-01T02:00:00Z"
+  },
+  {
+    "id": "cloud-economies-of-scale",
+    "domain": "Cloud Concepts",
+    "title": "Économies d'échelle massives",
+    "core_explanation": "En mutualisant l'usage de centaines de milliers de clients, un fournisseur comme AWS atteint des économies d'échelle qu'aucune organisation ne pourrait obtenir seule. Ces économies se traduisent par des prix « pay-as-you-go » plus bas, donc un coût variable inférieur à ce que l'on obtiendrait avec sa propre infrastructure.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+    "generated_at": "2026-07-01T02:00:00Z"
+  },
+  {
+    "id": "cloud-elasticity-agility-global",
+    "domain": "Cloud Concepts",
+    "title": "Élasticité, agilité et portée mondiale",
+    "core_explanation": "Le cloud permet d'arrêter de deviner sa capacité : on accède à autant ou aussi peu de ressources que nécessaire et on peut monter ou descendre en charge en quelques minutes. Il augmente aussi la vitesse et l'agilité (de nouvelles ressources IT sont disponibles en minutes plutôt qu'en semaines) et permet de se déployer dans le monde entier en quelques minutes pour réduire la latence auprès des utilisateurs.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+    "generated_at": "2026-07-01T02:00:00Z"
+  },
+  {
+    "id": "cloud-service-models",
+    "domain": "Cloud Concepts",
+    "title": "Modèles de service : IaaS, PaaS, SaaS",
+    "core_explanation": "Le cloud se décline en trois modèles de service. IaaS (Infrastructure as a Service) offre le plus haut niveau de flexibilité et de contrôle sur les ressources IT (ex : Amazon EC2). PaaS (Platform as a Service) supprime la gestion de l'infrastructure sous-jacente pour se concentrer sur le déploiement des applications (ex : AWS Elastic Beanstalk). SaaS (Software as a Service) fournit un produit fini exploité et géré par le fournisseur, sans se soucier de l'infrastructure.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/types-of-cloud-computing.html",
+    "generated_at": "2026-07-01T02:00:00Z"
+  },
+  {
+    "id": "cloud-deployment-models",
+    "domain": "Cloud Concepts",
+    "title": "Modèles de déploiement : cloud, hybride, sur site",
+    "core_explanation": "Il existe trois modèles de déploiement. Le déploiement cloud (« dans le cloud ») fait tourner l'ensemble des parties de l'application dans le cloud. Le déploiement hybride relie des ressources cloud à des ressources existantes hors du cloud, le plus souvent une infrastructure sur site, pour étendre et faire croître l'infrastructure. Le déploiement sur site (« on-premises », aussi appelé cloud privé) déploie des ressources en interne à l'aide de technologies de virtualisation et de gestion.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/types-of-cloud-computing.html",
+    "generated_at": "2026-07-01T02:00:00Z"
+  },
+  {
+    "id": "well-architected-framework",
+    "domain": "Cloud Concepts",
+    "title": "AWS Well-Architected Framework",
+    "core_explanation": "L'AWS Well-Architected Framework fournit une approche cohérente pour évaluer une architecture par rapport aux bonnes pratiques du cloud et concevoir des systèmes fiables, sécurisés, performants et économiques. Il repose sur un ensemble de questions fondamentales et de piliers qui aident à comprendre à quel point une architecture s'aligne sur les bonnes pratiques cloud.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html",
+    "generated_at": "2026-07-01T02:00:00Z"
+  },
+  {
+    "id": "well-architected-pillars",
+    "domain": "Cloud Concepts",
+    "title": "Les six piliers du Well-Architected Framework",
+    "core_explanation": "Le framework repose sur six piliers : excellence opérationnelle (exécuter et superviser les charges de travail), sécurité (protéger les informations, systèmes et actifs), fiabilité (récupérer après une perturbation d'infrastructure ou de service), efficacité des performances (utiliser efficacement les ressources de calcul), optimisation des coûts (éviter les coûts inutiles) et durabilité (réduire l'impact environnemental). La conception implique des arbitrages entre ces piliers selon les besoins métier.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html",
+    "generated_at": "2026-07-01T02:00:00Z"
+  },
+  {
+    "id": "cloud-adoption-framework",
+    "domain": "Cloud Concepts",
+    "title": "AWS Cloud Adoption Framework (AWS CAF)",
+    "core_explanation": "L'AWS Cloud Adoption Framework (CAF) s'appuie sur l'expérience et les bonnes pratiques d'AWS pour aider les organisations à réussir leur transformation cloud. Il organise ses conseils autour de six perspectives : Business, People (personnes), Governance (gouvernance), Platform (plateforme), Security (sécurité) et Operations (opérations). Chaque perspective regroupe des capacités que gèrent des parties prenantes aux rôles voisins dans le parcours de migration.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/foundational-capabilities.html",
+    "generated_at": "2026-07-01T02:00:00Z"
+  },
+  {
+    "id": "migration-7-rs",
+    "domain": "Cloud Concepts",
+    "title": "Les 7 stratégies de migration (7 R)",
+    "core_explanation": "AWS décrit sept stratégies de migration, les « 7 R » : Rehost (lift and shift, migrer sans modification), Replatform (lift and reshape, migrer avec quelques optimisations), Relocate (déplacement au niveau hyperviseur sans nouveau matériel), Refactor/Re-architect (remanier l'architecture pour tirer parti des capacités cloud-natives), Repurchase (drop and shop, passer à un autre produit souvent SaaS), Retain (conserver l'application dans l'environnement source) et Retire (décommissionner ce qui n'est plus utile).",
+    "difficulty": 3,
+    "source_url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html",
+    "generated_at": "2026-07-01T02:00:00Z"
+  },
+  {
+    "id": "cloud-economics-tco",
+    "domain": "Cloud Concepts",
+    "title": "Économie du cloud et coût total de possession (TCO)",
+    "core_explanation": "L'économie du cloud repose sur le paiement à l'usage : on ne paie que pour les ressources réellement consommées, ce qui produit un profil de coût variable aligné sur les besoins réels. La modélisation des coûts aide à estimer le coût total de possession (TCO) et le retour sur investissement (ROI) d'une migration, en tenant compte de la sur-provision, des serveurs obsolètes et des applications héritées que le cloud permet d'éviter.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/how-aws-pricing-works/aws-cost-optimization.html",
+    "generated_at": "2026-07-01T02:00:00Z"
+  },
+  {
+    "id": "cloud-right-sizing",
+    "domain": "Cloud Concepts",
+    "title": "Right-sizing et automatisation pour l'optimisation des coûts",
+    "core_explanation": "Le right-sizing consiste à ajuster les types et tailles d'instances aux besoins réels de performance et de capacité, au coût le plus bas possible. Combiné à l'automatisation et à l'auto-scaling, il évite la sur-provision et réduit fortement la facture. Des outils comme les recommandations de right-sizing de Cost Explorer identifient les opportunités de réduire ou d'arrêter des instances Amazon EC2 sous-utilisées.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html",
+    "generated_at": "2026-07-01T02:00:00Z"
+  }
+]

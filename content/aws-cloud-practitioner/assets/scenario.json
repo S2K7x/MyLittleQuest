@@ -1,1 +1,52 @@
-[]
+[
+  {
+    "id": "scenario-cloud-01",
+    "game_type": "scenario",
+    "difficulty": 2,
+    "payload": {
+      "intro": "Une startup lance un site e-commerce. Le trafic est imprévisible : quasi nul certains jours, puis multiplié par 20 pendant les soldes. L'équipe veut éviter d'acheter des serveurs surdimensionnés « au cas où ». Quelle caractéristique du cloud répond le mieux à ce besoin ?",
+      "choices": [
+        {
+          "text": "L'élasticité : monter et descendre en charge en quelques minutes selon la demande réelle.",
+          "is_correct": true,
+          "feedback": "Correct. L'élasticité permet d'accéder à autant ou aussi peu de ressources que nécessaire et d'ajuster la capacité en minutes, sans deviner à l'avance."
+        },
+        {
+          "text": "Acheter à l'avance la capacité maximale estimée pour les soldes.",
+          "is_correct": false,
+          "feedback": "C'est exactement ce que le cloud permet d'éviter : la sur-provision. On paierait pour une capacité inutilisée la majorité du temps."
+        },
+        {
+          "text": "Le modèle SaaS, car il supprime tout besoin de calcul.",
+          "is_correct": false,
+          "feedback": "Le SaaS concerne la manière de consommer un logiciel fini, pas la gestion de la capacité d'une application qu'on héberge soi-même."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-cloud-02",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Une entreprise possède une vieille application de comptabilité qui fonctionne bien mais dont personne ne maîtrise plus le code. La direction veut la migrer vers AWS rapidement, sans risque de régression fonctionnelle et sans réécrire quoi que ce soit dans l'immédiat. Quelle stratégie de migration privilégier ?",
+      "choices": [
+        {
+          "text": "Rehost (lift and shift) : déplacer l'application telle quelle, puis moderniser plus tard si besoin.",
+          "is_correct": true,
+          "feedback": "Correct. Rehost déplace l'application sans modification, ce qui minimise le risque et la durée de migration ; la modernisation peut venir après."
+        },
+        {
+          "text": "Refactor : réécrire immédiatement l'application en architecture cloud-native.",
+          "is_correct": false,
+          "feedback": "Refactor implique de remanier le code — risqué et long ici, d'autant que personne ne maîtrise plus l'application. AWS le déconseille pendant la migration elle-même."
+        },
+        {
+          "text": "Retire : décommissionner l'application.",
+          "is_correct": false,
+          "feedback": "Retire s'applique aux applications devenues inutiles. Or celle-ci est encore utilisée et fonctionne : on ne veut pas la supprimer."
+        }
+      ]
+    }
+  }
+]

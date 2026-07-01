@@ -15,7 +15,7 @@ fichier directement, ou valide une proposition faite par Claude dans `NEXT_MISSI
 
 | Certification | Slug | Statut | Exam guide officiel |
 |---|---|---|---|
-| AWS Certified Cloud Practitioner (CLF-C02) | `aws-cloud-practitioner` | `not_started` | https://d1.awsstatic.com/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Exam-Guide.pdf |
+| AWS Certified Cloud Practitioner (CLF-C02) | `aws-cloud-practitioner` | `in_progress` | https://d1.awsstatic.com/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Exam-Guide.pdf |
 
 ## Notes
 
