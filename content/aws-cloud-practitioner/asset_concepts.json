@@ -1,1 +1,30 @@
-[]
+[
+  { "asset_id": "qcm-cloud-01", "concept_ids": ["cloud-capex-vs-opex", "cloud-benefits-six-advantages"] },
+  { "asset_id": "qcm-cloud-02", "concept_ids": ["cloud-service-models"] },
+  { "asset_id": "qcm-cloud-03", "concept_ids": ["well-architected-pillars"] },
+  { "asset_id": "qcm-cloud-04", "concept_ids": ["migration-7-rs"] },
+  { "asset_id": "qcm-cloud-05", "concept_ids": ["cloud-right-sizing"] },
+  { "asset_id": "qcm-cloud-06", "concept_ids": ["cloud-adoption-framework"] },
+
+  { "asset_id": "flashcard-cloud-01", "concept_ids": ["cloud-benefits-six-advantages"] },
+  { "asset_id": "flashcard-cloud-02", "concept_ids": ["cloud-capex-vs-opex"] },
+  { "asset_id": "flashcard-cloud-03", "concept_ids": ["cloud-service-models"] },
+  { "asset_id": "flashcard-cloud-04", "concept_ids": ["well-architected-pillars", "well-architected-framework"] },
+  { "asset_id": "flashcard-cloud-05", "concept_ids": ["migration-7-rs"] },
+  { "asset_id": "flashcard-cloud-06", "concept_ids": ["cloud-adoption-framework"] },
+  { "asset_id": "flashcard-cloud-07", "concept_ids": ["cloud-right-sizing", "cloud-economics-tco"] },
+
+  { "asset_id": "swipe-cloud-01", "concept_ids": ["cloud-capex-vs-opex", "cloud-benefits-six-advantages"] },
+  { "asset_id": "swipe-cloud-02", "concept_ids": ["cloud-service-models"] },
+  { "asset_id": "swipe-cloud-03", "concept_ids": ["well-architected-pillars"] },
+  { "asset_id": "swipe-cloud-04", "concept_ids": ["migration-7-rs"] },
+  { "asset_id": "swipe-cloud-05", "concept_ids": ["cloud-deployment-models"] },
+  { "asset_id": "swipe-cloud-06", "concept_ids": ["cloud-right-sizing"] },
+  { "asset_id": "swipe-cloud-07", "concept_ids": ["cloud-economies-of-scale"] },
+
+  { "asset_id": "scenario-cloud-01", "concept_ids": ["cloud-elasticity-agility-global", "cloud-benefits-six-advantages"] },
+  { "asset_id": "scenario-cloud-02", "concept_ids": ["migration-7-rs"] },
+
+  { "asset_id": "match-cloud-01", "concept_ids": ["cloud-service-models"] },
+  { "asset_id": "match-cloud-02", "concept_ids": ["migration-7-rs"] }
+]

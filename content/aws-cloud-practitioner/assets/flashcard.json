@@ -1,1 +1,65 @@
-[]
+[
+  {
+    "id": "flashcard-cloud-01",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Quels sont les six avantages du cloud computing selon AWS ?",
+      "back": "1) Échanger une dépense fixe contre une dépense variable, 2) bénéficier d'économies d'échelle massives, 3) arrêter de deviner sa capacité, 4) gagner en vitesse et en agilité, 5) arrêter de dépenser pour exploiter des datacenters, 6) se déployer mondialement en quelques minutes."
+    }
+  },
+  {
+    "id": "flashcard-cloud-02",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "CapEx vs OpEx : quelle est la différence dans le contexte du cloud ?",
+      "back": "CapEx (dépense d'investissement) = investir en amont dans des serveurs et datacenters avant de savoir comment on les utilisera. OpEx (dépense variable) = ne payer que pour les ressources réellement consommées. Le cloud fait passer de CapEx à OpEx."
+    }
+  },
+  {
+    "id": "flashcard-cloud-03",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "IaaS, PaaS, SaaS : que gère-t-on soi-même dans chaque modèle ?",
+      "back": "IaaS : contrôle maximal, on gère l'OS et les applications (ex : Amazon EC2). PaaS : on gère seulement le déploiement des applications, pas l'infrastructure (ex : AWS Elastic Beanstalk). SaaS : produit fini géré par le fournisseur, on ne gère rien de l'infrastructure."
+    }
+  },
+  {
+    "id": "flashcard-cloud-04",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Quels sont les six piliers de l'AWS Well-Architected Framework ?",
+      "back": "Excellence opérationnelle, sécurité, fiabilité, efficacité des performances, optimisation des coûts et durabilité."
+    }
+  },
+  {
+    "id": "flashcard-cloud-05",
+    "game_type": "flashcard",
+    "difficulty": 3,
+    "payload": {
+      "front": "Que sont les « 7 R » des stratégies de migration AWS ?",
+      "back": "Rehost (lift and shift), Replatform (lift and reshape), Relocate (au niveau hyperviseur), Refactor/Re-architect (remaniement cloud-natif), Repurchase (drop and shop, souvent vers du SaaS), Retain (conserver dans la source) et Retire (décommissionner)."
+    }
+  },
+  {
+    "id": "flashcard-cloud-06",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Quelles sont les six perspectives de l'AWS Cloud Adoption Framework (CAF) ?",
+      "back": "Business, People (personnes), Governance (gouvernance), Platform (plateforme), Security (sécurité) et Operations (opérations)."
+    }
+  },
+  {
+    "id": "flashcard-cloud-07",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Qu'est-ce que le right-sizing et pourquoi réduit-il les coûts ?",
+      "back": "Le right-sizing ajuste le type et la taille des instances aux besoins réels de performance et de capacité, au coût le plus bas. Il évite la sur-provision (payer pour des ressources inutilisées) et, combiné à l'automatisation et l'auto-scaling, réduit fortement la facture."
+    }
+  }
+]

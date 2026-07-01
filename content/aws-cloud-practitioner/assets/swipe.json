@@ -1,1 +1,72 @@
-[]
+[
+  {
+    "id": "swipe-cloud-01",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "Dans le cloud, on paie les ressources uniquement pour ce que l'on consomme, au lieu d'investir à l'avance dans des serveurs.",
+      "is_true": true,
+      "explanation": "Vrai. C'est le principe de la dépense variable (OpEx) : on ne paie qu'à la consommation, premier des six avantages du cloud."
+    }
+  },
+  {
+    "id": "swipe-cloud-02",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Avec le modèle SaaS, le client est responsable de l'installation et du patch du système d'exploitation sous-jacent.",
+      "is_true": false,
+      "explanation": "Faux. En SaaS, le fournisseur exploite et gère entièrement le produit ; le client n'a pas à se soucier de l'infrastructure ni du système d'exploitation."
+    }
+  },
+  {
+    "id": "swipe-cloud-03",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Le Well-Architected Framework comporte cinq piliers.",
+      "is_true": false,
+      "explanation": "Faux. Il comporte six piliers : excellence opérationnelle, sécurité, fiabilité, efficacité des performances, optimisation des coûts et durabilité."
+    }
+  },
+  {
+    "id": "swipe-cloud-04",
+    "game_type": "swipe",
+    "difficulty": 3,
+    "payload": {
+      "statement": "La stratégie de migration « Repurchase » consiste à passer à un autre produit, souvent une solution SaaS.",
+      "is_true": true,
+      "explanation": "Vrai. Repurchase (« drop and shop ») remplace l'application existante par un autre produit, typiquement une solution SaaS, avec migration des données."
+    }
+  },
+  {
+    "id": "swipe-cloud-05",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Un déploiement hybride relie des ressources cloud à une infrastructure existante hors du cloud, souvent sur site.",
+      "is_true": true,
+      "explanation": "Vrai. Le déploiement hybride connecte des ressources cloud à des ressources existantes non situées dans le cloud, le plus souvent une infrastructure sur site."
+    }
+  },
+  {
+    "id": "swipe-cloud-06",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Le right-sizing consiste à toujours choisir la plus grande instance disponible pour garantir la performance.",
+      "is_true": false,
+      "explanation": "Faux. Le right-sizing ajuste la taille de l'instance aux besoins réels au coût le plus bas ; surdimensionner systématiquement crée de la sur-provision et augmente les coûts."
+    }
+  },
+  {
+    "id": "swipe-cloud-07",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "En mutualisant l'usage de centaines de milliers de clients, AWS atteint des économies d'échelle qui font baisser les prix « pay-as-you-go ».",
+      "is_true": true,
+      "explanation": "Vrai. L'agrégation de l'usage de très nombreux clients permet des économies d'échelle massives, traduites en prix à l'usage plus bas que ce qu'une organisation obtiendrait seule."
+    }
+  }
+]
