@@ -61,5 +61,5 @@ Contenu rédigé en français, termes techniques AWS conservés en anglais.
 
 ## Lien PR
 
-Voir la Pull Request ouverte depuis la branche `claude/loving-curie-urbnd2` vers `main`
-(lien ajouté à l'ouverture).
+PR #2 (draft) : https://github.com/S2K7x/MyLittleQuest/pull/2
+Branche `claude/loving-curie-urbnd2` → `main`.
