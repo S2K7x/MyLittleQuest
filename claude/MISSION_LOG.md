@@ -91,5 +91,5 @@ Les mêmes 3 décisions produit qu'après le Domaine 1 restent en attente (non b
 
 ## Lien PR
 
-PR (draft) : voir le lien dans NEXT_MISSION une fois ouverte / la sortie de la session.
+PR #4 (draft) : https://github.com/S2K7x/MyLittleQuest/pull/4
 Branche `claude/loving-curie-03d3jf` → `main`.
