@@ -84,5 +84,129 @@
       "correct_index": 1,
       "explanation": "Le CAF s'organise en six perspectives : Business, People, Governance, Platform, Security et Operations."
     }
+  },
+  {
+    "id": "qcm-sec-01",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Dans le modèle de responsabilité partagée, qui est responsable de la sécurité « du » cloud (matériel, installations physiques, infrastructure des services) ?",
+      "choices": [
+        "Le client",
+        "AWS",
+        "Un auditeur tiers indépendant",
+        "C'est toujours partagé à parts égales"
+      ],
+      "correct_index": 1,
+      "explanation": "AWS est responsable de la sécurité « du » cloud : matériel, logiciel, réseau et installations physiques. Le client est responsable de la sécurité « dans » le cloud : ses données, ses configurations et la gestion des accès."
+    }
+  },
+  {
+    "id": "qcm-sec-02",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quelle affirmation décrit correctement une Service Control Policy (SCP) dans AWS Organizations ?",
+      "choices": [
+        "Elle accorde des permissions aux utilisateurs IAM des comptes membres",
+        "Elle définit un plafond de permissions maximales, sans jamais accorder de droit",
+        "Elle s'applique en priorité au compte de gestion (management account)",
+        "Elle remplace entièrement les policies IAM"
+      ],
+      "correct_index": 1,
+      "explanation": "Une SCP n'accorde jamais de permission : elle fixe la limite maximale des permissions disponibles pour les comptes membres. Une action doit être autorisée à la fois par la SCP et par une policy IAM. Le compte de gestion n'est pas affecté par les SCP."
+    }
+  },
+  {
+    "id": "qcm-sec-03",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Un client a besoin de télécharger les rapports de conformité d'AWS (SOC, ISO, PCI) pour les fournir à ses auditeurs. Quel service utilise-t-il ?",
+      "choices": ["AWS Trusted Advisor", "AWS Artifact", "Amazon Inspector", "AWS KMS"],
+      "correct_index": 1,
+      "explanation": "AWS Artifact est le portail en libre-service permettant de télécharger gratuitement et à la demande les rapports de sécurité et de conformité d'AWS, ainsi que de gérer les accords juridiques."
+    }
+  },
+  {
+    "id": "qcm-sec-04",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Quelle différence distingue un security group d'une network ACL (NACL) dans un VPC ?",
+      "choices": [
+        "Le security group agit au niveau du sous-réseau, la NACL au niveau de l'instance",
+        "Le security group est sans état, la NACL est à état",
+        "Le security group est à état et n'a que des règles d'autorisation ; la NACL est sans état et gère allow et deny",
+        "Seules les NACL sont facturées"
+      ],
+      "correct_index": 2,
+      "explanation": "Le security group agit au niveau de l'instance, est stateful (le trafic de réponse est autorisé automatiquement) et n'a que des règles allow. La NACL agit au niveau du sous-réseau, est stateless et gère des règles allow et deny."
+    }
+  },
+  {
+    "id": "qcm-sec-05",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Quelle est la bonne pratique recommandée par AWS concernant le compte root ?",
+      "choices": [
+        "L'utiliser pour toutes les tâches d'administration quotidiennes",
+        "Créer des clés d'accès root pour automatiser les déploiements",
+        "Le protéger par MFA et ne l'utiliser que pour les rares tâches qui l'exigent",
+        "Partager ses identifiants avec toute l'équipe d'administration"
+      ],
+      "correct_index": 2,
+      "explanation": "Le compte root a un accès illimité. AWS recommande de le protéger par un mot de passe fort et la MFA, de ne pas créer de clés d'accès root, et de réserver son usage aux rares tâches qui l'exigent — les tâches courantes passent par un utilisateur administrateur."
+    }
+  },
+  {
+    "id": "qcm-sec-06",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quel service AWS détecte les menaces en analysant en continu les événements CloudTrail, les VPC Flow Logs et les journaux DNS, sans nécessiter d'agent ?",
+      "choices": ["Amazon Inspector", "AWS WAF", "Amazon GuardDuty", "AWS Shield"],
+      "correct_index": 2,
+      "explanation": "Amazon GuardDuty est le service de détection de menaces : il analyse en continu CloudTrail, les VPC Flow Logs et les journaux DNS via du machine learning et des flux de renseignement, sans déploiement d'agent."
+    }
+  },
+  {
+    "id": "qcm-sec-07",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une équipe veut protéger une application web contre les injections SQL et le cross-site scripting (XSS) en filtrant les requêtes HTTP. Quel service AWS répond à ce besoin ?",
+      "choices": ["AWS WAF", "AWS Shield Standard", "Amazon GuardDuty", "AWS KMS"],
+      "correct_index": 0,
+      "explanation": "AWS WAF est un pare-feu applicatif web (couche 7) qui filtre les requêtes HTTP/S et défend contre les attaques web courantes comme l'injection SQL et le XSS. Shield protège contre les DDoS, GuardDuty détecte les menaces, KMS gère les clés de chiffrement."
+    }
+  },
+  {
+    "id": "qcm-sec-08",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quel est l'intérêt principal d'un rôle IAM par rapport à un utilisateur IAM avec clés d'accès permanentes ?",
+      "choices": [
+        "Il fournit des identifiants de sécurité temporaires qui expirent automatiquement",
+        "Il accorde par défaut un accès complet à toutes les ressources",
+        "Il ne nécessite jamais de policy",
+        "Il chiffre automatiquement toutes les données du compte"
+      ],
+      "correct_index": 0,
+      "explanation": "Un rôle IAM fournit des identifiants temporaires (clé d'accès, clé secrète, jeton de session) qui expirent au bout d'une durée définie, évitant de stocker des clés à long terme. C'est la méthode recommandée pour les applications sur EC2 ou l'accès entre comptes."
+    }
+  },
+  {
+    "id": "qcm-sec-09",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quel service AWS inspecte l'environnement d'un compte et recommande des améliorations de sécurité, comme repérer un groupe de sécurité laissant un accès non restreint ou une MFA manquante sur le compte root ?",
+      "choices": ["Amazon Inspector", "AWS Trusted Advisor", "AWS Artifact", "Amazon GuardDuty"],
+      "correct_index": 1,
+      "explanation": "AWS Trusted Advisor inspecte le compte et formule des recommandations selon les bonnes pratiques, dont des vérifications de sécurité (groupes de sécurité trop ouverts, MFA root manquante, accès public…). L'étendue des checks dépend du plan de support."
+    }
   }
 ]

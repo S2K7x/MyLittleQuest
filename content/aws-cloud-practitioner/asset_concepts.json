@@ -26,5 +26,37 @@
   { "asset_id": "scenario-cloud-02", "concept_ids": ["migration-7-rs"] },
 
   { "asset_id": "match-cloud-01", "concept_ids": ["cloud-service-models"] },
-  { "asset_id": "match-cloud-02", "concept_ids": ["migration-7-rs"] }
+  { "asset_id": "match-cloud-02", "concept_ids": ["migration-7-rs"] },
+
+  { "asset_id": "qcm-sec-01", "concept_ids": ["shared-responsibility-model"] },
+  { "asset_id": "qcm-sec-02", "concept_ids": ["aws-organizations-scp"] },
+  { "asset_id": "qcm-sec-03", "concept_ids": ["aws-artifact", "aws-compliance-programs"] },
+  { "asset_id": "qcm-sec-04", "concept_ids": ["security-groups-vs-nacl"] },
+  { "asset_id": "qcm-sec-05", "concept_ids": ["root-user-best-practices"] },
+  { "asset_id": "qcm-sec-06", "concept_ids": ["amazon-guardduty"] },
+  { "asset_id": "qcm-sec-07", "concept_ids": ["aws-waf"] },
+  { "asset_id": "qcm-sec-08", "concept_ids": ["iam-roles-temp-credentials"] },
+  { "asset_id": "qcm-sec-09", "concept_ids": ["trusted-advisor-security"] },
+
+  { "asset_id": "flashcard-sec-01", "concept_ids": ["shared-responsibility-model"] },
+  { "asset_id": "flashcard-sec-02", "concept_ids": ["iam-identities"] },
+  { "asset_id": "flashcard-sec-03", "concept_ids": ["aws-organizations-scp"] },
+  { "asset_id": "flashcard-sec-04", "concept_ids": ["aws-artifact", "aws-compliance-programs"] },
+  { "asset_id": "flashcard-sec-05", "concept_ids": ["security-groups-vs-nacl"] },
+  { "asset_id": "flashcard-sec-06", "concept_ids": ["amazon-guardduty", "amazon-inspector", "aws-shield", "aws-waf"] },
+  { "asset_id": "flashcard-sec-07", "concept_ids": ["encryption-at-rest-in-transit", "aws-kms"] },
+
+  { "asset_id": "swipe-sec-01", "concept_ids": ["shared-responsibility-model"] },
+  { "asset_id": "swipe-sec-02", "concept_ids": ["aws-organizations-scp"] },
+  { "asset_id": "swipe-sec-03", "concept_ids": ["root-user-best-practices", "iam-mfa"] },
+  { "asset_id": "swipe-sec-04", "concept_ids": ["security-groups-vs-nacl"] },
+  { "asset_id": "swipe-sec-05", "concept_ids": ["aws-shield"] },
+  { "asset_id": "swipe-sec-06", "concept_ids": ["amazon-inspector", "aws-waf"] },
+  { "asset_id": "swipe-sec-07", "concept_ids": ["aws-kms"] },
+
+  { "asset_id": "scenario-sec-01", "concept_ids": ["iam-roles-temp-credentials", "iam-least-privilege", "root-user-best-practices"] },
+  { "asset_id": "scenario-sec-02", "concept_ids": ["aws-shield", "aws-waf", "amazon-guardduty"] },
+
+  { "asset_id": "match-sec-01", "concept_ids": ["amazon-guardduty", "aws-waf", "aws-shield", "amazon-inspector", "aws-kms"] },
+  { "asset_id": "match-sec-02", "concept_ids": ["security-groups-vs-nacl", "aws-artifact", "aws-organizations-scp"] }
 ]

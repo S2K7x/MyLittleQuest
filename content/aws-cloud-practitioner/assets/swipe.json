@@ -68,5 +68,75 @@
       "is_true": true,
       "explanation": "Vrai. L'agrégation de l'usage de très nombreux clients permet des économies d'échelle massives, traduites en prix à l'usage plus bas que ce qu'une organisation obtiendrait seule."
     }
+  },
+  {
+    "id": "swipe-sec-01",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "Dans le modèle de responsabilité partagée, AWS est responsable de la sécurité des données et de la configuration des accès du client.",
+      "is_true": false,
+      "explanation": "Faux. AWS est responsable de la sécurité « du » cloud (infrastructure). La sécurité des données, des configurations et de la gestion des accès relève du client : c'est la sécurité « dans » le cloud."
+    }
+  },
+  {
+    "id": "swipe-sec-02",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Une Service Control Policy (SCP) peut accorder directement des permissions à un utilisateur IAM.",
+      "is_true": false,
+      "explanation": "Faux. Une SCP n'accorde jamais de permission : elle définit un plafond de permissions maximales. Il faut toujours une policy IAM pour accorder effectivement un droit, dans la limite fixée par la SCP."
+    }
+  },
+  {
+    "id": "swipe-sec-03",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "Activer l'authentification multifacteur (MFA) sur le compte root est une bonne pratique de sécurité recommandée par AWS.",
+      "is_true": true,
+      "explanation": "Vrai. Le compte root ayant un accès illimité, AWS recommande fortement de le protéger par MFA, en plus d'un mot de passe fort, et de réserver son usage aux tâches qui l'exigent."
+    }
+  },
+  {
+    "id": "swipe-sec-04",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Un security group est stateless : il faut créer une règle explicite pour autoriser le trafic de réponse.",
+      "is_true": false,
+      "explanation": "Faux. Un security group est stateful : le trafic de réponse à une connexion autorisée est automatiquement permis. C'est la network ACL (NACL) qui est stateless et exige d'autoriser explicitement le trafic retour."
+    }
+  },
+  {
+    "id": "swipe-sec-05",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "AWS Shield Standard protège automatiquement et gratuitement tous les clients AWS contre les attaques DDoS réseau et transport les plus fréquentes.",
+      "is_true": true,
+      "explanation": "Vrai. Shield Standard est actif par défaut et sans frais pour tous les clients. Shield Advanced est l'offre payante qui ajoute la protection applicative et un support dédié."
+    }
+  },
+  {
+    "id": "swipe-sec-06",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Amazon Inspector est un pare-feu applicatif web qui filtre les requêtes HTTP contre les injections SQL.",
+      "is_true": false,
+      "explanation": "Faux. C'est AWS WAF qui filtre les requêtes HTTP (injection SQL, XSS). Amazon Inspector est un service de gestion des vulnérabilités qui scanne EC2, les images ECR et les fonctions Lambda."
+    }
+  },
+  {
+    "id": "swipe-sec-07",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Avec AWS KMS, les administrateurs d'AWS peuvent consulter le matériel des clés de chiffrement en clair.",
+      "is_true": false,
+      "explanation": "Faux. Le matériel des clés est protégé dans des modules matériels de sécurité (HSM). Aucun humain, y compris chez AWS, ne peut consulter, accéder ou exporter les clés en clair."
+    }
   }
 ]

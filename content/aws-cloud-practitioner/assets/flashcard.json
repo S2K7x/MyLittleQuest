@@ -61,5 +61,68 @@
       "front": "Qu'est-ce que le right-sizing et pourquoi réduit-il les coûts ?",
       "back": "Le right-sizing ajuste le type et la taille des instances aux besoins réels de performance et de capacité, au coût le plus bas. Il évite la sur-provision (payer pour des ressources inutilisées) et, combiné à l'automatisation et l'auto-scaling, réduit fortement la facture."
     }
+  },
+  {
+    "id": "flashcard-sec-01",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Modèle de responsabilité partagée : que signifie « sécurité DU cloud » vs « sécurité DANS le cloud » ?",
+      "back": "Sécurité DU cloud = responsabilité d'AWS : matériel, logiciel, réseau, installations physiques. Sécurité DANS le cloud = responsabilité du client : ses données, ses configurations, la gestion des accès (IAM), le chiffrement, le système d'exploitation invité pour les services IaaS."
+    }
+  },
+  {
+    "id": "flashcard-sec-02",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "En IAM, quelle est la différence entre un utilisateur, un groupe et un rôle ?",
+      "back": "Un utilisateur représente une personne ou une application avec des identifiants propres. Un groupe rassemble des utilisateurs pour leur appliquer des permissions communes. Un rôle est une identité aux permissions définies, endossée temporairement pour obtenir des identifiants de sécurité qui expirent. AWS recommande d'attacher les policies aux groupes et rôles, pas aux utilisateurs."
+    }
+  },
+  {
+    "id": "flashcard-sec-03",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Qu'est-ce qu'une Service Control Policy (SCP) dans AWS Organizations ?",
+      "back": "Une SCP définit le plafond des permissions maximales pour les utilisateurs et rôles IAM des comptes membres d'une organisation. Elle n'accorde jamais de permission — elle limite. Une action doit être autorisée à la fois par la SCP et par une policy IAM. Le compte de gestion n'est pas affecté."
+    }
+  },
+  {
+    "id": "flashcard-sec-04",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "À quoi servent AWS Artifact et les programmes de conformité AWS ?",
+      "back": "AWS Artifact est un portail gratuit pour télécharger à la demande les rapports de conformité d'AWS (SOC, ISO 27001, PCI DSS…) et gérer les accords juridiques. Ces rapports attestent des programmes de conformité audités en continu d'AWS et servent au client à démontrer la conformité de la partie infrastructure auprès de ses auditeurs."
+    }
+  },
+  {
+    "id": "flashcard-sec-05",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Security group vs network ACL : stateful ou stateless, quel niveau ?",
+      "back": "Security group : niveau instance, stateful (réponse autorisée automatiquement), règles allow uniquement. Network ACL (NACL) : niveau sous-réseau, stateless (il faut autoriser le trafic retour), règles allow ET deny. AWS recommande les security groups comme mécanisme principal, les NACL en garde-fou secondaire."
+    }
+  },
+  {
+    "id": "flashcard-sec-06",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "À quoi servent GuardDuty, Inspector, Shield et WAF ?",
+      "back": "GuardDuty : détection de menaces (analyse CloudTrail, VPC Flow Logs, DNS). Inspector : gestion des vulnérabilités (scan EC2, images ECR, Lambda). Shield : protection contre les attaques DDoS. WAF : pare-feu applicatif web filtrant les requêtes HTTP (injection SQL, XSS)."
+    }
+  },
+  {
+    "id": "flashcard-sec-07",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Chiffrement au repos vs en transit, et rôle d'AWS KMS ?",
+      "back": "Au repos = protéger les données stockées ; en transit = protéger les données qui circulent sur le réseau (via TLS). AWS KMS (Key Management Service) permet de créer et contrôler les clés de chiffrement, s'intègre à la majorité des services AWS et protège le matériel des clés dans des HSM ; personne n'accède aux clés en clair."
+    }
   }
 ]

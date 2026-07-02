@@ -106,5 +106,158 @@
     "difficulty": 2,
     "source_url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html",
     "generated_at": "2026-07-01T02:00:00Z"
+  },
+  {
+    "id": "shared-responsibility-model",
+    "domain": "Security and Compliance",
+    "title": "Le modèle de responsabilité partagée",
+    "core_explanation": "AWS distingue la sécurité « du » cloud, dont AWS est responsable (matériel, logiciel, réseau et installations physiques qui font tourner les services), de la sécurité « dans » le cloud, dont le client est responsable (données, configuration, gestion des accès). Le partage exact dépend du service utilisé : pour un service IaaS comme Amazon EC2, le client gère le système d'exploitation invité, les correctifs et la configuration du pare-feu ; pour des services abstraits comme Amazon S3, AWS opère l'infrastructure et le système d'exploitation, le client se concentrant sur ses données et leurs accès.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/aws-risk-and-compliance/shared-responsibility-model.html",
+    "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "iam-identities",
+    "domain": "Security and Compliance",
+    "title": "IAM : utilisateurs, groupes, rôles et policies",
+    "core_explanation": "AWS Identity and Access Management (IAM) contrôle qui est authentifié et autorisé à utiliser les ressources. Par défaut, les utilisateurs, groupes et rôles IAM n'ont aucun accès : ce sont les policies (documents de permissions) qui accordent des droits. Un utilisateur IAM représente une personne ou une application, un groupe rassemble des utilisateurs pour leur appliquer des permissions communes, et un rôle est une identité aux permissions définies que l'on peut endosser temporairement. AWS recommande d'attacher les policies aux groupes et aux rôles plutôt qu'aux utilisateurs individuels.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html",
+    "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "iam-least-privilege",
+    "domain": "Security and Compliance",
+    "title": "Principe du moindre privilège",
+    "core_explanation": "Le principe du moindre privilège consiste à n'accorder que les permissions strictement nécessaires à l'accomplissement d'une tâche, et rien de plus. On définit les actions autorisées sur des ressources précises, éventuellement sous conditions. C'est une bonne pratique de sécurité IAM fondamentale : elle limite la surface d'attaque et l'impact d'un identifiant compromis. AWS recommande de commencer avec des permissions larges puis de les resserrer, en s'appuyant sur des outils comme IAM Access Analyzer pour générer des policies au plus juste.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+    "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "iam-mfa",
+    "domain": "Security and Compliance",
+    "title": "Authentification multifacteur (MFA)",
+    "core_explanation": "L'authentification multifacteur (MFA) ajoute une couche de protection en exigeant un second facteur en plus du mot de passe : un code temporaire ou un authentificateur matériel. Elle réduit fortement le risque lié à un mot de passe compromis. AWS recommande d'activer la MFA sur toutes les identités, en priorité sur le compte root, et privilégie les méthodes résistantes au phishing comme les passkeys et clés de sécurité FIDO, plus sûres que les codes TOTP.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html",
+    "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "iam-roles-temp-credentials",
+    "domain": "Security and Compliance",
+    "title": "Rôles IAM et identifiants temporaires",
+    "core_explanation": "Un rôle IAM est une identité que l'on endosse pour obtenir des identifiants de sécurité temporaires (clé d'accès, clé secrète et jeton de session) au lieu d'identifiants permanents. Ces identifiants expirent automatiquement au bout d'une durée définie, ce qui limite les risques. Les rôles sont la manière recommandée de donner des permissions à une application sur une instance Amazon EC2 ou d'accorder un accès temporaire entre comptes, sans avoir à stocker de clés d'accès à long terme.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html",
+    "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "root-user-best-practices",
+    "domain": "Security and Compliance",
+    "title": "Protection du compte root",
+    "core_explanation": "Le compte root (utilisateur racine) dispose d'un accès complet et illimité à toutes les ressources du compte AWS. AWS recommande de ne pas l'utiliser pour les tâches quotidiennes : il faut créer un utilisateur administrateur avec des permissions adaptées. Le compte root doit être protégé par un mot de passe fort et par la MFA, ses clés d'accès ne doivent pas exister (ou être supprimées), et son usage doit être réservé aux rares tâches qui l'exigent réellement.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-best-practices.html",
+    "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "encryption-at-rest-in-transit",
+    "domain": "Security and Compliance",
+    "title": "Chiffrement au repos et en transit",
+    "core_explanation": "Le chiffrement au repos protège les données stockées (dans Amazon S3, sur des volumes, dans des bases de données) en les rendant illisibles sans la clé de déchiffrement. Le chiffrement en transit protège les données qui circulent sur le réseau, généralement via TLS, contre l'interception. Sur AWS, ces deux protections sont largement disponibles et souvent activables en quelques clics ; elles constituent une bonne pratique de base pour protéger la confidentialité des données côté client.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/logical-separation/encrypting-data-at-rest-and--in-transit.html",
+    "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "aws-kms",
+    "domain": "Security and Compliance",
+    "title": "AWS Key Management Service (KMS)",
+    "core_explanation": "AWS Key Management Service (KMS) permet de créer et de contrôler les clés de chiffrement utilisées pour protéger les données. KMS s'intègre à la majorité des services AWS, qui l'appellent pour chiffrer et déchiffrer les données au repos ou en transit, tout en laissant au client la maîtrise du cycle de vie et des permissions sur les clés. Le matériel des clés est protégé dans des modules matériels de sécurité (HSM) validés FIPS 140-3 ; personne, pas même AWS, n'a accès aux clés en clair.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/kms/latest/developerguide/service-integration.html",
+    "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "aws-organizations-scp",
+    "domain": "Security and Compliance",
+    "title": "AWS Organizations et Service Control Policies (SCP)",
+    "core_explanation": "AWS Organizations permet de gérer de façon centralisée plusieurs comptes AWS, regroupés en unités organisationnelles (OU). Les Service Control Policies (SCP) offrent un contrôle central sur les permissions maximales disponibles pour les utilisateurs et rôles IAM des comptes membres. Point clé : une SCP n'accorde jamais de permission — elle définit une limite (un plafond) au-delà de laquelle aucune action n'est possible, même si une policy IAM l'autorise. Les SCP n'affectent pas le compte de gestion (management account).",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html",
+    "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "aws-artifact",
+    "domain": "Security and Compliance",
+    "title": "AWS Artifact",
+    "core_explanation": "AWS Artifact est un portail en libre-service permettant de télécharger à la demande, et gratuitement, les rapports de sécurité et de conformité d'AWS (par exemple SOC 1/2/3, PCI, ISO) ainsi que de gérer des accords juridiques avec AWS. Ces rapports servent aux clients à démontrer la conformité de la partie « du » cloud auprès de leurs auditeurs et régulateurs. Chaque rapport téléchargé porte un filigrane unique et traçable et n'est partageable que dans un cadre restreint.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html",
+    "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "aws-compliance-programs",
+    "domain": "Security and Compliance",
+    "title": "Programmes de conformité AWS",
+    "core_explanation": "Les environnements AWS sont audités en continu et disposent de certifications et attestations couvrant de nombreux référentiels et géographies (SOC, ISO 27001, PCI DSS, FedRAMP, etc.). AWS participe à plus de cinquante programmes d'audit. Ces programmes aident les clients à comprendre les contrôles en place et à établir leur propre conformité. La responsabilité de conformité est partagée : AWS assure la conformité de l'infrastructure, le client celle de ses données et de ses configurations.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/security-and-compliance.html",
+    "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "trusted-advisor-security",
+    "domain": "Security and Compliance",
+    "title": "AWS Trusted Advisor (vérifications de sécurité)",
+    "core_explanation": "AWS Trusted Advisor inspecte l'environnement AWS et formule des recommandations selon les bonnes pratiques, notamment en matière de sécurité : groupes de sécurité trop ouverts (accès non restreint), MFA manquante sur le compte root, buckets à accès public, etc. Il aide ainsi à combler les failles de sécurité côté client. L'étendue des vérifications dépend du plan de support : les plans Basic et Developer n'accèdent qu'à un sous-ensemble, les plans Business et Enterprise à l'ensemble des checks.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/awssupport/latest/user/security-checks.html",
+    "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "security-groups-vs-nacl",
+    "domain": "Security and Compliance",
+    "title": "Security groups contre network ACL",
+    "core_explanation": "Dans un VPC, deux mécanismes filtrent le trafic réseau. Les security groups agissent au niveau de l'instance, sont à état (stateful : le trafic de réponse est automatiquement autorisé) et ne comportent que des règles d'autorisation (allow). Les network ACL (NACL) agissent au niveau du sous-réseau, sont sans état (stateless : il faut autoriser explicitement le trafic de réponse) et acceptent des règles d'autorisation et de refus (allow et deny). AWS recommande les security groups comme mécanisme principal, les NACL servant de garde-fou secondaire au niveau du sous-réseau.",
+    "difficulty": 3,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/aws-best-practices-ddos-resiliency/security-groups-and-network-acls-bp5.html",
+    "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "amazon-guardduty",
+    "domain": "Security and Compliance",
+    "title": "Amazon GuardDuty",
+    "core_explanation": "Amazon GuardDuty est un service de détection de menaces qui surveille, analyse et traite en continu des sources de données AWS (événements CloudTrail, VPC Flow Logs, journaux DNS). Il s'appuie sur des flux de renseignement sur les menaces et du machine learning pour repérer des activités suspectes : identifiants compromis, exfiltration de données, cryptominage non autorisé, comportements anormaux. Son activation ne nécessite pas de déployer d'agent : GuardDuty commence automatiquement à analyser les sources de données du compte.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html",
+    "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "aws-shield",
+    "domain": "Security and Compliance",
+    "title": "AWS Shield",
+    "core_explanation": "AWS Shield est un service géré de protection contre les attaques par déni de service distribué (DDoS). Shield Standard protège automatiquement et gratuitement tous les clients AWS contre les attaques DDoS réseau et transport les plus fréquentes (couches 3 et 4). Shield Advanced est une offre payante qui ajoute une protection applicative (couche 7), une meilleure visibilité sur les événements et l'accès à une équipe de réponse dédiée (Shield Response Team).",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/waf/latest/developerguide/shield-chapter.html",
+    "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "aws-waf",
+    "domain": "Security and Compliance",
+    "title": "AWS WAF (pare-feu applicatif web)",
+    "core_explanation": "AWS WAF est un pare-feu applicatif web (couche 7) qui surveille les requêtes HTTP/S envoyées à une application web et contrôle l'accès au contenu. Il permet de définir des règles pour filtrer le trafic malveillant et se défendre contre des attaques web courantes comme l'injection SQL et le cross-site scripting (XSS). Il se place devant des ressources comme CloudFront, un Application Load Balancer ou API Gateway.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html",
+    "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "amazon-inspector",
+    "domain": "Security and Compliance",
+    "title": "Amazon Inspector",
+    "core_explanation": "Amazon Inspector est un service de gestion des vulnérabilités qui découvre automatiquement les charges de travail et les analyse en continu à la recherche de vulnérabilités logicielles et d'expositions réseau non intentionnelles. Il scanne notamment les instances Amazon EC2, les images de conteneurs dans Amazon ECR et les fonctions Lambda, sans configuration manuelle des scans. Chaque problème détecté génère un « finding » détaillé assorti de recommandations de remédiation.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html",
+    "generated_at": "2026-07-02T02:00:00Z"
   }
 ]
