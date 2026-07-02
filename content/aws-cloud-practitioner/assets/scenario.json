@@ -48,5 +48,55 @@
         }
       ]
     }
+  },
+  {
+    "id": "scenario-sec-01",
+    "game_type": "scenario",
+    "difficulty": 2,
+    "payload": {
+      "intro": "Une équipe déploie une application sur des instances Amazon EC2 qui doivent lire des fichiers dans un bucket Amazon S3. Un développeur propose de générer des clés d'accès IAM permanentes et de les copier dans le code de l'application. Quelle approche est la plus sûre ?",
+      "choices": [
+        {
+          "text": "Attacher un rôle IAM à l'instance EC2 pour qu'elle obtienne des identifiants temporaires.",
+          "is_correct": true,
+          "feedback": "Correct. Un rôle IAM fournit des identifiants temporaires qui expirent automatiquement, sans stocker de clés permanentes dans le code — c'est la méthode recommandée par AWS."
+        },
+        {
+          "text": "Coder en dur les clés d'accès permanentes dans l'application.",
+          "is_correct": false,
+          "feedback": "À éviter absolument : des clés permanentes dans le code sont facilement exposées (dépôt Git, image, logs) et n'expirent pas. Un rôle IAM supprime ce risque."
+        },
+        {
+          "text": "Utiliser les clés d'accès du compte root pour être sûr d'avoir tous les droits.",
+          "is_correct": false,
+          "feedback": "Très mauvaise pratique : le compte root ne doit pas servir aux tâches courantes et ne devrait pas avoir de clés d'accès. On viole aussi le moindre privilège."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-sec-02",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Un site web hébergé sur AWS subit une attaque : un pic massif de trafic réseau cherche à le rendre indisponible (déni de service), et l'on observe aussi des requêtes tentant des injections SQL sur le formulaire de connexion. Quelle combinaison de services répond le mieux à ces deux menaces ?",
+      "choices": [
+        {
+          "text": "AWS Shield pour la protection DDoS et AWS WAF pour filtrer les requêtes web malveillantes.",
+          "is_correct": true,
+          "feedback": "Correct. Shield protège contre les attaques DDoS (couches réseau/transport et, en Advanced, applicative), et WAF filtre le trafic HTTP pour bloquer les injections SQL et le XSS."
+        },
+        {
+          "text": "Amazon Inspector pour bloquer le DDoS et AWS KMS pour arrêter les injections SQL.",
+          "is_correct": false,
+          "feedback": "Non. Inspector fait de la gestion de vulnérabilités (scan), pas de blocage DDoS en temps réel ; KMS gère les clés de chiffrement, il ne filtre pas les requêtes web."
+        },
+        {
+          "text": "Activer uniquement Amazon GuardDuty, qui bloquera automatiquement les deux attaques.",
+          "is_correct": false,
+          "feedback": "GuardDuty détecte et alerte sur des menaces, mais ne bloque pas le trafic DDoS ni les requêtes web : la détection ne remplace pas les protections Shield et WAF."
+        }
+      ]
+    }
   }
 ]

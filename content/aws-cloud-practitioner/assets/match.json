@@ -24,5 +24,32 @@
         { "left": "Retain", "right": "Conserver l'application dans l'environnement source" }
       ]
     }
+  },
+  {
+    "id": "match-sec-01",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        { "left": "Amazon GuardDuty", "right": "Détection de menaces (CloudTrail, VPC Flow Logs, DNS)" },
+        { "left": "AWS WAF", "right": "Pare-feu applicatif web (injection SQL, XSS)" },
+        { "left": "AWS Shield", "right": "Protection contre les attaques DDoS" },
+        { "left": "Amazon Inspector", "right": "Gestion des vulnérabilités (scan EC2, ECR, Lambda)" },
+        { "left": "AWS KMS", "right": "Création et contrôle des clés de chiffrement" }
+      ]
+    }
+  },
+  {
+    "id": "match-sec-02",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        { "left": "Security group", "right": "Niveau instance, stateful, règles allow uniquement" },
+        { "left": "Network ACL", "right": "Niveau sous-réseau, stateless, règles allow et deny" },
+        { "left": "AWS Artifact", "right": "Téléchargement des rapports de conformité (SOC, ISO, PCI)" },
+        { "left": "Service Control Policy", "right": "Plafond de permissions maximales sur les comptes membres" }
+      ]
+    }
   }
 ]
