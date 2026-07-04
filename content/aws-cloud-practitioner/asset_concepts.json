@@ -1,62 +1,499 @@
 [
-  { "asset_id": "qcm-cloud-01", "concept_ids": ["cloud-capex-vs-opex", "cloud-benefits-six-advantages"] },
-  { "asset_id": "qcm-cloud-02", "concept_ids": ["cloud-service-models"] },
-  { "asset_id": "qcm-cloud-03", "concept_ids": ["well-architected-pillars"] },
-  { "asset_id": "qcm-cloud-04", "concept_ids": ["migration-7-rs"] },
-  { "asset_id": "qcm-cloud-05", "concept_ids": ["cloud-right-sizing"] },
-  { "asset_id": "qcm-cloud-06", "concept_ids": ["cloud-adoption-framework"] },
-
-  { "asset_id": "flashcard-cloud-01", "concept_ids": ["cloud-benefits-six-advantages"] },
-  { "asset_id": "flashcard-cloud-02", "concept_ids": ["cloud-capex-vs-opex"] },
-  { "asset_id": "flashcard-cloud-03", "concept_ids": ["cloud-service-models"] },
-  { "asset_id": "flashcard-cloud-04", "concept_ids": ["well-architected-pillars", "well-architected-framework"] },
-  { "asset_id": "flashcard-cloud-05", "concept_ids": ["migration-7-rs"] },
-  { "asset_id": "flashcard-cloud-06", "concept_ids": ["cloud-adoption-framework"] },
-  { "asset_id": "flashcard-cloud-07", "concept_ids": ["cloud-right-sizing", "cloud-economics-tco"] },
-
-  { "asset_id": "swipe-cloud-01", "concept_ids": ["cloud-capex-vs-opex", "cloud-benefits-six-advantages"] },
-  { "asset_id": "swipe-cloud-02", "concept_ids": ["cloud-service-models"] },
-  { "asset_id": "swipe-cloud-03", "concept_ids": ["well-architected-pillars"] },
-  { "asset_id": "swipe-cloud-04", "concept_ids": ["migration-7-rs"] },
-  { "asset_id": "swipe-cloud-05", "concept_ids": ["cloud-deployment-models"] },
-  { "asset_id": "swipe-cloud-06", "concept_ids": ["cloud-right-sizing"] },
-  { "asset_id": "swipe-cloud-07", "concept_ids": ["cloud-economies-of-scale"] },
-
-  { "asset_id": "scenario-cloud-01", "concept_ids": ["cloud-elasticity-agility-global", "cloud-benefits-six-advantages"] },
-  { "asset_id": "scenario-cloud-02", "concept_ids": ["migration-7-rs"] },
-
-  { "asset_id": "match-cloud-01", "concept_ids": ["cloud-service-models"] },
-  { "asset_id": "match-cloud-02", "concept_ids": ["migration-7-rs"] },
-
-  { "asset_id": "qcm-sec-01", "concept_ids": ["shared-responsibility-model"] },
-  { "asset_id": "qcm-sec-02", "concept_ids": ["aws-organizations-scp"] },
-  { "asset_id": "qcm-sec-03", "concept_ids": ["aws-artifact", "aws-compliance-programs"] },
-  { "asset_id": "qcm-sec-04", "concept_ids": ["security-groups-vs-nacl"] },
-  { "asset_id": "qcm-sec-05", "concept_ids": ["root-user-best-practices"] },
-  { "asset_id": "qcm-sec-06", "concept_ids": ["amazon-guardduty"] },
-  { "asset_id": "qcm-sec-07", "concept_ids": ["aws-waf"] },
-  { "asset_id": "qcm-sec-08", "concept_ids": ["iam-roles-temp-credentials"] },
-  { "asset_id": "qcm-sec-09", "concept_ids": ["trusted-advisor-security"] },
-
-  { "asset_id": "flashcard-sec-01", "concept_ids": ["shared-responsibility-model"] },
-  { "asset_id": "flashcard-sec-02", "concept_ids": ["iam-identities"] },
-  { "asset_id": "flashcard-sec-03", "concept_ids": ["aws-organizations-scp"] },
-  { "asset_id": "flashcard-sec-04", "concept_ids": ["aws-artifact", "aws-compliance-programs"] },
-  { "asset_id": "flashcard-sec-05", "concept_ids": ["security-groups-vs-nacl"] },
-  { "asset_id": "flashcard-sec-06", "concept_ids": ["amazon-guardduty", "amazon-inspector", "aws-shield", "aws-waf"] },
-  { "asset_id": "flashcard-sec-07", "concept_ids": ["encryption-at-rest-in-transit", "aws-kms"] },
-
-  { "asset_id": "swipe-sec-01", "concept_ids": ["shared-responsibility-model"] },
-  { "asset_id": "swipe-sec-02", "concept_ids": ["aws-organizations-scp"] },
-  { "asset_id": "swipe-sec-03", "concept_ids": ["root-user-best-practices", "iam-mfa"] },
-  { "asset_id": "swipe-sec-04", "concept_ids": ["security-groups-vs-nacl"] },
-  { "asset_id": "swipe-sec-05", "concept_ids": ["aws-shield"] },
-  { "asset_id": "swipe-sec-06", "concept_ids": ["amazon-inspector", "aws-waf"] },
-  { "asset_id": "swipe-sec-07", "concept_ids": ["aws-kms"] },
-
-  { "asset_id": "scenario-sec-01", "concept_ids": ["iam-roles-temp-credentials", "iam-least-privilege", "root-user-best-practices"] },
-  { "asset_id": "scenario-sec-02", "concept_ids": ["aws-shield", "aws-waf", "amazon-guardduty"] },
-
-  { "asset_id": "match-sec-01", "concept_ids": ["amazon-guardduty", "aws-waf", "aws-shield", "amazon-inspector", "aws-kms"] },
-  { "asset_id": "match-sec-02", "concept_ids": ["security-groups-vs-nacl", "aws-artifact", "aws-organizations-scp"] }
+  {
+    "asset_id": "qcm-cloud-01",
+    "concept_ids": [
+      "cloud-capex-vs-opex",
+      "cloud-benefits-six-advantages"
+    ]
+  },
+  {
+    "asset_id": "qcm-cloud-02",
+    "concept_ids": [
+      "cloud-service-models"
+    ]
+  },
+  {
+    "asset_id": "qcm-cloud-03",
+    "concept_ids": [
+      "well-architected-pillars"
+    ]
+  },
+  {
+    "asset_id": "qcm-cloud-04",
+    "concept_ids": [
+      "migration-7-rs"
+    ]
+  },
+  {
+    "asset_id": "qcm-cloud-05",
+    "concept_ids": [
+      "cloud-right-sizing"
+    ]
+  },
+  {
+    "asset_id": "qcm-cloud-06",
+    "concept_ids": [
+      "cloud-adoption-framework"
+    ]
+  },
+  {
+    "asset_id": "flashcard-cloud-01",
+    "concept_ids": [
+      "cloud-benefits-six-advantages"
+    ]
+  },
+  {
+    "asset_id": "flashcard-cloud-02",
+    "concept_ids": [
+      "cloud-capex-vs-opex"
+    ]
+  },
+  {
+    "asset_id": "flashcard-cloud-03",
+    "concept_ids": [
+      "cloud-service-models"
+    ]
+  },
+  {
+    "asset_id": "flashcard-cloud-04",
+    "concept_ids": [
+      "well-architected-pillars",
+      "well-architected-framework"
+    ]
+  },
+  {
+    "asset_id": "flashcard-cloud-05",
+    "concept_ids": [
+      "migration-7-rs"
+    ]
+  },
+  {
+    "asset_id": "flashcard-cloud-06",
+    "concept_ids": [
+      "cloud-adoption-framework"
+    ]
+  },
+  {
+    "asset_id": "flashcard-cloud-07",
+    "concept_ids": [
+      "cloud-right-sizing",
+      "cloud-economics-tco"
+    ]
+  },
+  {
+    "asset_id": "swipe-cloud-01",
+    "concept_ids": [
+      "cloud-capex-vs-opex",
+      "cloud-benefits-six-advantages"
+    ]
+  },
+  {
+    "asset_id": "swipe-cloud-02",
+    "concept_ids": [
+      "cloud-service-models"
+    ]
+  },
+  {
+    "asset_id": "swipe-cloud-03",
+    "concept_ids": [
+      "well-architected-pillars"
+    ]
+  },
+  {
+    "asset_id": "swipe-cloud-04",
+    "concept_ids": [
+      "migration-7-rs"
+    ]
+  },
+  {
+    "asset_id": "swipe-cloud-05",
+    "concept_ids": [
+      "cloud-deployment-models"
+    ]
+  },
+  {
+    "asset_id": "swipe-cloud-06",
+    "concept_ids": [
+      "cloud-right-sizing"
+    ]
+  },
+  {
+    "asset_id": "swipe-cloud-07",
+    "concept_ids": [
+      "cloud-economies-of-scale"
+    ]
+  },
+  {
+    "asset_id": "scenario-cloud-01",
+    "concept_ids": [
+      "cloud-elasticity-agility-global",
+      "cloud-benefits-six-advantages"
+    ]
+  },
+  {
+    "asset_id": "scenario-cloud-02",
+    "concept_ids": [
+      "migration-7-rs"
+    ]
+  },
+  {
+    "asset_id": "match-cloud-01",
+    "concept_ids": [
+      "cloud-service-models"
+    ]
+  },
+  {
+    "asset_id": "match-cloud-02",
+    "concept_ids": [
+      "migration-7-rs"
+    ]
+  },
+  {
+    "asset_id": "qcm-sec-01",
+    "concept_ids": [
+      "shared-responsibility-model"
+    ]
+  },
+  {
+    "asset_id": "qcm-sec-02",
+    "concept_ids": [
+      "aws-organizations-scp"
+    ]
+  },
+  {
+    "asset_id": "qcm-sec-03",
+    "concept_ids": [
+      "aws-artifact",
+      "aws-compliance-programs"
+    ]
+  },
+  {
+    "asset_id": "qcm-sec-04",
+    "concept_ids": [
+      "security-groups-vs-nacl"
+    ]
+  },
+  {
+    "asset_id": "qcm-sec-05",
+    "concept_ids": [
+      "root-user-best-practices"
+    ]
+  },
+  {
+    "asset_id": "qcm-sec-06",
+    "concept_ids": [
+      "amazon-guardduty"
+    ]
+  },
+  {
+    "asset_id": "qcm-sec-07",
+    "concept_ids": [
+      "aws-waf"
+    ]
+  },
+  {
+    "asset_id": "qcm-sec-08",
+    "concept_ids": [
+      "iam-roles-temp-credentials"
+    ]
+  },
+  {
+    "asset_id": "qcm-sec-09",
+    "concept_ids": [
+      "trusted-advisor-security"
+    ]
+  },
+  {
+    "asset_id": "flashcard-sec-01",
+    "concept_ids": [
+      "shared-responsibility-model"
+    ]
+  },
+  {
+    "asset_id": "flashcard-sec-02",
+    "concept_ids": [
+      "iam-identities"
+    ]
+  },
+  {
+    "asset_id": "flashcard-sec-03",
+    "concept_ids": [
+      "aws-organizations-scp"
+    ]
+  },
+  {
+    "asset_id": "flashcard-sec-04",
+    "concept_ids": [
+      "aws-artifact",
+      "aws-compliance-programs"
+    ]
+  },
+  {
+    "asset_id": "flashcard-sec-05",
+    "concept_ids": [
+      "security-groups-vs-nacl"
+    ]
+  },
+  {
+    "asset_id": "flashcard-sec-06",
+    "concept_ids": [
+      "amazon-guardduty",
+      "amazon-inspector",
+      "aws-shield",
+      "aws-waf"
+    ]
+  },
+  {
+    "asset_id": "flashcard-sec-07",
+    "concept_ids": [
+      "encryption-at-rest-in-transit",
+      "aws-kms"
+    ]
+  },
+  {
+    "asset_id": "swipe-sec-01",
+    "concept_ids": [
+      "shared-responsibility-model"
+    ]
+  },
+  {
+    "asset_id": "swipe-sec-02",
+    "concept_ids": [
+      "aws-organizations-scp"
+    ]
+  },
+  {
+    "asset_id": "swipe-sec-03",
+    "concept_ids": [
+      "root-user-best-practices",
+      "iam-mfa"
+    ]
+  },
+  {
+    "asset_id": "swipe-sec-04",
+    "concept_ids": [
+      "security-groups-vs-nacl"
+    ]
+  },
+  {
+    "asset_id": "swipe-sec-05",
+    "concept_ids": [
+      "aws-shield"
+    ]
+  },
+  {
+    "asset_id": "swipe-sec-06",
+    "concept_ids": [
+      "amazon-inspector",
+      "aws-waf"
+    ]
+  },
+  {
+    "asset_id": "swipe-sec-07",
+    "concept_ids": [
+      "aws-kms"
+    ]
+  },
+  {
+    "asset_id": "scenario-sec-01",
+    "concept_ids": [
+      "iam-roles-temp-credentials",
+      "iam-least-privilege",
+      "root-user-best-practices"
+    ]
+  },
+  {
+    "asset_id": "scenario-sec-02",
+    "concept_ids": [
+      "aws-shield",
+      "aws-waf",
+      "amazon-guardduty"
+    ]
+  },
+  {
+    "asset_id": "match-sec-01",
+    "concept_ids": [
+      "amazon-guardduty",
+      "aws-waf",
+      "aws-shield",
+      "amazon-inspector",
+      "aws-kms"
+    ]
+  },
+  {
+    "asset_id": "match-sec-02",
+    "concept_ids": [
+      "security-groups-vs-nacl",
+      "aws-artifact",
+      "aws-organizations-scp"
+    ]
+  },
+  {
+    "asset_id": "qcm-infra-01",
+    "concept_ids": [
+      "infra-availability-zones"
+    ]
+  },
+  {
+    "asset_id": "qcm-infra-02",
+    "concept_ids": [
+      "infra-region-selection",
+      "infra-regions"
+    ]
+  },
+  {
+    "asset_id": "qcm-infra-03",
+    "concept_ids": [
+      "infra-cloudfront",
+      "infra-edge-locations"
+    ]
+  },
+  {
+    "asset_id": "qcm-infra-04",
+    "concept_ids": [
+      "svc-cloudformation",
+      "svc-iac-concept"
+    ]
+  },
+  {
+    "asset_id": "qcm-infra-05",
+    "concept_ids": [
+      "svc-direct-connect"
+    ]
+  },
+  {
+    "asset_id": "qcm-infra-06",
+    "concept_ids": [
+      "svc-aws-sdk"
+    ]
+  },
+  {
+    "asset_id": "qcm-infra-07",
+    "concept_ids": [
+      "infra-local-zones"
+    ]
+  },
+  {
+    "asset_id": "flashcard-infra-01",
+    "concept_ids": [
+      "infra-regions"
+    ]
+  },
+  {
+    "asset_id": "flashcard-infra-02",
+    "concept_ids": [
+      "infra-availability-zones"
+    ]
+  },
+  {
+    "asset_id": "flashcard-infra-03",
+    "concept_ids": [
+      "infra-region-selection"
+    ]
+  },
+  {
+    "asset_id": "flashcard-infra-04",
+    "concept_ids": [
+      "infra-cloudfront",
+      "infra-global-accelerator"
+    ]
+  },
+  {
+    "asset_id": "flashcard-infra-05",
+    "concept_ids": [
+      "svc-management-console",
+      "svc-aws-cli",
+      "svc-aws-sdk"
+    ]
+  },
+  {
+    "asset_id": "flashcard-infra-06",
+    "concept_ids": [
+      "svc-cloudformation"
+    ]
+  },
+  {
+    "asset_id": "flashcard-infra-07",
+    "concept_ids": [
+      "svc-direct-connect",
+      "svc-site-to-site-vpn"
+    ]
+  },
+  {
+    "asset_id": "swipe-infra-01",
+    "concept_ids": [
+      "infra-availability-zones"
+    ]
+  },
+  {
+    "asset_id": "swipe-infra-02",
+    "concept_ids": [
+      "infra-region-selection"
+    ]
+  },
+  {
+    "asset_id": "swipe-infra-03",
+    "concept_ids": [
+      "infra-cloudfront",
+      "infra-edge-locations"
+    ]
+  },
+  {
+    "asset_id": "swipe-infra-04",
+    "concept_ids": [
+      "svc-direct-connect",
+      "svc-site-to-site-vpn"
+    ]
+  },
+  {
+    "asset_id": "swipe-infra-05",
+    "concept_ids": [
+      "svc-aws-cli"
+    ]
+  },
+  {
+    "asset_id": "swipe-infra-06",
+    "concept_ids": [
+      "svc-outposts"
+    ]
+  },
+  {
+    "asset_id": "swipe-infra-07",
+    "concept_ids": [
+      "svc-iac-concept",
+      "svc-cloudformation"
+    ]
+  },
+  {
+    "asset_id": "scenario-infra-01",
+    "concept_ids": [
+      "infra-cloudfront",
+      "infra-edge-locations"
+    ]
+  },
+  {
+    "asset_id": "scenario-infra-02",
+    "concept_ids": [
+      "svc-direct-connect",
+      "svc-site-to-site-vpn"
+    ]
+  },
+  {
+    "asset_id": "match-infra-01",
+    "concept_ids": [
+      "infra-regions",
+      "infra-availability-zones",
+      "infra-edge-locations",
+      "infra-local-zones"
+    ]
+  },
+  {
+    "asset_id": "match-infra-02",
+    "concept_ids": [
+      "svc-management-console",
+      "svc-aws-cli",
+      "svc-aws-sdk",
+      "svc-cloudformation"
+    ]
+  }
 ]

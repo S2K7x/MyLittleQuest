@@ -37,7 +37,12 @@
     "difficulty": 2,
     "payload": {
       "question": "Combien de piliers composent l'AWS Well-Architected Framework ?",
-      "choices": ["Quatre", "Cinq", "Six", "Sept"],
+      "choices": [
+        "Quatre",
+        "Cinq",
+        "Six",
+        "Sept"
+      ],
       "correct_index": 2,
       "explanation": "Le framework compte six piliers : excellence opérationnelle, sécurité, fiabilité, efficacité des performances, optimisation des coûts et durabilité."
     }
@@ -48,7 +53,12 @@
     "difficulty": 3,
     "payload": {
       "question": "Une équipe migre une application vers AWS en la déplaçant telle quelle, sans aucune modification de code (« lift and shift »). Quelle stratégie de migration parmi les 7 R utilise-t-elle ?",
-      "choices": ["Refactor", "Rehost", "Repurchase", "Retire"],
+      "choices": [
+        "Refactor",
+        "Rehost",
+        "Repurchase",
+        "Retire"
+      ],
       "correct_index": 1,
       "explanation": "Rehost, aussi appelé « lift and shift », consiste à déplacer une application vers le cloud sans la modifier. Refactor remanie l'architecture, Repurchase change de produit (souvent vers du SaaS), Retire décommissionne."
     }
@@ -123,7 +133,12 @@
     "difficulty": 2,
     "payload": {
       "question": "Un client a besoin de télécharger les rapports de conformité d'AWS (SOC, ISO, PCI) pour les fournir à ses auditeurs. Quel service utilise-t-il ?",
-      "choices": ["AWS Trusted Advisor", "AWS Artifact", "Amazon Inspector", "AWS KMS"],
+      "choices": [
+        "AWS Trusted Advisor",
+        "AWS Artifact",
+        "Amazon Inspector",
+        "AWS KMS"
+      ],
       "correct_index": 1,
       "explanation": "AWS Artifact est le portail en libre-service permettant de télécharger gratuitement et à la demande les rapports de sécurité et de conformité d'AWS, ainsi que de gérer les accords juridiques."
     }
@@ -166,7 +181,12 @@
     "difficulty": 2,
     "payload": {
       "question": "Quel service AWS détecte les menaces en analysant en continu les événements CloudTrail, les VPC Flow Logs et les journaux DNS, sans nécessiter d'agent ?",
-      "choices": ["Amazon Inspector", "AWS WAF", "Amazon GuardDuty", "AWS Shield"],
+      "choices": [
+        "Amazon Inspector",
+        "AWS WAF",
+        "Amazon GuardDuty",
+        "AWS Shield"
+      ],
       "correct_index": 2,
       "explanation": "Amazon GuardDuty est le service de détection de menaces : il analyse en continu CloudTrail, les VPC Flow Logs et les journaux DNS via du machine learning et des flux de renseignement, sans déploiement d'agent."
     }
@@ -177,7 +197,12 @@
     "difficulty": 2,
     "payload": {
       "question": "Une équipe veut protéger une application web contre les injections SQL et le cross-site scripting (XSS) en filtrant les requêtes HTTP. Quel service AWS répond à ce besoin ?",
-      "choices": ["AWS WAF", "AWS Shield Standard", "Amazon GuardDuty", "AWS KMS"],
+      "choices": [
+        "AWS WAF",
+        "AWS Shield Standard",
+        "Amazon GuardDuty",
+        "AWS KMS"
+      ],
       "correct_index": 0,
       "explanation": "AWS WAF est un pare-feu applicatif web (couche 7) qui filtre les requêtes HTTP/S et défend contre les attaques web courantes comme l'injection SQL et le XSS. Shield protège contre les DDoS, GuardDuty détecte les menaces, KMS gère les clés de chiffrement."
     }
@@ -204,9 +229,126 @@
     "difficulty": 2,
     "payload": {
       "question": "Quel service AWS inspecte l'environnement d'un compte et recommande des améliorations de sécurité, comme repérer un groupe de sécurité laissant un accès non restreint ou une MFA manquante sur le compte root ?",
-      "choices": ["Amazon Inspector", "AWS Trusted Advisor", "AWS Artifact", "Amazon GuardDuty"],
+      "choices": [
+        "Amazon Inspector",
+        "AWS Trusted Advisor",
+        "AWS Artifact",
+        "Amazon GuardDuty"
+      ],
       "correct_index": 1,
       "explanation": "AWS Trusted Advisor inspecte le compte et formule des recommandations selon les bonnes pratiques, dont des vérifications de sécurité (groupes de sécurité trop ouverts, MFA root manquante, accès public…). L'étendue des checks dépend du plan de support."
+    }
+  },
+  {
+    "id": "qcm-infra-01",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Qu'est-ce qu'une Availability Zone (AZ) dans une Région AWS ?",
+      "choices": [
+        "Un ou plusieurs datacenters isolés, avec alimentation et réseau redondants, au sein d'une Région",
+        "Un site de cache proche des utilisateurs pour diffuser du contenu",
+        "Une copie complète d'une Région dans un autre continent",
+        "Un compte AWS distinct dédié à la production"
+      ],
+      "correct_index": 0,
+      "explanation": "Une AZ est constituée d'un ou plusieurs datacenters discrets à alimentation, réseau et connectivité redondants. Une Région contient plusieurs AZ physiquement séparées mais reliées par un réseau à faible latence."
+    }
+  },
+  {
+    "id": "qcm-infra-02",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une entreprise européenne doit garantir que les données de ses clients restent stockées en France pour des raisons réglementaires. Quel critère de choix de Région est déterminant ici ?",
+      "choices": [
+        "La conformité et la résidence des données",
+        "Le nombre d'edge locations dans la Région",
+        "La couleur de l'interface de la console",
+        "Le nombre de SDK disponibles"
+      ],
+      "correct_index": 0,
+      "explanation": "La localisation géographique d'une Région aide à répondre aux exigences réglementaires et de résidence des données. On garde le contrôle total de la Région où résident les données."
+    }
+  },
+  {
+    "id": "qcm-infra-03",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quel service AWS met en cache le contenu (images, vidéos, pages web) dans des edge locations proches des utilisateurs pour accélérer sa diffusion ?",
+      "choices": [
+        "Amazon CloudFront",
+        "AWS Direct Connect",
+        "AWS CloudFormation",
+        "AWS Outposts"
+      ],
+      "correct_index": 0,
+      "explanation": "Amazon CloudFront est le CDN d'AWS : il route la requête vers l'edge location la plus proche en latence et sert le contenu mis en cache, en le récupérant depuis l'origine si nécessaire."
+    }
+  },
+  {
+    "id": "qcm-infra-04",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une équipe veut automatiser le déploiement reproductible de son infrastructure AWS à partir de fichiers versionnés (JSON ou YAML). Quel service AWS natif utiliser ?",
+      "choices": [
+        "AWS CloudFormation",
+        "AWS Management Console",
+        "Amazon CloudFront",
+        "AWS Global Accelerator"
+      ],
+      "correct_index": 0,
+      "explanation": "AWS CloudFormation est le service d'Infrastructure as Code natif : on décrit les ressources dans un template et CloudFormation les provisionne dans le bon ordre en gérant les dépendances."
+    }
+  },
+  {
+    "id": "qcm-infra-05",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une organisation a besoin d'une connexion réseau dédiée et physique, à haut débit et à latence régulière, entre son datacenter et AWS, sans passer par l'Internet public. Quelle option choisir ?",
+      "choices": [
+        "AWS Direct Connect",
+        "AWS Site-to-Site VPN",
+        "Amazon CloudFront",
+        "AWS Management Console"
+      ],
+      "correct_index": 0,
+      "explanation": "AWS Direct Connect établit une connexion dédiée et physique vers AWS, hors Internet public, offrant un débit élevé et une expérience réseau plus régulière qu'une connexion via Internet."
+    }
+  },
+  {
+    "id": "qcm-infra-06",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quelle méthode d'accès à AWS est la plus adaptée pour appeler des services AWS directement depuis le code d'une application Python ?",
+      "choices": [
+        "Un AWS SDK (par exemple Boto3 pour Python)",
+        "L'AWS Management Console",
+        "Un ticket au support AWS",
+        "AWS Direct Connect"
+      ],
+      "correct_index": 0,
+      "explanation": "Les AWS SDKs permettent d'appeler les services AWS depuis le code dans le langage du développeur (Boto3 pour Python), en gérant la signature des requêtes, les identifiants et les réessais."
+    }
+  },
+  {
+    "id": "qcm-infra-07",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Une application de jeu en temps réel a besoin d'une latence de quelques millisecondes pour des utilisateurs concentrés dans une grande métropole éloignée de la Région AWS la plus proche. Quelle infrastructure AWS répond le mieux à ce besoin ?",
+      "choices": [
+        "AWS Local Zones",
+        "Une seconde Availability Zone dans la même Région",
+        "AWS Artifact",
+        "Un bucket Amazon S3 supplémentaire"
+      ],
+      "correct_index": 0,
+      "explanation": "Une AWS Local Zone place le calcul et le stockage au plus près des utilisateurs, dans leur agglomération, pour une très faible latence adaptée au jeu temps réel, au streaming ou à la VR/AR."
     }
   }
 ]

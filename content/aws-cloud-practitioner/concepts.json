@@ -259,5 +259,140 @@
     "difficulty": 2,
     "source_url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html",
     "generated_at": "2026-07-02T02:00:00Z"
+  },
+  {
+    "id": "infra-regions",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS Regions",
+    "core_explanation": "Une AWS Region est une zone géographique physique du monde (ex : eu-west-3 à Paris, us-east-1 en Virginie du Nord) qui regroupe plusieurs Availability Zones isolées. Chaque Région est indépendante des autres : on choisit dans quelle(s) Région(s) déployer ses ressources, et les données y restent, ce qui aide à respecter les exigences réglementaires et de résidence des données. Toutes les Régions ne proposent pas exactement les mêmes services au même moment.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html",
+    "generated_at": "2026-07-04T02:00:00Z"
+  },
+  {
+    "id": "infra-availability-zones",
+    "domain": "Cloud Technology and Services",
+    "title": "Availability Zones (AZ)",
+    "core_explanation": "Une Availability Zone est constituée d'un ou plusieurs datacenters discrets, avec alimentation, réseau et connectivité redondants, à l'intérieur d'une Région. Une Région contient plusieurs AZ physiquement séparées mais reliées par un réseau à faible latence et haut débit. Répartir une application sur plusieurs AZ est la base de la haute disponibilité : la panne d'une AZ n'affecte pas les autres.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-availability-zones.html",
+    "generated_at": "2026-07-04T02:00:00Z"
+  },
+  {
+    "id": "infra-region-selection",
+    "domain": "Cloud Technology and Services",
+    "title": "Choisir une Région AWS",
+    "core_explanation": "Le choix d'une Région repose sur quatre facteurs classiques : (1) la conformité et la résidence des données (exigences légales sur la localisation), (2) la proximité des utilisateurs pour réduire la latence, (3) la disponibilité des services et fonctionnalités souhaités, qui varie d'une Région à l'autre, et (4) le prix, qui diffère selon la Région. On garde le contrôle total de la Région où résident ses données.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html",
+    "generated_at": "2026-07-04T02:00:00Z"
+  },
+  {
+    "id": "infra-edge-locations",
+    "domain": "Cloud Technology and Services",
+    "title": "Edge locations et Points of Presence",
+    "core_explanation": "En plus des Régions, AWS exploite un réseau mondial de Points of Presence (PoP), qui incluent les edge locations et des caches régionaux de niveau intermédiaire. Ces sites, bien plus nombreux et proches des utilisateurs que les Régions, hébergent des services de périphérie comme Amazon CloudFront (CDN), Amazon Route 53 (DNS) et AWS Global Accelerator. Ils servent le contenu et les requêtes depuis l'emplacement le plus proche de l'utilisateur pour réduire la latence.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/points-of-presence.html",
+    "generated_at": "2026-07-04T02:00:00Z"
+  },
+  {
+    "id": "infra-cloudfront",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon CloudFront (CDN)",
+    "core_explanation": "Amazon CloudFront est le réseau de diffusion de contenu (CDN) d'AWS. Il met en cache le contenu (pages web, images, vidéos, API) dans les edge locations proches des utilisateurs : une requête est routée vers l'edge location la plus proche en termes de latence, ce qui accélère la livraison. Si le contenu n'est pas en cache, CloudFront le récupère depuis l'origine (ex : un bucket S3 ou un serveur) via le réseau backbone AWS.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html",
+    "generated_at": "2026-07-04T02:00:00Z"
+  },
+  {
+    "id": "infra-global-accelerator",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS Global Accelerator",
+    "core_explanation": "AWS Global Accelerator améliore la performance et la disponibilité des applications pour les utilisateurs mondiaux. Il fournit des adresses IP statiques qui servent de points d'entrée fixes et sont annoncées en anycast depuis le réseau edge AWS : le trafic entre sur le réseau mondial privé d'AWS depuis l'edge location la plus proche, puis est acheminé vers les endpoints régionaux (ALB, NLB, EC2, Elastic IP). À la différence de CloudFront (cache de contenu), Global Accelerator optimise le routage réseau vers les applications.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html",
+    "generated_at": "2026-07-04T02:00:00Z"
+  },
+  {
+    "id": "infra-local-zones",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS Local Zones",
+    "core_explanation": "Une AWS Local Zone est une extension d'une Région placée au plus près des utilisateurs, dans une grande agglomération, pour offrir une très faible latence à des applications comme le jeu en temps réel, le streaming ou la VR/AR. On y place des ressources de calcul et de stockage proches des utilisateurs finaux. Les Local Zones disposent de leur propre accès Internet et supportent AWS Direct Connect, sans que le trafic ait à traverser la Région parente.",
+    "difficulty": 3,
+    "source_url": "https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html",
+    "generated_at": "2026-07-04T02:00:00Z"
+  },
+  {
+    "id": "svc-management-console",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS Management Console",
+    "core_explanation": "L'AWS Management Console est une application web qui regroupe les consoles de gestion de chaque service AWS. Elle offre une interface graphique pour créer, configurer et surveiller ses ressources depuis un navigateur, sans écrire de code. C'est souvent le point d'entrée pour découvrir un service ou effectuer des tâches ponctuelles ; pour l'automatisation ou les opérations répétitives, on privilégie la CLI, les SDK ou l'IaC.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/hands-on/latest/getting-started-with-aws-management-console/getting-started-with-aws-management-console.html",
+    "generated_at": "2026-07-04T02:00:00Z"
+  },
+  {
+    "id": "svc-aws-cli",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS Command Line Interface (CLI)",
+    "core_explanation": "L'AWS CLI est un outil open source qui permet d'interagir avec les services AWS via des commandes dans un terminal. Avec une configuration minimale, elle offre des fonctionnalités équivalentes à celles de la console web, mais depuis la ligne de commande. Elle est idéale pour scripter, automatiser des tâches répétitives et intégrer AWS dans des pipelines, là où la console conviendrait mal.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html",
+    "generated_at": "2026-07-04T02:00:00Z"
+  },
+  {
+    "id": "svc-aws-sdk",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS SDKs",
+    "core_explanation": "Les AWS SDKs (Software Development Kits) permettent d'appeler les services AWS directement depuis le code d'une application, dans le langage du développeur : Python (Boto3), Java, JavaScript, .NET, Go, PHP, Ruby, etc. Ils gèrent pour vous les détails de bas niveau (signature des requêtes, gestion des identifiants, réessais). C'est la méthode d'accès privilégiée pour intégrer AWS au sein d'un logiciel, quand la console (interactif) et la CLI (scripts) ne suffisent pas.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/sdkref/latest/guide/overview.html",
+    "generated_at": "2026-07-04T02:00:00Z"
+  },
+  {
+    "id": "svc-iac-concept",
+    "domain": "Cloud Technology and Services",
+    "title": "Infrastructure as Code (IaC)",
+    "core_explanation": "L'Infrastructure as Code consiste à décrire et provisionner son infrastructure (serveurs, réseaux, bases de données) à l'aide de fichiers de configuration versionnés, plutôt que par des actions manuelles dans une console. L'IaC rend les déploiements reproductibles, traçables et automatisables, et réduit les erreurs de configuration manuelle. Sur AWS, l'outil natif d'IaC est AWS CloudFormation.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/introduction-devops-aws/infrastructure-as-code.html",
+    "generated_at": "2026-07-04T02:00:00Z"
+  },
+  {
+    "id": "svc-cloudformation",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS CloudFormation",
+    "core_explanation": "AWS CloudFormation est le service d'Infrastructure as Code natif d'AWS. On décrit dans un template (JSON ou YAML) l'ensemble des ressources voulues (instances EC2, bases RDS, buckets S3…), et CloudFormation se charge de les provisionner et de les configurer dans le bon ordre en gérant les dépendances. L'ensemble des ressources créées à partir d'un template forme une stack, que l'on peut mettre à jour ou supprimer d'un bloc.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html",
+    "generated_at": "2026-07-04T02:00:00Z"
+  },
+  {
+    "id": "svc-direct-connect",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS Direct Connect",
+    "core_explanation": "AWS Direct Connect établit une connexion réseau dédiée et physique entre le réseau sur site d'une organisation et AWS, sans passer par l'Internet public. Cela offre un débit plus élevé, une latence plus faible et une expérience réseau plus régulière que les connexions via Internet, et peut réduire les coûts réseau. C'est un choix de connectivité hybride pour les besoins de bande passante importants et constants.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html",
+    "generated_at": "2026-07-04T02:00:00Z"
+  },
+  {
+    "id": "svc-site-to-site-vpn",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS Site-to-Site VPN",
+    "core_explanation": "AWS Site-to-Site VPN crée un tunnel chiffré et sécurisé entre le réseau sur site d'une organisation et un VPC AWS, à travers l'Internet public. Il permet d'étendre un réseau on-premises vers le cloud rapidement et à faible coût. Comparé à Direct Connect, le VPN se met en place plus vite et coûte moins cher, mais il transite par Internet : la latence et le débit sont donc moins prévisibles.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html",
+    "generated_at": "2026-07-04T02:00:00Z"
+  },
+  {
+    "id": "svc-outposts",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS Outposts",
+    "core_explanation": "AWS Outposts est un service entièrement géré qui étend l'infrastructure, les services, les API et les outils AWS jusque dans les locaux du client (datacenter, colocation, site sur site). Un Outpost est un pool de capacité de calcul et de stockage AWS installé sur site, opéré et maintenu par AWS. Il répond aux besoins de faible latence vers des systèmes locaux, de traitement local des données ou de résidence des données, tout en gardant la même expérience que dans le cloud AWS.",
+    "difficulty": 3,
+    "source_url": "https://docs.aws.amazon.com/outposts/latest/userguide/what-is-outposts.html",
+    "generated_at": "2026-07-04T02:00:00Z"
   }
 ]

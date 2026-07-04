@@ -5,9 +5,18 @@
     "difficulty": 2,
     "payload": {
       "pairs": [
-        { "left": "IaaS", "right": "Contrôle maximal sur les ressources IT (ex : Amazon EC2)" },
-        { "left": "PaaS", "right": "On gère les applications, pas l'infrastructure (ex : Elastic Beanstalk)" },
-        { "left": "SaaS", "right": "Produit fini entièrement géré par le fournisseur" }
+        {
+          "left": "IaaS",
+          "right": "Contrôle maximal sur les ressources IT (ex : Amazon EC2)"
+        },
+        {
+          "left": "PaaS",
+          "right": "On gère les applications, pas l'infrastructure (ex : Elastic Beanstalk)"
+        },
+        {
+          "left": "SaaS",
+          "right": "Produit fini entièrement géré par le fournisseur"
+        }
       ]
     }
   },
@@ -17,11 +26,26 @@
     "difficulty": 3,
     "payload": {
       "pairs": [
-        { "left": "Rehost", "right": "Déplacer l'application telle quelle (lift and shift)" },
-        { "left": "Replatform", "right": "Migrer avec quelques optimisations (lift and reshape)" },
-        { "left": "Repurchase", "right": "Passer à un autre produit, souvent SaaS (drop and shop)" },
-        { "left": "Retire", "right": "Décommissionner une application devenue inutile" },
-        { "left": "Retain", "right": "Conserver l'application dans l'environnement source" }
+        {
+          "left": "Rehost",
+          "right": "Déplacer l'application telle quelle (lift and shift)"
+        },
+        {
+          "left": "Replatform",
+          "right": "Migrer avec quelques optimisations (lift and reshape)"
+        },
+        {
+          "left": "Repurchase",
+          "right": "Passer à un autre produit, souvent SaaS (drop and shop)"
+        },
+        {
+          "left": "Retire",
+          "right": "Décommissionner une application devenue inutile"
+        },
+        {
+          "left": "Retain",
+          "right": "Conserver l'application dans l'environnement source"
+        }
       ]
     }
   },
@@ -31,11 +55,26 @@
     "difficulty": 2,
     "payload": {
       "pairs": [
-        { "left": "Amazon GuardDuty", "right": "Détection de menaces (CloudTrail, VPC Flow Logs, DNS)" },
-        { "left": "AWS WAF", "right": "Pare-feu applicatif web (injection SQL, XSS)" },
-        { "left": "AWS Shield", "right": "Protection contre les attaques DDoS" },
-        { "left": "Amazon Inspector", "right": "Gestion des vulnérabilités (scan EC2, ECR, Lambda)" },
-        { "left": "AWS KMS", "right": "Création et contrôle des clés de chiffrement" }
+        {
+          "left": "Amazon GuardDuty",
+          "right": "Détection de menaces (CloudTrail, VPC Flow Logs, DNS)"
+        },
+        {
+          "left": "AWS WAF",
+          "right": "Pare-feu applicatif web (injection SQL, XSS)"
+        },
+        {
+          "left": "AWS Shield",
+          "right": "Protection contre les attaques DDoS"
+        },
+        {
+          "left": "Amazon Inspector",
+          "right": "Gestion des vulnérabilités (scan EC2, ECR, Lambda)"
+        },
+        {
+          "left": "AWS KMS",
+          "right": "Création et contrôle des clés de chiffrement"
+        }
       ]
     }
   },
@@ -45,10 +84,72 @@
     "difficulty": 2,
     "payload": {
       "pairs": [
-        { "left": "Security group", "right": "Niveau instance, stateful, règles allow uniquement" },
-        { "left": "Network ACL", "right": "Niveau sous-réseau, stateless, règles allow et deny" },
-        { "left": "AWS Artifact", "right": "Téléchargement des rapports de conformité (SOC, ISO, PCI)" },
-        { "left": "Service Control Policy", "right": "Plafond de permissions maximales sur les comptes membres" }
+        {
+          "left": "Security group",
+          "right": "Niveau instance, stateful, règles allow uniquement"
+        },
+        {
+          "left": "Network ACL",
+          "right": "Niveau sous-réseau, stateless, règles allow et deny"
+        },
+        {
+          "left": "AWS Artifact",
+          "right": "Téléchargement des rapports de conformité (SOC, ISO, PCI)"
+        },
+        {
+          "left": "Service Control Policy",
+          "right": "Plafond de permissions maximales sur les comptes membres"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-infra-01",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "AWS Region",
+          "right": "Zone géographique regroupant plusieurs Availability Zones"
+        },
+        {
+          "left": "Availability Zone",
+          "right": "Un ou plusieurs datacenters isolés au sein d'une Région"
+        },
+        {
+          "left": "Edge location",
+          "right": "Site proche des utilisateurs hébergeant CloudFront, Route 53, Global Accelerator"
+        },
+        {
+          "left": "AWS Local Zone",
+          "right": "Extension d'une Région dans une métropole pour une très faible latence"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-infra-02",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "AWS Management Console",
+          "right": "Interface web graphique pour gérer ses ressources"
+        },
+        {
+          "left": "AWS CLI",
+          "right": "Commandes en terminal pour scripter et automatiser"
+        },
+        {
+          "left": "AWS SDK",
+          "right": "Appeler les services AWS depuis le code d'une application"
+        },
+        {
+          "left": "AWS CloudFormation",
+          "right": "Provisionner l'infrastructure via des templates (IaC)"
+        }
       ]
     }
   }
