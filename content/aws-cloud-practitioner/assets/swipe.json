@@ -138,5 +138,75 @@
       "is_true": false,
       "explanation": "Faux. Le matériel des clés est protégé dans des modules matériels de sécurité (HSM). Aucun humain, y compris chez AWS, ne peut consulter, accéder ou exporter les clés en clair."
     }
+  },
+  {
+    "id": "swipe-infra-01",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "Une Région AWS contient toujours plusieurs Availability Zones physiquement séparées.",
+      "is_true": true,
+      "explanation": "Vrai. Une Région regroupe plusieurs AZ isolées, reliées par un réseau à faible latence et haut débit, ce qui permet la haute disponibilité."
+    }
+  },
+  {
+    "id": "swipe-infra-02",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Tous les services AWS sont disponibles dans toutes les Régions au même moment.",
+      "is_true": false,
+      "explanation": "Faux. La disponibilité des services et fonctionnalités varie selon la Région : c'est l'un des critères de choix d'une Région."
+    }
+  },
+  {
+    "id": "swipe-infra-03",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Amazon CloudFront met en cache le contenu dans les edge locations pour le servir depuis l'emplacement le plus proche de l'utilisateur.",
+      "is_true": true,
+      "explanation": "Vrai. CloudFront est le CDN d'AWS : il route la requête vers l'edge location la plus proche en latence et sert le contenu mis en cache."
+    }
+  },
+  {
+    "id": "swipe-infra-04",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "AWS Direct Connect établit une connexion chiffrée qui passe par l'Internet public.",
+      "is_true": false,
+      "explanation": "Faux. Direct Connect est une connexion réseau dédiée et physique qui ne passe pas par l'Internet public. C'est le Site-to-Site VPN qui utilise un tunnel chiffré via Internet."
+    }
+  },
+  {
+    "id": "swipe-infra-05",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "L'AWS CLI permet d'interagir avec les services AWS via des commandes dans un terminal, ce qui facilite l'automatisation.",
+      "is_true": true,
+      "explanation": "Vrai. La CLI offre des fonctionnalités équivalentes à la console web depuis la ligne de commande, idéale pour scripter et automatiser."
+    }
+  },
+  {
+    "id": "swipe-infra-06",
+    "game_type": "swipe",
+    "difficulty": 3,
+    "payload": {
+      "statement": "AWS Outposts permet d'exécuter de l'infrastructure et des services AWS directement dans le datacenter du client.",
+      "is_true": true,
+      "explanation": "Vrai. Outposts étend l'infrastructure, les services et les API AWS sur site, pour la faible latence, le traitement local des données ou la résidence des données."
+    }
+  },
+  {
+    "id": "swipe-infra-07",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "L'Infrastructure as Code consiste à configurer manuellement chaque ressource dans la console AWS.",
+      "is_true": false,
+      "explanation": "Faux. L'IaC décrit l'infrastructure dans des fichiers versionnés (ex : templates CloudFormation) pour des déploiements reproductibles et automatisés, à l'opposé des actions manuelles."
+    }
   }
 ]

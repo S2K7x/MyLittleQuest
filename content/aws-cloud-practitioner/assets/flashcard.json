@@ -124,5 +124,68 @@
       "front": "Chiffrement au repos vs en transit, et rôle d'AWS KMS ?",
       "back": "Au repos = protéger les données stockées ; en transit = protéger les données qui circulent sur le réseau (via TLS). AWS KMS (Key Management Service) permet de créer et contrôler les clés de chiffrement, s'intègre à la majorité des services AWS et protège le matériel des clés dans des HSM ; personne n'accède aux clés en clair."
     }
+  },
+  {
+    "id": "flashcard-infra-01",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Qu'est-ce qu'une AWS Region ?",
+      "back": "Une zone géographique physique du monde (ex : eu-west-3 Paris) regroupant plusieurs Availability Zones isolées. Chaque Région est indépendante ; les données y restent, ce qui aide à la conformité et à la résidence des données."
+    }
+  },
+  {
+    "id": "flashcard-infra-02",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Availability Zone vs Region ?",
+      "back": "Une Région contient plusieurs Availability Zones (AZ). Une AZ = un ou plusieurs datacenters isolés à alimentation/réseau redondants. Répartir sur plusieurs AZ assure la haute disponibilité."
+    }
+  },
+  {
+    "id": "flashcard-infra-03",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Quels sont les 4 facteurs pour choisir une Région AWS ?",
+      "back": "(1) Conformité / résidence des données, (2) proximité des utilisateurs (latence), (3) disponibilité des services et fonctionnalités, (4) prix, qui varie selon la Région."
+    }
+  },
+  {
+    "id": "flashcard-infra-04",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "CloudFront vs Global Accelerator ?",
+      "back": "Amazon CloudFront = CDN qui met en cache le contenu dans les edge locations. AWS Global Accelerator = adresses IP statiques anycast qui optimisent le routage réseau vers les applications, sans mise en cache de contenu."
+    }
+  },
+  {
+    "id": "flashcard-infra-05",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Console, CLI, SDK : quand utiliser quoi ?",
+      "back": "Console = interface graphique web pour tâches ponctuelles/découverte. CLI = commandes en terminal pour scripter et automatiser. SDK = appeler AWS depuis le code d'une application (Boto3, Java, JS…)."
+    }
+  },
+  {
+    "id": "flashcard-infra-06",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Qu'est-ce qu'AWS CloudFormation ?",
+      "back": "Le service d'Infrastructure as Code natif d'AWS. On décrit les ressources voulues dans un template (JSON/YAML) et CloudFormation les provisionne dans le bon ordre. L'ensemble forme une stack."
+    }
+  },
+  {
+    "id": "flashcard-infra-07",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Direct Connect vs Site-to-Site VPN ?",
+      "back": "Direct Connect = connexion physique dédiée hors Internet public (débit élevé, latence régulière, plus long/coûteux à mettre en place). Site-to-Site VPN = tunnel chiffré via Internet (rapide et peu coûteux, mais latence/débit moins prévisibles)."
+    }
   }
 ]

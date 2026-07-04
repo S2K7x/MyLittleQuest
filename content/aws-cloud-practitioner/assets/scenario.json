@@ -98,5 +98,55 @@
         }
       ]
     }
+  },
+  {
+    "id": "scenario-infra-01",
+    "game_type": "scenario",
+    "difficulty": 2,
+    "payload": {
+      "intro": "Un site média diffuse des vidéos à des spectateurs répartis sur plusieurs continents. Les utilisateurs éloignés de la Région d'hébergement se plaignent de temps de chargement lents. L'équipe veut réduire la latence sans dupliquer toute l'infrastructure dans chaque Région. Quelle solution privilégier ?",
+      "choices": [
+        {
+          "text": "Mettre en place Amazon CloudFront pour mettre le contenu en cache dans les edge locations proches des spectateurs.",
+          "is_correct": true,
+          "feedback": "Correct. CloudFront (CDN) met le contenu en cache dans les edge locations et le sert depuis l'emplacement le plus proche, réduisant la latence sans dupliquer l'infrastructure."
+        },
+        {
+          "text": "Déployer une copie complète de l'application dans chaque Région du monde.",
+          "is_correct": false,
+          "feedback": "Coûteux et complexe à maintenir. Un CDN comme CloudFront répond au besoin de latence sans dupliquer toute l'infrastructure."
+        },
+        {
+          "text": "Migrer le site vers AWS Outposts sur site.",
+          "is_correct": false,
+          "feedback": "Outposts sert des besoins de faible latence locale ou de résidence des données sur un site précis, pas la diffusion de contenu à un public mondial."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-infra-02",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Une banque veut relier son datacenter à AWS pour des transferts de données volumineux et réguliers, avec une latence prévisible et sans exposer le trafic à l'Internet public. Le délai de mise en place n'est pas un problème. Quelle option de connectivité recommander ?",
+      "choices": [
+        {
+          "text": "AWS Direct Connect, pour une connexion dédiée et physique hors Internet public.",
+          "is_correct": true,
+          "feedback": "Correct. Direct Connect offre une connexion dédiée, un débit élevé et une latence régulière, sans transiter par l'Internet public — adapté à des transferts volumineux et réguliers."
+        },
+        {
+          "text": "AWS Site-to-Site VPN, car c'est toujours la meilleure option de connectivité.",
+          "is_correct": false,
+          "feedback": "Le VPN passe par Internet : latence et débit moins prévisibles. Il est rapide à déployer, mais ici la latence prévisible et le hors-Internet priment, ce que Direct Connect apporte."
+        },
+        {
+          "text": "Amazon CloudFront, pour accélérer les transferts.",
+          "is_correct": false,
+          "feedback": "CloudFront est un CDN de diffusion de contenu vers des utilisateurs finaux, pas une solution de connectivité hybride entre un datacenter et AWS."
+        }
+      ]
+    }
   }
 ]
