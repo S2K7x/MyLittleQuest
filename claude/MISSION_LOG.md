@@ -106,5 +106,5 @@ grossisse davantage :
 
 ## Lien PR
 
-PR (draft) : voir lien dans la description de la Pull Request ouverte pour la branche
-`claude/loving-curie-dqlak6` → `main`.
+PR #5 (draft) : https://github.com/S2K7x/MyLittleQuest/pull/5
+Branche `claude/loving-curie-dqlak6` → `main`.
