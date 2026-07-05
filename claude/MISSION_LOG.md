@@ -113,5 +113,5 @@ maintenant que le contenu grossit. Le script `validate.py` de cette nuit peut se
 
 ## Lien PR
 
-PR (draft) : voir le lien ajouté ci-dessous après ouverture.
+PR #6 (draft) : https://github.com/S2K7x/MyLittleQuest/pull/6
 Branche `claude/content-aws-clf-c02-domain-3-lot-b` → `main`.
