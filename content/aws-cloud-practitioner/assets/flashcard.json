@@ -187,5 +187,77 @@
       "front": "Direct Connect vs Site-to-Site VPN ?",
       "back": "Direct Connect = connexion physique dédiée hors Internet public (débit élevé, latence régulière, plus long/coûteux à mettre en place). Site-to-Site VPN = tunnel chiffré via Internet (rapide et peu coûteux, mais latence/débit moins prévisibles)."
     }
+  },
+  {
+    "id": "flashcard-comp-01",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Qu'est-ce qu'un « type d'instance » Amazon EC2 ?",
+      "back": "Une combinaison prédéfinie de CPU, mémoire, stockage et capacité réseau. Les types sont regroupés en familles optimisées : usage général, calcul, mémoire, stockage, GPU/accéléré."
+    }
+  },
+  {
+    "id": "flashcard-comp-02",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "On-Demand vs Reserved vs Spot pour EC2 ?",
+      "back": "On-Demand = à la seconde, sans engagement (charges imprévisibles). Reserved / Savings Plans = engagement 1 ou 3 ans, forte réduction (charges stables). Spot = capacité inutilisée très peu chère mais interruptible (charges tolérantes aux interruptions)."
+    }
+  },
+  {
+    "id": "flashcard-comp-03",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Que signifie « serverless » pour AWS Lambda ?",
+      "back": "Aucun serveur à provisionner ou gérer. On fournit du code déclenché par un événement ; AWS gère capacité, mise à l'échelle, correctifs. Facturation à l'usage (invocations + durée), rien quand le code ne tourne pas."
+    }
+  },
+  {
+    "id": "flashcard-comp-04",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "ECS vs EKS ?",
+      "back": "Deux orchestrateurs de conteneurs gérés. ECS = orchestrateur propriétaire d'AWS, simple à prendre en main. EKS = Kubernetes géré, standard ouvert et portable. Les deux peuvent utiliser EC2 ou AWS Fargate comme calcul."
+    }
+  },
+  {
+    "id": "flashcard-stor-01",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Quelle durabilité Amazon S3 est-il conçu pour offrir ?",
+      "back": "99,999999999 % (11 neuf). Chaque objet est stocké de façon redondante sur plusieurs équipements répartis sur au moins trois Availability Zones d'une Région."
+    }
+  },
+  {
+    "id": "flashcard-stor-02",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Quand utiliser S3 Intelligent-Tiering ?",
+      "back": "Quand les schémas d'accès aux données sont imprévisibles. La classe déplace automatiquement les objets entre paliers d'accès selon l'usage réel, sans frais de récupération, pour optimiser le coût sans gestion manuelle."
+    }
+  },
+  {
+    "id": "flashcard-stor-03",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "EBS, EFS, S3 : quel type de stockage chacun ?",
+      "back": "EBS = bloc (volume attaché à une instance EC2). EFS = fichiers (système NFS partagé par plusieurs ressources). S3 = objets (buckets, accès via API web)."
+    }
+  },
+  {
+    "id": "flashcard-stor-04",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "À quoi sert AWS Backup ?",
+      "back": "À centraliser et automatiser la sauvegarde de plusieurs services AWS (EBS, EFS, RDS, DynamoDB, S3…) depuis une console unique, via des backup plans (fréquence, rétention). Évite les scripts et processus manuels service par service."
+    }
   }
 ]

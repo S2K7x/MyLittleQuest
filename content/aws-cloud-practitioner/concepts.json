@@ -394,5 +394,140 @@
     "difficulty": 3,
     "source_url": "https://docs.aws.amazon.com/outposts/latest/userguide/what-is-outposts.html",
     "generated_at": "2026-07-04T02:00:00Z"
+  },
+  {
+    "id": "comp-ec2",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon EC2 (instances et familles)",
+    "core_explanation": "Amazon Elastic Compute Cloud (EC2) fournit des serveurs virtuels redimensionnables, appelés instances, dans le cloud AWS. On choisit une image machine (AMI) pour le système d'exploitation et le logiciel, puis un type d'instance qui définit le CPU, la mémoire, le stockage et le réseau. Les types sont regroupés en familles optimisées pour un usage : usage général, calcul intensif (compute), mémoire, stockage ou GPU/accéléré. EC2 est un service IaaS : on garde le contrôle du système d'exploitation et on paie à la seconde (minimum 60 s) sans engagement.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
+    "generated_at": "2026-07-05T02:00:00Z"
+  },
+  {
+    "id": "comp-ec2-pricing",
+    "domain": "Cloud Technology and Services",
+    "title": "Modèles de tarification EC2",
+    "core_explanation": "EC2 propose plusieurs options d'achat pour optimiser les coûts. On-Demand : paiement à la seconde sans engagement, idéal pour des charges imprévisibles ou de courte durée. Reserved Instances : engagement sur une configuration précise (type + Région) sur 1 ou 3 ans, jusqu'à ~72 % de réduction. Savings Plans : engagement sur un montant de dépense horaire (USD/h) sur 1 ou 3 ans, plus flexible que les Reserved Instances (AWS les recommande). Spot Instances : capacité inutilisée à prix très réduit, mais interruptible par AWS ; adaptée aux charges tolérantes aux interruptions. Il existe aussi les Dedicated Hosts pour des besoins de conformité/licences.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html",
+    "generated_at": "2026-07-05T02:00:00Z"
+  },
+  {
+    "id": "comp-auto-scaling",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon EC2 Auto Scaling",
+    "core_explanation": "Amazon EC2 Auto Scaling ajuste automatiquement le nombre d'instances EC2 d'un groupe (Auto Scaling group) pour suivre la demande. Il ajoute des instances quand la charge augmente (scale out) et en retire quand elle baisse (scale in), en respectant une capacité minimale, maximale et souhaitée. Il remplace aussi automatiquement les instances défaillantes pour maintenir la disponibilité. C'est la mise en œuvre concrète de l'élasticité du cloud : on paie la capacité réellement nécessaire au lieu de surprovisionner. Souvent associé à un load balancer (ELB) pour répartir le trafic.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html",
+    "generated_at": "2026-07-05T02:00:00Z"
+  },
+  {
+    "id": "comp-lambda",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS Lambda (serverless)",
+    "core_explanation": "AWS Lambda est un service de calcul serverless : on exécute du code sans provisionner ni gérer de serveurs. On écrit une fonction, on la relie à un déclencheur (événement d'un autre service AWS comme S3, API Gateway, EventBridge…) et Lambda exécute le code à la demande. AWS gère l'infrastructure sous-jacente : capacité, mise à l'échelle automatique, correctifs et disponibilité. La facturation est à l'usage (nombre d'invocations et durée d'exécution consommée), sans coût quand le code ne s'exécute pas. Modèle event-driven, idéal pour des traitements courts et ponctuels.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html",
+    "generated_at": "2026-07-05T02:00:00Z"
+  },
+  {
+    "id": "comp-ecs",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon ECS (orchestration de conteneurs)",
+    "core_explanation": "Amazon Elastic Container Service (ECS) est un service entièrement géré d'orchestration de conteneurs qui aide à déployer, gérer et mettre à l'échelle des applications conteneurisées (Docker). ECS gère le placement des conteneurs, leur cycle de vie et leur mise à l'échelle sans avoir à opérer soi-même un plan de contrôle. Les conteneurs peuvent s'exécuter sur des instances EC2 que l'on gère, ou en mode serverless avec AWS Fargate. C'est la solution d'orchestration propriétaire d'AWS, plus simple à prendre en main qu'un cluster Kubernetes.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html",
+    "generated_at": "2026-07-05T02:00:00Z"
+  },
+  {
+    "id": "comp-eks",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon EKS (Kubernetes géré)",
+    "core_explanation": "Amazon Elastic Kubernetes Service (EKS) est un service Kubernetes entièrement géré : AWS opère le plan de contrôle Kubernetes (control plane) et en assure la disponibilité et les mises à jour. EKS est certifié conforme à Kubernetes, ce qui permet d'exécuter des applications Kubernetes standard sans les réécrire et de réutiliser l'écosystème d'outils Kubernetes existant. On le choisit quand on veut Kubernetes précisément (portabilité, standard ouvert), là où ECS est l'orchestrateur propriétaire d'AWS. Les workloads peuvent tourner sur EC2 ou sur AWS Fargate.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html",
+    "generated_at": "2026-07-05T02:00:00Z"
+  },
+  {
+    "id": "comp-fargate",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS Fargate (conteneurs serverless)",
+    "core_explanation": "AWS Fargate est un moteur de calcul serverless pour conteneurs, utilisable avec Amazon ECS et Amazon EKS. Avec Fargate, il n'y a plus d'instances EC2 à provisionner, configurer ni mettre à l'échelle pour exécuter des conteneurs : on package l'application, on déclare le CPU et la mémoire nécessaires, et Fargate fournit la capacité à la demande. La facturation se fait au CPU/mémoire réellement demandés (pay-as-you-go). Chaque tâche Fargate est isolée pour la sécurité. C'est l'option 'sans serveur à gérer' pour les conteneurs, par opposition au mode EC2 où l'on gère les instances.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html",
+    "generated_at": "2026-07-05T02:00:00Z"
+  },
+  {
+    "id": "comp-elastic-beanstalk",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS Elastic Beanstalk (PaaS)",
+    "core_explanation": "AWS Elastic Beanstalk est un service de type PaaS qui déploie et gère automatiquement des applications web sur AWS. On fournit le code de l'application (Go, Java, .NET, Node.js, PHP, Python, Ruby ou conteneurs Docker) et Elastic Beanstalk provisionne les ressources sous-jacentes : instances EC2, répartition de charge, surveillance de l'état et mise à l'échelle automatique. On garde le contrôle et la visibilité sur ces ressources, mais sans avoir à les configurer manuellement. Il n'y a pas de surcoût pour Elastic Beanstalk : on ne paie que les ressources AWS consommées.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html",
+    "generated_at": "2026-07-05T02:00:00Z"
+  },
+  {
+    "id": "stor-s3",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon S3 (stockage objet)",
+    "core_explanation": "Amazon Simple Storage Service (S3) est un service de stockage d'objets : on stocke des fichiers (objets) dans des conteneurs appelés buckets. S3 est conçu pour une durabilité de 99,999999999 % (11 neuf) : chaque objet est répliqué de façon redondante sur plusieurs équipements répartis sur au moins trois Availability Zones d'une Région. C'est un stockage massivement scalable, accessible via une API web, adapté à la sauvegarde, à l'hébergement de données statiques, aux data lakes ou à la distribution de contenu. La sécurité passe par le chiffrement, les politiques de bucket et le blocage de l'accès public.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
+    "generated_at": "2026-07-05T02:00:00Z"
+  },
+  {
+    "id": "stor-s3-storage-classes",
+    "domain": "Cloud Technology and Services",
+    "title": "Classes de stockage Amazon S3",
+    "core_explanation": "S3 propose plusieurs classes de stockage pour optimiser le coût selon la fréquence d'accès. S3 Standard : données fréquemment consultées, faible latence. S3 Standard-IA (Infrequent Access) : données peu consultées mais à accès immédiat, coût de stockage plus bas mais frais de récupération. S3 One Zone-IA : comme IA mais dans une seule AZ (moins durable, moins cher). S3 Intelligent-Tiering : déplace automatiquement les objets entre paliers selon l'usage réel, sans frais de récupération, idéal quand les accès sont imprévisibles. Le choix de la classe est un levier clé d'optimisation des coûts de stockage.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+    "generated_at": "2026-07-05T02:00:00Z"
+  },
+  {
+    "id": "stor-s3-glacier",
+    "domain": "Cloud Technology and Services",
+    "title": "Classes d'archivage S3 Glacier",
+    "core_explanation": "Les classes S3 Glacier sont conçues pour l'archivage longue durée à très bas coût. S3 Glacier Instant Retrieval : données rarement consultées (environ une fois par trimestre) mais nécessitant une récupération en millisecondes. S3 Glacier Flexible Retrieval : archives consultées une à deux fois par an, récupération en minutes à heures (avec récupérations groupées gratuites), adapté aux sauvegardes et à la reprise après sinistre. S3 Glacier Deep Archive : le stockage le moins cher d'AWS, pour des données consultées moins d'une fois par an et conservées plusieurs années (conformité, archivage réglementaire). Le compromis est toujours coût de stockage bas contre délai/coût de récupération plus élevé.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/glacier-storage-classes.html",
+    "generated_at": "2026-07-05T02:00:00Z"
+  },
+  {
+    "id": "stor-ebs",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon EBS (stockage bloc)",
+    "core_explanation": "Amazon Elastic Block Store (EBS) fournit des volumes de stockage bloc que l'on attache à des instances EC2, comme un disque dur virtuel. Un volume EBS persiste indépendamment de la durée de vie de l'instance et se comporte comme un périphérique bloc formatable (système de fichiers, base de données…). En général, un volume EBS est attaché à une seule instance à la fois et réside dans une Availability Zone précise. On peut créer des snapshots (sauvegardes incrémentielles stockées dans S3) pour la sauvegarde ou la duplication. À distinguer du stockage d'instance (instance store) qui est éphémère.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html",
+    "generated_at": "2026-07-05T02:00:00Z"
+  },
+  {
+    "id": "stor-efs",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon EFS (système de fichiers partagé)",
+    "core_explanation": "Amazon Elastic File System (EFS) fournit un stockage de fichiers serverless et élastique, partageable simultanément par de nombreuses ressources de calcul (EC2, ECS, EKS, Lambda, Fargate). EFS grandit et rétrécit automatiquement à mesure qu'on ajoute ou supprime des fichiers, sans provisionnement de capacité. Il utilise le protocole NFS, standard des systèmes de fichiers Linux, et est accessible depuis plusieurs Availability Zones. À la différence d'EBS (bloc, attaché à une instance), EFS est un système de fichiers partagé par plusieurs clients à la fois — utile pour du contenu partagé, des répertoires personnels ou des applications distribuées.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html",
+    "generated_at": "2026-07-05T02:00:00Z"
+  },
+  {
+    "id": "stor-storage-gateway",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS Storage Gateway (stockage hybride)",
+    "core_explanation": "AWS Storage Gateway est un service de stockage hybride qui relie les applications sur site au stockage cloud AWS de façon transparente. Une appliance (machine virtuelle ou matérielle) déployée sur site expose des protocoles standard (NFS, SMB, iSCSI) aux applications locales et relaie les données vers des services AWS comme Amazon S3, S3 Glacier ou EBS. Cas d'usage typiques : sauvegarde et archivage vers le cloud, reprise après sinistre, migration et extension du stockage sur site (tiering). C'est le pont entre un datacenter existant et le stockage AWS, sans réécrire les applications.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/storagegateway/latest/vgw/WhatIsStorageGateway.html",
+    "generated_at": "2026-07-05T02:00:00Z"
+  },
+  {
+    "id": "stor-aws-backup",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS Backup (sauvegarde centralisée)",
+    "core_explanation": "AWS Backup est un service entièrement géré qui centralise et automatise la protection des données à travers de nombreux services AWS (EBS, EFS, RDS, DynamoDB, S3…) et jusque sur site. Au lieu de configurer les sauvegardes service par service, on définit des politiques appelées backup plans (fréquence, rétention, chiffrement) que l'on applique aux ressources à protéger. La console centralisée donne une vue consolidée des sauvegardes et des journaux d'activité, ce qui facilite l'audit et la conformité. AWS Backup supprime le besoin de scripts personnalisés et de processus manuels de sauvegarde.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html",
+    "generated_at": "2026-07-05T02:00:00Z"
   }
 ]

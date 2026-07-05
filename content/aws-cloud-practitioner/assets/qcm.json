@@ -350,5 +350,133 @@
       "correct_index": 0,
       "explanation": "Une AWS Local Zone place le calcul et le stockage au plus près des utilisateurs, dans leur agglomération, pour une très faible latence adaptée au jeu temps réel, au streaming ou à la VR/AR."
     }
+  },
+  {
+    "id": "qcm-comp-01",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Quelle affirmation décrit le mieux Amazon EC2 ?",
+      "choices": [
+        "Un service de serveurs virtuels (instances) redimensionnables dans le cloud",
+        "Un service de stockage d'objets dans des buckets",
+        "Une base de données relationnelle entièrement gérée",
+        "Un réseau de diffusion de contenu (CDN)"
+      ],
+      "correct_index": 0,
+      "explanation": "Amazon EC2 fournit des instances, des serveurs virtuels dont on choisit le type (CPU, mémoire, réseau). Le stockage objet est S3, la base gérée RDS, le CDN CloudFront."
+    }
+  },
+  {
+    "id": "qcm-comp-02",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une entreprise exécute une charge de traitement par lots tolérante aux interruptions et veut minimiser au maximum le coût de calcul EC2. Quelle option d'achat est la plus adaptée ?",
+      "choices": [
+        "Spot Instances",
+        "On-Demand Instances",
+        "Reserved Instances sur 3 ans",
+        "Dedicated Hosts"
+      ],
+      "correct_index": 0,
+      "explanation": "Les Spot Instances offrent la capacité inutilisée à prix très réduit mais peuvent être interrompues : parfaites pour une charge tolérante aux interruptions. On-Demand coûte plus cher, les Reserved engagent sur 3 ans, les Dedicated Hosts répondent à des besoins de conformité/licence."
+    }
+  },
+  {
+    "id": "qcm-comp-03",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Quel service permet d'exécuter du code en réponse à des événements, sans provisionner ni gérer de serveurs, avec une facturation à l'usage ?",
+      "choices": [
+        "AWS Lambda",
+        "Amazon EC2",
+        "AWS Elastic Beanstalk",
+        "Amazon EBS"
+      ],
+      "correct_index": 0,
+      "explanation": "AWS Lambda est le service de calcul serverless event-driven : pas de serveur à gérer, facturation à l'invocation et à la durée. EC2 gère des serveurs, Beanstalk déploie des applications sur des ressources gérées, EBS est du stockage."
+    }
+  },
+  {
+    "id": "qcm-comp-04",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une équipe veut faire tourner des conteneurs sans avoir à provisionner ni gérer d'instances EC2. Quelle technologie AWS choisir ?",
+      "choices": [
+        "AWS Fargate",
+        "Amazon EC2 Auto Scaling",
+        "AWS Direct Connect",
+        "Amazon EBS"
+      ],
+      "correct_index": 0,
+      "explanation": "AWS Fargate est le moteur serverless pour conteneurs (avec ECS ou EKS) : plus d'instances EC2 à gérer. Auto Scaling ajuste un parc d'instances, Direct Connect est de la connectivité réseau, EBS du stockage bloc."
+    }
+  },
+  {
+    "id": "qcm-stor-01",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Amazon S3 est un service de quel type de stockage ?",
+      "choices": [
+        "Stockage d'objets",
+        "Stockage bloc attaché à une instance",
+        "Système de fichiers NFS partagé",
+        "Stockage sur bande physique"
+      ],
+      "correct_index": 0,
+      "explanation": "S3 est du stockage d'objets : des fichiers (objets) dans des buckets. Le stockage bloc est EBS, le système de fichiers partagé NFS est EFS."
+    }
+  },
+  {
+    "id": "qcm-stor-02",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Des données d'archive doivent être conservées plusieurs années pour conformité et sont consultées moins d'une fois par an. Quelle classe S3 offre le coût de stockage le plus bas ?",
+      "choices": [
+        "S3 Glacier Deep Archive",
+        "S3 Standard",
+        "S3 Standard-IA",
+        "S3 Intelligent-Tiering"
+      ],
+      "correct_index": 0,
+      "explanation": "S3 Glacier Deep Archive est le stockage le moins cher d'AWS, conçu pour des données consultées moins d'une fois par an et conservées longtemps. S3 Standard est fait pour l'accès fréquent, les autres classes coûtent plus cher au stockage."
+    }
+  },
+  {
+    "id": "qcm-stor-03",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quelle est la principale différence entre Amazon EBS et Amazon EFS ?",
+      "choices": [
+        "EBS est un volume bloc attaché en général à une seule instance ; EFS est un système de fichiers partagé par plusieurs ressources à la fois",
+        "EBS est du stockage objet ; EFS est du stockage bloc",
+        "EBS est serverless ; EFS nécessite de gérer des serveurs",
+        "EBS est gratuit ; EFS est payant"
+      ],
+      "correct_index": 0,
+      "explanation": "EBS fournit des volumes bloc attachés en général à une seule instance EC2 dans une AZ ; EFS est un système de fichiers NFS élastique, partagé simultanément par plusieurs ressources de calcul."
+    }
+  },
+  {
+    "id": "qcm-stor-04",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une entreprise veut relier ses applications sur site au stockage cloud AWS via des protocoles standard (NFS, SMB, iSCSI) pour la sauvegarde et l'archivage. Quel service répond à ce besoin hybride ?",
+      "choices": [
+        "AWS Storage Gateway",
+        "Amazon S3 Transfer Acceleration",
+        "AWS Lambda",
+        "Amazon CloudFront"
+      ],
+      "correct_index": 0,
+      "explanation": "AWS Storage Gateway est le service de stockage hybride : une appliance sur site expose NFS/SMB/iSCSI et relaie les données vers S3, S3 Glacier ou EBS. Idéal pour sauvegarde, archivage et migration."
+    }
   }
 ]

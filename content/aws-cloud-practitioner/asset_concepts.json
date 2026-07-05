@@ -495,5 +495,189 @@
       "svc-aws-sdk",
       "svc-cloudformation"
     ]
+  },
+  {
+    "asset_id": "qcm-comp-01",
+    "concept_ids": [
+      "comp-ec2"
+    ]
+  },
+  {
+    "asset_id": "qcm-comp-02",
+    "concept_ids": [
+      "comp-ec2-pricing"
+    ]
+  },
+  {
+    "asset_id": "qcm-comp-03",
+    "concept_ids": [
+      "comp-lambda"
+    ]
+  },
+  {
+    "asset_id": "qcm-comp-04",
+    "concept_ids": [
+      "comp-fargate"
+    ]
+  },
+  {
+    "asset_id": "qcm-stor-01",
+    "concept_ids": [
+      "stor-s3"
+    ]
+  },
+  {
+    "asset_id": "qcm-stor-02",
+    "concept_ids": [
+      "stor-s3-glacier",
+      "stor-s3-storage-classes"
+    ]
+  },
+  {
+    "asset_id": "qcm-stor-03",
+    "concept_ids": [
+      "stor-ebs",
+      "stor-efs"
+    ]
+  },
+  {
+    "asset_id": "qcm-stor-04",
+    "concept_ids": [
+      "stor-storage-gateway"
+    ]
+  },
+  {
+    "asset_id": "flashcard-comp-01",
+    "concept_ids": [
+      "comp-ec2"
+    ]
+  },
+  {
+    "asset_id": "flashcard-comp-02",
+    "concept_ids": [
+      "comp-ec2-pricing"
+    ]
+  },
+  {
+    "asset_id": "flashcard-comp-03",
+    "concept_ids": [
+      "comp-lambda"
+    ]
+  },
+  {
+    "asset_id": "flashcard-comp-04",
+    "concept_ids": [
+      "comp-ecs",
+      "comp-eks"
+    ]
+  },
+  {
+    "asset_id": "flashcard-stor-01",
+    "concept_ids": [
+      "stor-s3"
+    ]
+  },
+  {
+    "asset_id": "flashcard-stor-02",
+    "concept_ids": [
+      "stor-s3-storage-classes"
+    ]
+  },
+  {
+    "asset_id": "flashcard-stor-03",
+    "concept_ids": [
+      "stor-ebs",
+      "stor-efs",
+      "stor-s3"
+    ]
+  },
+  {
+    "asset_id": "flashcard-stor-04",
+    "concept_ids": [
+      "stor-aws-backup"
+    ]
+  },
+  {
+    "asset_id": "swipe-comp-01",
+    "concept_ids": [
+      "comp-ec2"
+    ]
+  },
+  {
+    "asset_id": "swipe-comp-02",
+    "concept_ids": [
+      "comp-ec2-pricing"
+    ]
+  },
+  {
+    "asset_id": "swipe-comp-03",
+    "concept_ids": [
+      "comp-lambda"
+    ]
+  },
+  {
+    "asset_id": "swipe-comp-04",
+    "concept_ids": [
+      "comp-auto-scaling"
+    ]
+  },
+  {
+    "asset_id": "swipe-stor-01",
+    "concept_ids": [
+      "stor-s3"
+    ]
+  },
+  {
+    "asset_id": "swipe-stor-02",
+    "concept_ids": [
+      "stor-s3-glacier"
+    ]
+  },
+  {
+    "asset_id": "swipe-stor-03",
+    "concept_ids": [
+      "stor-efs"
+    ]
+  },
+  {
+    "asset_id": "swipe-stor-04",
+    "concept_ids": [
+      "stor-storage-gateway"
+    ]
+  },
+  {
+    "asset_id": "scenario-comp-01",
+    "concept_ids": [
+      "comp-lambda",
+      "comp-ec2-pricing",
+      "comp-ec2"
+    ]
+  },
+  {
+    "asset_id": "scenario-stor-01",
+    "concept_ids": [
+      "stor-s3-glacier",
+      "stor-s3-storage-classes"
+    ]
+  },
+  {
+    "asset_id": "match-comp-01",
+    "concept_ids": [
+      "comp-ec2",
+      "comp-lambda",
+      "comp-fargate",
+      "comp-elastic-beanstalk",
+      "comp-auto-scaling"
+    ]
+  },
+  {
+    "asset_id": "match-stor-01",
+    "concept_ids": [
+      "stor-s3",
+      "stor-ebs",
+      "stor-efs",
+      "stor-s3-glacier",
+      "stor-storage-gateway"
+    ]
   }
 ]
