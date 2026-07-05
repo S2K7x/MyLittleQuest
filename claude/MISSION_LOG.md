@@ -1,110 +1,117 @@
-# MISSION LOG — AWS CLF-C02, Domaine 3 (Lot A) : Infrastructure globale & déploiement
+# MISSION LOG — AWS CLF-C02, Domaine 3 (Lot B) : Compute & Storage
 
-**Date** : 2026-07-04 (session nocturne autonome)
-**Branche** : claude/loving-curie-dqlak6
+**Date** : 2026-07-05 (session nocturne autonome)
+**Branche** : claude/content-aws-clf-c02-domain-3-lot-b
 **Statut** : Terminée — PR ouverte vers main
 
 ## Ce qui a été fait
 
-Premier lot du **Domaine 3 — Cloud Technology and Services** (34 %, le plus lourd de l'examen),
-correspondant au **Lot A** planifié : Tasks 3.1 (méthodes de déploiement / d'accès + connectivité
-hybride) et 3.2 (infrastructure globale AWS). 15 nouveaux concepts et 25 nouveaux assets de jeu
-(les 5 formats). Tout est en **AJOUT** : les Domaines 1 et 2 ne sont pas modifiés (vérifié
-sémantiquement — seul le formatage JSON de certains fichiers existants a été normalisé, aucune
-valeur existante altérée). Contenu en français, termes AWS conservés en anglais. Chaque concept
-pointe vers une page exacte de docs.aws.amazon.com, vérifiée via WebSearch.
+Deuxième lot du **Domaine 3 — Cloud Technology and Services** (34 %, le plus lourd de l'examen),
+correspondant au **Lot B** planifié : services **compute** et **storage** cœur du CLF-C02
+(partie de la Task 3.3). 15 nouveaux concepts (8 compute, 7 storage) et 28 nouveaux assets de jeu
+(les 5 formats). Tout est en **AJOUT strict** : aucune valeur existante (Domaines 1, 2 et Lot A)
+n'a été modifiée (vérifié : 0 ligne supprimée au diff Git). Contenu en français, termes AWS
+conservés en anglais. Chaque concept pointe vers une page exacte de docs.aws.amazon.com,
+vérifiée via WebSearch (WebFetch renvoie 403 sur AWS).
 
 ## Certification / domaine traités
 
-- **Certif** : `aws-cloud-practitioner` (reste `in_progress` — Domaine 3 partiel, Domaine 4 à venir)
-- **Domaine** : Domain 3 — Cloud Technology and Services (Lot A : Tasks 3.1 & 3.2)
-- **Concepts créés** : 15 (total certif : 44)
-- **Assets créés** : 25 → QCM ×7, flashcards ×7, swipe ×7, scénarios ×2, match ×2 (total : 76)
-- **Mapping** : 25 nouvelles entrées dans `asset_concepts.json` (total : 76)
+- **Certif** : `aws-cloud-practitioner` (reste `in_progress` — Domaine 3 encore partiel, Domaine 4 à venir)
+- **Domaine** : Domain 3 — Cloud Technology and Services (Lot B : compute & storage, part de la Task 3.3)
+- **Concepts créés** : 15 (total certif : 59)
+- **Assets créés** : 28 → QCM ×8, flashcards ×8, swipe ×8, scénarios ×2, match ×2 (total : 104)
+- **Mapping** : 28 nouvelles entrées dans `asset_concepts.json` (total : 104)
 
-## Coverage du Lot A vs blueprint
+## Coverage du Lot B vs Task 3.3 (compute/storage)
 
-- **Task 3.2 — AWS global infrastructure** : Régions (`infra-regions`), Availability Zones
-  (`infra-availability-zones`), choix d'une Région (`infra-region-selection`), edge locations /
-  Points of Presence (`infra-edge-locations`), Amazon CloudFront (`infra-cloudfront`), AWS Global
-  Accelerator (`infra-global-accelerator`), AWS Local Zones (`infra-local-zones`). ✅
-- **Task 3.1 — Méthodes de déploiement et d'accès** : AWS Management Console
-  (`svc-management-console`), AWS CLI (`svc-aws-cli`), AWS SDKs (`svc-aws-sdk`), Infrastructure as
-  Code (`svc-iac-concept`), AWS CloudFormation (`svc-cloudformation`) ; connectivité hybride :
-  AWS Direct Connect (`svc-direct-connect`), AWS Site-to-Site VPN (`svc-site-to-site-vpn`),
-  AWS Outposts (`svc-outposts`). ✅
+**Compute (8 concepts)** : Amazon EC2 instances & familles (`comp-ec2`), modèles de tarification
+EC2 On-Demand/Reserved/Spot/Savings Plans (`comp-ec2-pricing`), EC2 Auto Scaling
+(`comp-auto-scaling`), AWS Lambda / serverless (`comp-lambda`), Amazon ECS (`comp-ecs`),
+Amazon EKS (`comp-eks`), AWS Fargate (`comp-fargate`), AWS Elastic Beanstalk /PaaS
+(`comp-elastic-beanstalk`). ✅
+
+**Storage (7 concepts)** : Amazon S3 stockage objet & durabilité (`stor-s3`), classes de stockage
+S3 (`stor-s3-storage-classes`), classes d'archivage S3 Glacier (`stor-s3-glacier`), Amazon EBS
+stockage bloc (`stor-ebs`), Amazon EFS système de fichiers partagé (`stor-efs`), AWS Storage
+Gateway / hybride (`stor-storage-gateway`), AWS Backup / sauvegarde centralisée (`stor-aws-backup`). ✅
 
 ## Reste du Domaine 3 (lots suivants, à planifier — voir NEXT_MISSION.md)
 
-- **Lot B — Compute & Storage** : EC2, Lambda, ECS/EKS/Fargate, Elastic Beanstalk ; S3, EBS, EFS,
-  S3 Glacier, Storage Gateway.
 - **Lot C — Networking & Databases** : VPC, subnets, Route 53, ELB ; RDS, Aurora, DynamoDB,
   ElastiCache, Redshift.
 - **Lot D — Autres catégories** : analytics, ML, dev tools, monitoring (CloudWatch, CloudTrail),
   intégration applicative (SQS, SNS).
+- Puis **Domaine 4 — Billing, Pricing, and Support** (12 %), non commencé.
 
 ## Fichiers créés / modifiés
 
 - `content/aws-cloud-practitioner/concepts.json` (+15 concepts)
-- `content/aws-cloud-practitioner/assets/{qcm,flashcard,swipe,scenario,match}.json` (+25 assets)
-- `content/aws-cloud-practitioner/asset_concepts.json` (+25 mappings)
+- `content/aws-cloud-practitioner/assets/{qcm,flashcard,swipe,scenario,match}.json` (+28 assets)
+- `content/aws-cloud-practitioner/asset_concepts.json` (+28 mappings)
 - `claude/MISSION_LOG.md` (ce fichier), `claude/NEXT_MISSION.md` (mission suivante)
 
 ## Garde-fous vérifiés
 
 - §6.1 Sources : chaque concept pointe vers une page exacte de docs.aws.amazon.com (vérifiées via
-  WebSearch — WebFetch renvoie 403 sur AWS). Aucun lien générique. Liste complète ci-dessous.
+  WebSearch). Aucun lien générique. Liste complète ci-dessous.
 - §6.2 Aucune nouvelle certif hors roadmap : uniquement `aws-cloud-practitioner`.
 - §6.3 Aucune reproduction de question d'examen / braindump : toutes les questions sont originales
   et pédagogiques, inspirées du scope officiel (blueprint + docs AWS).
-- §6.4 Certif **non** marquée `complete` : Domaine 3 partiel (Lot A) + Domaine 4 non traité →
+- §6.4 Certif **non** marquée `complete` : Domaine 3 partiel (Lots A+B) + Domaine 4 non traité →
   reste `in_progress`.
 - §6.5 Aucune touche côté client (IndexedDB / exports) — uniquement `content/`.
-- §6.6 Aucun secret / credential dans les commits (scan effectué avant commit).
+- §6.6 Aucun secret / credential dans les commits (scan effectué avant commit : rien détecté).
 - §6.7 Aucun push direct sur `main` — branche + PR draft.
 
 ## Contrôles techniques passés
 
 - JSON valide pour les 7 fichiers de contenu.
-- Schéma respecté par format (QCM correct_index valide, scénario = exactement 1 choix correct,
-  swipe is_true booléen, match ≥2 paires, flashcard front/back, etc.).
+- Schéma respecté par format (QCM correct_index dans les bornes, scénario = exactement 1 choix
+  correct, swipe is_true booléen, match ≥2 paires, flashcard front/back, base id/game_type/
+  difficulty/payload).
 - Intégrité référentielle : 0 asset orphelin, 0 concept_id inexistant, 0 concept sans asset,
-  0 asset id dupliqué (76 assets ↔ 76 mappings).
-- Non-régression : les 51 entrées existantes (Domaines 1+2) sont préservées à l'identique en
-  valeur (comparaison sémantique du prefix), seul le formatage a été normalisé.
+  0 asset id dupliqué, 0 concept id dupliqué (104 assets ↔ 104 mappings).
+- Non-régression : 0 ligne supprimée au diff Git (707 insertions, 0 suppression) — les 44 concepts
+  et 76 assets existants sont préservés à l'identique.
 
-## Sources docs.aws consultées (Lot A)
+## Sources docs.aws consultées (Lot B)
 
-- Régions : /global-infrastructure/latest/regions/aws-regions.html
-- Availability Zones : /global-infrastructure/latest/regions/aws-availability-zones.html
-- Edge locations / PoP : /whitepapers/latest/aws-fault-isolation-boundaries/points-of-presence.html
-- CloudFront : /AmazonCloudFront/latest/DeveloperGuide/Introduction.html
-- Global Accelerator : /global-accelerator/latest/dg/what-is-global-accelerator.html
-- Local Zones : /local-zones/latest/ug/how-local-zones-work.html
-- Management Console : /hands-on/latest/getting-started-with-aws-management-console/getting-started-with-aws-management-console.html
-- AWS CLI : /cli/latest/userguide/cli-chap-welcome.html
-- AWS SDKs : /sdkref/latest/guide/overview.html
-- Infrastructure as Code : /whitepapers/latest/introduction-devops-aws/infrastructure-as-code.html
-- CloudFormation : /AWSCloudFormation/latest/UserGuide/Welcome.html
-- Direct Connect : /directconnect/latest/UserGuide/Welcome.html
-- Site-to-Site VPN : /vpn/latest/s2svpn/VPC_VPN.html
-- Outposts : /outposts/latest/userguide/what-is-outposts.html
+- Amazon EC2 : /AWSEC2/latest/UserGuide/concepts.html
+- Tarification EC2 : /AWSEC2/latest/UserGuide/instance-purchasing-options.html
+- EC2 Auto Scaling : /autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html
+- AWS Lambda : /lambda/latest/dg/welcome.html
+- Amazon ECS : /AmazonECS/latest/developerguide/Welcome.html
+- Amazon EKS : /eks/latest/userguide/what-is-eks.html
+- AWS Fargate : /AmazonECS/latest/developerguide/AWS_Fargate.html
+- Elastic Beanstalk : /elasticbeanstalk/latest/dg/Welcome.html
+- Amazon S3 : /AmazonS3/latest/userguide/Welcome.html
+- Classes de stockage S3 : /AmazonS3/latest/userguide/storage-class-intro.html
+- S3 Glacier : /AmazonS3/latest/userguide/glacier-storage-classes.html
+- Amazon EBS : /ebs/latest/userguide/what-is-ebs.html
+- Amazon EFS : /efs/latest/ug/whatisefs.html
+- Storage Gateway : /storagegateway/latest/vgw/WhatIsStorageGateway.html
+- AWS Backup : /aws-backup/latest/devguide/whatisbackup.html
 
 ## Questions ouvertes pour Shai (à lire en priorité)
 
 Les mêmes 3 décisions produit restent en attente (non bloquantes, reportées depuis les Domaines
-1 et 2) — elles ne bloquent pas la génération mais méritent un arbitrage avant que le volume ne
-grossisse davantage :
+1, 2 et le Lot A) — elles ne bloquent pas la génération mais méritent un arbitrage avant que le
+volume ne grossisse davantage (on est déjà à 59 concepts / 104 assets) :
 
 1. **Langue du contenu** : FR uniquement (choix actuel) ou bilingue FR/EN à terme ? Impacte
    potentiellement le schéma (ajout d'un champ de langue).
 2. **Granularité du champ `domain`** : nom du domaine (`"Cloud Technology and Services"`, choix
    actuel) ou sous-domaines par tâche (3.1/3.2/3.3/3.4) pour un filtrage plus fin côté app ?
+   D'autant plus pertinent que le Domaine 3 s'étale maintenant sur plusieurs lots (A + B).
 3. **Critère `complete`** : le PDF de l'exam guide reste inaccessible au fetcher (403). Le coverage
    est jugé sur la structure connue du blueprint + sources docs.aws citées. Suffit-il, ou veux-tu
    une vérification manuelle du PDF avant tout passage `needs_review`/`complete` ?
 
+**Nouvelle piste à trancher** (voir NEXT_MISSION.md) : mettre en place une **CI de validation**
+(GitHub Action lançant le script schéma + intégrité à chaque PR) devient de plus en plus utile
+maintenant que le contenu grossit. Le script `validate.py` de cette nuit peut servir de base.
+
 ## Lien PR
 
-PR #5 (draft) : https://github.com/S2K7x/MyLittleQuest/pull/5
-Branche `claude/loving-curie-dqlak6` → `main`.
+PR (draft) : voir le lien ajouté ci-dessous après ouverture.
+Branche `claude/content-aws-clf-c02-domain-3-lot-b` → `main`.
