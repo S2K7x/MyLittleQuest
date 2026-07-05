@@ -152,5 +152,63 @@
         }
       ]
     }
+  },
+  {
+    "id": "match-comp-01",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "Amazon EC2",
+          "right": "Serveurs virtuels (instances) redimensionnables"
+        },
+        {
+          "left": "AWS Lambda",
+          "right": "Exécuter du code serverless piloté par événements"
+        },
+        {
+          "left": "AWS Fargate",
+          "right": "Faire tourner des conteneurs sans gérer d'instances"
+        },
+        {
+          "left": "AWS Elastic Beanstalk",
+          "right": "Déployer une application web sur des ressources gérées (PaaS)"
+        },
+        {
+          "left": "Amazon EC2 Auto Scaling",
+          "right": "Ajuster automatiquement le nombre d'instances à la demande"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-stor-01",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "Amazon S3",
+          "right": "Stockage d'objets dans des buckets"
+        },
+        {
+          "left": "Amazon EBS",
+          "right": "Volume bloc attaché à une instance EC2"
+        },
+        {
+          "left": "Amazon EFS",
+          "right": "Système de fichiers NFS partagé et élastique"
+        },
+        {
+          "left": "S3 Glacier Deep Archive",
+          "right": "Archivage longue durée au coût le plus bas"
+        },
+        {
+          "left": "AWS Storage Gateway",
+          "right": "Relier le stockage sur site au cloud AWS (hybride)"
+        }
+      ]
+    }
   }
 ]

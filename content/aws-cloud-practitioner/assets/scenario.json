@@ -148,5 +148,55 @@
         }
       ]
     }
+  },
+  {
+    "id": "scenario-comp-01",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Une startup lance une API web au trafic très variable : des pics imprévisibles en journée, presque rien la nuit. Elle veut éviter de payer des serveurs qui tournent en permanence et minimiser la gestion d'infrastructure. Quelle approche de calcul recommander en priorité ?",
+      "choices": [
+        {
+          "text": "AWS Lambda, pour un modèle serverless qui s'exécute et se facture uniquement à la demande.",
+          "is_correct": true,
+          "feedback": "Correct. Lambda est event-driven, monte en charge automatiquement et ne facture que les invocations réelles : idéal pour un trafic variable sans serveur à gérer."
+        },
+        {
+          "text": "Une grande instance EC2 On-Demand allumée en permanence pour absorber tous les pics.",
+          "is_correct": false,
+          "feedback": "Une instance allumée 24/7 paie même la nuit sans trafic, et une seule grande instance gère mal des pics imprévisibles. C'est l'inverse de l'objectif de coût et d'élasticité."
+        },
+        {
+          "text": "Des Reserved Instances EC2 sur 3 ans pour bloquer un prix bas.",
+          "is_correct": false,
+          "feedback": "Les Reserved Instances conviennent à une charge stable et prévisible sur la durée, pas à un trafic très variable avec de longues périodes creuses."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-stor-01",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Une entreprise doit conserver des relevés réglementaires pendant 7 ans. Ces documents ne sont quasiment jamais consultés, mais doivent rester récupérables si un audit l'exige (un délai de plusieurs heures est acceptable). L'objectif est le coût de stockage le plus bas possible. Quelle classe S3 choisir ?",
+      "choices": [
+        {
+          "text": "S3 Glacier Deep Archive, la classe d'archivage la moins chère pour des données rarement consultées et conservées des années.",
+          "is_correct": true,
+          "feedback": "Correct. Deep Archive offre le coût de stockage le plus bas pour de l'archivage réglementaire long terme, avec un délai de récupération de plusieurs heures — acceptable ici."
+        },
+        {
+          "text": "S3 Standard, pour garder les documents accessibles instantanément.",
+          "is_correct": false,
+          "feedback": "S3 Standard est optimisé pour un accès fréquent et immédiat : son coût de stockage est bien plus élevé, inutile pour des données presque jamais lues."
+        },
+        {
+          "text": "Amazon EBS, en attachant un gros volume à une instance EC2 dédiée.",
+          "is_correct": false,
+          "feedback": "EBS est du stockage bloc attaché à une instance, pensé pour des données de travail actives, pas pour de l'archivage réglementaire longue durée au coût minimal."
+        }
+      ]
+    }
   }
 ]

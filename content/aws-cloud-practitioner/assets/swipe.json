@@ -208,5 +208,85 @@
       "is_true": false,
       "explanation": "Faux. L'IaC décrit l'infrastructure dans des fichiers versionnés (ex : templates CloudFormation) pour des déploiements reproductibles et automatisés, à l'opposé des actions manuelles."
     }
+  },
+  {
+    "id": "swipe-comp-01",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "Avec Amazon EC2, le client reste responsable de la gestion du système d'exploitation de ses instances.",
+      "is_true": true,
+      "explanation": "Vrai. EC2 est un service IaaS : AWS gère l'infrastructure physique, mais le client gère le système d'exploitation, les correctifs applicatifs et la configuration de ses instances."
+    }
+  },
+  {
+    "id": "swipe-comp-02",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Les Spot Instances garantissent que l'instance ne sera jamais interrompue par AWS.",
+      "is_true": false,
+      "explanation": "Faux. Les Spot Instances utilisent la capacité inutilisée à prix réduit et peuvent être récupérées (interrompues) par AWS. Elles conviennent aux charges tolérantes aux interruptions."
+    }
+  },
+  {
+    "id": "swipe-comp-03",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "AWS Lambda nécessite de provisionner et gérer des serveurs pour exécuter le code.",
+      "is_true": false,
+      "explanation": "Faux. Lambda est serverless : AWS gère l'infrastructure et la mise à l'échelle. On fournit seulement le code et son déclencheur, et on paie à l'usage."
+    }
+  },
+  {
+    "id": "swipe-comp-04",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Amazon EC2 Auto Scaling peut remplacer automatiquement une instance défaillante d'un groupe.",
+      "is_true": true,
+      "explanation": "Vrai. Au-delà d'ajuster la capacité à la demande, Auto Scaling détecte les instances non saines et les remplace pour maintenir la capacité souhaitée et la disponibilité."
+    }
+  },
+  {
+    "id": "swipe-stor-01",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "Amazon S3 stocke les fichiers sous forme d'objets dans des conteneurs appelés buckets.",
+      "is_true": true,
+      "explanation": "Vrai. S3 est un stockage d'objets : les objets (fichiers + métadonnées) sont rangés dans des buckets, accessibles via une API web."
+    }
+  },
+  {
+    "id": "swipe-stor-02",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "S3 Glacier Deep Archive est adapté à des données qui doivent être récupérées en quelques millisecondes plusieurs fois par jour.",
+      "is_true": false,
+      "explanation": "Faux. Deep Archive vise l'archivage à très bas coût de données rarement consultées (moins d'une fois par an), avec des délais de récupération longs. Pour un accès immédiat fréquent, on utilise S3 Standard."
+    }
+  },
+  {
+    "id": "swipe-stor-03",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Un même volume Amazon EFS peut être monté et partagé simultanément par plusieurs instances de calcul.",
+      "is_true": true,
+      "explanation": "Vrai. EFS est un système de fichiers partagé (NFS) : plusieurs ressources (EC2, ECS, Lambda…) peuvent y accéder en même temps, à la différence d'un volume EBS attaché en général à une seule instance."
+    }
+  },
+  {
+    "id": "swipe-stor-04",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "AWS Storage Gateway sert à connecter un environnement sur site au stockage cloud AWS.",
+      "is_true": true,
+      "explanation": "Vrai. Storage Gateway est un service de stockage hybride : une appliance sur site expose des protocoles standard et relaie les données vers AWS (S3, Glacier, EBS) pour la sauvegarde, l'archivage ou la migration."
+    }
   }
 ]
