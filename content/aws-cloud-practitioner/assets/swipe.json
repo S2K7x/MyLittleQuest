@@ -288,5 +288,85 @@
       "is_true": true,
       "explanation": "Vrai. Storage Gateway est un service de stockage hybride : une appliance sur site expose des protocoles standard et relaie les données vers AWS (S3, Glacier, EBS) pour la sauvegarde, l'archivage ou la migration."
     }
+  },
+  {
+    "id": "swipe-net-01",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Un subnet peut s'étendre sur plusieurs Availability Zones.",
+      "is_true": false,
+      "explanation": "Faux. Un subnet réside entièrement dans une seule Availability Zone. Pour couvrir plusieurs AZ, on crée un subnet par AZ, ce qui améliore la résilience de l'application."
+    }
+  },
+  {
+    "id": "swipe-net-02",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Une NAT Gateway permet à des instances d'un subnet privé de sortir vers Internet sans être joignables depuis Internet.",
+      "is_true": true,
+      "explanation": "Vrai. La NAT Gateway autorise le trafic sortant initié par les instances privées (mises à jour, appels d'API) tout en bloquant les connexions entrantes non sollicitées venant d'Internet."
+    }
+  },
+  {
+    "id": "swipe-net-03",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "Amazon Route 53 est un service de cache en mémoire.",
+      "is_true": false,
+      "explanation": "Faux. Route 53 est le service DNS managé d'AWS (enregistrement de domaines, routage, health checks). Le service de cache en mémoire est Amazon ElastiCache."
+    }
+  },
+  {
+    "id": "swipe-net-04",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Elastic Load Balancing surveille la santé de ses cibles et ne route le trafic que vers celles qui sont saines.",
+      "is_true": true,
+      "explanation": "Vrai. ELB effectue des health checks et n'envoie le trafic qu'aux cibles saines, ce qui augmente la disponibilité et la tolérance aux pannes de l'application."
+    }
+  },
+  {
+    "id": "swipe-db-01",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "Amazon RDS prend en charge plusieurs moteurs relationnels comme MySQL, PostgreSQL et SQL Server.",
+      "is_true": true,
+      "explanation": "Vrai. RDS est un service de bases relationnelles managées supportant MySQL, PostgreSQL, MariaDB, Oracle et SQL Server (ainsi qu'Aurora)."
+    }
+  },
+  {
+    "id": "swipe-db-02",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Amazon Aurora est compatible avec MySQL et PostgreSQL.",
+      "is_true": true,
+      "explanation": "Vrai. Aurora est un moteur relationnel managé compatible MySQL et PostgreSQL, conçu pour de meilleures performances et une meilleure disponibilité que RDS standard."
+    }
+  },
+  {
+    "id": "swipe-db-03",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Amazon ElastiCache est une base de données relationnelle transactionnelle.",
+      "is_true": false,
+      "explanation": "Faux. ElastiCache est un cache/magasin de données en mémoire (Redis ou Memcached) servant à accélérer les lectures et décharger la base principale. La base relationnelle managée, c'est RDS."
+    }
+  },
+  {
+    "id": "swipe-db-04",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Amazon Redshift est optimisé pour les requêtes analytiques (OLAP) sur de grands volumes de données.",
+      "is_true": true,
+      "explanation": "Vrai. Redshift est un entrepôt de données à l'échelle du pétaoctet, optimisé pour l'analytique et le reporting, à distinguer des bases transactionnelles (OLTP) comme RDS ou DynamoDB."
+    }
   }
 ]

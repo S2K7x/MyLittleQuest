@@ -679,5 +679,189 @@
       "stor-s3-glacier",
       "stor-storage-gateway"
     ]
+  },
+  {
+    "asset_id": "qcm-net-01",
+    "concept_ids": [
+      "net-vpc"
+    ]
+  },
+  {
+    "asset_id": "qcm-net-02",
+    "concept_ids": [
+      "net-subnets"
+    ]
+  },
+  {
+    "asset_id": "qcm-net-03",
+    "concept_ids": [
+      "net-route53"
+    ]
+  },
+  {
+    "asset_id": "qcm-net-04",
+    "concept_ids": [
+      "net-elb"
+    ]
+  },
+  {
+    "asset_id": "qcm-db-01",
+    "concept_ids": [
+      "db-rds"
+    ]
+  },
+  {
+    "asset_id": "qcm-db-02",
+    "concept_ids": [
+      "db-dynamodb"
+    ]
+  },
+  {
+    "asset_id": "qcm-db-03",
+    "concept_ids": [
+      "db-redshift"
+    ]
+  },
+  {
+    "asset_id": "qcm-db-04",
+    "concept_ids": [
+      "db-elasticache"
+    ]
+  },
+  {
+    "asset_id": "flashcard-net-01",
+    "concept_ids": [
+      "net-vpc"
+    ]
+  },
+  {
+    "asset_id": "flashcard-net-02",
+    "concept_ids": [
+      "net-internet-gateway"
+    ]
+  },
+  {
+    "asset_id": "flashcard-net-03",
+    "concept_ids": [
+      "net-nat-gateway",
+      "net-internet-gateway"
+    ]
+  },
+  {
+    "asset_id": "flashcard-net-04",
+    "concept_ids": [
+      "net-vpc-endpoints"
+    ]
+  },
+  {
+    "asset_id": "flashcard-db-01",
+    "concept_ids": [
+      "db-aurora"
+    ]
+  },
+  {
+    "asset_id": "flashcard-db-02",
+    "concept_ids": [
+      "db-dynamodb"
+    ]
+  },
+  {
+    "asset_id": "flashcard-db-03",
+    "concept_ids": [
+      "db-documentdb"
+    ]
+  },
+  {
+    "asset_id": "flashcard-db-04",
+    "concept_ids": [
+      "db-neptune"
+    ]
+  },
+  {
+    "asset_id": "swipe-net-01",
+    "concept_ids": [
+      "net-subnets"
+    ]
+  },
+  {
+    "asset_id": "swipe-net-02",
+    "concept_ids": [
+      "net-nat-gateway"
+    ]
+  },
+  {
+    "asset_id": "swipe-net-03",
+    "concept_ids": [
+      "net-route53",
+      "db-elasticache"
+    ]
+  },
+  {
+    "asset_id": "swipe-net-04",
+    "concept_ids": [
+      "net-elb"
+    ]
+  },
+  {
+    "asset_id": "swipe-db-01",
+    "concept_ids": [
+      "db-rds"
+    ]
+  },
+  {
+    "asset_id": "swipe-db-02",
+    "concept_ids": [
+      "db-aurora"
+    ]
+  },
+  {
+    "asset_id": "swipe-db-03",
+    "concept_ids": [
+      "db-elasticache"
+    ]
+  },
+  {
+    "asset_id": "swipe-db-04",
+    "concept_ids": [
+      "db-redshift"
+    ]
+  },
+  {
+    "asset_id": "scenario-net-01",
+    "concept_ids": [
+      "net-elb",
+      "net-vpc",
+      "net-subnets"
+    ]
+  },
+  {
+    "asset_id": "scenario-db-01",
+    "concept_ids": [
+      "db-dynamodb",
+      "db-redshift",
+      "db-rds"
+    ]
+  },
+  {
+    "asset_id": "match-net-01",
+    "concept_ids": [
+      "net-vpc",
+      "net-subnets",
+      "net-internet-gateway",
+      "net-nat-gateway",
+      "net-route53",
+      "net-elb"
+    ]
+  },
+  {
+    "asset_id": "match-db-01",
+    "concept_ids": [
+      "db-rds",
+      "db-aurora",
+      "db-dynamodb",
+      "db-elasticache",
+      "db-redshift",
+      "db-documentdb"
+    ]
   }
 ]

@@ -198,5 +198,55 @@
         }
       ]
     }
+  },
+  {
+    "id": "scenario-net-01",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Une application web tourne sur plusieurs instances EC2 réparties dans deux Availability Zones. Le trafic est très variable et l'équipe veut à la fois répartir la charge sur les instances saines et adapter automatiquement leur nombre à la demande. Quelle combinaison de services recommander ?",
+      "choices": [
+        {
+          "text": "Placer les instances derrière un Elastic Load Balancing et les gérer dans un groupe EC2 Auto Scaling.",
+          "is_correct": true,
+          "feedback": "Correct. ELB distribue le trafic entrant vers les instances saines sur les deux AZ, tandis qu'EC2 Auto Scaling ajuste automatiquement le nombre d'instances selon la charge. Les deux services sont complémentaires."
+        },
+        {
+          "text": "Router directement les utilisateurs vers une seule instance via Amazon Route 53, sans répartiteur de charge.",
+          "is_correct": false,
+          "feedback": "Router vers une seule instance crée un point de défaillance unique et ne répartit pas la charge. Route 53 gère le DNS mais ne remplace pas un répartiteur de charge entre plusieurs instances."
+        },
+        {
+          "text": "Stocker l'application dans Amazon S3 et servir le trafic depuis un bucket public.",
+          "is_correct": false,
+          "feedback": "S3 sert du contenu statique (objets) mais n'exécute pas une application dynamique sur des instances EC2 et n'assure pas la répartition de charge applicative demandée."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-db-01",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Une startup conçoit un service de jeu mobile qui attend des millions de requêtes par seconde, avec des accès simples par clé et un besoin de latence en millisecondes, sans vouloir administrer de serveurs de base de données. Quel service de base de données est le plus adapté ?",
+      "choices": [
+        {
+          "text": "Amazon DynamoDB, base NoSQL clé-valeur serverless offrant une latence en millisecondes à très grande échelle.",
+          "is_correct": true,
+          "feedback": "Correct. DynamoDB est conçu exactement pour ce profil : très haut débit, accès clé-valeur, latence en millisecondes, entièrement géré et serverless, sans serveur à provisionner."
+        },
+        {
+          "text": "Amazon Redshift, pour absorber le trafic de jeu en temps réel.",
+          "is_correct": false,
+          "feedback": "Redshift est un entrepôt de données analytique (OLAP), pensé pour des requêtes complexes sur de grands volumes, pas pour des millions d'accès transactionnels clé-valeur à faible latence."
+        },
+        {
+          "text": "Amazon RDS for Oracle, pour bénéficier d'un moteur relationnel classique.",
+          "is_correct": false,
+          "feedback": "RDS convient aux charges relationnelles, mais la montée en charge massive et l'accès clé-valeur à faible latence décrits ici correspondent mieux à une base NoSQL serverless comme DynamoDB."
+        }
+      ]
+    }
   }
 ]
