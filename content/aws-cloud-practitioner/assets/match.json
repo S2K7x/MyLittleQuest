@@ -210,5 +210,71 @@
         }
       ]
     }
+  },
+  {
+    "id": "match-net-01",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "Amazon VPC",
+          "right": "Réseau virtuel isolé où lancer ses ressources"
+        },
+        {
+          "left": "Subnet",
+          "right": "Plage d'IP dans une seule Availability Zone"
+        },
+        {
+          "left": "Internet Gateway",
+          "right": "Accès Internet bidirectionnel d'un subnet public"
+        },
+        {
+          "left": "NAT Gateway",
+          "right": "Sortie Internet des subnets privés uniquement"
+        },
+        {
+          "left": "Amazon Route 53",
+          "right": "DNS géré et routage du trafic"
+        },
+        {
+          "left": "Elastic Load Balancing",
+          "right": "Répartition du trafic sur les cibles saines"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-db-01",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "Amazon RDS",
+          "right": "Bases relationnelles managées (MySQL, PostgreSQL...)"
+        },
+        {
+          "left": "Amazon Aurora",
+          "right": "Relationnel géré compatible MySQL/PostgreSQL, haute perf"
+        },
+        {
+          "left": "Amazon DynamoDB",
+          "right": "NoSQL clé-valeur serverless, latence en ms"
+        },
+        {
+          "left": "Amazon ElastiCache",
+          "right": "Cache en mémoire (Redis/Memcached)"
+        },
+        {
+          "left": "Amazon Redshift",
+          "right": "Entrepôt de données analytique (OLAP)"
+        },
+        {
+          "left": "Amazon DocumentDB",
+          "right": "Base de documents compatible MongoDB"
+        }
+      ]
+    }
   }
 ]

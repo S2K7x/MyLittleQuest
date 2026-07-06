@@ -529,5 +529,131 @@
     "difficulty": 2,
     "source_url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html",
     "generated_at": "2026-07-05T02:00:00Z"
+  },
+  {
+    "id": "net-vpc",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon VPC (réseau virtuel isolé)",
+    "core_explanation": "Amazon Virtual Private Cloud (Amazon VPC) permet de lancer des ressources AWS dans un réseau virtuel logiquement isolé que l'on définit soi-même. Ce réseau ressemble à un réseau traditionnel d'un centre de données, mais bénéficie de l'infrastructure évolutive d'AWS. On y contrôle sa propre plage d'adresses IP (IPv4 et IPv6), la création de sous-réseaux, les tables de routage et les passerelles réseau. Un VPC est confiné à une seule Région AWS et peut s'étendre sur plusieurs Availability Zones. Il n'y a pas de coût pour le VPC lui-même ; certains composants (NAT gateway, par exemple) sont facturés. Le VPC est la brique de base du réseau AWS : il isole les ressources et sert de périmètre où appliquer security groups et network ACL.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html",
+    "generated_at": "2026-07-06T02:00:00Z"
+  },
+  {
+    "id": "net-subnets",
+    "domain": "Cloud Technology and Services",
+    "title": "Sous-réseaux (subnets) et tables de routage",
+    "core_explanation": "Un subnet (sous-réseau) est une plage d'adresses IP à l'intérieur d'un VPC, dans laquelle on place des ressources comme des instances EC2. Chaque subnet réside entièrement dans une seule Availability Zone et ne peut pas s'étendre sur plusieurs AZ ; répartir les ressources sur des subnets de plusieurs AZ protège l'application de la panne d'une zone. Chaque subnet est associé à une table de routage qui détermine où le trafic sortant est dirigé. On distingue généralement un subnet public (dont la table de routage envoie le trafic Internet vers une Internet Gateway) et un subnet privé (sans route directe vers Internet). Ce découpage public/privé est le socle de l'architecture réseau AWS : on expose ce qui doit l'être et on isole le reste.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html",
+    "generated_at": "2026-07-06T02:00:00Z"
+  },
+  {
+    "id": "net-internet-gateway",
+    "domain": "Cloud Technology and Services",
+    "title": "Internet Gateway (accès Internet du VPC)",
+    "core_explanation": "Une Internet Gateway (IGW) est un composant du VPC qui permet aux ressources d'un subnet public (par exemple une instance EC2 disposant d'une adresse IPv4 publique ou Elastic IP) de communiquer avec Internet, dans les deux sens. Elle fournit une cible dans les tables de routage du VPC pour le trafic routable vers Internet et réalise la traduction d'adresses (NAT) pour l'IPv4, en remplaçant l'adresse privée de l'instance par son adresse publique. Une seule Internet Gateway s'attache à un VPC. Sans IGW et sans route correspondante dans la table de routage, un subnet reste privé : ses ressources n'ont aucun accès entrant ni sortant direct vers Internet.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html",
+    "generated_at": "2026-07-06T02:00:00Z"
+  },
+  {
+    "id": "net-nat-gateway",
+    "domain": "Cloud Technology and Services",
+    "title": "NAT Gateway (sortie Internet des subnets privés)",
+    "core_explanation": "Une NAT Gateway (passerelle de traduction d'adresses réseau) permet aux instances situées dans un subnet privé d'initier des connexions sortantes vers Internet (par exemple pour télécharger des mises à jour) tout en empêchant Internet d'initier des connexions entrantes vers ces instances. On place la NAT Gateway dans un subnet public et on lui associe une Elastic IP ; le trafic des subnets privés est ensuite routé vers la NAT Gateway, puis vers l'Internet Gateway. C'est un service managé, hautement disponible dans son AZ, facturé à l'heure et au volume de données traité. La NAT Gateway est la réponse standard au besoin « mes serveurs privés doivent sortir sur Internet, mais rester injoignables depuis l'extérieur ».",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html",
+    "generated_at": "2026-07-06T02:00:00Z"
+  },
+  {
+    "id": "net-route53",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon Route 53 (DNS géré)",
+    "core_explanation": "Amazon Route 53 est un service DNS (Domain Name System) cloud hautement disponible et évolutif. Il remplit trois grandes fonctions : enregistrer des noms de domaine, router le trafic Internet vers les ressources d'une application (traduire un nom comme exemple.com vers l'adresse de la ressource), et vérifier la santé des ressources via des health checks. Route 53 propose plusieurs politiques de routage (simple, pondéré, par latence, géographique, basculement) permettant de diriger les utilisateurs vers la ressource la plus adaptée ou de basculer automatiquement en cas de panne. Le nom « 53 » fait référence au port TCP/UDP 53 utilisé par le DNS. Au niveau CCP, retenir : DNS managé, enregistrement de domaines, routage et contrôle de disponibilité.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html",
+    "generated_at": "2026-07-06T02:00:00Z"
+  },
+  {
+    "id": "net-elb",
+    "domain": "Cloud Technology and Services",
+    "title": "Elastic Load Balancing (répartition de charge)",
+    "core_explanation": "Elastic Load Balancing (ELB) distribue automatiquement le trafic entrant sur plusieurs cibles (instances EC2, conteneurs, adresses IP) réparties dans une ou plusieurs Availability Zones. Il surveille la santé des cibles enregistrées et ne route le trafic que vers les cibles saines, augmentant ainsi la disponibilité et la tolérance aux pannes de l'application. ELB adapte sa propre capacité automatiquement en fonction du trafic. Il existe plusieurs types : l'Application Load Balancer (ALB, couche 7, HTTP/HTTPS), le Network Load Balancer (NLB, couche 4, très haute performance), le Gateway Load Balancer et le Classic Load Balancer (historique). ELB se combine naturellement avec EC2 Auto Scaling : Auto Scaling ajuste le nombre d'instances, ELB répartit le trafic entre elles.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html",
+    "generated_at": "2026-07-06T02:00:00Z"
+  },
+  {
+    "id": "net-vpc-endpoints",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS PrivateLink et VPC endpoints",
+    "core_explanation": "AWS PrivateLink permet de connecter de façon privée un VPC à des services AWS ou à des services tiers, comme s'ils se trouvaient dans le VPC, sans passer par une Internet Gateway, une NAT Gateway, une adresse IP publique ou une connexion Internet. Le trafic entre un VPC endpoint et le service reste sur le réseau AWS sans traverser l'Internet public, ce qui améliore la sécurité. On distingue les interface endpoints (adossés à PrivateLink, une interface réseau dans le subnet) et les gateway endpoints (pour Amazon S3 et DynamoDB, sans PrivateLink). Au niveau CCP, l'idée à retenir est la connectivité privée vers les services AWS sans exposer le trafic à Internet.",
+    "difficulty": 3,
+    "source_url": "https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html",
+    "generated_at": "2026-07-06T02:00:00Z"
+  },
+  {
+    "id": "db-rds",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon RDS (bases relationnelles gérées)",
+    "core_explanation": "Amazon Relational Database Service (Amazon RDS) est un service géré qui facilite la mise en place, l'exploitation et la mise à l'échelle d'une base de données relationnelle dans le cloud AWS. RDS prend en charge plusieurs moteurs standards du marché : MySQL, PostgreSQL, MariaDB, Oracle et SQL Server (ainsi qu'Aurora). AWS gère les tâches d'administration chronophages — provisionnement, application des correctifs, sauvegardes automatiques, monitoring, reprise sur panne — pendant que l'utilisateur se concentre sur ses applications et ses données. RDS propose des options de haute disponibilité (déploiements Multi-AZ) et de montée en charge en lecture (read replicas). C'est le choix par défaut pour une charge de travail relationnelle classique que l'on ne veut pas administrer soi-même.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html",
+    "generated_at": "2026-07-06T02:00:00Z"
+  },
+  {
+    "id": "db-aurora",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon Aurora (relationnel MySQL/PostgreSQL géré)",
+    "core_explanation": "Amazon Aurora est un moteur de base de données relationnelle entièrement géré, compatible avec MySQL et PostgreSQL, et intégré à Amazon RDS. Aurora est conçu pour offrir des performances élevées (jusqu'à 5x le débit de MySQL standard et 3x celui de PostgreSQL standard selon AWS) tout en conservant la compatibilité avec les outils et applications existants. Son sous-système de stockage distribué et tolérant aux pannes réplique automatiquement les données sur plusieurs Availability Zones et grossit automatiquement selon les besoins (jusqu'à 128 Tio). Aurora automatise le clustering, la réplication, les sauvegardes et la reprise sur panne. À retenir pour le CCP : base relationnelle managée, compatible MySQL/PostgreSQL, plus performante et plus disponible que RDS standard, pour un coût plus élevé.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html",
+    "generated_at": "2026-07-06T02:00:00Z"
+  },
+  {
+    "id": "db-dynamodb",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon DynamoDB (NoSQL clé-valeur serverless)",
+    "core_explanation": "Amazon DynamoDB est un service de base de données NoSQL entièrement géré et serverless, de type clé-valeur et document, qui offre des performances constantes de l'ordre de la milliseconde quelle que soit l'échelle. DynamoDB répartit automatiquement les données et le trafic sur un nombre suffisant de serveurs pour absorber la charge, sans qu'il faille provisionner ou administrer des instances. Il gère la mise à l'échelle, la réplication et les correctifs, chiffre les données au repos par défaut et propose des global tables pour une réplication multi-Région. C'est le service de prédilection pour des charges à très fort volume et faible latence (applications web/mobiles, jeux, IoT) qui ne nécessitent pas de schéma relationnel. À retenir pour le CCP : NoSQL, serverless, scalable, latence en millisecondes.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html",
+    "generated_at": "2026-07-06T02:00:00Z"
+  },
+  {
+    "id": "db-elasticache",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon ElastiCache (cache en mémoire)",
+    "core_explanation": "Amazon ElastiCache est un service géré qui facilite la création, la gestion et la mise à l'échelle d'un magasin de données ou d'un cache en mémoire distribué dans le cloud. En stockant les données fréquemment consultées en mémoire (RAM), ElastiCache réduit fortement la latence et décharge les bases de données principales, améliorant les performances des applications. Il prend en charge les moteurs Redis (Redis OSS / Valkey) et Memcached, en mode cluster à base de nœuds ou en mode serverless. Étant entièrement managé, il gère le provisionnement matériel, le monitoring, le remplacement des nœuds et l'application des correctifs. Cas d'usage typiques : mise en cache de résultats de requêtes, sessions utilisateur, classements en temps réel. À retenir pour le CCP : cache en mémoire managé, Redis ou Memcached, pour accélérer les lectures.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html",
+    "generated_at": "2026-07-06T02:00:00Z"
+  },
+  {
+    "id": "db-redshift",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon Redshift (entrepôt de données / analytique)",
+    "core_explanation": "Amazon Redshift est un service d'entrepôt de données (data warehouse) entièrement géré, à l'échelle du pétaoctet, optimisé pour l'analytique (OLAP) sur de grands volumes de données. Il permet d'exécuter des requêtes analytiques complexes rapidement grâce à un stockage en colonnes et à un traitement massivement parallèle. Redshift se décline en clusters provisionnés ou en mode Redshift Serverless (capacité provisionnée et facturée automatiquement, sans configuration). On y charge des données et on les interroge via un éditeur de requêtes ou un outil de Business Intelligence. À ne pas confondre avec RDS/Aurora, qui sont transactionnels (OLTP) : Redshift est fait pour l'analyse et le reporting sur de grands jeux de données, pas pour les opérations applicatives courantes.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html",
+    "generated_at": "2026-07-06T02:00:00Z"
+  },
+  {
+    "id": "db-documentdb",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon DocumentDB (documents, compatible MongoDB)",
+    "core_explanation": "Amazon DocumentDB (compatible avec MongoDB) est un service de base de données de documents entièrement géré, rapide et évolutif, qui facilite le stockage, l'interrogation et l'indexation de données au format document (JSON). Il sépare le stockage du calcul et réplique six copies des données sur trois Availability Zones pour la durabilité et la disponibilité. Étant compatible avec l'API MongoDB, il permet de réutiliser les pilotes, outils et applications MongoDB existants tout en déléguant à AWS l'administration (provisionnement, correctifs, sauvegardes, mise à l'échelle). Au niveau CCP, DocumentDB illustre la stratégie AWS de bases « purpose-built » : à chaque type de données son service adapté — ici, les documents.",
+    "difficulty": 3,
+    "source_url": "https://docs.aws.amazon.com/documentdb/latest/devguide/what-is.html",
+    "generated_at": "2026-07-06T02:00:00Z"
+  },
+  {
+    "id": "db-neptune",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon Neptune (base de données de graphes)",
+    "core_explanation": "Amazon Neptune est un service de base de données de graphes entièrement géré, conçu pour construire et exécuter des applications travaillant sur des jeux de données fortement connectés. Il prend en charge les modèles de graphes de propriétés (via Gremlin et openCypher) et RDF (via SPARQL), et permet d'interroger des milliards de relations en quelques millisecondes. Les données sont automatiquement répliquées sur plusieurs Availability Zones, ce qui rend le service hautement durable et disponible (plus de 99,99 % de disponibilité visée). Cas d'usage typiques : réseaux sociaux, moteurs de recommandation, détection de fraude, graphes de connaissances. Au niveau CCP, Neptune est un autre exemple de base « purpose-built » : le bon outil pour des données en forme de graphe.",
+    "difficulty": 3,
+    "source_url": "https://docs.aws.amazon.com/neptune/latest/userguide/intro.html",
+    "generated_at": "2026-07-06T02:00:00Z"
   }
 ]

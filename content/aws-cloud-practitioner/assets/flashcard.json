@@ -259,5 +259,77 @@
       "front": "À quoi sert AWS Backup ?",
       "back": "À centraliser et automatiser la sauvegarde de plusieurs services AWS (EBS, EFS, RDS, DynamoDB, S3…) depuis une console unique, via des backup plans (fréquence, rétention). Évite les scripts et processus manuels service par service."
     }
+  },
+  {
+    "id": "flashcard-net-01",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Qu'est-ce qu'un Amazon VPC ?",
+      "back": "Un réseau virtuel logiquement isolé, défini par l'utilisateur au sein d'une Région AWS, dans lequel il lance ses ressources. Il contrôle ses plages IP, ses subnets, ses tables de routage et ses passerelles. C'est la brique de base du réseau AWS."
+    }
+  },
+  {
+    "id": "flashcard-net-02",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "À quoi sert une Internet Gateway (IGW) dans un VPC ?",
+      "back": "À permettre aux ressources d'un subnet public de communiquer avec Internet (dans les deux sens). Elle sert de cible dans la table de routage pour le trafic Internet et réalise la NAT pour l'IPv4. Une seule IGW s'attache à un VPC."
+    }
+  },
+  {
+    "id": "flashcard-net-03",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Quelle est la différence entre une Internet Gateway et une NAT Gateway ?",
+      "back": "L'Internet Gateway donne un accès Internet bidirectionnel aux subnets publics. La NAT Gateway permet aux instances d'un subnet privé de sortir vers Internet (mises à jour, etc.) sans autoriser de connexions entrantes depuis Internet vers elles."
+    }
+  },
+  {
+    "id": "flashcard-net-04",
+    "game_type": "flashcard",
+    "difficulty": 3,
+    "payload": {
+      "front": "Que permet AWS PrivateLink (VPC endpoints) ?",
+      "back": "Connecter un VPC à des services AWS ou tiers de façon privée, sans Internet Gateway, NAT ni IP publique. Le trafic reste sur le réseau AWS et ne traverse pas l'Internet public, ce qui renforce la sécurité."
+    }
+  },
+  {
+    "id": "flashcard-db-01",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Qu'est-ce qu'Amazon Aurora ?",
+      "back": "Un moteur de base relationnelle géré, compatible MySQL et PostgreSQL, intégré à RDS. Plus performant et plus disponible que RDS standard (stockage distribué répliqué sur plusieurs AZ, croissance automatique), pour un coût plus élevé."
+    }
+  },
+  {
+    "id": "flashcard-db-02",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Amazon DynamoDB en une phrase ?",
+      "back": "Une base NoSQL clé-valeur et document, entièrement gérée et serverless, offrant des performances constantes en millisecondes à toute échelle, sans serveur à provisionner. Idéale pour le web/mobile à fort trafic."
+    }
+  },
+  {
+    "id": "flashcard-db-03",
+    "game_type": "flashcard",
+    "difficulty": 3,
+    "payload": {
+      "front": "Qu'est-ce qu'Amazon DocumentDB ?",
+      "back": "Un service de base de données de documents (JSON) entièrement géré et compatible avec l'API MongoDB. Il permet de réutiliser pilotes et outils MongoDB tout en déléguant l'administration à AWS. Exemple de base 'purpose-built'."
+    }
+  },
+  {
+    "id": "flashcard-db-04",
+    "game_type": "flashcard",
+    "difficulty": 3,
+    "payload": {
+      "front": "À quel type de données Amazon Neptune est-il destiné ?",
+      "back": "Aux données fortement connectées, en forme de graphe : réseaux sociaux, recommandations, détection de fraude, graphes de connaissances. C'est une base de données de graphes managée (Gremlin, openCypher, SPARQL)."
+    }
   }
 ]

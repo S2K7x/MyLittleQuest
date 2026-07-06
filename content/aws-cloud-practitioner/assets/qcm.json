@@ -478,5 +478,133 @@
       "correct_index": 0,
       "explanation": "AWS Storage Gateway est le service de stockage hybride : une appliance sur site expose NFS/SMB/iSCSI et relaie les données vers S3, S3 Glacier ou EBS. Idéal pour sauvegarde, archivage et migration."
     }
+  },
+  {
+    "id": "qcm-net-01",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Que permet Amazon VPC ?",
+      "choices": [
+        "Lancer des ressources AWS dans un réseau virtuel logiquement isolé que l'on définit soi-même",
+        "Stocker des objets dans des buckets accessibles publiquement",
+        "Exécuter du code sans provisionner de serveur",
+        "Distribuer du contenu statique depuis des edge locations"
+      ],
+      "correct_index": 0,
+      "explanation": "Amazon VPC (Virtual Private Cloud) est un réseau virtuel isolé dans lequel on lance ses ressources AWS, avec contrôle des plages IP, subnets, tables de routage et passerelles. Les autres réponses décrivent S3, Lambda et CloudFront."
+    }
+  },
+  {
+    "id": "qcm-net-02",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Dans un VPC, qu'est-ce qui distingue principalement un subnet public d'un subnet privé ?",
+      "choices": [
+        "Sa table de routage : un subnet public a une route vers une Internet Gateway, un subnet privé n'en a pas",
+        "Le subnet public est chiffré, le subnet privé ne l'est pas",
+        "Le subnet public réside dans plusieurs Availability Zones à la fois",
+        "Le subnet privé ne peut contenir que des bases de données"
+      ],
+      "correct_index": 0,
+      "explanation": "Un subnet est public ou privé selon sa table de routage : s'il route le trafic Internet vers une Internet Gateway, il est public ; sinon il est privé. Un subnet réside toujours dans une seule AZ."
+    }
+  },
+  {
+    "id": "qcm-net-03",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Quel service AWS fournit un DNS géré permettant d'enregistrer des domaines et de router le trafic Internet vers vos ressources ?",
+      "choices": [
+        "Amazon Route 53",
+        "Amazon CloudFront",
+        "AWS Direct Connect",
+        "Elastic Load Balancing"
+      ],
+      "correct_index": 0,
+      "explanation": "Amazon Route 53 est le service DNS managé d'AWS : enregistrement de domaines, routage du trafic (plusieurs politiques) et health checks. CloudFront est un CDN, Direct Connect une liaison réseau privée, ELB un répartiteur de charge."
+    }
+  },
+  {
+    "id": "qcm-net-04",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une application reçoit un trafic variable et tourne sur plusieurs instances EC2 réparties dans deux AZ. Quel service distribue automatiquement le trafic entrant vers les instances saines ?",
+      "choices": [
+        "Elastic Load Balancing (ELB)",
+        "Amazon Route 53 Resolver",
+        "Amazon S3",
+        "AWS Storage Gateway"
+      ],
+      "correct_index": 0,
+      "explanation": "Elastic Load Balancing répartit le trafic entrant sur plusieurs cibles (instances, conteneurs, IP) dans une ou plusieurs AZ, surveille leur santé et ne route que vers les cibles saines. Il se combine avec EC2 Auto Scaling."
+    }
+  },
+  {
+    "id": "qcm-db-01",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Quel service AWS permet d'exploiter une base de données relationnelle gérée avec des moteurs comme MySQL, PostgreSQL ou SQL Server ?",
+      "choices": [
+        "Amazon RDS",
+        "Amazon DynamoDB",
+        "Amazon ElastiCache",
+        "Amazon Redshift"
+      ],
+      "correct_index": 0,
+      "explanation": "Amazon RDS (Relational Database Service) est le service de bases relationnelles managées, prenant en charge MySQL, PostgreSQL, MariaDB, Oracle et SQL Server. DynamoDB est NoSQL, ElastiCache un cache, Redshift un entrepôt analytique."
+    }
+  },
+  {
+    "id": "qcm-db-02",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une application mobile a besoin d'une base à très fort volume, faible latence (millisecondes) et sans serveur à gérer, avec un modèle clé-valeur. Quel service choisir ?",
+      "choices": [
+        "Amazon DynamoDB",
+        "Amazon RDS for PostgreSQL",
+        "Amazon Redshift",
+        "Amazon Neptune"
+      ],
+      "correct_index": 0,
+      "explanation": "Amazon DynamoDB est une base NoSQL clé-valeur serverless offrant des performances en millisecondes à toute échelle, idéale pour les applications web/mobiles à fort trafic. RDS est relationnel, Redshift analytique, Neptune orienté graphe."
+    }
+  },
+  {
+    "id": "qcm-db-03",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une entreprise veut analyser des téraoctets de données historiques avec des requêtes analytiques complexes pour du reporting. Quel service AWS est optimisé pour cet usage ?",
+      "choices": [
+        "Amazon Redshift",
+        "Amazon RDS for MySQL",
+        "Amazon ElastiCache",
+        "Amazon DynamoDB"
+      ],
+      "correct_index": 0,
+      "explanation": "Amazon Redshift est un entrepôt de données (data warehouse) à l'échelle du pétaoctet, optimisé pour l'analytique (OLAP) : stockage en colonnes et traitement massivement parallèle. RDS/DynamoDB sont transactionnels (OLTP), ElastiCache est un cache."
+    }
+  },
+  {
+    "id": "qcm-db-04",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "À quoi sert principalement Amazon ElastiCache ?",
+      "choices": [
+        "Fournir un cache de données en mémoire (Redis/Memcached) pour réduire la latence et décharger la base principale",
+        "Stocker des données analytiques sur le long terme à faible coût",
+        "Héberger un entrepôt de données pour le reporting BI",
+        "Enregistrer des noms de domaine et router le DNS"
+      ],
+      "correct_index": 0,
+      "explanation": "Amazon ElastiCache est un service de cache/magasin de données en mémoire (Redis ou Memcached) qui accélère les lectures fréquentes et soulage la base de données principale. Les autres réponses décrivent d'autres services (Glacier, Redshift, Route 53)."
+    }
   }
 ]
