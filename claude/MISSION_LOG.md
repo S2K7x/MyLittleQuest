@@ -69,6 +69,6 @@ contenu de la PR #7), le diff est donc propre et non conflictuel.
 
 ## Lien PR
 
-PR (draft) de cette session : lien ajouté en fin de session.
+PR (draft) de cette session : https://github.com/S2K7x/MyLittleQuest/pull/8
 Branche `claude/ci-validation-content` → `main`.
 PR du Lot C (déjà ouverte, à arbitrer) : https://github.com/S2K7x/MyLittleQuest/pull/7
