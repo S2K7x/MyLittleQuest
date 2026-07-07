@@ -1,0 +1,34 @@
+name: Validate content
+
+# Valide le schéma et l'intégrité référentielle du contenu pédagogique JSON
+# (content/**) à chaque PR et push. Aucune dépendance externe : le script
+# scripts/validate.py n'utilise que la bibliothèque standard Python.
+
+on:
+  pull_request:
+    paths:
+      - "content/**"
+      - "scripts/validate.py"
+      - ".github/workflows/validate-content.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "content/**"
+      - "scripts/validate.py"
+      - ".github/workflows/validate-content.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Valider le contenu (schéma + intégrité référentielle)
+        run: python3 scripts/validate.py

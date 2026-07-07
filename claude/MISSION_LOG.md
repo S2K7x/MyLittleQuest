@@ -1,117 +1,74 @@
-# MISSION LOG — AWS CLF-C02, Domaine 3 (Lot B) : Compute & Storage
+# MISSION LOG — CI de validation du contenu (+ signalement doublon Lot C)
 
-**Date** : 2026-07-05 (session nocturne autonome)
-**Branche** : claude/content-aws-clf-c02-domain-3-lot-b
-**Statut** : Terminée — PR ouverte vers main
+**Date** : 2026-07-07 (session nocturne autonome)
+**Branche** : claude/ci-validation-content
+**Statut** : Terminée — PR ouverte vers main (draft)
 
-## Ce qui a été fait
+## ⚠️ À LIRE EN PREMIER (10 secondes) — doublon détecté dans le pipeline
 
-Deuxième lot du **Domaine 3 — Cloud Technology and Services** (34 %, le plus lourd de l'examen),
-correspondant au **Lot B** planifié : services **compute** et **storage** cœur du CLF-C02
-(partie de la Task 3.3). 15 nouveaux concepts (8 compute, 7 storage) et 28 nouveaux assets de jeu
-(les 5 formats). Tout est en **AJOUT strict** : aucune valeur existante (Domaines 1, 2 et Lot A)
-n'a été modifiée (vérifié : 0 ligne supprimée au diff Git). Contenu en français, termes AWS
-conservés en anglais. Chaque concept pointe vers une page exacte de docs.aws.amazon.com,
-vérifiée via WebSearch (WebFetch renvoie 403 sur AWS).
+La mission de cette nuit (lue dans `NEXT_MISSION.md` sur `main`) était de générer le **Lot C
+(Networking & Databases)**. **Ce lot a DÉJÀ été fait par une session précédente : la PR #7 est
+ouverte** (draft) et contient exactement ce contenu (14 concepts, 28 assets, networking + databases).
+
+**Pourquoi le doublon ?** La session qui a produit le Lot C a mis à jour `NEXT_MISSION.md` (→ « Lot D »)
+**à l'intérieur de la PR #7, qui n'est pas encore mergée**. Tant que la PR #7 n'est pas mergée dans
+`main`, le `NEXT_MISSION.md` de `main` continue de pointer vers le Lot C → chaque nouvelle session
+nocturne relance la même mission. J'ai généré le même Lot C localement puis, en tentant de pousser,
+j'ai découvert la collision de branche (la branche `claude/content-aws-clf-c02-domain-3-lot-c` existe
+déjà sur origin avec la PR #7). **Je n'ai pas écrasé la PR #7 ni ouvert de PR de contenu en double.**
+
+**Décision demandée à Shai** : merger (ou fermer) la **PR #7**. Le merge débloque le pipeline —
+`NEXT_MISSION` passera alors au Lot D et le doublon nocturne cessera.
+
+## Ce que cette session a livré à la place (utile et sans conflit avec la PR #7)
+
+Plutôt que de dupliquer la PR #7, j'ai livré la **piste recommandée** des sessions précédentes : la
+**CI de validation du contenu**, qui manque à la PR #7 et sécurisera toutes les générations futures.
+
+- `scripts/validate.py` : validation JSON — schéma par format (qcm/flashcard/swipe/scenario/match)
+  + intégrité référentielle (0 orphelin, 0 concept sans asset, 0 id dupliqué, 0 mapping dupliqué).
+  Bibliothèque standard uniquement, code retour 0/1.
+- `.github/workflows/validate-content.yml` : GitHub Action lançant `validate.py` sur chaque PR et
+  push touchant `content/**`. Échec du job = échec de la PR.
+
+Ces fichiers ne touchent **que** `scripts/` et `.github/` (aucun chevauchement avec les fichiers de
+contenu de la PR #7), le diff est donc propre et non conflictuel.
 
 ## Certification / domaine traités
 
-- **Certif** : `aws-cloud-practitioner` (reste `in_progress` — Domaine 3 encore partiel, Domaine 4 à venir)
-- **Domaine** : Domain 3 — Cloud Technology and Services (Lot B : compute & storage, part de la Task 3.3)
-- **Concepts créés** : 15 (total certif : 59)
-- **Assets créés** : 28 → QCM ×8, flashcards ×8, swipe ×8, scénarios ×2, match ×2 (total : 104)
-- **Mapping** : 28 nouvelles entrées dans `asset_concepts.json` (total : 104)
+- **Aucun contenu pédagogique généré dans cette session** (le Lot C existe déjà en PR #7).
+- État de la certif `aws-cloud-practitioner` sur `main` : 59 concepts, 104 assets (Domaines 1, 2 et
+  Lots A+B du Domaine 3). Après merge de la PR #7 : 73 concepts, 132 assets.
 
-## Coverage du Lot B vs Task 3.3 (compute/storage)
+## Contrôle technique passé
 
-**Compute (8 concepts)** : Amazon EC2 instances & familles (`comp-ec2`), modèles de tarification
-EC2 On-Demand/Reserved/Spot/Savings Plans (`comp-ec2-pricing`), EC2 Auto Scaling
-(`comp-auto-scaling`), AWS Lambda / serverless (`comp-lambda`), Amazon ECS (`comp-ecs`),
-Amazon EKS (`comp-eks`), AWS Fargate (`comp-fargate`), AWS Elastic Beanstalk /PaaS
-(`comp-elastic-beanstalk`). ✅
-
-**Storage (7 concepts)** : Amazon S3 stockage objet & durabilité (`stor-s3`), classes de stockage
-S3 (`stor-s3-storage-classes`), classes d'archivage S3 Glacier (`stor-s3-glacier`), Amazon EBS
-stockage bloc (`stor-ebs`), Amazon EFS système de fichiers partagé (`stor-efs`), AWS Storage
-Gateway / hybride (`stor-storage-gateway`), AWS Backup / sauvegarde centralisée (`stor-aws-backup`). ✅
-
-## Reste du Domaine 3 (lots suivants, à planifier — voir NEXT_MISSION.md)
-
-- **Lot C — Networking & Databases** : VPC, subnets, Route 53, ELB ; RDS, Aurora, DynamoDB,
-  ElastiCache, Redshift.
-- **Lot D — Autres catégories** : analytics, ML, dev tools, monitoring (CloudWatch, CloudTrail),
-  intégration applicative (SQS, SNS).
-- Puis **Domaine 4 — Billing, Pricing, and Support** (12 %), non commencé.
+- `python3 scripts/validate.py` sur le contenu actuel de `main` (59 concepts / 104 assets / 104
+  mappings) : ✅ OK (schéma + intégrité référentielle).
 
 ## Fichiers créés / modifiés
 
-- `content/aws-cloud-practitioner/concepts.json` (+15 concepts)
-- `content/aws-cloud-practitioner/assets/{qcm,flashcard,swipe,scenario,match}.json` (+28 assets)
-- `content/aws-cloud-practitioner/asset_concepts.json` (+28 mappings)
+- `scripts/validate.py` (nouveau — validateur réutilisable)
+- `.github/workflows/validate-content.yml` (nouveau — CI de validation)
 - `claude/MISSION_LOG.md` (ce fichier), `claude/NEXT_MISSION.md` (mission suivante)
 
 ## Garde-fous vérifiés
 
-- §6.1 Sources : chaque concept pointe vers une page exacte de docs.aws.amazon.com (vérifiées via
-  WebSearch). Aucun lien générique. Liste complète ci-dessous.
-- §6.2 Aucune nouvelle certif hors roadmap : uniquement `aws-cloud-practitioner`.
-- §6.3 Aucune reproduction de question d'examen / braindump : toutes les questions sont originales
-  et pédagogiques, inspirées du scope officiel (blueprint + docs AWS).
-- §6.4 Certif **non** marquée `complete` : Domaine 3 partiel (Lots A+B) + Domaine 4 non traité →
-  reste `in_progress`.
-- §6.5 Aucune touche côté client (IndexedDB / exports) — uniquement `content/`.
-- §6.6 Aucun secret / credential dans les commits (scan effectué avant commit : rien détecté).
-- §6.7 Aucun push direct sur `main` — branche + PR draft.
+- §6.2 Aucune nouvelle certif hors roadmap. §6.5 Aucune touche côté client (IndexedDB / exports).
+- §6.6 Aucun secret / credential (scan effectué : rien). §6.7 Aucun push sur `main` — branche + PR draft.
+- §6.3/§6.1 sans objet cette nuit (aucun contenu généré). Statut certif inchangé (`in_progress`).
 
-## Contrôles techniques passés
+## Questions ouvertes pour Shai (par priorité)
 
-- JSON valide pour les 7 fichiers de contenu.
-- Schéma respecté par format (QCM correct_index dans les bornes, scénario = exactement 1 choix
-  correct, swipe is_true booléen, match ≥2 paires, flashcard front/back, base id/game_type/
-  difficulty/payload).
-- Intégrité référentielle : 0 asset orphelin, 0 concept_id inexistant, 0 concept sans asset,
-  0 asset id dupliqué, 0 concept id dupliqué (104 assets ↔ 104 mappings).
-- Non-régression : 0 ligne supprimée au diff Git (707 insertions, 0 suppression) — les 44 concepts
-  et 76 assets existants sont préservés à l'identique.
-
-## Sources docs.aws consultées (Lot B)
-
-- Amazon EC2 : /AWSEC2/latest/UserGuide/concepts.html
-- Tarification EC2 : /AWSEC2/latest/UserGuide/instance-purchasing-options.html
-- EC2 Auto Scaling : /autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html
-- AWS Lambda : /lambda/latest/dg/welcome.html
-- Amazon ECS : /AmazonECS/latest/developerguide/Welcome.html
-- Amazon EKS : /eks/latest/userguide/what-is-eks.html
-- AWS Fargate : /AmazonECS/latest/developerguide/AWS_Fargate.html
-- Elastic Beanstalk : /elasticbeanstalk/latest/dg/Welcome.html
-- Amazon S3 : /AmazonS3/latest/userguide/Welcome.html
-- Classes de stockage S3 : /AmazonS3/latest/userguide/storage-class-intro.html
-- S3 Glacier : /AmazonS3/latest/userguide/glacier-storage-classes.html
-- Amazon EBS : /ebs/latest/userguide/what-is-ebs.html
-- Amazon EFS : /efs/latest/ug/whatisefs.html
-- Storage Gateway : /storagegateway/latest/vgw/WhatIsStorageGateway.html
-- AWS Backup : /aws-backup/latest/devguide/whatisbackup.html
-
-## Questions ouvertes pour Shai (à lire en priorité)
-
-Les mêmes 3 décisions produit restent en attente (non bloquantes, reportées depuis les Domaines
-1, 2 et le Lot A) — elles ne bloquent pas la génération mais méritent un arbitrage avant que le
-volume ne grossisse davantage (on est déjà à 59 concepts / 104 assets) :
-
-1. **Langue du contenu** : FR uniquement (choix actuel) ou bilingue FR/EN à terme ? Impacte
-   potentiellement le schéma (ajout d'un champ de langue).
-2. **Granularité du champ `domain`** : nom du domaine (`"Cloud Technology and Services"`, choix
-   actuel) ou sous-domaines par tâche (3.1/3.2/3.3/3.4) pour un filtrage plus fin côté app ?
-   D'autant plus pertinent que le Domaine 3 s'étale maintenant sur plusieurs lots (A + B).
-3. **Critère `complete`** : le PDF de l'exam guide reste inaccessible au fetcher (403). Le coverage
-   est jugé sur la structure connue du blueprint + sources docs.aws citées. Suffit-il, ou veux-tu
-   une vérification manuelle du PDF avant tout passage `needs_review`/`complete` ?
-
-**Nouvelle piste à trancher** (voir NEXT_MISSION.md) : mettre en place une **CI de validation**
-(GitHub Action lançant le script schéma + intégrité à chaque PR) devient de plus en plus utile
-maintenant que le contenu grossit. Le script `validate.py` de cette nuit peut servir de base.
+1. **Merger ou fermer la PR #7 (Lot C)** — débloque le pipeline et arrête le doublon nocturne. **(bloquant pour la suite)**
+2. **Améliorer le handoff du pipeline** pour éviter que ce doublon se reproduise. Options possibles
+   (à trancher) : (a) merger les PR de contenu plus vite ; (b) faire écrire `NEXT_MISSION.md`
+   directement sur `main` par un petit commit séparé plutôt que dans la PR de contenu ; (c) qu'une
+   session vérifie les PR ouvertes (via l'API GitHub) avant de (re)lancer une mission.
+3. Les 3 décisions produit toujours en attente (langue FR vs bilingue ; granularité du champ
+   `domain` ; critère de `complete` avec exam guide PDF inaccessible) — inchangées.
 
 ## Lien PR
 
-PR #6 (draft) : https://github.com/S2K7x/MyLittleQuest/pull/6
-Branche `claude/content-aws-clf-c02-domain-3-lot-b` → `main`.
+PR (draft) de cette session : lien ajouté en fin de session.
+Branche `claude/ci-validation-content` → `main`.
+PR du Lot C (déjà ouverte, à arbitrer) : https://github.com/S2K7x/MyLittleQuest/pull/7
