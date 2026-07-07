@@ -1,104 +1,87 @@
 # NEXT MISSION
 
-## Générer le contenu Domain 3 — Lot C : Networking & Databases (AWS CLF-C02)
+## ⚠️ D'ABORD : le Lot C est déjà fait (PR #7) — NE PAS le régénérer
+
+Avant toute génération de contenu, **vérifier les Pull Requests ouvertes** (API GitHub) pour ne pas
+refaire un lot déjà produit. Au 2026-07-07 :
+- **PR #7 (ouverte, draft)** contient déjà le **Lot C — Networking & Databases** (14 concepts, 28
+  assets). **Ne pas le régénérer.** Idéalement, Shai merge la PR #7 ; sinon, considérer le Lot C
+  comme fait et passer directement au Lot D.
+- Une CI de validation (`scripts/validate.py` + `.github/workflows/validate-content.yml`) a été
+  ajoutée par la session du 2026-07-07 (PR séparée). L'utiliser avant chaque PR.
+
+## Mission : Domaine 3 — Lot D : Autres catégories de services (AWS CLF-C02)
 
 **Certification cible** : AWS Certified Cloud Practitioner (CLF-C02)
-**Dossier** : `content/aws-cloud-practitioner/` (compléter, ne rien écraser)
-**Branche à créer** : `claude/content-aws-clf-c02-domain-3-lot-c` (ou la branche `claude/...`
-assignée à la session)
+**Dossier** : `content/aws-cloud-practitioner/` (compléter en AJOUT strict, ne rien écraser)
+**Branche à créer** : `claude/content-aws-clf-c02-domain-3-lot-d` (nom descriptif ; vérifier qu'elle
+n'existe pas déjà sur origin avant de pousser).
 
-### Contexte
+### Pré-requis avant de commencer
 
-Avancement du Domaine 3 (Cloud Technology and Services, 34 %, découpé en lots) :
-- **Lot A — Infrastructure globale + déploiement (Tasks 3.1 & 3.2)** : fait — 15 concepts, 25 assets.
-- **Lot B — Compute & Storage (part de la Task 3.3)** : fait (cette PR) — 15 concepts, 28 assets.
-- Restent les lots C (networking & databases, fin de la Task 3.3) et D (autres catégories de
-  services, Task 3.4).
+1. Repartir de `main` À JOUR (`git fetch origin main && git checkout -B <branche> origin/main`).
+2. Si la PR #7 est mergée, `main` contient déjà le Lot C (73 concepts) : générer le Lot D en ajout
+   par-dessus. Si la PR #7 n'est PAS encore mergée, prévenir dans la PR que le Lot D suppose le Lot C
+   (risque de conflit à l'intégration) — ou attendre le merge de la PR #7.
+3. Lancer `python3 scripts/validate.py` en fin de travail (doit renvoyer OK).
 
-État global de la certif : **59 concepts, 104 assets**. Domaines 1 (Cloud Concepts) et 2 (Security
-& Compliance) complets ; Domaine 3 partiel (Lots A + B) ; Domaine 4 (Billing/Pricing/Support) non
-commencé.
+### Objectif — Lot D (Task 3.4) : services hors compute/storage/network/db
 
-### Objectif — Lot C : Networking & Databases (fin de la Task 3.3)
+~12-16 concepts, `domain` = `"Cloud Technology and Services"`. Découpage suggéré :
 
-Couvrir les services **réseau** et **bases de données** cœur du CLF-C02. Suggestion de découpage
-des concepts (~13-16 concepts, `domain` = `"Cloud Technology and Services"`) :
+**Monitoring & gouvernance** : Amazon CloudWatch (métriques, alarmes, logs), AWS CloudTrail (audit
+des appels API — bien distinguer de CloudWatch), AWS Config (conformité, léger), AWS Health Dashboard
+(léger).
 
-**Networking**
-- Amazon VPC (réseau virtuel isolé, subnets publics/privés) — reconnaissance niveau CCP
-- Sous-réseaux (subnets), tables de routage, Internet Gateway / NAT Gateway — niveau reconnaissance
-- Amazon Route 53 (DNS géré, routage) — reconnaissance
-- Elastic Load Balancing (ELB : répartition de charge, types ALB/NLB au niveau reconnaissance)
-  — lien avec Auto Scaling vu au Lot B
-- (optionnel) VPC endpoints / PrivateLink — reconnaissance, à jauger selon le scope CCP
+**Intégration applicative / messagerie** : Amazon SQS (files de messages), Amazon SNS (pub/sub,
+notifications), Amazon EventBridge (bus d'événements, léger).
 
-**Databases**
-- Amazon RDS (bases relationnelles gérées, moteurs supportés) — reconnaissance
-- Amazon Aurora (base relationnelle compatible MySQL/PostgreSQL, gérée) — reconnaissance
-- Amazon DynamoDB (NoSQL clé-valeur, serverless, scalable) — reconnaissance
-- Amazon ElastiCache (cache en mémoire, Redis/Memcached) — reconnaissance
-- Amazon Redshift (entrepôt de données / data warehouse, analytique) — reconnaissance
-- (optionnel) Amazon DocumentDB / Neptune / Keyspaces — reconnaissance très légère si pertinent
+**Analytics & Big Data** : Amazon Athena (SQL sur S3), Amazon Kinesis (streaming, léger), AWS Glue
+(ETL managé, léger).
 
-### Contenu à générer (Lot C)
+**IA / Machine Learning (reconnaissance CCP)** : Amazon SageMaker (plateforme ML managée), services
+IA applicatifs (Rekognition, Comprehend, Polly, Translate…) — 1 concept groupé.
 
-- **Concepts** (~13-16, en AJOUT dans `concepts.json`), chacun avec un `source_url` précis vers
-  docs.aws.amazon.com (page exacte, vérifiée via **WebSearch** — WebFetch renvoie 403 sur AWS).
-- **Assets** — mêmes minimums qu'aux lots précédents : QCM ≥ 6, flashcards ≥ 6, swipe ≥ 6,
-  + au moins 1 scénario et 1 match. Préfixe d'id suggéré : `-net-` (networking) / `-db-`
-  (databases). Vérifier l'absence de collision avec les id existants (`-cloud-`, `-sec-`,
-  `-infra-`, `-svc-`, `-comp-`, `-stor-`).
+**Dev tools (optionnel selon budget)** : CodeCommit / CodeBuild / CodeDeploy / CodePipeline — 1
+concept groupé, léger.
+
+### Contenu à générer (Lot D)
+
+- **Concepts** (~12-16, en AJOUT), chacun avec un `source_url` précis vers docs.aws.amazon.com (page
+  exacte, vérifiée via **WebSearch** — WebFetch renvoie 403 sur AWS).
+- **Assets** — minimums : QCM ≥ 6, flashcards ≥ 6, swipe ≥ 6, + ≥ 1 scénario et ≥ 1 match. Préfixes
+  d'id suggérés : `-mon-`, `-app-`, `-ana-`, `-ml-`. Vérifier l'absence de collision avec les id
+  existants (`-cloud-`, `-sec-`, `-infra-`, `-svc-`, `-comp-`, `-stor-`, `-net-`, `-db-`).
 - **Mapping** : compléter `asset_concepts.json`, 1 mapping par asset, 0 orphelin, 0 concept sans asset.
-
-### Outils réutilisables de cette nuit
-
-Les scripts `gen_lot_b.py` (génération append-only) et surtout `validate.py` (schéma + intégrité
-référentielle) écrits en session sont directement réutilisables comme base : adapter les listes
-de concepts/assets/mappings, relancer la validation avant la PR. **Piste alternative recommandée**
-(voir plus bas) : intégrer `validate.py` dans une GitHub Action pour sécuriser toutes les PR.
 
 ### Garde-fous (rappel, priment sur la mission)
 
 - Chaque concept avec un `source_url` précis vers docs.aws.amazon.com. Pas de lien générique.
 - Aucune reproduction de question d'examen réelle / braindump.
-- Ne pas marquer la certif `complete` (Domaine 3 encore partiel après Lot C + Domaine 4 restant).
+- Ne pas marquer la certif `complete` tant que le Domaine 4 n'est pas traité et justifié.
 - Aucun secret dans les commits. Ne pas toucher au code côté client / IndexedDB.
-- Valider JSON + intégrité référentielle (0 orphelin, 0 concept sans asset, 0 id dupliqué) avant la PR.
-- Travail en AJOUT strict : ne pas altérer les valeurs des entrées existantes (Domaines 1, 2, Lots
-  A et B). Objectif : 0 ligne supprimée au diff Git sur les fichiers existants.
+- Valider via `scripts/validate.py` avant la PR. Travail en AJOUT strict (0 suppression au diff).
 
 ### Fin de mission attendue
 
-PR `claude/...` → `main` (draft) avec résumé (nb concepts / assets par type), liste des sources
-consultées, et note de coverage du Lot C vs la Task 3.3 (partie networking/databases).
+PR `claude/...` → `main` (draft) : résumé (nb concepts / assets par type), sources consultées, note
+de coverage du Lot D vs la Task 3.4.
 
 ---
 
-## Décisions produit en attente de Shai (non bloquantes, à trancher bientôt)
+## Décisions produit en attente de Shai (non bloquantes)
 
-Reportées depuis les Domaines 1, 2 et les Lots A/B du Domaine 3 — elles ne bloquent pas la
-génération mais méritent un arbitrage avant que le volume ne grossisse davantage (déjà 59 concepts /
-104 assets) :
+1. **Merger/fermer la PR #7 (Lot C)** et **améliorer le handoff du pipeline** pour éviter les doublons
+   (voir `MISSION_LOG.md`).
+2. **Langue du contenu** : FR uniquement (actuel) ou bilingue FR/EN ?
+3. **Granularité du champ `domain`** : nom du domaine (actuel) ou sous-domaines par tâche (3.1…3.4) ?
+4. **Critère `complete`** : exam guide PDF inaccessible au fetcher (403) ; coverage jugé sur le
+   blueprint + docs.aws. Suffisant, ou vérification manuelle du PDF souhaitée ?
 
-1. **Langue du contenu** : FR uniquement (actuel) ou bilingue FR/EN ? Impact possible sur le schéma
-   (ajout d'un champ de langue).
-2. **Granularité du champ `domain`** : nom du domaine (actuel) ou sous-domaines par tâche
-   (3.1…3.4) pour affiner le filtrage côté app ? De plus en plus pertinent maintenant que le
-   Domaine 3 s'étale sur plusieurs lots (A + B, bientôt C + D).
-3. **Critère `complete`** : exam guide PDF inaccessible au fetcher (403). Coverage jugé sur la
-   structure du blueprint + docs.aws citées. Suffisant, ou vérification manuelle du PDF souhaitée
-   avant `needs_review`/`complete` ?
+## Pistes alternatives
 
-## Pistes alternatives (si tu préfères réorienter)
-
-- **[Recommandé] Mettre en place une CI de validation** (GitHub Action lançant `validate.py` —
-  schéma + intégrité référentielle des JSON — à chaque PR). De plus en plus utile : le contenu
-  grossit (59 concepts, 104 assets) et une CI sécuriserait toutes les générations futures contre
-  une régression de schéma ou un orphelin. Le script `validate.py` écrit cette nuit est prêt à
-  servir de base directe — il faudrait juste le versionner (ex : `scripts/validate.py`) et ajouter
-  un workflow `.github/workflows/`.
-- **Traiter le Domaine 4 (Billing/Pricing/Support, 12 %) avant de finir le Domaine 3** : plus
-  petit, permet de compléter un domaine entier rapidement (Cost Explorer, AWS Budgets, Pricing
-  Calculator, plans de support, TCO, consolidated billing via Organizations).
-- **Enrichir les Domaines/Lots déjà couverts** : plus d'assets par concept (meilleure rotation
-  SM-2), scénarios supplémentaires, montée en difficulté progressive.
+- **Traiter le Domaine 4 (Billing/Pricing/Support, 12 %) avant le Lot D** : plus petit, boucle un
+  domaine entier (Cost Explorer, AWS Budgets, Pricing Calculator, plans de support, TCO,
+  consolidated billing via Organizations).
+- **Enrichir les lots déjà couverts** : plus d'assets par concept (meilleure rotation SM-2),
+  scénarios supplémentaires, montée en difficulté.
