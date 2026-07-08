@@ -198,5 +198,55 @@
         }
       ]
     }
+  },
+  {
+    "id": "scenario-mon-01",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Après la suppression accidentelle d'une ressource de production, votre responsable sécurité veut identifier précisément quel utilisateur ou rôle a effectué l'appel d'API de suppression, à quelle date et depuis quelle adresse IP. Quel service consulter en priorité ?",
+      "choices": [
+        {
+          "text": "AWS CloudTrail, qui journalise chaque appel d'API du compte avec l'identité de l'appelant, la date et l'IP source.",
+          "is_correct": true,
+          "feedback": "Correct. CloudTrail est l'outil d'audit : il retrace les appels d'API (qui, quoi, quand, d'où), exactement ce qu'il faut pour identifier l'auteur d'une suppression."
+        },
+        {
+          "text": "Amazon CloudWatch, en regardant les métriques d'utilisation de la ressource.",
+          "is_correct": false,
+          "feedback": "CloudWatch suit la performance et l'état de santé (métriques, logs applicatifs, alarmes), mais ne dit pas quel utilisateur a appelé l'API de suppression."
+        },
+        {
+          "text": "Le AWS Health Dashboard, pour voir si AWS a subi un incident.",
+          "is_correct": false,
+          "feedback": "Le Health Dashboard montre les incidents et maintenances côté AWS, pas les actions réalisées par vos utilisateurs sur vos ressources."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-app-01",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Un site de e-commerce subit d'énormes pics de commandes pendant les soldes. Le service qui traite les commandes est parfois saturé et vous ne voulez perdre aucune commande, même s'il devient temporairement indisponible. Quelle approche adopter ?",
+      "choices": [
+        {
+          "text": "Placer une file Amazon SQS entre la réception et le traitement des commandes, pour les mettre en tampon et les traiter au rythme du consommateur.",
+          "is_correct": true,
+          "feedback": "Correct. SQS découple les deux composants : les commandes s'accumulent durablement dans la file et sont traitées quand le consommateur est disponible, sans perte lors des pics ou d'une panne."
+        },
+        {
+          "text": "Appeler directement le service de traitement en synchrone à chaque commande, sans tampon.",
+          "is_correct": false,
+          "feedback": "Un appel synchrone direct fait perdre des commandes dès que le service de traitement est saturé ou indisponible : il n'y a aucun tampon pour absorber le pic."
+        },
+        {
+          "text": "Stocker chaque commande dans Amazon Athena pour la traiter plus tard.",
+          "is_correct": false,
+          "feedback": "Athena est un service de requête SQL sur S3, pas une file de messages : il n'est pas conçu pour mettre en tampon et distribuer des tâches à traiter."
+        }
+      ]
+    }
   }
 ]

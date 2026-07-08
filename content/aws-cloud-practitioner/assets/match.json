@@ -210,5 +210,63 @@
         }
       ]
     }
+  },
+  {
+    "id": "match-mon-01",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "Amazon CloudWatch",
+          "right": "Métriques, logs et alarmes (santé/performance)"
+        },
+        {
+          "left": "AWS CloudTrail",
+          "right": "Journal des appels d'API (qui a fait quoi)"
+        },
+        {
+          "left": "AWS Config",
+          "right": "Conformité et historique de configuration"
+        },
+        {
+          "left": "AWS Health Dashboard",
+          "right": "Incidents et maintenances AWS de votre compte"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-app-ana-01",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "Amazon SQS",
+          "right": "File de messages (point à point)"
+        },
+        {
+          "left": "Amazon SNS",
+          "right": "Publication/abonnement (fan-out)"
+        },
+        {
+          "left": "Amazon EventBridge",
+          "right": "Bus d'événements routés par règles"
+        },
+        {
+          "left": "Amazon Athena",
+          "right": "Requêtes SQL serverless sur S3"
+        },
+        {
+          "left": "Amazon Kinesis",
+          "right": "Traitement de données en flux temps réel"
+        },
+        {
+          "left": "AWS Glue",
+          "right": "ETL managé et catalogue de données"
+        }
+      ]
+    }
   }
 ]
