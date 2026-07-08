@@ -1,74 +1,97 @@
-# MISSION LOG — CI de validation du contenu (+ signalement doublon Lot C)
+# MISSION LOG — Domaine 3 Lot D (CLF-C02) : monitoring, intégration, analytics, ML, dev tools
 
-**Date** : 2026-07-07 (session nocturne autonome)
-**Branche** : claude/ci-validation-content
+**Date** : 2026-07-08 (session nocturne autonome)
+**Branche** : claude/content-aws-clf-c02-domain-3-lot-d
 **Statut** : Terminée — PR ouverte vers main (draft)
 
-## ⚠️ À LIRE EN PREMIER (10 secondes) — doublon détecté dans le pipeline
+## ⚠️ À LIRE EN PREMIER (10 secondes)
 
-La mission de cette nuit (lue dans `NEXT_MISSION.md` sur `main`) était de générer le **Lot C
-(Networking & Databases)**. **Ce lot a DÉJÀ été fait par une session précédente : la PR #7 est
-ouverte** (draft) et contient exactement ce contenu (14 concepts, 28 assets, networking + databases).
+- **Lot D généré et validé** : 13 concepts + 28 assets, en **ajout strict** (690 insertions, 0 suppression au diff).
+  `python3 scripts/validate.py` → ✅ OK (72 concepts / 132 assets / 132 mappings).
+- **La PR #7 (Lot C — Networking & Databases) est TOUJOURS ouverte et non mergée.** Le Lot D a donc
+  été généré **par-dessus `main` (qui ne contient PAS encore le Lot C)**, pas par-dessus le Lot C.
+  Les deux lots sont **indépendants** (préfixes d'id disjoints : Lot C `-net-`/`-db-`, Lot D
+  `-mon-`/`-app-`/`-ana-`/`-ml-`/`-dev-`). Aucune collision d'id. **Mais** ils ajoutent tous deux à
+  la fin des mêmes tableaux JSON → **conflit Git textuel attendu à l'intégration** si les deux PR
+  sont mergées. Résolution triviale (garder les deux blocs). **Décision demandée à Shai** : merger
+  la PR #7 **puis** rebaser cette PR sur `main`, ou l'inverse — l'ordre de merge détermine qui
+  résout le conflit d'append.
 
-**Pourquoi le doublon ?** La session qui a produit le Lot C a mis à jour `NEXT_MISSION.md` (→ « Lot D »)
-**à l'intérieur de la PR #7, qui n'est pas encore mergée**. Tant que la PR #7 n'est pas mergée dans
-`main`, le `NEXT_MISSION.md` de `main` continue de pointer vers le Lot C → chaque nouvelle session
-nocturne relance la même mission. J'ai généré le même Lot C localement puis, en tentant de pousser,
-j'ai découvert la collision de branche (la branche `claude/content-aws-clf-c02-domain-3-lot-c` existe
-déjà sur origin avec la PR #7). **Je n'ai pas écrasé la PR #7 ni ouvert de PR de contenu en double.**
+## Ce qui a été fait
 
-**Décision demandée à Shai** : merger (ou fermer) la **PR #7**. Le merge débloque le pipeline —
-`NEXT_MISSION` passera alors au Lot D et le doublon nocturne cessera.
+Quatrième lot du **Domaine 3 — Cloud Technology and Services** (34 %), Task 3.4 : les familles de
+services hors compute/storage/network/db. 13 concepts (`domain` = `Cloud Technology and Services`),
+chacun avec un `source_url` précis vers docs.aws.amazon.com (page « what is » vérifiée via WebSearch,
+WebFetch renvoyant 403 sur AWS).
 
-## Ce que cette session a livré à la place (utile et sans conflit avec la PR #7)
-
-Plutôt que de dupliquer la PR #7, j'ai livré la **piste recommandée** des sessions précédentes : la
-**CI de validation du contenu**, qui manque à la PR #7 et sécurisera toutes les générations futures.
-
-- `scripts/validate.py` : validation JSON — schéma par format (qcm/flashcard/swipe/scenario/match)
-  + intégrité référentielle (0 orphelin, 0 concept sans asset, 0 id dupliqué, 0 mapping dupliqué).
-  Bibliothèque standard uniquement, code retour 0/1.
-- `.github/workflows/validate-content.yml` : GitHub Action lançant `validate.py` sur chaque PR et
-  push touchant `content/**`. Échec du job = échec de la PR.
-
-Ces fichiers ne touchent **que** `scripts/` et `.github/` (aucun chevauchement avec les fichiers de
-contenu de la PR #7), le diff est donc propre et non conflictuel.
+- **Monitoring & gouvernance (4)** : CloudWatch, CloudTrail, AWS Config, AWS Health Dashboard.
+  Distinction pédagogique appuyée CloudWatch (santé/perf) vs CloudTrail (audit des appels d'API) vs
+  Config (conformité de configuration) vs Health Dashboard (incidents AWS).
+- **Intégration applicative (3)** : SQS (file point à point), SNS (pub/sub fan-out), EventBridge (bus
+  d'événements). Distinction SQS vs SNS travaillée.
+- **Analytics (3)** : Athena (SQL serverless sur S3), Kinesis (streaming temps réel), Glue (ETL +
+  Data Catalog).
+- **IA / ML (2)** : SageMaker (construire ses propres modèles) et 1 concept groupé « services d'IA
+  applicative » (Rekognition, Comprehend, Polly, Translate, Transcribe, Lex — pré-entraînés par API).
+- **Dev tools (1)** : chaîne CI/CD (CodePipeline orchestrant CodeBuild / CodeDeploy).
 
 ## Certification / domaine traités
 
-- **Aucun contenu pédagogique généré dans cette session** (le Lot C existe déjà en PR #7).
-- État de la certif `aws-cloud-practitioner` sur `main` : 59 concepts, 104 assets (Domaines 1, 2 et
-  Lots A+B du Domaine 3). Après merge de la PR #7 : 73 concepts, 132 assets.
+- **aws-cloud-practitioner**, Domaine 3 (Cloud Technology and Services), Task 3.4.
+- Assets créés : **QCM ×8, flashcards ×8, swipe ×8, scénarios ×2, match ×2** = 28 assets, 28 mappings
+  (1 par asset, 0 orphelin, 0 concept sans asset, tous les 13 concepts couverts par ≥ 1 asset).
+- Totaux certif sur cette branche (base = `main`, sans le Lot C) : **72 concepts, 132 assets**.
+  Après merge cumulé Lot C (PR #7) + Lot D : 86 concepts, 160 assets.
+
+## Sources consultées (docs.aws.amazon.com, page exacte vérifiée via WebSearch)
+
+- CloudWatch : `AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html`
+- CloudTrail : `awscloudtrail/latest/userguide/cloudtrail-user-guide.html`
+- Config : `config/latest/developerguide/WhatIsConfig.html`
+- Health : `health/latest/ug/what-is-aws-health.html`
+- SQS : `AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html`
+- SNS : `sns/latest/dg/welcome.html`
+- EventBridge : `eventbridge/latest/userguide/eb-what-is.html`
+- Athena : `athena/latest/ug/what-is.html`
+- Kinesis : `streams/latest/dev/introduction.html`
+- Glue : `glue/latest/dg/what-is-glue.html`
+- SageMaker : `sagemaker/latest/dg/whatis.html`
+- Services IA (groupé) : `whitepapers/latest/aws-overview/machine-learning.html`
+- CI/CD CodePipeline : `codepipeline/latest/userguide/welcome.html`
 
 ## Contrôle technique passé
 
-- `python3 scripts/validate.py` sur le contenu actuel de `main` (59 concepts / 104 assets / 104
-  mappings) : ✅ OK (schéma + intégrité référentielle).
+- `python3 scripts/validate.py` : ✅ OK (schéma par format + intégrité référentielle).
+- Diff : **690 insertions, 0 suppression** (ajout strict, non-régression garantie).
+- Aucun secret / credential dans le diff (scan effectué).
 
 ## Fichiers créés / modifiés
 
-- `scripts/validate.py` (nouveau — validateur réutilisable)
-- `.github/workflows/validate-content.yml` (nouveau — CI de validation)
+- `content/aws-cloud-practitioner/concepts.json` (+13)
+- `content/aws-cloud-practitioner/assets/{qcm,flashcard,swipe,scenario,match}.json` (+28)
+- `content/aws-cloud-practitioner/asset_concepts.json` (+28)
 - `claude/MISSION_LOG.md` (ce fichier), `claude/NEXT_MISSION.md` (mission suivante)
 
 ## Garde-fous vérifiés
 
-- §6.2 Aucune nouvelle certif hors roadmap. §6.5 Aucune touche côté client (IndexedDB / exports).
-- §6.6 Aucun secret / credential (scan effectué : rien). §6.7 Aucun push sur `main` — branche + PR draft.
-- §6.3/§6.1 sans objet cette nuit (aucun contenu généré). Statut certif inchangé (`in_progress`).
+- §6.1 Chaque concept a un `source_url` précis et vérifié. §6.2 Aucune certif hors roadmap.
+- §6.3 Contenu original pédagogique, aucun braindump. §6.4 Statut certif inchangé (`in_progress`) —
+  Domaine 3 quasi bouclé mais Domaine 4 non commencé, pas de passage `complete`.
+- §6.5 Aucune touche côté client (IndexedDB/exports). §6.6 Aucun secret. §6.7 Branche + PR draft, pas
+  de push sur `main`.
 
 ## Questions ouvertes pour Shai (par priorité)
 
-1. **Merger ou fermer la PR #7 (Lot C)** — débloque le pipeline et arrête le doublon nocturne. **(bloquant pour la suite)**
-2. **Améliorer le handoff du pipeline** pour éviter que ce doublon se reproduise. Options possibles
-   (à trancher) : (a) merger les PR de contenu plus vite ; (b) faire écrire `NEXT_MISSION.md`
-   directement sur `main` par un petit commit séparé plutôt que dans la PR de contenu ; (c) qu'une
-   session vérifie les PR ouvertes (via l'API GitHub) avant de (re)lancer une mission.
+1. **Merger la PR #7 (Lot C) puis rebaser cette PR (ou l'inverse)** — un conflit d'append JSON est
+   attendu entre les deux (voir encadré en tête). Trivial à résoudre, mais à trancher.
+2. **Domaine 3 quasi complet** : après Lot C + Lot D, il reste surtout le **Domaine 4 (Billing,
+   Pricing & Support, 12 %)** pour viser un coverage complet du blueprint CCP. Proposé comme
+   prochaine mission (voir `NEXT_MISSION.md`).
 3. Les 3 décisions produit toujours en attente (langue FR vs bilingue ; granularité du champ
-   `domain` ; critère de `complete` avec exam guide PDF inaccessible) — inchangées.
+   `domain` ; critère de `complete` avec exam guide PDF inaccessible au fetcher) — inchangées.
 
 ## Lien PR
 
-PR (draft) de cette session : https://github.com/S2K7x/MyLittleQuest/pull/8
-Branche `claude/ci-validation-content` → `main`.
-PR du Lot C (déjà ouverte, à arbitrer) : https://github.com/S2K7x/MyLittleQuest/pull/7
+PR (draft) de cette session : voir la PR ouverte pour la branche
+`claude/content-aws-clf-c02-domain-3-lot-d` → `main` (lien ajouté au commit de pilotage).
+PR du Lot C (toujours ouverte, à arbitrer) : https://github.com/S2K7x/MyLittleQuest/pull/7
