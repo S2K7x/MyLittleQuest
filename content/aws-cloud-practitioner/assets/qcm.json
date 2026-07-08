@@ -478,5 +478,133 @@
       "correct_index": 0,
       "explanation": "AWS Storage Gateway est le service de stockage hybride : une appliance sur site expose NFS/SMB/iSCSI et relaie les données vers S3, S3 Glacier ou EBS. Idéal pour sauvegarde, archivage et migration."
     }
+  },
+  {
+    "id": "qcm-mon-01",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Un auditeur veut savoir QUI a supprimé un bucket S3 et à quelle date, en retraçant les appels d'API du compte. Quel service AWS répond à ce besoin ?",
+      "choices": [
+        "AWS CloudTrail",
+        "Amazon CloudWatch",
+        "AWS Config",
+        "AWS Health Dashboard"
+      ],
+      "correct_index": 0,
+      "explanation": "AWS CloudTrail journalise les appels d'API du compte (qui, quoi, quand, depuis quelle IP) : c'est l'outil d'audit et de gouvernance. CloudWatch suit la performance/les métriques, pas la trace des appels d'API."
+    }
+  },
+  {
+    "id": "qcm-mon-02",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une équipe veut évaluer en continu si ses ressources respectent des règles de configuration (ex : « tous les volumes EBS doivent être chiffrés ») et être alertée en cas de non-conformité, avec un historique des changements. Quel service utiliser ?",
+      "choices": [
+        "AWS Config",
+        "AWS CloudTrail",
+        "Amazon CloudWatch",
+        "Amazon Inspector"
+      ],
+      "correct_index": 0,
+      "explanation": "AWS Config enregistre la configuration des ressources dans le temps et évalue leur conformité via des Config rules, signalant les ressources non conformes. CloudTrail trace les appels d'API, pas l'état de conformité de la configuration."
+    }
+  },
+  {
+    "id": "qcm-mon-03",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Où un client AWS peut-il voir, sans configuration ni coût supplémentaire, les événements de maintenance planifiée et les incidents AWS qui affectent spécifiquement ses ressources ?",
+      "choices": [
+        "Dans le AWS Health Dashboard",
+        "Dans Amazon CloudWatch Logs",
+        "Dans AWS CloudTrail",
+        "Dans AWS Trusted Advisor"
+      ],
+      "correct_index": 0,
+      "explanation": "Le AWS Health Dashboard donne, sans configuration et sans coût supplémentaire, la visibilité sur les événements AWS (incidents, maintenances planifiées) touchant votre compte et vos ressources."
+    }
+  },
+  {
+    "id": "qcm-app-01",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une application doit découpler la réception de commandes de leur traitement, afin d'absorber les pics de trafic sans perdre de commandes si le composant de traitement est temporairement indisponible. Quel service AWS est le plus adapté ?",
+      "choices": [
+        "Amazon SQS",
+        "Amazon SNS",
+        "Amazon CloudWatch",
+        "AWS Glue"
+      ],
+      "correct_index": 0,
+      "explanation": "Amazon SQS est une file de messages managée : les commandes s'accumulent dans la file et sont traitées au rythme du consommateur, ce qui découple les composants et évite la perte de messages lors d'un pic ou d'une panne du consommateur."
+    }
+  },
+  {
+    "id": "qcm-app-02",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Un système doit envoyer la même notification à plusieurs destinataires en parallèle (une file SQS, une fonction Lambda et un e-mail) dès qu'un événement se produit. Quel service correspond à ce modèle publication/abonnement ?",
+      "choices": [
+        "Amazon SNS",
+        "Amazon SQS",
+        "Amazon Kinesis",
+        "Amazon Athena"
+      ],
+      "correct_index": 0,
+      "explanation": "Amazon SNS suit le modèle pub/sub : un message publié sur un sujet est poussé en parallèle à tous les abonnés (SQS, Lambda, e-mail, SMS, HTTP/S). SQS, lui, est une file point à point où un message est consommé par un seul consommateur."
+    }
+  },
+  {
+    "id": "qcm-ana-01",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une équipe veut interroger en SQL des fichiers de logs stockés dans Amazon S3, de façon ponctuelle, sans provisionner ni gérer de serveur ni charger les données dans une base. Quel service AWS choisir ?",
+      "choices": [
+        "Amazon Athena",
+        "Amazon RDS",
+        "AWS Glue",
+        "Amazon EC2"
+      ],
+      "correct_index": 0,
+      "explanation": "Amazon Athena est un service de requête serverless qui analyse directement en SQL les données dans S3, facturé à la quantité de données scannées. Aucune infrastructure à gérer, idéal pour des requêtes ad hoc sur des logs."
+    }
+  },
+  {
+    "id": "qcm-ml-01",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une équipe de data scientists veut construire, entraîner et déployer ses PROPRES modèles de machine learning dans un environnement managé de bout en bout. Quel service AWS est conçu pour cela ?",
+      "choices": [
+        "Amazon SageMaker",
+        "Amazon Rekognition",
+        "Amazon Comprehend",
+        "Amazon Polly"
+      ],
+      "correct_index": 0,
+      "explanation": "Amazon SageMaker est la plateforme managée pour construire, entraîner et déployer ses propres modèles ML. Rekognition, Comprehend et Polly sont des services d'IA pré-entraînés utilisables par simple appel d'API, sans construire de modèle."
+    }
+  },
+  {
+    "id": "qcm-dev-01",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quel service AWS permet de modéliser et d'automatiser les étapes de publication d'un logiciel (source, build, test, déploiement) sous forme d'un pipeline de livraison continue ?",
+      "choices": [
+        "AWS CodePipeline",
+        "AWS CloudFormation",
+        "Amazon EventBridge",
+        "AWS Config"
+      ],
+      "correct_index": 0,
+      "explanation": "AWS CodePipeline est le service de livraison continue (CI/CD) qui orchestre les étapes de release et s'appuie sur CodeBuild (build/test) et CodeDeploy (déploiement). CloudFormation, lui, provisionne l'infrastructure (IaC)."
+    }
   }
 ]

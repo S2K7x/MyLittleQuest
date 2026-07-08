@@ -288,5 +288,85 @@
       "is_true": true,
       "explanation": "Vrai. Storage Gateway est un service de stockage hybride : une appliance sur site expose des protocoles standard et relaie les données vers AWS (S3, Glacier, EBS) pour la sauvegarde, l'archivage ou la migration."
     }
+  },
+  {
+    "id": "swipe-mon-01",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "Amazon CloudWatch collecte des métriques et permet de définir des alarmes sur les ressources et applications AWS.",
+      "is_true": true,
+      "explanation": "Vrai. CloudWatch est le service de surveillance : métriques en temps réel, logs, tableaux de bord et alarmes déclenchant notification ou action automatique quand un seuil est franchi."
+    }
+  },
+  {
+    "id": "swipe-mon-02",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "AWS CloudTrail sert principalement à mesurer l'utilisation CPU et la latence de vos instances EC2.",
+      "is_true": false,
+      "explanation": "Faux. Mesurer CPU et latence relève d'Amazon CloudWatch. CloudTrail journalise les appels d'API du compte (qui a fait quelle action, quand) pour l'audit et la conformité."
+    }
+  },
+  {
+    "id": "swipe-mon-03",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "Le AWS Health Dashboard informe des incidents et maintenances AWS affectant votre compte, sans configuration ni coût supplémentaire.",
+      "is_true": true,
+      "explanation": "Vrai. Le AWS Health Dashboard est disponible pour tous les clients sans configuration ni frais additionnels et montre les événements AWS (incidents, maintenances planifiées) touchant vos ressources."
+    }
+  },
+  {
+    "id": "swipe-app-01",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Avec Amazon SQS, un même message est diffusé simultanément à tous les abonnés d'un sujet.",
+      "is_true": false,
+      "explanation": "Faux. C'est le modèle publication/abonnement d'Amazon SNS. SQS est une file point à point : un message y est stocké puis consommé par un seul consommateur, qui le supprime ensuite."
+    }
+  },
+  {
+    "id": "swipe-app-02",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Amazon SNS permet de diffuser un message à plusieurs abonnés à la fois (fan-out) selon un modèle publication/abonnement.",
+      "is_true": true,
+      "explanation": "Vrai. SNS suit le modèle pub/sub : un message publié sur un sujet est poussé en parallèle à tous les abonnés (SQS, Lambda, e-mail, SMS, HTTP/S)."
+    }
+  },
+  {
+    "id": "swipe-ana-01",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Amazon Athena permet d'interroger en SQL des données dans Amazon S3 sans serveur à provisionner.",
+      "is_true": true,
+      "explanation": "Vrai. Athena est serverless : on interroge directement en SQL standard les données stockées dans S3, avec une facturation à la quantité de données scannées, sans infrastructure à gérer."
+    }
+  },
+  {
+    "id": "swipe-ana-02",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Amazon Kinesis est conçu pour l'ingestion et le traitement de données en flux (streaming) en temps réel.",
+      "is_true": true,
+      "explanation": "Vrai. Kinesis (Data Streams) ingère en continu de grandes quantités de données et les met à disposition presque immédiatement (délai typiquement inférieur à la seconde), pour un traitement temps réel."
+    }
+  },
+  {
+    "id": "swipe-ml-01",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Amazon SageMaker est un service pré-entraîné qui reconnaît des objets dans les images sans aucune configuration.",
+      "is_true": false,
+      "explanation": "Faux. Reconnaître des objets dans des images relève d'Amazon Rekognition (service d'IA pré-entraîné). SageMaker est la plateforme managée pour construire, entraîner et déployer ses propres modèles ML."
+    }
   }
 ]

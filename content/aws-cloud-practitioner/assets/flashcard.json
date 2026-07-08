@@ -259,5 +259,77 @@
       "front": "À quoi sert AWS Backup ?",
       "back": "À centraliser et automatiser la sauvegarde de plusieurs services AWS (EBS, EFS, RDS, DynamoDB, S3…) depuis une console unique, via des backup plans (fréquence, rétention). Évite les scripts et processus manuels service par service."
     }
+  },
+  {
+    "id": "flashcard-mon-01",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "À quoi sert Amazon CloudWatch ?",
+      "back": "À surveiller les ressources AWS et les applications : collecte de métriques (CPU, latence, requêtes…), journaux (CloudWatch Logs), tableaux de bord et alarmes qui notifient ou déclenchent une action quand un seuil est franchi. Répond à « comment se portent mes ressources ? », pas à « qui a fait quoi ? »."
+    }
+  },
+  {
+    "id": "flashcard-mon-02",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "À quoi sert AWS CloudTrail, et en quoi diffère-t-il de CloudWatch ?",
+      "back": "CloudTrail journalise les appels d'API du compte (qui a fait quelle action, quand, depuis où) : c'est l'audit, la gouvernance et la conformité. CloudWatch suit la performance et l'état de santé (métriques, logs, alarmes). Résumé : CloudTrail = trace des actions ; CloudWatch = santé des ressources."
+    }
+  },
+  {
+    "id": "flashcard-mon-03",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Que fait AWS Config ?",
+      "back": "Il enregistre en continu la configuration des ressources AWS et son évolution dans le temps, et évalue la conformité via des règles (Config rules) qui signalent les ressources non conformes. Sert à la gouvernance et à l'audit de configuration : « ma configuration respecte-t-elle mes règles, et comment a-t-elle changé ? »."
+    }
+  },
+  {
+    "id": "flashcard-app-01",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Qu'est-ce qu'Amazon SQS et quel problème résout-il ?",
+      "back": "Amazon SQS est une file de messages managée. Un producteur y dépose des messages, un consommateur les récupère et les traite à son rythme. Cela découple les composants d'une application, absorbe les pics de charge et évite de perdre des messages en cas de panne du consommateur. Modèle point à point (1 message → 1 consommateur)."
+    }
+  },
+  {
+    "id": "flashcard-app-02",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Qu'est-ce qu'Amazon EventBridge ?",
+      "back": "Un bus d'événements serverless qui relie des applications via des événements (issus de vos apps, de SaaS partenaires ou de services AWS). Des règles routent chaque événement, selon son contenu, vers des cibles (Lambda, SQS, SNS…). Permet des architectures event-driven faiblement couplées ; inclut EventBridge Scheduler (cron/rate)."
+    }
+  },
+  {
+    "id": "flashcard-ana-01",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "À quoi sert AWS Glue ?",
+      "back": "Service d'intégration de données serverless : découverte, préparation et transformation de données (ETL) via Apache Spark, plus un Data Catalog de métadonnées (tables partagées avec Athena, Redshift, EMR) alimenté par des crawlers. Sert à cataloguer et transformer des données brutes (souvent dans S3) pour l'analytique."
+    }
+  },
+  {
+    "id": "flashcard-ana-02",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "À quoi sert Amazon Kinesis ?",
+      "back": "À collecter, traiter et analyser des données en flux (streaming) en temps réel et à grande échelle : logs, clics, télémétrie IoT, métriques. Kinesis Data Streams ingère en continu et met les données à disposition presque immédiatement (délai typiquement < 1 s). À distinguer du traitement par lots (batch)."
+    }
+  },
+  {
+    "id": "flashcard-ml-01",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Cite quelques services d'IA applicative AWS (pré-entraînés) et leur usage.",
+      "back": "Rekognition (analyse d'images/vidéos), Comprehend (NLP : entités, sentiments), Polly (texte → parole), Translate (traduction), Transcribe (parole → texte), Lex (chatbots). Ce sont des modèles pré-entraînés appelés par API, sans expertise ML — contrairement à SageMaker qui sert à construire ses propres modèles."
+    }
   }
 ]

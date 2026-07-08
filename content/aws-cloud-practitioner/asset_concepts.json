@@ -679,5 +679,190 @@
       "stor-s3-glacier",
       "stor-storage-gateway"
     ]
+  },
+  {
+    "asset_id": "qcm-mon-01",
+    "concept_ids": [
+      "mon-cloudtrail",
+      "mon-cloudwatch"
+    ]
+  },
+  {
+    "asset_id": "qcm-mon-02",
+    "concept_ids": [
+      "mon-config"
+    ]
+  },
+  {
+    "asset_id": "qcm-mon-03",
+    "concept_ids": [
+      "mon-health-dashboard"
+    ]
+  },
+  {
+    "asset_id": "qcm-app-01",
+    "concept_ids": [
+      "app-sqs"
+    ]
+  },
+  {
+    "asset_id": "qcm-app-02",
+    "concept_ids": [
+      "app-sns"
+    ]
+  },
+  {
+    "asset_id": "qcm-ana-01",
+    "concept_ids": [
+      "ana-athena"
+    ]
+  },
+  {
+    "asset_id": "qcm-ml-01",
+    "concept_ids": [
+      "ml-sagemaker",
+      "ml-ai-services"
+    ]
+  },
+  {
+    "asset_id": "qcm-dev-01",
+    "concept_ids": [
+      "dev-codepipeline"
+    ]
+  },
+  {
+    "asset_id": "flashcard-mon-01",
+    "concept_ids": [
+      "mon-cloudwatch"
+    ]
+  },
+  {
+    "asset_id": "flashcard-mon-02",
+    "concept_ids": [
+      "mon-cloudtrail",
+      "mon-cloudwatch"
+    ]
+  },
+  {
+    "asset_id": "flashcard-mon-03",
+    "concept_ids": [
+      "mon-config"
+    ]
+  },
+  {
+    "asset_id": "flashcard-app-01",
+    "concept_ids": [
+      "app-sqs"
+    ]
+  },
+  {
+    "asset_id": "flashcard-app-02",
+    "concept_ids": [
+      "app-eventbridge"
+    ]
+  },
+  {
+    "asset_id": "flashcard-ana-01",
+    "concept_ids": [
+      "ana-glue"
+    ]
+  },
+  {
+    "asset_id": "flashcard-ana-02",
+    "concept_ids": [
+      "ana-kinesis"
+    ]
+  },
+  {
+    "asset_id": "flashcard-ml-01",
+    "concept_ids": [
+      "ml-ai-services"
+    ]
+  },
+  {
+    "asset_id": "swipe-mon-01",
+    "concept_ids": [
+      "mon-cloudwatch"
+    ]
+  },
+  {
+    "asset_id": "swipe-mon-02",
+    "concept_ids": [
+      "mon-cloudtrail",
+      "mon-cloudwatch"
+    ]
+  },
+  {
+    "asset_id": "swipe-mon-03",
+    "concept_ids": [
+      "mon-health-dashboard"
+    ]
+  },
+  {
+    "asset_id": "swipe-app-01",
+    "concept_ids": [
+      "app-sqs",
+      "app-sns"
+    ]
+  },
+  {
+    "asset_id": "swipe-app-02",
+    "concept_ids": [
+      "app-sns"
+    ]
+  },
+  {
+    "asset_id": "swipe-ana-01",
+    "concept_ids": [
+      "ana-athena"
+    ]
+  },
+  {
+    "asset_id": "swipe-ana-02",
+    "concept_ids": [
+      "ana-kinesis"
+    ]
+  },
+  {
+    "asset_id": "swipe-ml-01",
+    "concept_ids": [
+      "ml-sagemaker",
+      "ml-ai-services"
+    ]
+  },
+  {
+    "asset_id": "scenario-mon-01",
+    "concept_ids": [
+      "mon-cloudtrail",
+      "mon-cloudwatch",
+      "mon-health-dashboard"
+    ]
+  },
+  {
+    "asset_id": "scenario-app-01",
+    "concept_ids": [
+      "app-sqs",
+      "ana-athena"
+    ]
+  },
+  {
+    "asset_id": "match-mon-01",
+    "concept_ids": [
+      "mon-cloudwatch",
+      "mon-cloudtrail",
+      "mon-config",
+      "mon-health-dashboard"
+    ]
+  },
+  {
+    "asset_id": "match-app-ana-01",
+    "concept_ids": [
+      "app-sqs",
+      "app-sns",
+      "app-eventbridge",
+      "ana-athena",
+      "ana-kinesis",
+      "ana-glue"
+    ]
   }
 ]

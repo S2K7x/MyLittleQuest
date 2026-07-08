@@ -529,5 +529,122 @@
     "difficulty": 2,
     "source_url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html",
     "generated_at": "2026-07-05T02:00:00Z"
+  },
+  {
+    "id": "mon-cloudwatch",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon CloudWatch (métriques, alarmes, logs)",
+    "core_explanation": "Amazon CloudWatch est le service de surveillance et d'observabilité des ressources AWS et des applications qui y tournent. Il collecte en temps réel des métriques (utilisation CPU, latence, nombre de requêtes…), centralise des journaux applicatifs et système (CloudWatch Logs), et permet de créer des tableaux de bord. On y définit des alarmes qui déclenchent une notification (via SNS) ou une action automatique (par exemple un scaling) quand une métrique franchit un seuil. CloudWatch répond à la question « comment se portent mes ressources et mes applications ? » — la performance et l'état de santé, pas la trace des appels d'API.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html",
+    "generated_at": "2026-07-08T02:00:00Z"
+  },
+  {
+    "id": "mon-cloudtrail",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS CloudTrail (audit des appels d'API)",
+    "core_explanation": "AWS CloudTrail enregistre les actions effectuées dans un compte AWS sous forme d'événements : chaque appel d'API réalisé via la console, la CLI, un SDK ou un service AWS est journalisé (qui a fait quoi, quand, depuis quelle adresse IP). C'est l'outil d'audit, de gouvernance et de conformité : il répond à « qui a créé/supprimé/modifié cette ressource ? ». L'historique des événements (Event history) donne accès gratuitement aux 90 derniers jours d'événements de gestion ; pour une conservation durable, on crée un trail qui livre les journaux dans un bucket S3. À bien distinguer de CloudWatch, qui suit la performance, pas la trace des appels d'API.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html",
+    "generated_at": "2026-07-08T02:00:00Z"
+  },
+  {
+    "id": "mon-config",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS Config (conformité et historique de configuration)",
+    "core_explanation": "AWS Config donne une vue détaillée de la configuration des ressources AWS d'un compte, de leurs relations et de l'évolution de ces configurations dans le temps. Il enregistre en continu les changements et permet de définir des règles (Config rules) qui évaluent si une ressource respecte les paramètres attendus : une ressource non conforme est signalée et une notification est envoyée. AWS Config sert donc à l'audit de conformité et à la gouvernance de l'état des ressources — « ma configuration respecte-t-elle mes règles, et comment a-t-elle changé ? » — là où CloudTrail trace les appels d'API et CloudWatch la performance.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html",
+    "generated_at": "2026-07-08T02:00:00Z"
+  },
+  {
+    "id": "mon-health-dashboard",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS Health Dashboard (état des services et du compte)",
+    "core_explanation": "Le AWS Health Dashboard donne une visibilité sur l'état de santé des services AWS et sur les événements qui affectent spécifiquement votre compte et vos ressources. Il ne nécessite aucune configuration et est disponible sans coût supplémentaire. On y voit les événements ouverts, récents et planifiés (maintenances, changements programmés) ainsi que les notifications, avec un journal des événements des 90 derniers jours. Il répond à « y a-t-il un incident AWS ou une maintenance qui touche mes ressources ? », ce qui le distingue de CloudWatch (métriques de mes applications) et de CloudTrail (journal de mes appels d'API).",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html",
+    "generated_at": "2026-07-08T02:00:00Z"
+  },
+  {
+    "id": "app-sqs",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon SQS (file de messages)",
+    "core_explanation": "Amazon Simple Queue Service (SQS) est un service entièrement géré de files de messages qui permet de découpler et de mettre à l'échelle des microservices, des systèmes distribués et des applications serverless. Un composant producteur dépose des messages dans une file ; un ou plusieurs consommateurs les récupèrent et les traitent à leur rythme, puis les suppriment. La file absorbe les pics de charge et évite qu'une panne du consommateur ne fasse perdre des messages (ils restent stockés de façon durable). Le modèle est point à point (un message est traité par un consommateur) — à distinguer du pub/sub de SNS. Files standard (livraison au moins une fois) ou FIFO (ordre et exactement une fois).",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html",
+    "generated_at": "2026-07-08T02:00:00Z"
+  },
+  {
+    "id": "app-sns",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon SNS (publication / abonnement, notifications)",
+    "core_explanation": "Amazon Simple Notification Service (SNS) est un service géré de messagerie en mode publication/abonnement (pub/sub). Un éditeur publie un message sur un sujet (topic) ; tous les abonnés à ce sujet le reçoivent en parallèle. Les abonnés peuvent être des files SQS, des fonctions Lambda, des points de terminaison HTTP/S, des e-mails ou des SMS. SNS sert donc à diffuser une même information vers plusieurs destinataires (fan-out) et à envoyer des notifications. À la différence de SQS (un message consommé par un seul consommateur, mode file), SNS pousse le message à tous les abonnés au moment de la publication.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/sns/latest/dg/welcome.html",
+    "generated_at": "2026-07-08T02:00:00Z"
+  },
+  {
+    "id": "app-eventbridge",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon EventBridge (bus d'événements)",
+    "core_explanation": "Amazon EventBridge est un bus d'événements serverless qui connecte des applications à l'aide d'événements provenant de vos propres applications, d'applications SaaS partenaires et de services AWS. On définit des règles de routage qui, en fonction du contenu d'un événement, l'acheminent vers une ou plusieurs cibles (Lambda, SQS, SNS, Step Functions…). EventBridge facilite les architectures orientées événements (event-driven), faiblement couplées. Il inclut aussi EventBridge Scheduler pour planifier des tâches (expressions cron/rate). Il se distingue de SNS/SQS par sa capacité à filtrer et router selon le contenu des événements et à intégrer nativement de nombreuses sources SaaS et AWS.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html",
+    "generated_at": "2026-07-08T02:00:00Z"
+  },
+  {
+    "id": "ana-athena",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon Athena (requêtes SQL sur S3)",
+    "core_explanation": "Amazon Athena est un service de requête interactif qui permet d'analyser des données stockées dans Amazon S3 directement en SQL standard, sans avoir à charger les données dans une base au préalable. Athena est serverless : il n'y a aucune infrastructure à provisionner ou gérer, et la facturation se fait à la quantité de données scannées par les requêtes. On pointe Athena sur ses fichiers dans S3 (souvent catalogués via AWS Glue), puis on lance des requêtes ad hoc dont les résultats arrivent en quelques secondes. C'est l'outil idéal pour interroger ponctuellement des journaux ou des jeux de données sur S3 sans monter un entrepôt de données dédié.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/athena/latest/ug/what-is.html",
+    "generated_at": "2026-07-08T02:00:00Z"
+  },
+  {
+    "id": "ana-kinesis",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon Kinesis (traitement de données en flux)",
+    "core_explanation": "Amazon Kinesis permet de collecter, traiter et analyser des données en flux (streaming) en temps réel, à grande échelle. Avec Kinesis Data Streams, on ingère en continu de grandes quantités de données (journaux, clics, télémétrie IoT, métriques d'applications), on les stocke durablement quelques temps, et des applications consommatrices les traitent presque immédiatement (délai typiquement inférieur à la seconde). Cela sert aux tableaux de bord temps réel, à la détection d'anomalies, ou à alimenter d'autres services AWS. À distinguer du traitement par lots (batch) : Kinesis est fait pour des données qui arrivent en continu et qu'on veut exploiter au fil de l'eau.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html",
+    "generated_at": "2026-07-08T02:00:00Z"
+  },
+  {
+    "id": "ana-glue",
+    "domain": "Cloud Technology and Services",
+    "title": "AWS Glue (ETL managé et catalogue de données)",
+    "core_explanation": "AWS Glue est un service d'intégration de données serverless qui facilite la découverte, la préparation, le déplacement et la combinaison de données provenant de sources multiples, pour l'analytique, le machine learning et le développement d'applications. Il fournit un Data Catalog (métadonnées : définitions de tables partagées avec Athena, Redshift Spectrum, EMR), des crawlers qui parcourent les sources pour inférer les schémas, et des jobs ETL (extract, transform, load) exécutés sur Apache Spark sans serveur à gérer. Glue sert à transformer et cataloguer les données brutes (souvent dans S3) pour les rendre exploitables par les outils d'analyse.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html",
+    "generated_at": "2026-07-08T02:00:00Z"
+  },
+  {
+    "id": "ml-sagemaker",
+    "domain": "Cloud Technology and Services",
+    "title": "Amazon SageMaker (plateforme ML managée)",
+    "core_explanation": "Amazon SageMaker (SageMaker AI) est un service entièrement géré qui permet aux data scientists et développeurs de construire, entraîner et déployer des modèles de machine learning dans un environnement hébergé prêt pour la production. Il couvre l'ensemble du cycle de vie ML : préparation des données, entraînement (avec des algorithmes managés et des options d'entraînement distribué), réglage, puis déploiement des modèles derrière des points de terminaison. SageMaker est la plateforme pour ceux qui veulent créer leurs propres modèles, à distinguer des services d'IA applicative pré-entraînés (Rekognition, Comprehend…) qui s'utilisent par simple appel d'API sans expertise ML.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html",
+    "generated_at": "2026-07-08T02:00:00Z"
+  },
+  {
+    "id": "ml-ai-services",
+    "domain": "Cloud Technology and Services",
+    "title": "Services d'IA applicative AWS (Rekognition, Comprehend, Polly, Translate…)",
+    "core_explanation": "AWS propose une gamme de services d'intelligence artificielle « applicatifs » : des modèles pré-entraînés utilisables par simple appel d'API, sans aucune expertise en machine learning. Les principaux à reconnaître pour le CCP : Amazon Rekognition (analyse d'images et de vidéos : détection d'objets, de texte, comparaison de visages), Amazon Comprehend (traitement du langage naturel : entités, sentiments, langue à partir de texte), Amazon Polly (synthèse vocale, texte vers parole), Amazon Translate (traduction automatique), Amazon Transcribe (parole vers texte) et Amazon Lex (agents conversationnels). Ils se distinguent de SageMaker, qui sert à construire et entraîner ses propres modèles.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/machine-learning.html",
+    "generated_at": "2026-07-08T02:00:00Z"
+  },
+  {
+    "id": "dev-codepipeline",
+    "domain": "Cloud Technology and Services",
+    "title": "Chaîne CI/CD AWS (CodePipeline et services Code*)",
+    "core_explanation": "AWS CodePipeline est un service de livraison continue (CI/CD) qui permet de modéliser, visualiser et automatiser les étapes de publication d'un logiciel : à chaque changement de code, le pipeline enchaîne automatiquement les phases (source, build, test, déploiement). CodePipeline orchestre les étapes et s'appuie sur des services complémentaires de la famille Code* : un dépôt de code source, AWS CodeBuild pour compiler et tester le code, et AWS CodeDeploy pour automatiser le déploiement vers les instances ou services cibles. L'ensemble sert à automatiser le cycle de release et à réduire les erreurs manuelles.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html",
+    "generated_at": "2026-07-08T02:00:00Z"
   }
 ]
