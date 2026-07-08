@@ -92,6 +92,6 @@ WebFetch renvoyant 403 sur AWS).
 
 ## Lien PR
 
-PR (draft) de cette session : voir la PR ouverte pour la branche
-`claude/content-aws-clf-c02-domain-3-lot-d` → `main` (lien ajouté au commit de pilotage).
+PR (draft) de cette session : https://github.com/S2K7x/MyLittleQuest/pull/9
+Branche `claude/content-aws-clf-c02-domain-3-lot-d` → `main`.
 PR du Lot C (toujours ouverte, à arbitrer) : https://github.com/S2K7x/MyLittleQuest/pull/7
