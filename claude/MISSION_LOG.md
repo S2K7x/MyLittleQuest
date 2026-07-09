@@ -124,6 +124,6 @@ nomenclature ? À revoir si AWS publie une révision de l'exam guide.
 
 ## Lien PR
 
-PR (draft) de cette session : voir lien ajouté après ouverture (branche
-`claude/loving-curie-d74pqn` → `main`).
+PR (draft) de cette session : https://github.com/S2K7x/MyLittleQuest/pull/10
+Branche `claude/loving-curie-d74pqn` → `main`.
 PR du Lot C (toujours ouverte, à arbitrer) : https://github.com/S2K7x/MyLittleQuest/pull/7
