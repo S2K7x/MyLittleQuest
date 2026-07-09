@@ -248,5 +248,55 @@
         }
       ]
     }
+  },
+  {
+    "id": "scenario-cost-01",
+    "game_type": "scenario",
+    "difficulty": 2,
+    "payload": {
+      "intro": "Un étudiant découvre AWS avec le Free Tier et craint de recevoir une facture surprise s'il dépasse les limites gratuites sans s'en rendre compte. Que lui conseiller de mettre en place en priorité ?",
+      "choices": [
+        {
+          "text": "Créer un budget dans AWS Budgets avec une alerte e-mail dès que la dépense (ou l'usage) approche un seuil défini.",
+          "is_correct": true,
+          "feedback": "Correct. AWS Budgets permet de fixer un seuil de coût ou d'usage et d'être alerté par e-mail avant le dépassement, y compris sur une prévision. C'est la parade la plus directe à la « facture surprise » quand on sort du Free Tier."
+        },
+        {
+          "text": "Estimer une seule fois le coût avec AWS Pricing Calculator, puis ne plus rien surveiller.",
+          "is_correct": false,
+          "feedback": "Pricing Calculator estime un coût prévisionnel avant déploiement, mais ne surveille pas la consommation réelle ni n'alerte en cas de dépassement. Il ne protège donc pas contre une facture surprise en cours d'usage."
+        },
+        {
+          "text": "Attendre la facture de fin de mois et l'analyser après coup dans Cost Explorer.",
+          "is_correct": false,
+          "feedback": "Cost Explorer analyse les coûts a posteriori : utile pour comprendre, mais il n'alerte pas en amont. Attendre la facture ne prévient pas le dépassement redouté."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-sup-01",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Une entreprise fait tourner des charges de production critiques sur AWS. Elle exige un support technique disponible 24/7 par téléphone et chat, des temps de réponse rapides en cas de panne, et un accompagnement stratégique avec un interlocuteur dédié. Quel plan de support recommander ?",
+      "choices": [
+        {
+          "text": "Le plan Enterprise, pour le Technical Account Manager (TAM) dédié, l'accompagnement et les temps de réponse les plus rapides.",
+          "is_correct": true,
+          "feedback": "Correct. Le plan Enterprise offre un TAM dédié, un accompagnement stratégique et les temps de réponse les plus courts (jusqu'à 15 min pour un système de production en panne) — adapté à des charges critiques exigeant un interlocuteur dédié."
+        },
+        {
+          "text": "Le plan Basic, gratuit, qui suffit toujours pour la production.",
+          "is_correct": false,
+          "feedback": "Le plan Basic (gratuit) ne donne pas de support technique par cas : il se limite à la documentation, aux forums et aux questions de compte/facturation. Il ne couvre pas des charges de production critiques."
+        },
+        {
+          "text": "Le plan Developer, car il inclut un TAM dédié et le support 24/7 par téléphone.",
+          "is_correct": false,
+          "feedback": "Faux : le plan Developer offre un support technique par e-mail en heures ouvrées, sans TAM dédié ni support téléphonique 24/7. Le TAM dédié est propre au plan Enterprise."
+        }
+      ]
+    }
   }
 ]

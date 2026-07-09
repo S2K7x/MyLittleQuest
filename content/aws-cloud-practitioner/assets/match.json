@@ -268,5 +268,63 @@
         }
       ]
     }
+  },
+  {
+    "id": "match-cost-01",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "AWS Cost Explorer",
+          "right": "Visualiser et analyser les coûts dans le temps"
+        },
+        {
+          "left": "AWS Budgets",
+          "right": "Fixer un seuil et alerter avant dépassement"
+        },
+        {
+          "left": "AWS Cost and Usage Report",
+          "right": "Donnée de coût la plus détaillée, livrée en S3"
+        },
+        {
+          "left": "AWS Cost Anomaly Detection",
+          "right": "Détecter par ML une dépense anormale inattendue"
+        },
+        {
+          "left": "Console Billing and Cost Management",
+          "right": "Tableau de bord central et factures détaillées"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-sup-01",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "Plan Enterprise",
+          "right": "TAM dédié et temps de réponse les plus rapides"
+        },
+        {
+          "left": "AWS Trusted Advisor",
+          "right": "Recommandations réparties en cinq catégories"
+        },
+        {
+          "left": "AWS Marketplace",
+          "right": "Catalogue de logiciels tiers sur la facture AWS"
+        },
+        {
+          "left": "AWS Support Center",
+          "right": "Créer et suivre des cas de support"
+        },
+        {
+          "left": "AWS Pricing Calculator",
+          "right": "Estimer un coût avant de créer des ressources"
+        }
+      ]
+    }
   }
 ]

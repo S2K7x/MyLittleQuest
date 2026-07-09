@@ -606,5 +606,133 @@
       "correct_index": 0,
       "explanation": "AWS CodePipeline est le service de livraison continue (CI/CD) qui orchestre les étapes de release et s'appuie sur CodeBuild (build/test) et CodeDeploy (déploiement). CloudFormation, lui, provisionne l'infrastructure (IaC)."
     }
+  },
+  {
+    "id": "qcm-bill-01",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Quel principe résume le mieux le modèle de tarification par défaut d'AWS pour la majorité des services ?",
+      "choices": [
+        "Payer à l'usage (pay-as-you-go), sans engagement de longue durée, en ne réglant que ce que l'on consomme",
+        "Payer un abonnement mensuel fixe identique quel que soit l'usage",
+        "Acheter une licence perpétuelle par serveur avant toute utilisation",
+        "Payer uniquement en fin d'année après audit manuel de la consommation"
+      ],
+      "correct_index": 0,
+      "explanation": "AWS applique par défaut un modèle pay-as-you-go : on paie à l'usage, sans contrat de longue durée, uniquement pour ce que l'on consomme et le temps qu'on le consomme. Réserver de la capacité ou consommer en volume permet ensuite de payer moins."
+    }
+  },
+  {
+    "id": "qcm-bill-02",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Parmi ces offres du AWS Free Tier, laquelle reste gratuite de façon permanente (dans ses limites) tant qu'on est client AWS ?",
+      "choices": [
+        "Les offres « always free » (toujours gratuit), comme un quota mensuel de requêtes Lambda",
+        "Les offres « 12 mois gratuits », valables seulement la première année",
+        "Les « essais gratuits » (free trials) à court terme propres à chaque service",
+        "Toutes les offres du Free Tier expirent après 30 jours"
+      ],
+      "correct_index": 0,
+      "explanation": "Le Free Tier comprend trois types d'offres : « always free » (gratuit en permanence dans une limite mensuelle), « 12 mois gratuits » (première année seulement) et « essais gratuits » (court terme). Seules les offres « always free » restent gratuites de façon permanente."
+    }
+  },
+  {
+    "id": "qcm-bill-03",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Une équipe veut estimer le coût mensuel d'une architecture AWS AVANT de créer la moindre ressource. Quel outil utiliser ?",
+      "choices": [
+        "AWS Pricing Calculator",
+        "AWS Cost Explorer",
+        "AWS Cost and Usage Report",
+        "AWS Budgets"
+      ],
+      "correct_index": 0,
+      "explanation": "AWS Pricing Calculator est un outil web gratuit de prévision : on configure les services envisagés et il estime le coût, sans rien facturer. Cost Explorer, Budgets et le CUR analysent des coûts déjà engendrés par des ressources existantes."
+    }
+  },
+  {
+    "id": "qcm-bill-04",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quel est un avantage financier de la facturation consolidée via AWS Organizations ?",
+      "choices": [
+        "L'usage cumulé de tous les comptes atteint plus vite les paliers de tarifs dégressifs de volume",
+        "Chaque compte membre reçoit une facture séparée pour plus de clarté",
+        "AWS applique automatiquement une remise fixe de 50 % sur tous les services",
+        "La facturation consolidée coûte un supplément mensuel par compte membre"
+      ],
+      "correct_index": 0,
+      "explanation": "La facturation consolidée (gratuite) agrège l'usage de tous les comptes : les tarifs dégressifs de volume et les remises RI/Savings Plans s'appliquent sur la consommation cumulée, et le compte de gestion reçoit une facture unique. Il n'y a ni facture séparée par compte, ni remise fixe automatique, ni surcoût."
+    }
+  },
+  {
+    "id": "qcm-cost-01",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quel service permet de VISUALISER et d'ANALYSER l'évolution de ses coûts dans le temps, avec filtres, regroupements et prévisions ?",
+      "choices": [
+        "AWS Cost Explorer",
+        "AWS Budgets",
+        "AWS Pricing Calculator",
+        "AWS Trusted Advisor"
+      ],
+      "correct_index": 0,
+      "explanation": "AWS Cost Explorer sert à visualiser et analyser les coûts et l'usage dans le temps (graphiques, filtres, regroupements, prévisions, historique jusqu'à 13 mois). Budgets fixe des seuils et alerte, Pricing Calculator estime avant usage, Trusted Advisor recommande des optimisations."
+    }
+  },
+  {
+    "id": "qcm-cost-02",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une entreprise veut être ALERTÉE dès que sa dépense mensuelle risque de dépasser 1 000 USD. Quel service AWS répond directement à ce besoin ?",
+      "choices": [
+        "AWS Budgets",
+        "AWS Cost Explorer",
+        "AWS Cost and Usage Report",
+        "AWS Pricing Calculator"
+      ],
+      "correct_index": 0,
+      "explanation": "AWS Budgets permet de fixer un budget de coût ou d'usage et d'envoyer des alertes (e-mail ou SNS) quand la dépense approche, dépasse ou est prévue pour dépasser le seuil. C'est l'outil proactif de maîtrise des coûts, complémentaire de l'analyse rétrospective de Cost Explorer."
+    }
+  },
+  {
+    "id": "qcm-cost-03",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quelle source fournit les données de coût et d'usage AWS LES PLUS DÉTAILLÉES (ventilées à l'heure, par ressource et par tag), livrées dans un bucket S3 ?",
+      "choices": [
+        "AWS Cost and Usage Report (CUR)",
+        "Le tableau de bord de la console Billing",
+        "AWS Budgets",
+        "AWS Pricing Calculator"
+      ],
+      "correct_index": 0,
+      "explanation": "Le AWS Cost and Usage Report (CUR) est le jeu de données de facturation le plus complet : ventilé par heure/jour/mois, par ressource et par tag, publié dans un bucket S3 que l'on possède, et interrogeable avec Athena ou Redshift. C'est plus granulaire que les vues agrégées de Cost Explorer ou du tableau de bord."
+    }
+  },
+  {
+    "id": "qcm-sup-01",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quel plan de support AWS inclut un Technical Account Manager (TAM) dédié et les temps de réponse les plus rapides ?",
+      "choices": [
+        "Enterprise",
+        "Basic",
+        "Developer",
+        "Business"
+      ],
+      "correct_index": 0,
+      "explanation": "Le plan Enterprise ajoute un Technical Account Manager (TAM) dédié, un accompagnement stratégique et les temps de réponse les plus courts (jusqu'à 15 minutes pour un système de production en panne). Basic est gratuit et limité, Developer vise l'expérimentation, Business offre le support 24/7 sans TAM dédié."
+    }
   }
 ]

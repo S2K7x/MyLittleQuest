@@ -331,5 +331,77 @@
       "front": "Cite quelques services d'IA applicative AWS (pré-entraînés) et leur usage.",
       "back": "Rekognition (analyse d'images/vidéos), Comprehend (NLP : entités, sentiments), Polly (texte → parole), Translate (traduction), Transcribe (parole → texte), Lex (chatbots). Ce sont des modèles pré-entraînés appelés par API, sans expertise ML — contrairement à SageMaker qui sert à construire ses propres modèles."
     }
+  },
+  {
+    "id": "flashcard-bill-01",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Quels sont les trois leviers pour « payer moins » avec la tarification AWS ?",
+      "back": "1) Réserver / s'engager (Reserved Instances, Savings Plans sur 1 ou 3 ans, jusqu'à ~72 % de réduction). 2) Consommer plus (tarifs dégressifs par paliers de volume, ex. S3, transfert sortant). 3) Profiter de la baisse continue des prix liée aux économies d'échelle d'AWS. Le socle reste le pay-as-you-go : on paie à l'usage, sans engagement obligatoire."
+    }
+  },
+  {
+    "id": "flashcard-bill-02",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Quels sont les trois types d'offres du AWS Free Tier ?",
+      "back": "« Always free » (toujours gratuit, dans une limite mensuelle permanente, ex. 1 M de requêtes Lambda/mois), « 12 mois gratuits » (gratuit la première année après création du compte, jusqu'à un plafond) et « essais gratuits » (free trials, accès gratuit court terme propre à chaque service). Au-delà des limites, la facturation passe au tarif standard."
+    }
+  },
+  {
+    "id": "flashcard-cost-01",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "À quoi sert la console AWS Billing and Cost Management ?",
+      "back": "C'est le point d'entrée central des dépenses : tableau de bord (dépense du mois précédent, coûts month-to-date, prévision de fin de mois, répartition par service), consultation des factures détaillées, préférences et mode de paiement, et accès aux outils de coûts (Cost Explorer, Budgets, CUR). On y repère vite une anomalie ou un dépassement de budget."
+    }
+  },
+  {
+    "id": "flashcard-cost-02",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Que sont les cost allocation tags et quelles sont leurs deux familles ?",
+      "back": "Des étiquettes clé/valeur sur les ressources pour suivre les coûts par projet, équipe ou environnement. Deux familles : tags définis par l'utilisateur (préfixe user:) et tags générés par AWS (préfixe aws:, ex. createdBy). Ils doivent être activés dans la console de facturation (délai jusqu'à 24 h) pour apparaître dans Cost Explorer et le rapport de coûts."
+    }
+  },
+  {
+    "id": "flashcard-cost-03",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Qu'est-ce qu'AWS Cost Anomaly Detection et en quoi diffère-t-il d'AWS Budgets ?",
+      "back": "Un service qui utilise le machine learning pour apprendre le comportement de dépense habituel et alerter sur des écarts anormaux (avec impact estimé et cause probable). Différence : Budgets alerte sur des seuils que L'ON fixe à l'avance ; Anomaly Detection détecte des dépassements INATTENDUS qu'on n'avait pas anticipés. Les deux sont complémentaires."
+    }
+  },
+  {
+    "id": "flashcard-sup-01",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Cite les plans de support AWS et une différence clé entre eux.",
+      "back": "Basic (gratuit, docs/forums/facturation), Developer (support technique par e-mail en heures ouvrées), Business (support 24/7 e-mail/chat/téléphone, Trusted Advisor complet), Enterprise On-Ramp et Enterprise (temps de réponse plus rapides ; Enterprise ajoute un TAM dédié). Plus le niveau monte, plus l'accès aux experts est large et les réponses rapides — avec un coût minimum croissant."
+    }
+  },
+  {
+    "id": "flashcard-sup-02",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Quelles sont les cinq catégories de vérifications d'AWS Trusted Advisor ?",
+      "back": "Optimisation des coûts, sécurité, tolérance aux pannes, performance et limites de service (quotas). Sur l'axe coûts, il repère le gaspillage (instances EC2 sous-utilisées, IP Elastic non associées, load balancers inactifs, volumes EBS peu utilisés) et suggère RI/Savings Plans. L'étendue des checks dépend du plan de support (complet à partir de Business)."
+    }
+  },
+  {
+    "id": "flashcard-sup-03",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Qu'est-ce qu'AWS Marketplace ?",
+      "back": "Un catalogue numérique organisé pour trouver, acheter, déployer et gérer des logiciels, données et services tiers compatibles AWS (AMI, SaaS, conteneurs...). Avantage facturation : les achats apparaissent sur la même facture AWS. Tout titulaire d'un compte peut acheter ; les éditeurs (ISV) et partenaires peuvent s'enregistrer comme vendeurs."
+    }
   }
 ]

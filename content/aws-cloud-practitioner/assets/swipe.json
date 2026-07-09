@@ -368,5 +368,85 @@
       "is_true": false,
       "explanation": "Faux. Reconnaître des objets dans des images relève d'Amazon Rekognition (service d'IA pré-entraîné). SageMaker est la plateforme managée pour construire, entraîner et déployer ses propres modèles ML."
     }
+  },
+  {
+    "id": "swipe-bill-01",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "La facturation consolidée d'AWS Organizations entraîne des frais supplémentaires mensuels par compte membre.",
+      "is_true": false,
+      "explanation": "Faux. La facturation consolidée est offerte sans frais supplémentaires. Elle regroupe le paiement en une facture unique et permet de partager les tarifs dégressifs de volume et les remises RI/Savings Plans entre comptes."
+    }
+  },
+  {
+    "id": "swipe-bill-02",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "AWS Pricing Calculator crée réellement les ressources AWS et facture leur utilisation dès l'estimation.",
+      "is_true": false,
+      "explanation": "Faux. Pricing Calculator est un outil de prévision gratuit : il estime un coût à partir d'une configuration décrite, sans créer aucune ressource ni engendrer de facturation. Il sert à planifier un budget avant de déployer."
+    }
+  },
+  {
+    "id": "swipe-cost-01",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "AWS Cost Explorer permet de visualiser l'historique des coûts et de prévoir les dépenses futures.",
+      "is_true": true,
+      "explanation": "Vrai. Cost Explorer visualise et analyse les coûts dans le temps (jusqu'à 13 mois d'historique), avec filtres et regroupements, et fournit des prévisions de dépense ainsi que des recommandations d'achat de Reserved Instances."
+    }
+  },
+  {
+    "id": "swipe-cost-02",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "AWS Budgets peut envoyer une alerte lorsqu'une dépense est PRÉVUE pour dépasser un seuil, avant même qu'il ne soit atteint.",
+      "is_true": true,
+      "explanation": "Vrai. AWS Budgets déclenche des notifications (e-mail ou SNS) non seulement quand un seuil est dépassé, mais aussi quand la dépense est prévue (forecast) pour le dépasser — ce qui permet d'agir en amont."
+    }
+  },
+  {
+    "id": "swipe-cost-03",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Pour obtenir la donnée de facturation la plus détaillée (à l'heure, par ressource et par tag), on utilise le AWS Cost and Usage Report livré dans un bucket S3.",
+      "is_true": true,
+      "explanation": "Vrai. Le CUR est le rapport de coûts le plus complet : ventilé à l'heure/jour/mois, par ressource et par tag, publié dans un bucket S3 que l'on possède et interrogeable avec Athena ou Redshift."
+    }
+  },
+  {
+    "id": "swipe-cost-04",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Un tag de répartition des coûts apparaît immédiatement dans Cost Explorer dès qu'il est appliqué à une ressource, sans activation préalable.",
+      "is_true": false,
+      "explanation": "Faux. Un cost allocation tag doit d'abord être activé dans la console de facturation (Billing) pour apparaître dans Cost Explorer ou le rapport de coûts, et l'activation peut prendre jusqu'à 24 h."
+    }
+  },
+  {
+    "id": "swipe-sup-01",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "AWS re:Post et le Knowledge Center sont des ressources d'auto-assistance gratuites, accessibles quel que soit le plan de support.",
+      "is_true": true,
+      "explanation": "Vrai. La documentation, le Knowledge Center et la communauté de questions/réponses AWS re:Post sont des ressources gratuites ouvertes à tous. L'ouverture de cas de support techniques, elle, dépend du plan de support souscrit."
+    }
+  },
+  {
+    "id": "swipe-sup-02",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "Les logiciels tiers souscrits via AWS Marketplace apparaissent sur la même facture AWS que le reste de la consommation.",
+      "is_true": true,
+      "explanation": "Vrai. Un des intérêts d'AWS Marketplace est que les achats et abonnements de logiciels/données tiers sont regroupés sur la facture AWS, ce qui simplifie la gestion des dépenses logicielles."
+    }
   }
 ]
