@@ -646,5 +646,131 @@
     "difficulty": 2,
     "source_url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html",
     "generated_at": "2026-07-08T02:00:00Z"
+  },
+  {
+    "id": "bill-pricing-fundamentals",
+    "domain": "Billing, Pricing, and Support",
+    "title": "Fondamentaux de la tarification AWS",
+    "core_explanation": "La tarification AWS repose sur quelques principes : payer à l'usage (pay-as-you-go), sans engagement ni contrat de longue durée pour la plupart des services, en ne réglant que ce que l'on consomme et le temps qu'on le consomme. Trois leviers d'économie complètent ce modèle : payer moins en réservant (engagement sur 1 ou 3 ans via Reserved Instances ou Savings Plans, jusqu'à ~72 % de réduction), payer moins en consommant plus (tarifs dégressifs par paliers de volume, ex. S3 ou transfert de données sortant), et bénéficier de la baisse continue des prix à mesure qu'AWS réalise des économies d'échelle. Les trois grands postes de coût sont le calcul (compute), le stockage et le transfert de données sortant.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/whitepapers/latest/how-aws-pricing-works/key-principles.html",
+    "generated_at": "2026-07-09T02:00:00Z"
+  },
+  {
+    "id": "bill-free-tier",
+    "domain": "Billing, Pricing, and Support",
+    "title": "AWS Free Tier (niveau gratuit)",
+    "core_explanation": "AWS Free Tier permet de tester des services sans frais, selon trois types d'offres. « Always free » (toujours gratuit) : des dizaines de services offrent une limite d'usage mensuelle gratuite de façon permanente (ex. 1 million de requêtes Lambda par mois). « 12 mois gratuits » : certaines offres sont gratuites pendant les 12 premiers mois suivant la création du compte, jusqu'à un plafond d'usage. « Essais gratuits » (free trials) : accès gratuit à court terme, pour une durée ou un quota limité, propre à chaque service. Dépasser les limites du Free Tier entraîne une facturation au tarif standard : il est recommandé de surveiller sa consommation (AWS Budgets, tableau de bord de facturation) pour éviter les frais inattendus.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier.html",
+    "generated_at": "2026-07-09T02:00:00Z"
+  },
+  {
+    "id": "bill-pricing-calculator",
+    "domain": "Billing, Pricing, and Support",
+    "title": "AWS Pricing Calculator",
+    "core_explanation": "AWS Pricing Calculator est un outil web gratuit qui permet d'estimer à l'avance le coût d'une architecture ou d'une charge de travail AWS, avant même de créer les ressources. On y configure les services envisagés (type et taille des instances EC2, volume de stockage S3, transfert de données...) et l'outil calcule une estimation mensuelle et annuelle. Il sert à planifier un budget, comparer des options de configuration, estimer le retour sur investissement d'une migration, puis exporter et partager l'estimation (CSV ou PDF). C'est un outil de prévision : il n'engendre aucun coût réel et ne facture rien, il aide seulement à anticiper la dépense.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/pricing-calculator/latest/userguide/what-is-pricing-calculator.html",
+    "generated_at": "2026-07-09T02:00:00Z"
+  },
+  {
+    "id": "bill-consolidated-billing",
+    "domain": "Billing, Pricing, and Support",
+    "title": "Facturation consolidée (AWS Organizations)",
+    "core_explanation": "La facturation consolidée, offerte par AWS Organizations sans frais supplémentaires, regroupe la facturation et le paiement de plusieurs comptes AWS. Le compte de gestion (management account) reçoit une facture unique couvrant tous les comptes membres, ce qui simplifie le suivi et le paiement. Elle apporte deux avantages financiers majeurs : les tarifs dégressifs de volume s'appliquent à l'usage cumulé de tous les comptes (on atteint plus vite les paliers de prix réduits), et les remises des Reserved Instances / Savings Plans peuvent être partagées entre comptes. On reste ici sur l'angle facturation d'AWS Organizations ; la gouvernance (unités organisationnelles, SCP) relève d'un autre concept.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/consolidated-billing.html",
+    "generated_at": "2026-07-09T02:00:00Z"
+  },
+  {
+    "id": "cost-billing-console",
+    "domain": "Billing, Pricing, and Support",
+    "title": "Console AWS Billing and Cost Management",
+    "core_explanation": "La console AWS Billing and Cost Management (Facturation et gestion des coûts) est le point d'entrée central pour comprendre et piloter ses dépenses AWS. Son tableau de bord donne une vue d'ensemble : dépense du mois précédent, coûts estimés du mois en cours (month-to-date), prévision de fin de mois, et répartition des coûts par service. On y consulte ses factures détaillées, on y définit le mode de paiement et les préférences de facturation, et on y accède aux outils de gestion des coûts (Cost Explorer, Budgets, Cost and Usage Report). C'est l'endroit où l'on repère rapidement une anomalie ou un dépassement de budget nécessitant une action.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html",
+    "generated_at": "2026-07-09T02:00:00Z"
+  },
+  {
+    "id": "cost-explorer",
+    "domain": "Billing, Pricing, and Support",
+    "title": "AWS Cost Explorer",
+    "core_explanation": "AWS Cost Explorer est un outil de visualisation et d'analyse des coûts et de l'usage AWS dans le temps. Il propose des graphiques, des filtres et des regroupements (par service, compte, Région, tag...) pour comprendre où va l'argent, à un niveau global ou très détaillé. Il permet aussi de prévoir la dépense future (jusqu'à plusieurs mois), d'afficher jusqu'à 13 mois d'historique et d'obtenir des recommandations d'achat de Reserved Instances. Cost Explorer répond à la question « où et pourquoi je dépense ? » de façon analytique et rétrospective — à distinguer d'AWS Budgets, qui sert à fixer des seuils et alerter, et du Cost and Usage Report, qui fournit la donnée brute la plus détaillée.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html",
+    "generated_at": "2026-07-09T02:00:00Z"
+  },
+  {
+    "id": "cost-budgets",
+    "domain": "Billing, Pricing, and Support",
+    "title": "AWS Budgets",
+    "core_explanation": "AWS Budgets permet de définir des budgets de coût ou d'usage et de recevoir des alertes lorsque la consommation approche ou dépasse un seuil fixé (ou est prévue pour le dépasser). On peut créer des budgets de coût (limite de dépense en USD), d'usage (limite de consommation d'un service), ou de couverture/utilisation des Reserved Instances et Savings Plans. Les notifications sont envoyées par e-mail ou via un sujet Amazon SNS. C'est l'outil proactif de maîtrise des dépenses : là où Cost Explorer analyse le passé, Budgets surveille en avance et prévient avant le dérapage — utile notamment pour ne pas dépasser le Free Tier ou un budget d'équipe.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html",
+    "generated_at": "2026-07-09T02:00:00Z"
+  },
+  {
+    "id": "cost-cur",
+    "domain": "Billing, Pricing, and Support",
+    "title": "AWS Cost and Usage Report (CUR)",
+    "core_explanation": "L'AWS Cost and Usage Report (CUR) est le rapport de coûts et d'usage le plus complet proposé par AWS. Il publie dans un bucket Amazon S3 que l'on possède un jeu de données très détaillé, ventilé par heure, jour ou mois, par produit ou ressource, et par tags de répartition définis par l'utilisateur. Conçu pour l'analyse approfondie, il peut être interrogé avec Amazon Athena ou chargé dans Amazon Redshift / QuickSight. On le choisit quand les vues agrégées de Cost Explorer ne suffisent pas et qu'on a besoin de la donnée brute la plus granulaire (audit financier détaillé, refacturation interne fine, analyses personnalisées).",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html",
+    "generated_at": "2026-07-09T02:00:00Z"
+  },
+  {
+    "id": "cost-allocation-tags",
+    "domain": "Billing, Pricing, and Support",
+    "title": "Tags de répartition des coûts (cost allocation tags)",
+    "core_explanation": "Les tags de répartition des coûts sont des étiquettes clé/valeur appliquées aux ressources AWS pour organiser et suivre les coûts par projet, équipe, environnement ou centre de coût. Il en existe deux familles : les tags définis par l'utilisateur (préfixe user:) que l'on crée et applique soi-même, et les tags générés par AWS (préfixe aws:, ex. createdBy) qu'AWS ajoute automatiquement. Dans les deux cas, il faut activer chaque tag dans la console de facturation avant qu'il n'apparaisse dans Cost Explorer ou le rapport de coûts (jusqu'à 24 h de délai). Une fois activés, ces tags permettent de filtrer et regrouper les dépenses par étiquette — brique essentielle d'une stratégie de répartition des coûts.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html",
+    "generated_at": "2026-07-09T02:00:00Z"
+  },
+  {
+    "id": "cost-anomaly-detection",
+    "domain": "Billing, Pricing, and Support",
+    "title": "AWS Cost Anomaly Detection",
+    "core_explanation": "AWS Cost Anomaly Detection utilise l'apprentissage automatique (machine learning) pour repérer des dépenses anormales et alerter. Le modèle apprend le comportement de dépense habituel (saisonnalité hebdomadaire/mensuelle, croissance naturelle) afin de limiter les fausses alertes, puis signale les écarts inattendus. On configure des « moniteurs » (par service, compte, catégorie de coût ou tag) et des abonnements d'alerte par e-mail ou SNS. Chaque anomalie détectée est présentée avec son impact estimé en dollars et une analyse de cause possible (service, compte, Région, type d'usage). C'est un garde-fou automatique complémentaire d'AWS Budgets : Budgets alerte sur des seuils que l'on fixe, Anomaly Detection détecte des écarts que l'on n'avait pas anticipés.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/cost-management/latest/userguide/getting-started-ad.html",
+    "generated_at": "2026-07-09T02:00:00Z"
+  },
+  {
+    "id": "sup-plans",
+    "domain": "Billing, Pricing, and Support",
+    "title": "Plans de support AWS",
+    "core_explanation": "AWS propose plusieurs plans de support de niveaux croissants. Basic (gratuit, inclus pour tous) : documentation, forums, questions de compte et de facturation, quelques vérifications Trusted Advisor. Developer : support technique par e-mail en heures ouvrées, pour l'expérimentation. Business : support technique 24/7 par e-mail, chat et téléphone, temps de réponse plus courts, accès complet à Trusted Advisor et à l'API de support. Enterprise On-Ramp et Enterprise : ajoutent des temps de réponse encore plus rapides (jusqu'à 15 minutes pour un système en production en panne au niveau Enterprise) et, pour Enterprise, un Technical Account Manager (TAM) dédié et un accompagnement stratégique. Le bon plan dépend de la criticité des charges et du besoin d'accompagnement — plus le niveau monte, plus l'accès aux experts et la rapidité augmentent (avec un coût minimum mensuel croissant).",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html",
+    "generated_at": "2026-07-09T02:00:00Z"
+  },
+  {
+    "id": "sup-trusted-advisor-cost",
+    "domain": "Billing, Pricing, and Support",
+    "title": "AWS Trusted Advisor (optimisation des coûts)",
+    "core_explanation": "AWS Trusted Advisor inspecte l'environnement AWS et fournit des recommandations de bonnes pratiques réparties en cinq catégories : optimisation des coûts, sécurité, tolérance aux pannes, performance et limites de service (quotas). Sur l'axe coûts, il repère le gaspillage — instances EC2 sous-utilisées, adresses IP Elastic non associées, équilibreurs de charge inactifs, volumes EBS peu utilisés — et suggère des engagements (Reserved Instances, Savings Plans) pour réduire la facture. L'étendue des vérifications dépend du plan de support : Basic et Developer n'ont accès qu'à un jeu limité de checks, tandis que Business, Enterprise On-Ramp et Enterprise débloquent l'ensemble des vérifications Trusted Advisor.",
+    "difficulty": 2,
+    "source_url": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+    "generated_at": "2026-07-09T02:00:00Z"
+  },
+  {
+    "id": "sup-marketplace",
+    "domain": "Billing, Pricing, and Support",
+    "title": "AWS Marketplace",
+    "core_explanation": "AWS Marketplace est un catalogue numérique organisé où l'on peut trouver, acheter, déployer et gérer des logiciels, données et services tiers qui fonctionnent avec AWS. On y trouve des milliers d'offres (sécurité, applications métier, machine learning, données sectorielles...) sous diverses formes : images machine (AMI), logiciels en SaaS, conteneurs, etc. L'intérêt côté facturation : les achats et abonnements souscrits via Marketplace apparaissent sur la même facture AWS, ce qui simplifie la gestion des dépenses logicielles tierces. Tout titulaire d'un compte AWS peut acheter ; les éditeurs (ISV) et partenaires peuvent s'y enregistrer comme vendeurs.",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/marketplace/latest/userguide/what-is-marketplace.html",
+    "generated_at": "2026-07-09T02:00:00Z"
+  },
+  {
+    "id": "sup-support-center",
+    "domain": "Billing, Pricing, and Support",
+    "title": "AWS Support Center et ressources d'aide",
+    "core_explanation": "AWS Support Center est la console depuis laquelle on crée et suit ses cas de support (support cases) auprès d'AWS : on y décrit le problème, on choisit le type et la sévérité, et on échange avec les équipes de support selon son plan. À côté de ce support avec cas, AWS offre des ressources d'auto-assistance gratuites et ouvertes à tous : la documentation officielle, le Knowledge Center (réponses aux questions fréquentes) et AWS re:Post, une communauté de questions/réponses où les utilisateurs et des experts AWS partagent des solutions. La bonne pratique consiste à chercher d'abord dans ces ressources gratuites, puis à ouvrir un cas de support quand une réponse personnalisée est nécessaire (selon les droits ouverts par le plan de support).",
+    "difficulty": 1,
+    "source_url": "https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html",
+    "generated_at": "2026-07-09T02:00:00Z"
   }
 ]

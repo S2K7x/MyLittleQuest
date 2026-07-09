@@ -864,5 +864,182 @@
       "ana-kinesis",
       "ana-glue"
     ]
+  },
+  {
+    "asset_id": "qcm-bill-01",
+    "concept_ids": [
+      "bill-pricing-fundamentals"
+    ]
+  },
+  {
+    "asset_id": "qcm-bill-02",
+    "concept_ids": [
+      "bill-free-tier"
+    ]
+  },
+  {
+    "asset_id": "qcm-bill-03",
+    "concept_ids": [
+      "bill-pricing-calculator"
+    ]
+  },
+  {
+    "asset_id": "qcm-bill-04",
+    "concept_ids": [
+      "bill-consolidated-billing"
+    ]
+  },
+  {
+    "asset_id": "qcm-cost-01",
+    "concept_ids": [
+      "cost-explorer"
+    ]
+  },
+  {
+    "asset_id": "qcm-cost-02",
+    "concept_ids": [
+      "cost-budgets"
+    ]
+  },
+  {
+    "asset_id": "qcm-cost-03",
+    "concept_ids": [
+      "cost-cur"
+    ]
+  },
+  {
+    "asset_id": "qcm-sup-01",
+    "concept_ids": [
+      "sup-plans"
+    ]
+  },
+  {
+    "asset_id": "flashcard-bill-01",
+    "concept_ids": [
+      "bill-pricing-fundamentals"
+    ]
+  },
+  {
+    "asset_id": "flashcard-bill-02",
+    "concept_ids": [
+      "bill-free-tier"
+    ]
+  },
+  {
+    "asset_id": "flashcard-cost-01",
+    "concept_ids": [
+      "cost-billing-console"
+    ]
+  },
+  {
+    "asset_id": "flashcard-cost-02",
+    "concept_ids": [
+      "cost-allocation-tags"
+    ]
+  },
+  {
+    "asset_id": "flashcard-cost-03",
+    "concept_ids": [
+      "cost-anomaly-detection"
+    ]
+  },
+  {
+    "asset_id": "flashcard-sup-01",
+    "concept_ids": [
+      "sup-plans"
+    ]
+  },
+  {
+    "asset_id": "flashcard-sup-02",
+    "concept_ids": [
+      "sup-trusted-advisor-cost"
+    ]
+  },
+  {
+    "asset_id": "flashcard-sup-03",
+    "concept_ids": [
+      "sup-marketplace"
+    ]
+  },
+  {
+    "asset_id": "swipe-bill-01",
+    "concept_ids": [
+      "bill-consolidated-billing"
+    ]
+  },
+  {
+    "asset_id": "swipe-bill-02",
+    "concept_ids": [
+      "bill-pricing-calculator"
+    ]
+  },
+  {
+    "asset_id": "swipe-cost-01",
+    "concept_ids": [
+      "cost-explorer"
+    ]
+  },
+  {
+    "asset_id": "swipe-cost-02",
+    "concept_ids": [
+      "cost-budgets"
+    ]
+  },
+  {
+    "asset_id": "swipe-cost-03",
+    "concept_ids": [
+      "cost-cur"
+    ]
+  },
+  {
+    "asset_id": "swipe-cost-04",
+    "concept_ids": [
+      "cost-allocation-tags"
+    ]
+  },
+  {
+    "asset_id": "swipe-sup-01",
+    "concept_ids": [
+      "sup-support-center"
+    ]
+  },
+  {
+    "asset_id": "swipe-sup-02",
+    "concept_ids": [
+      "sup-marketplace"
+    ]
+  },
+  {
+    "asset_id": "scenario-cost-01",
+    "concept_ids": [
+      "cost-budgets",
+      "bill-free-tier"
+    ]
+  },
+  {
+    "asset_id": "scenario-sup-01",
+    "concept_ids": [
+      "sup-plans"
+    ]
+  },
+  {
+    "asset_id": "match-cost-01",
+    "concept_ids": [
+      "cost-explorer",
+      "cost-budgets",
+      "cost-cur",
+      "cost-anomaly-detection",
+      "cost-billing-console"
+    ]
+  },
+  {
+    "asset_id": "match-sup-01",
+    "concept_ids": [
+      "sup-plans",
+      "sup-trusted-advisor-cost",
+      "sup-marketplace",
+      "sup-support-center",
+      "bill-pricing-calculator"
+    ]
   }
 ]
