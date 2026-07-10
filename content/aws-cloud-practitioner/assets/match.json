@@ -268,5 +268,68 @@
         }
       ]
     }
+  },
+  {
+    "id": "match-cloud-03",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "Déploiement cloud",
+          "right": "Toutes les parties de l'application tournent dans le cloud"
+        },
+        {
+          "left": "Déploiement hybride",
+          "right": "Des ressources cloud reliées à une infrastructure existante hors du cloud (souvent sur site)"
+        },
+        {
+          "left": "Déploiement sur site (on-premises)",
+          "right": "Ressources déployées en interne via virtualisation et outils de gestion (cloud privé)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-sec-03",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "Utilisateur IAM",
+          "right": "Représente une personne ou une application"
+        },
+        {
+          "left": "Groupe IAM",
+          "right": "Rassemble des utilisateurs pour leur appliquer des permissions communes"
+        },
+        {
+          "left": "Rôle IAM",
+          "right": "Identité aux permissions définies que l'on peut endosser temporairement"
+        },
+        {
+          "left": "Policy IAM",
+          "right": "Document de permissions qui accorde les droits"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-sec-04",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "Chiffrement au repos",
+          "right": "Protège les données stockées (S3, volumes, bases) en les rendant illisibles sans la clé"
+        },
+        {
+          "left": "Chiffrement en transit",
+          "right": "Protège les données qui circulent sur le réseau, généralement via TLS, contre l'interception"
+        }
+      ]
+    }
   }
 ]

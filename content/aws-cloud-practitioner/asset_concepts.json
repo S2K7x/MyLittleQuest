@@ -864,5 +864,209 @@
       "ana-kinesis",
       "ana-glue"
     ]
+  },
+  {
+    "asset_id": "qcm-cloud-07",
+    "concept_ids": [
+      "cloud-economies-of-scale"
+    ]
+  },
+  {
+    "asset_id": "flashcard-cloud-08",
+    "concept_ids": [
+      "cloud-economies-of-scale"
+    ]
+  },
+  {
+    "asset_id": "qcm-cloud-08",
+    "concept_ids": [
+      "cloud-elasticity-agility-global"
+    ]
+  },
+  {
+    "asset_id": "swipe-cloud-08",
+    "concept_ids": [
+      "cloud-elasticity-agility-global"
+    ]
+  },
+  {
+    "asset_id": "match-cloud-03",
+    "concept_ids": [
+      "cloud-deployment-models"
+    ]
+  },
+  {
+    "asset_id": "qcm-cloud-09",
+    "concept_ids": [
+      "cloud-deployment-models"
+    ]
+  },
+  {
+    "asset_id": "qcm-cloud-10",
+    "concept_ids": [
+      "well-architected-framework"
+    ]
+  },
+  {
+    "asset_id": "swipe-cloud-09",
+    "concept_ids": [
+      "well-architected-framework"
+    ]
+  },
+  {
+    "asset_id": "qcm-cloud-11",
+    "concept_ids": [
+      "cloud-economics-tco"
+    ]
+  },
+  {
+    "asset_id": "swipe-cloud-10",
+    "concept_ids": [
+      "cloud-economics-tco"
+    ]
+  },
+  {
+    "asset_id": "match-sec-03",
+    "concept_ids": [
+      "iam-identities"
+    ]
+  },
+  {
+    "asset_id": "qcm-sec-10",
+    "concept_ids": [
+      "iam-identities"
+    ]
+  },
+  {
+    "asset_id": "qcm-sec-11",
+    "concept_ids": [
+      "iam-least-privilege"
+    ]
+  },
+  {
+    "asset_id": "swipe-sec-08",
+    "concept_ids": [
+      "iam-least-privilege"
+    ]
+  },
+  {
+    "asset_id": "qcm-sec-12",
+    "concept_ids": [
+      "iam-mfa"
+    ]
+  },
+  {
+    "asset_id": "flashcard-sec-08",
+    "concept_ids": [
+      "iam-mfa"
+    ]
+  },
+  {
+    "asset_id": "match-sec-04",
+    "concept_ids": [
+      "encryption-at-rest-in-transit"
+    ]
+  },
+  {
+    "asset_id": "qcm-sec-13",
+    "concept_ids": [
+      "encryption-at-rest-in-transit"
+    ]
+  },
+  {
+    "asset_id": "flashcard-sec-09",
+    "concept_ids": [
+      "trusted-advisor-security"
+    ]
+  },
+  {
+    "asset_id": "swipe-sec-09",
+    "concept_ids": [
+      "trusted-advisor-security"
+    ]
+  },
+  {
+    "asset_id": "qcm-infra-08",
+    "concept_ids": [
+      "infra-global-accelerator"
+    ]
+  },
+  {
+    "asset_id": "swipe-infra-08",
+    "concept_ids": [
+      "infra-global-accelerator"
+    ]
+  },
+  {
+    "asset_id": "qcm-infra-09",
+    "concept_ids": [
+      "svc-outposts"
+    ]
+  },
+  {
+    "asset_id": "flashcard-infra-08",
+    "concept_ids": [
+      "svc-outposts"
+    ]
+  },
+  {
+    "asset_id": "qcm-comp-05",
+    "concept_ids": [
+      "comp-ecs"
+    ]
+  },
+  {
+    "asset_id": "swipe-comp-05",
+    "concept_ids": [
+      "comp-ecs"
+    ]
+  },
+  {
+    "asset_id": "qcm-comp-06",
+    "concept_ids": [
+      "comp-eks"
+    ]
+  },
+  {
+    "asset_id": "swipe-comp-06",
+    "concept_ids": [
+      "comp-eks"
+    ]
+  },
+  {
+    "asset_id": "qcm-comp-07",
+    "concept_ids": [
+      "comp-elastic-beanstalk"
+    ]
+  },
+  {
+    "asset_id": "flashcard-comp-05",
+    "concept_ids": [
+      "comp-elastic-beanstalk"
+    ]
+  },
+  {
+    "asset_id": "qcm-stor-05",
+    "concept_ids": [
+      "stor-aws-backup"
+    ]
+  },
+  {
+    "asset_id": "swipe-stor-05",
+    "concept_ids": [
+      "stor-aws-backup"
+    ]
+  },
+  {
+    "asset_id": "flashcard-dev-01",
+    "concept_ids": [
+      "dev-codepipeline"
+    ]
+  },
+  {
+    "asset_id": "swipe-dev-01",
+    "concept_ids": [
+      "dev-codepipeline"
+    ]
   }
 ]

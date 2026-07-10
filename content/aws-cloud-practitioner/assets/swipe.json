@@ -368,5 +368,105 @@
       "is_true": false,
       "explanation": "Faux. Reconnaître des objets dans des images relève d'Amazon Rekognition (service d'IA pré-entraîné). SageMaker est la plateforme managée pour construire, entraîner et déployer ses propres modèles ML."
     }
+  },
+  {
+    "id": "swipe-cloud-08",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Avec le cloud, il faut estimer précisément sa capacité à l'avance car on ne peut plus l'ajuster une fois les ressources provisionnées.",
+      "is_true": false,
+      "explanation": "Faux. Le cloud permet justement d'arrêter de deviner sa capacité : on monte ou descend en charge en quelques minutes selon la demande réelle."
+    }
+  },
+  {
+    "id": "swipe-cloud-09",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "L'AWS Well-Architected Framework aide à concevoir des systèmes fiables, sécurisés, performants et économiques.",
+      "is_true": true,
+      "explanation": "Vrai. Le framework repose sur des questions fondamentales et des piliers qui aident à mesurer l'alignement d'une architecture sur les bonnes pratiques cloud."
+    }
+  },
+  {
+    "id": "swipe-cloud-10",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "L'économie du cloud repose sur le paiement à l'usage : on ne paie que pour les ressources réellement consommées.",
+      "is_true": true,
+      "explanation": "Vrai. Ce profil de coût variable est aligné sur les besoins réels et évite de payer pour de la capacité sur-provisionnée."
+    }
+  },
+  {
+    "id": "swipe-sec-08",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Appliquer le principe du moindre privilège réduit l'impact potentiel d'un identifiant compromis.",
+      "is_true": true,
+      "explanation": "Vrai. En limitant les permissions au strict nécessaire, on réduit la surface d'attaque et ce qu'un attaquant peut faire avec un accès volé."
+    }
+  },
+  {
+    "id": "swipe-sec-09",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "L'ensemble complet des vérifications de Trusted Advisor est disponible quel que soit le plan de support AWS.",
+      "is_true": false,
+      "explanation": "Faux. Les plans Basic et Developer n'accèdent qu'à un sous-ensemble des vérifications ; l'ensemble complet est réservé aux plans Business et Enterprise."
+    }
+  },
+  {
+    "id": "swipe-infra-08",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "AWS Global Accelerator fournit des adresses IP statiques qui servent de points d'entrée fixes annoncés en anycast depuis le réseau edge d'AWS.",
+      "is_true": true,
+      "explanation": "Vrai. Le trafic entre sur le réseau mondial privé d'AWS depuis l'edge location la plus proche, puis est routé vers les endpoints régionaux, améliorant performance et disponibilité."
+    }
+  },
+  {
+    "id": "swipe-comp-05",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Amazon ECS peut exécuter des conteneurs en mode serverless avec AWS Fargate, sans gérer d'instances EC2.",
+      "is_true": true,
+      "explanation": "Vrai. Avec ECS, les conteneurs peuvent tourner sur des instances EC2 que l'on gère, ou en mode serverless avec Fargate qui supprime la gestion des serveurs."
+    }
+  },
+  {
+    "id": "swipe-comp-06",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Avec Amazon EKS, c'est le client qui doit installer et maintenir lui-même le plan de contrôle (control plane) Kubernetes.",
+      "is_true": false,
+      "explanation": "Faux. EKS est entièrement géré : AWS opère le plan de contrôle Kubernetes et en assure la disponibilité et les mises à jour."
+    }
+  },
+  {
+    "id": "swipe-stor-05",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "AWS Backup oblige à écrire des scripts personnalisés pour chaque service à sauvegarder.",
+      "is_true": false,
+      "explanation": "Faux. AWS Backup supprime justement le besoin de scripts personnalisés et de processus manuels : on définit des backup plans que l'on applique aux ressources à protéger."
+    }
+  },
+  {
+    "id": "swipe-dev-01",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "AWS CodePipeline déclenche automatiquement les étapes du pipeline (build, test, déploiement) à chaque changement de code.",
+      "is_true": true,
+      "explanation": "Vrai. CodePipeline est un service de livraison continue : à chaque changement, il enchaîne automatiquement les phases, ce qui réduit les erreurs manuelles du cycle de release."
+    }
   }
 ]

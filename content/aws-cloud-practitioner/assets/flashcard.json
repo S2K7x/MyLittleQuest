@@ -331,5 +331,59 @@
       "front": "Cite quelques services d'IA applicative AWS (pré-entraînés) et leur usage.",
       "back": "Rekognition (analyse d'images/vidéos), Comprehend (NLP : entités, sentiments), Polly (texte → parole), Translate (traduction), Transcribe (parole → texte), Lex (chatbots). Ce sont des modèles pré-entraînés appelés par API, sans expertise ML — contrairement à SageMaker qui sert à construire ses propres modèles."
     }
+  },
+  {
+    "id": "flashcard-cloud-08",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Qu'appelle-t-on « économies d'échelle massives » dans le cloud ?",
+      "back": "En mutualisant l'usage de centaines de milliers de clients, un fournisseur comme AWS atteint un volume qu'aucune organisation ne pourrait obtenir seule. Ces économies se répercutent en tarifs pay-as-you-go plus bas, donc un coût variable inférieur à celui d'une infrastructure propre."
+    }
+  },
+  {
+    "id": "flashcard-sec-08",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Sur quelle identité AWS recommande-t-il d'activer la MFA en priorité, et quelles méthodes privilégie-t-il ?",
+      "back": "En priorité sur le compte root, puis sur toutes les identités. AWS privilégie les méthodes résistantes au phishing (passkeys, clés de sécurité FIDO), plus sûres que les codes TOTP."
+    }
+  },
+  {
+    "id": "flashcard-sec-09",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Quels types de failles de sécurité AWS Trusted Advisor peut-il signaler ?",
+      "back": "Groupes de sécurité trop ouverts (accès non restreint), MFA manquante sur le compte root, buckets S3 à accès public, etc. L'étendue des vérifications dépend du plan de support (Basic/Developer = sous-ensemble, Business/Enterprise = tous les checks)."
+    }
+  },
+  {
+    "id": "flashcard-infra-08",
+    "game_type": "flashcard",
+    "difficulty": 3,
+    "payload": {
+      "front": "Qu'est-ce qu'AWS Outposts et qui l'opère ?",
+      "back": "Un service entièrement géré qui étend l'infrastructure, les services, les API et les outils AWS dans les locaux du client. L'Outpost est un pool de calcul/stockage AWS installé sur site, mais opéré et maintenu par AWS, offrant la même expérience que dans le cloud."
+    }
+  },
+  {
+    "id": "flashcard-comp-05",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Que gère automatiquement AWS Elastic Beanstalk, et qu'est-ce qui reste à la charge du développeur ?",
+      "back": "Beanstalk provisionne instances EC2, répartition de charge, surveillance de l'état et mise à l'échelle automatique. Le développeur fournit seulement le code de l'application ; il garde contrôle et visibilité sur les ressources sans les configurer manuellement."
+    }
+  },
+  {
+    "id": "flashcard-dev-01",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Quel est le rôle d'AWS CodePipeline et sur quels services Code* s'appuie-t-il ?",
+      "back": "CodePipeline modélise, visualise et automatise les étapes de release (source, build, test, déploiement). Il orchestre les étapes et s'appuie sur un dépôt de code source, AWS CodeBuild (compiler/tester) et AWS CodeDeploy (automatiser le déploiement)."
+    }
   }
 ]
