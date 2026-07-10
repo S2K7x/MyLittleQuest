@@ -606,5 +606,245 @@
       "correct_index": 0,
       "explanation": "AWS CodePipeline est le service de livraison continue (CI/CD) qui orchestre les étapes de release et s'appuie sur CodeBuild (build/test) et CodeDeploy (déploiement). CloudFormation, lui, provisionne l'infrastructure (IaC)."
     }
+  },
+  {
+    "id": "qcm-cloud-07",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Pourquoi AWS peut-il proposer des prix « pay-as-you-go » plus bas que le coût d'une infrastructure gérée en interne ?",
+      "choices": [
+        "Grâce aux économies d'échelle obtenues en mutualisant l'usage de centaines de milliers de clients",
+        "Parce qu'AWS revend son matériel d'occasion aux clients",
+        "Parce que le cloud supprime totalement le coût de l'électricité",
+        "Parce qu'AWS facture un abonnement fixe unique à vie"
+      ],
+      "correct_index": 0,
+      "explanation": "En agrégeant la demande de très nombreux clients, AWS atteint des économies d'échelle qu'aucune organisation seule ne pourrait obtenir, ce qui se traduit par un coût variable plus bas."
+    }
+  },
+  {
+    "id": "qcm-cloud-08",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une équipe IT veut fournir de nouvelles ressources en quelques minutes plutôt qu'en plusieurs semaines. Quel bénéfice du cloud vise-t-elle ?",
+      "choices": [
+        "La vitesse et l'agilité",
+        "Le chiffrement au repos",
+        "Le modèle de responsabilité partagée",
+        "La facturation consolidée"
+      ],
+      "correct_index": 0,
+      "explanation": "Le cloud augmente la vitesse et l'agilité : de nouvelles ressources IT sont disponibles en minutes plutôt qu'en semaines, ce qui réduit fortement le coût et le temps d'expérimentation."
+    }
+  },
+  {
+    "id": "qcm-cloud-09",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une entreprise relie ses serveurs de datacenter existants à des ressources AWS pour étendre progressivement sa capacité. Quel modèle de déploiement décrit cette approche ?",
+      "choices": [
+        "Hybride",
+        "Tout cloud",
+        "Sur site (on-premises)",
+        "Multi-région"
+      ],
+      "correct_index": 0,
+      "explanation": "Le déploiement hybride relie des ressources cloud à des ressources existantes hors du cloud (le plus souvent une infrastructure sur site) pour étendre et faire croître l'infrastructure."
+    }
+  },
+  {
+    "id": "qcm-cloud-10",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "À quoi sert l'AWS Well-Architected Framework ?",
+      "choices": [
+        "Évaluer une architecture par rapport aux bonnes pratiques du cloud à l'aide de questions et de piliers",
+        "Provisionner automatiquement des serveurs EC2",
+        "Facturer les ressources à l'usage",
+        "Chiffrer les données au repos"
+      ],
+      "correct_index": 0,
+      "explanation": "Le Well-Architected Framework fournit une approche cohérente pour évaluer une architecture face aux bonnes pratiques et concevoir des systèmes fiables, sécurisés, performants et économiques, via un ensemble de questions fondamentales et de piliers."
+    }
+  },
+  {
+    "id": "qcm-cloud-11",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Que désigne le TCO (Total Cost of Ownership) dans le contexte d'une migration vers le cloud ?",
+      "choices": [
+        "Le coût total de possession, estimé pour comparer le cloud à une infrastructure classique",
+        "Le nombre total de conteneurs déployés",
+        "Le temps de réponse du support technique",
+        "Le quota d'appels d'API par seconde"
+      ],
+      "correct_index": 0,
+      "explanation": "Le TCO estime le coût total de possession ; sa modélisation aide à évaluer le ROI d'une migration en tenant compte de la sur-provision, des serveurs obsolètes et des applications héritées que le cloud permet d'éviter."
+    }
+  },
+  {
+    "id": "qcm-sec-10",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Dans IAM, comment AWS recommande-t-il d'attribuer les permissions ?",
+      "choices": [
+        "En attachant les policies aux groupes et aux rôles plutôt qu'aux utilisateurs individuels",
+        "En donnant à chaque utilisateur les droits du compte root",
+        "En attachant une policy identique à tous les utilisateurs",
+        "En n'utilisant jamais de policies, seulement des mots de passe"
+      ],
+      "correct_index": 0,
+      "explanation": "Par défaut, utilisateurs, groupes et rôles n'ont aucun accès : ce sont les policies qui accordent des droits. AWS recommande de les attacher aux groupes et rôles plutôt qu'aux utilisateurs individuels."
+    }
+  },
+  {
+    "id": "qcm-sec-11",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quelle bonne pratique consiste à n'accorder que les permissions strictement nécessaires à une tâche ?",
+      "choices": [
+        "Le principe du moindre privilège",
+        "Le chiffrement en transit",
+        "La facturation consolidée",
+        "La haute disponibilité"
+      ],
+      "correct_index": 0,
+      "explanation": "Le moindre privilège limite la surface d'attaque et l'impact d'un identifiant compromis. AWS conseille de resserrer les permissions au plus juste, en s'appuyant sur des outils comme IAM Access Analyzer."
+    }
+  },
+  {
+    "id": "qcm-sec-12",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Que fait l'authentification multifacteur (MFA) ?",
+      "choices": [
+        "Elle exige un second facteur en plus du mot de passe (code temporaire ou authentificateur matériel)",
+        "Elle chiffre automatiquement les données au repos",
+        "Elle remplace définitivement le mot de passe par une adresse e-mail",
+        "Elle réduit le coût des instances EC2"
+      ],
+      "correct_index": 0,
+      "explanation": "La MFA ajoute une couche de protection en demandant un second facteur, ce qui réduit fortement le risque lié à un mot de passe compromis. AWS recommande de l'activer sur toutes les identités, en priorité le compte root."
+    }
+  },
+  {
+    "id": "qcm-sec-13",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quelle technologie protège le plus souvent les données en transit sur AWS ?",
+      "choices": [
+        "TLS",
+        "RAID",
+        "DNS",
+        "NAT"
+      ],
+      "correct_index": 0,
+      "explanation": "Le chiffrement en transit protège les données qui circulent sur le réseau, généralement via TLS, contre l'interception ; le chiffrement au repos protège quant à lui les données stockées."
+    }
+  },
+  {
+    "id": "qcm-infra-08",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quelle est la différence principale entre AWS Global Accelerator et Amazon CloudFront ?",
+      "choices": [
+        "Global Accelerator optimise le routage réseau vers les applications ; CloudFront met en cache le contenu",
+        "Global Accelerator est un service de stockage ; CloudFront est une base de données",
+        "Les deux services sont identiques, seul le nom change",
+        "Global Accelerator ne fonctionne que dans une seule région"
+      ],
+      "correct_index": 0,
+      "explanation": "Global Accelerator fournit des IP statiques anycast et achemine le trafic sur le réseau mondial privé d'AWS vers des endpoints régionaux (ALB, NLB, EC2, EIP). CloudFront, lui, met le contenu en cache aux edge locations."
+    }
+  },
+  {
+    "id": "qcm-infra-09",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Quel besoin AWS Outposts adresse-t-il ?",
+      "choices": [
+        "Étendre l'infrastructure et les services AWS jusque dans les locaux du client, pour la faible latence ou la résidence des données",
+        "Répartir le trafic HTTP entre plusieurs régions AWS",
+        "Générer des estimations de coût avant migration",
+        "Sauvegarder automatiquement les bases de données dans S3"
+      ],
+      "correct_index": 0,
+      "explanation": "Outposts est un pool de capacité de calcul et de stockage AWS installé sur site, opéré par AWS. Il répond aux besoins de faible latence vers des systèmes locaux, de traitement local des données ou de résidence des données."
+    }
+  },
+  {
+    "id": "qcm-comp-05",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Qu'est-ce qu'Amazon ECS ?",
+      "choices": [
+        "Le service d'orchestration de conteneurs propriétaire d'AWS",
+        "Un service de base de données relationnelle",
+        "Un service de distribution de contenu (CDN)",
+        "Un outil d'estimation de coûts"
+      ],
+      "correct_index": 0,
+      "explanation": "ECS est un service géré d'orchestration de conteneurs Docker : il gère placement, cycle de vie et mise à l'échelle sans opérer soi-même un plan de contrôle. Les conteneurs tournent sur EC2 ou en serverless avec Fargate."
+    }
+  },
+  {
+    "id": "qcm-comp-06",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Dans quel cas choisit-on Amazon EKS plutôt qu'Amazon ECS ?",
+      "choices": [
+        "Quand on veut précisément Kubernetes (portabilité, standard ouvert, écosystème d'outils)",
+        "Quand on veut éviter totalement les conteneurs",
+        "Quand on a besoin d'une base de données NoSQL",
+        "Quand on ne veut aucune mise à l'échelle automatique"
+      ],
+      "correct_index": 0,
+      "explanation": "EKS est un service Kubernetes géré, certifié conforme : on le choisit pour la portabilité et le standard ouvert Kubernetes. ECS reste l'orchestrateur propriétaire d'AWS, plus simple à prendre en main."
+    }
+  },
+  {
+    "id": "qcm-comp-07",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quel service de type PaaS provisionne automatiquement les ressources (EC2, load balancer, mise à l'échelle) à partir du code d'une application web ?",
+      "choices": [
+        "AWS Elastic Beanstalk",
+        "Amazon S3",
+        "AWS CloudTrail",
+        "Amazon Route 53"
+      ],
+      "correct_index": 0,
+      "explanation": "Elastic Beanstalk déploie et gère automatiquement des applications web : on fournit le code, il provisionne les ressources sous-jacentes. Il n'y a pas de surcoût pour le service, on ne paie que les ressources AWS consommées."
+    }
+  },
+  {
+    "id": "qcm-stor-05",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Quel intérêt principal apporte AWS Backup par rapport à des sauvegardes configurées service par service ?",
+      "choices": [
+        "Centraliser et automatiser la protection des données via des backup plans appliqués à plusieurs services AWS",
+        "Réduire la latence réseau des applications mondiales",
+        "Chiffrer le trafic HTTP entre le navigateur et le serveur",
+        "Fournir des adresses IP statiques anycast"
+      ],
+      "correct_index": 0,
+      "explanation": "AWS Backup centralise la protection à travers de nombreux services (EBS, EFS, RDS, DynamoDB, S3…) via des politiques (fréquence, rétention, chiffrement), avec une vue consolidée qui facilite audit et conformité."
+    }
   }
 ]
