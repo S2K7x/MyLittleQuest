@@ -85,5 +85,5 @@ Concepts enrichis (par domaine) :
 
 ## Lien PR
 
-PR (draft) de cette session : voir le lien ajouté ci-dessous après ouverture.
+PR (draft) de cette session : https://github.com/S2K7x/MyLittleQuest/pull/11
 Autres PR de contenu ouvertes : #7 (Lot C) et #10 (Domaine 4 — Billing).
