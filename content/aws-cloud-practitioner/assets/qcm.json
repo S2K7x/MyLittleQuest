@@ -846,5 +846,53 @@
       "correct_index": 0,
       "explanation": "AWS Backup centralise la protection à travers de nombreux services (EBS, EFS, RDS, DynamoDB, S3…) via des politiques (fréquence, rétention, chiffrement), avec une vue consolidée qui facilite audit et conformité."
     }
+  },
+  {
+    "id": "qcm-comp-08",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une application EC2 subit des pics de charge imprévisibles. On veut ajouter des instances quand la demande monte, en retirer quand elle baisse, et remplacer automatiquement les instances défaillantes. Quel service répond à ce besoin ?",
+      "choices": [
+        "Amazon EC2 Auto Scaling",
+        "Amazon CloudFront",
+        "AWS Trusted Advisor",
+        "Amazon Route 53"
+      ],
+      "correct_index": 0,
+      "explanation": "EC2 Auto Scaling ajuste le nombre d'instances d'un groupe entre une capacité minimale, souhaitée et maximale (scale out / scale in) et remplace les instances défaillantes pour maintenir la disponibilité. C'est la mise en œuvre concrète de l'élasticité, souvent couplée à un load balancer (ELB)."
+    }
+  },
+  {
+    "id": "qcm-app-03",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une architecture event-driven doit acheminer des événements vers différentes cibles (Lambda, SQS, SNS, Step Functions) selon leur contenu, et intégrer nativement des sources SaaS et AWS. Quel service est conçu pour cela ?",
+      "choices": [
+        "Amazon EventBridge",
+        "Amazon EC2 Auto Scaling",
+        "AWS Glue",
+        "Amazon CloudWatch Logs"
+      ],
+      "correct_index": 0,
+      "explanation": "EventBridge est un bus d'événements serverless : des règles de routage acheminent chaque événement vers une ou plusieurs cibles selon son contenu. Il se distingue de SNS/SQS par le filtrage/routage par contenu et l'intégration native de nombreuses sources SaaS et AWS."
+    }
+  },
+  {
+    "id": "qcm-ana-02",
+    "game_type": "qcm",
+    "difficulty": 2,
+    "payload": {
+      "question": "Une équipe data veut découvrir automatiquement le schéma de fichiers bruts dans S3, cataloguer ces métadonnées et exécuter des jobs ETL sans gérer de serveurs. Quel service AWS correspond ?",
+      "choices": [
+        "AWS Glue",
+        "Amazon Redshift",
+        "Amazon EventBridge",
+        "AWS CloudFormation"
+      ],
+      "correct_index": 0,
+      "explanation": "AWS Glue est un service d'intégration de données serverless : ses crawlers infèrent les schémas, son Data Catalog stocke les métadonnées (partagées avec Athena, Redshift Spectrum, EMR) et ses jobs ETL sur Apache Spark transforment les données sans serveur à gérer."
+    }
   }
 ]

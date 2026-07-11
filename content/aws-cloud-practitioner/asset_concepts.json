@@ -1068,5 +1068,71 @@
     "concept_ids": [
       "dev-codepipeline"
     ]
+  },
+  {
+    "asset_id": "qcm-comp-08",
+    "concept_ids": [
+      "comp-auto-scaling"
+    ]
+  },
+  {
+    "asset_id": "qcm-app-03",
+    "concept_ids": [
+      "app-eventbridge"
+    ]
+  },
+  {
+    "asset_id": "qcm-ana-02",
+    "concept_ids": [
+      "ana-glue"
+    ]
+  },
+  {
+    "asset_id": "flashcard-sec-10",
+    "concept_ids": [
+      "iam-roles-temp-credentials"
+    ]
+  },
+  {
+    "asset_id": "flashcard-infra-09",
+    "concept_ids": [
+      "svc-iac-concept"
+    ]
+  },
+  {
+    "asset_id": "swipe-sec-10",
+    "concept_ids": [
+      "aws-compliance-programs"
+    ]
+  },
+  {
+    "asset_id": "swipe-infra-09",
+    "concept_ids": [
+      "infra-local-zones"
+    ]
+  },
+  {
+    "asset_id": "swipe-infra-10",
+    "concept_ids": [
+      "svc-management-console"
+    ]
+  },
+  {
+    "asset_id": "scenario-comp-02",
+    "concept_ids": [
+      "comp-fargate"
+    ]
+  },
+  {
+    "asset_id": "scenario-ml-01",
+    "concept_ids": [
+      "ml-sagemaker"
+    ]
+  },
+  {
+    "asset_id": "match-cloud-04",
+    "concept_ids": [
+      "cloud-adoption-framework"
+    ]
   }
 ]

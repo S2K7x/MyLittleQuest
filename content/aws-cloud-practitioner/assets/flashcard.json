@@ -385,5 +385,23 @@
       "front": "Quel est le rôle d'AWS CodePipeline et sur quels services Code* s'appuie-t-il ?",
       "back": "CodePipeline modélise, visualise et automatise les étapes de release (source, build, test, déploiement). Il orchestre les étapes et s'appuie sur un dépôt de code source, AWS CodeBuild (compiler/tester) et AWS CodeDeploy (automatiser le déploiement)."
     }
+  },
+  {
+    "id": "flashcard-sec-10",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Pourquoi préférer un rôle IAM à des clés d'accès à long terme pour une application qui s'exécute sur une instance EC2 ?",
+      "back": "Un rôle fournit des identifiants de sécurité temporaires (clé d'accès, clé secrète, jeton de session) qui expirent automatiquement au bout d'une durée définie. L'application n'a ainsi aucune clé permanente à stocker ni à faire tourner sur l'instance, ce qui limite le risque en cas de fuite. C'est aussi la méthode recommandée pour accorder un accès temporaire entre comptes."
+    }
+  },
+  {
+    "id": "flashcard-infra-09",
+    "game_type": "flashcard",
+    "difficulty": 2,
+    "payload": {
+      "front": "Qu'est-ce que l'Infrastructure as Code (IaC) et quel est l'outil natif d'IaC sur AWS ?",
+      "back": "L'IaC décrit et provisionne l'infrastructure (serveurs, réseaux, bases de données) à l'aide de fichiers de configuration versionnés plutôt que par des actions manuelles en console. Elle rend les déploiements reproductibles, traçables et automatisables, et réduit les erreurs de configuration manuelle. L'outil d'IaC natif sur AWS est AWS CloudFormation."
+    }
   }
 ]

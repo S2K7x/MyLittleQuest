@@ -248,5 +248,65 @@
         }
       ]
     }
+  },
+  {
+    "id": "scenario-comp-02",
+    "game_type": "scenario",
+    "difficulty": 2,
+    "payload": {
+      "intro": "Une équipe veut exécuter une application conteneurisée sur AWS sans avoir à provisionner, patcher ni mettre à l'échelle des serveurs. Elle souhaite simplement déclarer le CPU et la mémoire nécessaires et payer à l'usage. Quelle option choisir ?",
+      "choices": [
+        {
+          "text": "AWS Fargate, le moteur de calcul serverless pour conteneurs (avec Amazon ECS ou Amazon EKS).",
+          "is_correct": true,
+          "feedback": "Correct. Fargate supprime la gestion des instances EC2 : on package l'application, on déclare le CPU et la mémoire, et Fargate fournit la capacité à la demande, facturée au CPU/mémoire réellement demandés."
+        },
+        {
+          "text": "Le mode de lancement EC2 d'Amazon ECS, en gérant soi-même le cluster d'instances.",
+          "is_correct": false,
+          "feedback": "Ce mode fonctionne mais impose de provisionner et de gérer les instances EC2 du cluster — exactement ce que l'équipe cherche à éviter."
+        },
+        {
+          "text": "Amazon EC2 avec des instances réservées, en installant Docker manuellement.",
+          "is_correct": false,
+          "feedback": "Cela oblige à gérer les serveurs, leur patch et leur mise à l'échelle, à l'opposé du besoin « sans serveur à gérer »."
+        },
+        {
+          "text": "AWS Lambda, en y exécutant en continu 24h/24 un conteneur applicatif de longue durée.",
+          "is_correct": false,
+          "feedback": "Lambda cible des exécutions courtes et événementielles ; pour un conteneur applicatif tournant en continu, Fargate est l'option conçue pour cet usage."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-ml-01",
+    "game_type": "scenario",
+    "difficulty": 2,
+    "payload": {
+      "intro": "Une entreprise dispose d'un jeu de données propre à son métier et veut entraîner, régler puis déployer son propre modèle de machine learning derrière un point de terminaison, en couvrant tout le cycle de vie ML. Quel service AWS est le plus adapté ?",
+      "choices": [
+        {
+          "text": "Amazon SageMaker, plateforme ML managée pour construire, entraîner et déployer ses propres modèles.",
+          "is_correct": true,
+          "feedback": "Correct. SageMaker couvre tout le cycle de vie ML (préparation des données, entraînement, réglage, déploiement derrière un endpoint) pour ceux qui créent leurs propres modèles."
+        },
+        {
+          "text": "Amazon Rekognition, en lui envoyant les données par appel d'API.",
+          "is_correct": false,
+          "feedback": "Rekognition est un service d'IA pré-entraîné (analyse d'images et de vidéos) qui s'utilise par simple appel d'API ; il ne permet pas d'entraîner son propre modèle sur mesure."
+        },
+        {
+          "text": "Amazon Comprehend, pour entraîner de zéro un modèle sur des données quelconques.",
+          "is_correct": false,
+          "feedback": "Comprehend est un service de NLP pré-entraîné ; ce n'est pas la plateforme pour construire et entraîner un modèle personnalisé de bout en bout."
+        },
+        {
+          "text": "AWS Glue, pour entraîner et héberger le modèle.",
+          "is_correct": false,
+          "feedback": "Glue est un service d'ETL et de catalogue de données : il prépare et transforme les données mais n'entraîne ni n'héberge de modèle de machine learning."
+        }
+      ]
+    }
   }
 ]

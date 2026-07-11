@@ -331,5 +331,38 @@
         }
       ]
     }
+  },
+  {
+    "id": "match-cloud-04",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "Perspective Business",
+          "right": "Aligner l'investissement cloud sur les résultats métier (stratégie, portefeuille)"
+        },
+        {
+          "left": "Perspective People (personnes)",
+          "right": "Faire évoluer la culture, les compétences et l'organisation des équipes"
+        },
+        {
+          "left": "Perspective Governance (gouvernance)",
+          "right": "Orchestrer l'initiative cloud, en mesurer la valeur et en maîtriser les risques"
+        },
+        {
+          "left": "Perspective Platform (plateforme)",
+          "right": "Construire une plateforme cloud évolutive à base de services et d'architectures modernes"
+        },
+        {
+          "left": "Perspective Security (sécurité)",
+          "right": "Assurer confidentialité, intégrité et disponibilité des données et des charges"
+        },
+        {
+          "left": "Perspective Operations (opérations)",
+          "right": "Exploiter les services cloud au niveau de fiabilité attendu par le métier"
+        }
+      ]
+    }
   }
 ]
