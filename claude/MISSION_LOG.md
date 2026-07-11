@@ -1,63 +1,67 @@
-# MISSION LOG — Enrichissement assets SM-2 (CLF-C02) : les 17 concepts à un seul asset
+# MISSION LOG — Enrichissement SM-2 (CLF-C02) : les 11 concepts de `main` à 2 assets
 
-**Date** : 2026-07-10 (session nocturne autonome)
-**Branche** : claude/loving-curie-l3m6q9
+**Date** : 2026-07-11 (session nocturne autonome)
+**Branche** : claude/loving-curie-t51kkw
 **Statut** : Terminée — PR ouverte vers main (draft)
 
 ## ⚠️ À LIRE EN PREMIER (10 secondes)
 
-- **La mission prévue (Domaine 4 — Billing/Pricing/Support) était DÉJÀ FAITE.** Elle existe dans
-  la **PR #10** (ouverte, draft, 14 concepts / 28 assets, créée le 2026-07-09, branche
-  `claude/loving-curie-d74pqn`). **Je ne l'ai PAS régénérée** (garde-fou anti-doublon, règle #1 de
-  l'ancien `NEXT_MISSION.md`). L'ancien `NEXT_MISSION.md` avait été écrit **avant** que cette PR #10
-  ne soit produite.
-- **À la place, j'ai fait un travail utile, non-doublon et sans décision requise** : enrichir en
-  assets les **17 concepts de `main` qui n'avaient qu'UN seul asset** (mauvaise rotation SM-2 — un
-  concept à réviser renvoyait toujours le même item). **+34 assets** (2 par concept) → chacun de ces
-  17 concepts passe à **3 assets**. `python3 scripts/validate.py` → ✅ OK (72 concepts / **166**
-  assets / **166** mappings). Diff **100 % additif : 661 insertions, 0 suppression**.
-- **Il y a maintenant 3 PR de contenu ouvertes** qui appendent toutes aux mêmes tableaux JSON →
-  **conflits Git d'append triviaux attendus** (garder tous les blocs). Voir « Décision demandée ».
+- **PR #11 (enrichissement des 17 concepts à 1 asset) a été MERGÉE** entre-temps → `main` est
+  désormais à **72 concepts / 166 assets / 166 mappings**. Cette session repart de ce `main` à jour.
+- **Mission de la nuit exécutée** : amener les **11 concepts de `main` qui n'avaient que 2 assets**
+  à **3 assets** (+1 asset chacun, type **complémentaire** de l'existant). **+11 assets, +11 mappings.**
+  Résultat : **plus aucun concept sous 3 assets** (rotation SM-2 assainie). Nouveaux totaux :
+  **72 concepts / 177 assets / 177 mappings**. `python3 scripts/validate.py` → ✅ OK.
+- **Diff 100 % additif : 255 insertions, 0 suppression.** Aucun concept touché, aucune `source_url`
+  requise (garde-fou §6.1 concerne les concepts, pas les assets).
+- **2 PR de contenu restent ouvertes et non mergées** : **PR #7** (Lot C — Networking & Databases,
+  14 concepts / 28 assets) et **PR #10** (Domaine 4 — Billing, 14 concepts / 28 assets). Elles
+  appendent aux mêmes tableaux JSON → **conflits d'append triviaux** à l'intégration (garder tous
+  les blocs). **Aucune collision d'id** avec cette PR. Voir « Décision demandée ».
 
 ## Ce qui a été fait
 
-Enrichissement pédagogique pour améliorer la rotation SM-2. Les 17 concepts déjà mergés sur `main`
-qui n'avaient qu'un asset en reçoivent 2 de plus (types complémentaires de l'existant), pour atteindre
-3 assets chacun. **Aucun nouveau concept**, donc aucune nouvelle recherche de `source_url` (garde-fou
-§6.1 concerne les concepts, pas les assets). Contenu original, ancré sur le `core_explanation` de
-chaque concept — aucune reproduction de question d'examen (§6.3).
+Enrichissement pédagogique ciblé pour la rotation SM-2 : chacun des 11 concepts déjà sur `main`
+qui n'avait que 2 assets reçoit **1 asset supplémentaire d'un type qu'il n'avait pas encore**, pour
+atteindre 3 assets. Le format **scénario** (le plus sous-représenté : 10/166) a été privilégié quand
+il était pédagogiquement pertinent → **2 scénarios ajoutés** (comp-fargate, ml-sagemaker), portant
+le total de scénarios à **12**. Contenu 100 % original, ancré sur le `core_explanation` de chaque
+concept — aucune reproduction de question d'examen (§6.3).
 
-Concepts enrichis (par domaine) :
-- **Cloud Concepts (5)** : economies-of-scale, elasticity-agility-global, deployment-models,
-  well-architected-framework, economics-tco.
-- **Security and Compliance (5)** : iam-identities, iam-least-privilege, iam-mfa,
-  encryption-at-rest-in-transit, trusted-advisor-security.
-- **Cloud Technology and Services (7)** : infra-global-accelerator, svc-outposts, comp-ecs,
-  comp-eks, comp-elastic-beanstalk, stor-aws-backup, dev-codepipeline.
+Concepts enrichis et asset ajouté (type complémentaire) :
+- **cloud-adoption-framework** (Cloud Concepts) → **match** (`match-cloud-04`) : les 6 perspectives du CAF.
+- **iam-roles-temp-credentials** (Security) → **flashcard** (`flashcard-sec-10`).
+- **aws-compliance-programs** (Security) → **swipe** (`swipe-sec-10`).
+- **infra-local-zones** (Cloud Tech) → **swipe** (`swipe-infra-09`).
+- **svc-management-console** (Cloud Tech) → **swipe** (`swipe-infra-10`).
+- **svc-iac-concept** (Cloud Tech) → **flashcard** (`flashcard-infra-09`).
+- **comp-auto-scaling** (Cloud Tech) → **qcm** (`qcm-comp-08`).
+- **comp-fargate** (Cloud Tech) → **scénario** (`scenario-comp-02`).
+- **app-eventbridge** (Cloud Tech) → **qcm** (`qcm-app-03`).
+- **ana-glue** (Cloud Tech) → **qcm** (`qcm-ana-02`).
+- **ml-sagemaker** (Cloud Tech) → **scénario** (`scenario-ml-01`).
 
 ## Certification / domaine traités
 
-- **aws-cloud-practitioner** — enrichissement transverse (Domaines 1, 2 et parties du 3 déjà sur `main`).
-- **34 assets créés** : QCM ×17, flashcards ×7, swipe ×8, match ×2 (aucun scénario ajouté cette fois).
-  34 mappings (1 par asset, 0 orphelin). Ids sans collision (suites continuées par préfixe/type).
-- Totaux certif sur cette branche (base = `main`, qui contient déjà le Lot D mais **pas** le Lot C
-  ni le Domaine 4) : **72 concepts, 166 assets, 166 mappings**.
+- **aws-cloud-practitioner** — enrichissement transverse (Domaines 1, 2 et 3 déjà sur `main`).
+- **11 assets créés** : qcm ×3, flashcard ×2, swipe ×3, scénario ×2, match ×1.
+  **11 mappings** (1 par asset, 0 orphelin). Ids sans collision (suites continuées par préfixe/type).
 
 ## Répartition finale des assets par concept (les 72 concepts de `main`)
 
-- 0 concept à 1 asset (**objectif atteint**, ils étaient 17).
-- 11 concepts à 2 assets, 36 à 3, 17 à 4, 7 à 5, 1 à 7.
+- 0 concept à 1 ou 2 assets (**objectif atteint** : ils étaient 11 à 2 assets).
+- 47 concepts à 3 assets, 17 à 4, 7 à 5, 1 à 7.
 
 ## Contrôle technique passé
 
-- `python3 scripts/validate.py` : ✅ OK (schéma par format + intégrité référentielle : 72/166/166).
-- Diff : **661 insertions, 0 suppression** (ajout strict, non-régression garantie).
+- `python3 scripts/validate.py` : ✅ OK (schéma par format + intégrité référentielle : 72 / 177 / 177).
+- Diff : **255 insertions, 0 suppression** (ajout strict, non-régression garantie).
 - Aucun secret / credential dans le diff (contenu 100 % pédagogique).
 
 ## Fichiers créés / modifiés
 
-- `content/aws-cloud-practitioner/assets/{qcm,flashcard,swipe,match}.json` (+34 assets)
-- `content/aws-cloud-practitioner/asset_concepts.json` (+34 mappings)
+- `content/aws-cloud-practitioner/assets/{qcm,flashcard,swipe,scenario,match}.json` (+11 assets)
+- `content/aws-cloud-practitioner/asset_concepts.json` (+11 mappings)
 - `claude/MISSION_LOG.md` (ce fichier), `claude/NEXT_MISSION.md` (mission suivante)
 - `content/aws-cloud-practitioner/concepts.json` : **non modifié** (0 nouveau concept).
 
@@ -70,20 +74,19 @@ Concepts enrichis (par domaine) :
 
 ## Questions ouvertes pour Shai (par priorité)
 
-1. **3 PR de contenu ouvertes à merger** : PR #7 (Lot C — réseau/BdD), PR #10 (Domaine 4 — billing),
-   et **cette PR** (enrichissement). Elles appendent toutes aux mêmes tableaux JSON → **conflits
-   d'append triviaux** (garder tous les blocs). **Ordre de merge suggéré** : #7 → #10 → cette PR
-   (ordre de production), en rebasant chaque suivante. Aucune collision d'id entre les trois.
+1. **2 PR de contenu ouvertes à merger** : **PR #7** (Lot C — réseau/BdD) et **PR #10** (Domaine 4 —
+   billing). Elles appendent aux mêmes tableaux JSON que cette PR → **conflits d'append triviaux**
+   (garder tous les blocs). **Ordre de merge suggéré** : #7 → #10 → cette PR. Aucune collision d'id.
 2. **Statut certif** : une fois PR #7 + #10 mergées, les 4 domaines sont couverts → basculer vers
    `needs_review` (garde-fou §6.4 ; exam guide PDF inaccessible au fetcher). Non fait cette session
    pour ne pas surestimer le coverage tant que #7/#10 ne sont pas sur `main`.
-3. **Le pipeline produit plus vite que le merge** : 3 PR de contenu s'accumulent non mergées. Décision
-   utile : soit merger le backlog, soit mettre en pause la génération de nouveau contenu jusqu'à
-   résorption. Voir `NEXT_MISSION.md`.
+3. **Le pipeline produit plus vite que le merge** : le backlog est passé de 3 à 2 PR (PR #11 mergée),
+   mais cette PR le ramène à 3. **Résorber le backlog (merger #7/#10) est probablement plus utile que
+   de générer davantage.** Détail des options dans `NEXT_MISSION.md`.
 4. Décisions produit anciennes toujours ouvertes (langue FR/bilingue ; granularité du champ `domain` ;
-   critère de `complete`) — inchangées.
+   critère de `complete` ; plans de support AWS en restructuration — soulevé par PR #10) — inchangées.
 
 ## Lien PR
 
-PR (draft) de cette session : https://github.com/S2K7x/MyLittleQuest/pull/11
+PR (draft) de cette session : voir le lien ajouté ci-dessous après ouverture.
 Autres PR de contenu ouvertes : #7 (Lot C) et #10 (Domaine 4 — Billing).
