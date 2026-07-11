@@ -468,5 +468,35 @@
       "is_true": true,
       "explanation": "Vrai. CodePipeline est un service de livraison continue : à chaque changement, il enchaîne automatiquement les phases, ce qui réduit les erreurs manuelles du cycle de release."
     }
+  },
+  {
+    "id": "swipe-sec-10",
+    "game_type": "swipe",
+    "difficulty": 2,
+    "payload": {
+      "statement": "Grâce aux programmes de conformité d'AWS (SOC, ISO 27001, PCI DSS, FedRAMP…), le client n'a plus aucune responsabilité de conformité sur ses propres données.",
+      "is_true": false,
+      "explanation": "Faux. La conformité est partagée : AWS assure la conformité de l'infrastructure et fournit certifications et attestations, mais le client reste responsable de la conformité de ses données et de ses configurations."
+    }
+  },
+  {
+    "id": "swipe-infra-09",
+    "game_type": "swipe",
+    "difficulty": 3,
+    "payload": {
+      "statement": "Une AWS Local Zone dispose de son propre accès Internet et supporte AWS Direct Connect, sans que le trafic doive remonter jusqu'à la Région parente.",
+      "is_true": true,
+      "explanation": "Vrai. Les Local Zones rapprochent calcul et stockage des utilisateurs d'une grande agglomération pour une latence très faible ; elles ont leur propre sortie Internet et le support de Direct Connect, ce qui évite un aller-retour vers la Région parente."
+    }
+  },
+  {
+    "id": "swipe-infra-10",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "Pour automatiser des opérations répétitives sur AWS, l'AWS Management Console (interface web) est le moyen le plus adapté.",
+      "is_true": false,
+      "explanation": "Faux. La Console web est idéale pour découvrir un service ou effectuer une tâche ponctuelle. Pour l'automatisation et les opérations répétitives, on privilégie la CLI, les SDK ou l'Infrastructure as Code."
+    }
   }
 ]
