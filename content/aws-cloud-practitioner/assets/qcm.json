@@ -894,5 +894,117 @@
       "correct_index": 0,
       "explanation": "AWS Glue est un service d'intégration de données serverless : ses crawlers infèrent les schémas, son Data Catalog stocke les métadonnées (partagées avec Athena, Redshift Spectrum, EMR) et ses jobs ETL sur Apache Spark transforment les données sans serveur à gérer."
     }
+  },
+  {
+    "id": "qcm-comp-09",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Une entreprise possède déjà des applications Kubernetes standard et veut les exécuter sur AWS sans les réécrire, en réutilisant son écosystème d'outils Kubernetes. Entre Amazon ECS et Amazon EKS, lequel choisir et pourquoi ?",
+      "choices": [
+        "Amazon EKS, car c'est le service Kubernetes conforme d'AWS qui exécute des applications Kubernetes standard sans réécriture.",
+        "Amazon ECS, car c'est aussi une distribution de Kubernetes gérée par AWS.",
+        "Amazon ECS, car il est le seul des deux à pouvoir utiliser AWS Fargate.",
+        "Aucun des deux : il faut d'abord installer et opérer soi-même Kubernetes sur des instances EC2."
+      ],
+      "correct_index": 0,
+      "explanation": "EKS est le service Kubernetes managé et certifié conforme d'AWS : il exécute des applications Kubernetes standard sans réécriture et réutilise l'écosystème Kubernetes existant. ECS est l'orchestrateur propriétaire d'AWS (ce n'est pas Kubernetes). Les deux peuvent faire tourner les workloads sur EC2 ou sur AWS Fargate."
+    }
+  },
+  {
+    "id": "qcm-comp-10",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Quelle est la différence essentielle entre exécuter des conteneurs (ECS ou EKS) sur AWS Fargate plutôt qu'en mode de lancement EC2 ?",
+      "choices": [
+        "Avec Fargate, on ne provisionne ni ne gère d'instances EC2 : on déclare le CPU et la mémoire nécessaires et on paie la capacité demandée ; en mode EC2, on gère soi-même les instances.",
+        "Fargate est totalement gratuit, alors que le mode de lancement EC2 est facturé.",
+        "Fargate n'accepte pas les conteneurs Docker, contrairement au mode EC2.",
+        "Le mode de lancement EC2 est serverless, tandis que Fargate impose de gérer des serveurs."
+      ],
+      "correct_index": 0,
+      "explanation": "Fargate est le moteur de calcul serverless pour conteneurs : plus d'instances EC2 à provisionner, configurer ou mettre à l'échelle ; on déclare le CPU/mémoire et Fargate fournit la capacité à la demande, facturée au pay-as-you-go. En mode de lancement EC2, on reste responsable des instances sous-jacentes."
+    }
+  },
+  {
+    "id": "qcm-comp-11",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Un établissement de santé doit traiter certaines données dans son propre datacenter, pour la faible latence vers des systèmes locaux et la résidence des données, tout en conservant les mêmes API et outils qu'AWS. Quelle solution répond le mieux à ce besoin ?",
+      "choices": [
+        "AWS Outposts, qui étend l'infrastructure, les services, les API et les outils AWS jusque dans les locaux du client.",
+        "Une Région AWS supplémentaire dédiée à ce client.",
+        "Amazon CloudFront, pour rapprocher les données des utilisateurs.",
+        "AWS Global Accelerator, pour router le trafic vers le datacenter."
+      ],
+      "correct_index": 0,
+      "explanation": "AWS Outposts installe sur site un pool de capacité AWS, opéré et maintenu par AWS, qui offre la même expérience que le cloud. Il répond précisément aux besoins de faible latence locale et de résidence des données. Une Région, CloudFront ou Global Accelerator ne placent pas de calcul dans le datacenter du client."
+    }
+  },
+  {
+    "id": "qcm-infra-10",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Une API dynamique et non cacheable sert des utilisateurs dans le monde entier via des endpoints régionaux (ALB/NLB). L'équipe veut des adresses IP statiques fixes et un routage optimisé sur le réseau privé mondial d'AWS, sans mise en cache de contenu. Quel service choisir ?",
+      "choices": [
+        "AWS Global Accelerator",
+        "Amazon CloudFront",
+        "Amazon Route 53 seul",
+        "AWS Direct Connect"
+      ],
+      "correct_index": 0,
+      "explanation": "Global Accelerator fournit des adresses IP statiques annoncées en anycast depuis l'edge et achemine le trafic sur le réseau mondial privé d'AWS vers les endpoints régionaux, ce qui optimise le routage réseau. CloudFront met en cache le contenu à l'edge : utile pour du contenu cacheable, pas pour router une API dynamique."
+    }
+  },
+  {
+    "id": "qcm-app-04",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Dans une architecture orientée événements, quelle capacité distingue le plus Amazon EventBridge de SNS et SQS ?",
+      "choices": [
+        "EventBridge route les événements vers une ou plusieurs cibles selon des règles portant sur le contenu de l'événement, et intègre nativement des sources d'événements SaaS partenaires et AWS.",
+        "EventBridge est le seul des trois à être serverless.",
+        "EventBridge stocke durablement les messages dans une file d'attente et ne fait rien de plus.",
+        "EventBridge ne peut acheminer un événement que vers une seule cible à la fois."
+      ],
+      "correct_index": 0,
+      "explanation": "EventBridge se distingue par le routage par règles fondées sur le contenu de l'événement et par l'intégration native de nombreuses sources SaaS et AWS. Une règle peut viser plusieurs cibles (Lambda, SQS, SNS, Step Functions…). SNS et SQS sont aussi serverless : ce n'est donc pas le critère distinctif."
+    }
+  },
+  {
+    "id": "qcm-ana-03",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Sur un lac de données dans Amazon S3, quel composant d'AWS Glue fournit les définitions de tables (métadonnées) partagées avec Amazon Athena et Redshift Spectrum, et quel composant découvre automatiquement les schémas des données brutes ?",
+      "choices": [
+        "Le Data Catalog stocke les métadonnées partagées ; les crawlers parcourent les sources pour inférer les schémas.",
+        "Les jobs ETL stockent les métadonnées ; Amazon Athena crée les crawlers.",
+        "Le Data Catalog exécute les transformations Apache Spark et il n'existe pas de crawler.",
+        "Amazon Redshift fournit le catalogue de métadonnées ; Glue ne sert qu'au stockage des fichiers."
+      ],
+      "correct_index": 0,
+      "explanation": "Le Data Catalog de Glue conserve les métadonnées (définitions de tables partagées avec Athena, Redshift Spectrum, EMR). Les crawlers parcourent les sources pour inférer les schémas. Les jobs ETL exécutent, eux, les transformations sur Apache Spark sans serveur à gérer."
+    }
+  },
+  {
+    "id": "qcm-ml-02",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Quand privilégier Amazon SageMaker plutôt qu'un service d'IA applicative pré-entraîné comme Amazon Rekognition ou Amazon Comprehend ?",
+      "choices": [
+        "Quand on veut construire, entraîner et déployer son propre modèle de bout en bout sur ses données ; les services pré-entraînés s'utilisent par simple appel d'API, sans expertise ML.",
+        "Quand on veut seulement appeler une API prête à l'emploi sans jamais entraîner de modèle.",
+        "SageMaker et Rekognition sont interchangeables pour n'importe quelle tâche de machine learning.",
+        "SageMaker sert uniquement à héberger des sites web statiques."
+      ],
+      "correct_index": 0,
+      "explanation": "SageMaker est la plateforme managée pour ceux qui créent leurs propres modèles : préparation des données, entraînement, réglage, déploiement derrière un endpoint. Les services pré-entraînés (Rekognition, Comprehend…) répondent à un besoin déjà résolu et s'appellent par API sans expertise ML."
+    }
   }
 ]

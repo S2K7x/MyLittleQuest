@@ -308,5 +308,95 @@
         }
       ]
     }
+  },
+  {
+    "id": "scenario-comp-03",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Une équipe migre des applications conteneurisées vers AWS. Elle tient à Kubernetes précisément (standard ouvert, portabilité, outils Kubernetes existants), mais ne veut ni opérer le plan de contrôle Kubernetes, ni provisionner et gérer des instances EC2. Quelle combinaison répond exactement à ces contraintes ?",
+      "choices": [
+        {
+          "text": "Amazon EKS avec AWS Fargate.",
+          "is_correct": true,
+          "feedback": "Correct. EKS fournit un plan de contrôle Kubernetes managé (portabilité, écosystème Kubernetes) et Fargate exécute les conteneurs en mode serverless, sans instance EC2 à provisionner ni gérer."
+        },
+        {
+          "text": "Amazon ECS avec le mode de lancement EC2.",
+          "is_correct": false,
+          "feedback": "ECS n'est pas Kubernetes (orchestrateur propriétaire d'AWS) et le mode de lancement EC2 impose de gérer les instances : les deux contraintes de l'équipe sont violées."
+        },
+        {
+          "text": "Amazon EKS avec un mode de lancement EC2 auto-géré.",
+          "is_correct": false,
+          "feedback": "On a bien Kubernetes, mais le mode EC2 oblige à provisionner et gérer les instances de calcul, ce que l'équipe veut éviter."
+        },
+        {
+          "text": "AWS Fargate seul, sans orchestrateur.",
+          "is_correct": false,
+          "feedback": "Fargate n'est pas un orchestrateur : c'est un moteur de calcul qui s'utilise avec ECS ou EKS. Seul, il ne fournit pas Kubernetes."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-infra-03",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Un industriel exploite une ligne de production et doit traiter les données de ses machines sur place : contrainte de résidence des données (elles doivent rester physiquement dans son usine) et faible latence vers les automates locaux. Il veut néanmoins conserver les mêmes API et outils qu'AWS. Quelle option choisir ?",
+      "choices": [
+        {
+          "text": "AWS Outposts, installé dans l'usine.",
+          "is_correct": true,
+          "feedback": "Correct. Outposts étend l'infrastructure, les services et les API AWS jusque dans les locaux du client : il répond à la fois à la résidence des données sur site et à la faible latence vers les systèmes locaux."
+        },
+        {
+          "text": "Une AWS Local Zone proche de la ville de l'usine.",
+          "is_correct": false,
+          "feedback": "Une Local Zone rapproche des ressources d'une grande agglomération, mais reste une infrastructure AWS hors du site du client : elle ne garantit pas que les données restent physiquement dans l'usine."
+        },
+        {
+          "text": "AWS Global Accelerator devant les endpoints régionaux.",
+          "is_correct": false,
+          "feedback": "Global Accelerator optimise le routage réseau vers des endpoints régionaux ; il ne place aucune capacité de calcul ou de stockage sur le site du client."
+        },
+        {
+          "text": "Amazon CloudFront avec des edge locations.",
+          "is_correct": false,
+          "feedback": "CloudFront met en cache du contenu à l'edge pour les utilisateurs ; il ne traite pas les données localement dans l'usine et ne répond pas à la résidence des données."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-app-02",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Une équipe construit une architecture faiblement couplée qui doit ingérer des événements provenant à la fois de services AWS et d'applications SaaS partenaires, puis les acheminer vers différentes cibles selon le contenu de chaque événement (par exemple router selon un champ « type de commande »). Quel service est le plus adapté ?",
+      "choices": [
+        {
+          "text": "Amazon EventBridge.",
+          "is_correct": true,
+          "feedback": "Correct. EventBridge est un bus d'événements serverless qui intègre nativement des sources SaaS partenaires et AWS, et route chaque événement vers une ou plusieurs cibles selon des règles portant sur son contenu."
+        },
+        {
+          "text": "Amazon SQS comme file d'attente centrale.",
+          "is_correct": false,
+          "feedback": "SQS est une file point à point pour découpler producteur et consommateur ; elle ne route pas les messages selon leur contenu ni n'intègre nativement des sources d'événements SaaS partenaires."
+        },
+        {
+          "text": "Amazon SNS pour diffuser à tous les abonnés.",
+          "is_correct": false,
+          "feedback": "SNS diffuse un message à ses abonnés, mais n'offre pas l'intégration native des sources SaaS partenaires ni le routage par règles fondées sur le contenu qui caractérise EventBridge."
+        },
+        {
+          "text": "AWS Step Functions pour orchestrer les étapes.",
+          "is_correct": false,
+          "feedback": "Step Functions orchestre les étapes d'un workflow ; ce n'est pas un bus d'événements chargé d'ingérer et de router des événements selon leur contenu."
+        }
+      ]
+    }
   }
 ]
