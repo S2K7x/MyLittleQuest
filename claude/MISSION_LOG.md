@@ -1,92 +1,93 @@
-# MISSION LOG — Enrichissement SM-2 (CLF-C02) : les 11 concepts de `main` à 2 assets
+# MISSION LOG — Montée en difficulté (CLF-C02) : 10 assets de difficulté 3
 
-**Date** : 2026-07-11 (session nocturne autonome)
-**Branche** : claude/loving-curie-t51kkw
+**Date** : 2026-07-12 (session nocturne autonome)
+**Branche** : claude/loving-curie-g34lhb
 **Statut** : Terminée — PR ouverte vers main (draft)
 
 ## ⚠️ À LIRE EN PREMIER (10 secondes)
 
-- **PR #11 (enrichissement des 17 concepts à 1 asset) a été MERGÉE** entre-temps → `main` est
-  désormais à **72 concepts / 166 assets / 166 mappings**. Cette session repart de ce `main` à jour.
-- **Mission de la nuit exécutée** : amener les **11 concepts de `main` qui n'avaient que 2 assets**
-  à **3 assets** (+1 asset chacun, type **complémentaire** de l'existant). **+11 assets, +11 mappings.**
-  Résultat : **plus aucun concept sous 3 assets** (rotation SM-2 assainie). Nouveaux totaux :
-  **72 concepts / 177 assets / 177 mappings**. `python3 scripts/validate.py` → ✅ OK.
-- **Diff 100 % additif : 255 insertions, 0 suppression.** Aucun concept touché, aucune `source_url`
-  requise (garde-fou §6.1 concerne les concepts, pas les assets).
-- **2 PR de contenu restent ouvertes et non mergées** : **PR #7** (Lot C — Networking & Databases,
-  14 concepts / 28 assets) et **PR #10** (Domaine 4 — Billing, 14 concepts / 28 assets). Elles
-  appendent aux mêmes tableaux JSON → **conflits d'append triviaux** à l'intégration (garder tous
-  les blocs). **Aucune collision d'id** avec cette PR. Voir « Décision demandée ».
+- **PR #11 ET PR #12 ont été MERGÉES** entre-temps → l'enrichissement SM-2 « remonter les planchers »
+  est intégré à `main` (72 concepts / 177 assets / 177 mappings). **Le backlog de PR est repassé de 3 à 2.**
+- **2 PR de contenu restent OUVERTES et non mergées** : **PR #7** (Lot C — Networking & Databases,
+  14 concepts / 28 assets) et **PR #10** (Domaine 4 — Billing/Pricing/Support, 14 concepts / 28 assets).
+  Elles apportent les 2 derniers pans du blueprint. **Décision de merge = point le plus utile pour Shai.**
+- **Mission de la nuit exécutée** : montée en fin de courbe SM-2. Ajout de **10 assets de difficulté 3**
+  (7 QCM + 3 scénarios) sur des concepts avancés **déjà sur `main`**, angle arbitrage/comparaison fine.
+  **+10 assets, +10 mappings, 0 concept.** Non-doublon vis-à-vis de #7 et #10 (aucun concept réseau/BdD/
+  billing touché). `python3 scripts/validate.py` → ✅ OK. **266 insertions, 0 suppression.**
+- Nouveaux totaux sur cette branche : **72 concepts / 187 assets / 187 mappings.**
 
 ## Ce qui a été fait
 
-Enrichissement pédagogique ciblé pour la rotation SM-2 : chacun des 11 concepts déjà sur `main`
-qui n'avait que 2 assets reçoit **1 asset supplémentaire d'un type qu'il n'avait pas encore**, pour
-atteindre 3 assets. Le format **scénario** (le plus sous-représenté : 10/166) a été privilégié quand
-il était pédagogiquement pertinent → **2 scénarios ajoutés** (comp-fargate, ml-sagemaker), portant
-le total de scénarios à **12**. Contenu 100 % original, ancré sur le `core_explanation` de chaque
-concept — aucune reproduction de question d'examen (§6.3).
+La grande majorité des assets de `main` étaient en difficulté 1-2. Cette session ajoute une couche de
+difficulté 3 (situations d'arbitrage, comparaisons fines entre services proches) sur les concepts les
+plus avancés déjà présents sur `main`. Le format **scénario** — le plus sous-représenté (12 → **15**) —
+a été privilégié. Contenu 100 % original, ancré sur le `core_explanation` de chaque concept, aucune
+reproduction de question d'examen (§6.3).
 
-Concepts enrichis et asset ajouté (type complémentaire) :
-- **cloud-adoption-framework** (Cloud Concepts) → **match** (`match-cloud-04`) : les 6 perspectives du CAF.
-- **iam-roles-temp-credentials** (Security) → **flashcard** (`flashcard-sec-10`).
-- **aws-compliance-programs** (Security) → **swipe** (`swipe-sec-10`).
-- **infra-local-zones** (Cloud Tech) → **swipe** (`swipe-infra-09`).
-- **svc-management-console** (Cloud Tech) → **swipe** (`swipe-infra-10`).
-- **svc-iac-concept** (Cloud Tech) → **flashcard** (`flashcard-infra-09`).
-- **comp-auto-scaling** (Cloud Tech) → **qcm** (`qcm-comp-08`).
-- **comp-fargate** (Cloud Tech) → **scénario** (`scenario-comp-02`).
-- **app-eventbridge** (Cloud Tech) → **qcm** (`qcm-app-03`).
-- **ana-glue** (Cloud Tech) → **qcm** (`qcm-ana-02`).
-- **ml-sagemaker** (Cloud Tech) → **scénario** (`scenario-ml-01`).
+Assets ajoutés (tous difficulté 3) :
+- **scenario-comp-03** → comp-eks / comp-ecs / comp-fargate : « je veux Kubernetes sans gérer d'instances »
+  → EKS + Fargate.
+- **scenario-infra-03** → svc-outposts / infra-local-zones : résidence des données sur site → Outposts.
+- **scenario-app-02** → app-eventbridge : routage d'événements par contenu + sources SaaS → EventBridge
+  (vs SQS/SNS/Step Functions).
+- **qcm-comp-09** → comp-eks / comp-ecs : Kubernetes standard sans réécriture → EKS (ECS = propriétaire).
+- **qcm-comp-10** → comp-fargate : Fargate vs mode de lancement EC2 (modèle de gestion/facturation).
+- **qcm-comp-11** → svc-outposts : faible latence locale + résidence des données.
+- **qcm-infra-10** → infra-global-accelerator : IP statiques + routage réseau (vs cache CloudFront).
+- **qcm-app-04** → app-eventbridge : routage par contenu + sources SaaS (distinction SNS/SQS).
+- **qcm-ana-03** → ana-glue : Data Catalog (métadonnées) vs crawlers (schémas).
+- **qcm-ml-02** → ml-sagemaker : modèle sur mesure vs services IA pré-entraînés.
 
 ## Certification / domaine traités
 
-- **aws-cloud-practitioner** — enrichissement transverse (Domaines 1, 2 et 3 déjà sur `main`).
-- **11 assets créés** : qcm ×3, flashcard ×2, swipe ×3, scénario ×2, match ×1.
-  **11 mappings** (1 par asset, 0 orphelin). Ids sans collision (suites continuées par préfixe/type).
+- **aws-cloud-practitioner** — Domaine 3 (Cloud Technology and Services) essentiellement, enrichissement
+  transverse en difficulté.
+- **10 assets créés** : qcm ×7, scénario ×3. **10 mappings** (0 orphelin). Ids sans collision (suites
+  continuées par préfixe/type : `qcm-comp-09..11`, `qcm-infra-10`, `qcm-app-04`, `qcm-ana-03`,
+  `qcm-ml-02`, `scenario-comp-03`, `scenario-infra-03`, `scenario-app-02`).
 
-## Répartition finale des assets par concept (les 72 concepts de `main`)
+## Répartition des difficultés (rappel)
 
-- 0 concept à 1 ou 2 assets (**objectif atteint** : ils étaient 11 à 2 assets).
-- 47 concepts à 3 assets, 17 à 4, 7 à 5, 1 à 7.
+- Avant : quasi-totalité des assets en difficulté 1-2.
+- Cette PR ajoute une première couche nette de difficulté 3 sur les concepts avancés. La couverture
+  difficulté 3 reste extensible sur d'autres familles (storage, security) dans une prochaine session.
 
 ## Contrôle technique passé
 
-- `python3 scripts/validate.py` : ✅ OK (schéma par format + intégrité référentielle : 72 / 177 / 177).
-- Diff : **255 insertions, 0 suppression** (ajout strict, non-régression garantie).
+- `python3 scripts/validate.py` : ✅ OK (schéma par format + intégrité référentielle : 72 / 187 / 187).
+- Diff : **266 insertions, 0 suppression** (ajout strict, non-régression garantie).
 - Aucun secret / credential dans le diff (contenu 100 % pédagogique).
 
 ## Fichiers créés / modifiés
 
-- `content/aws-cloud-practitioner/assets/{qcm,flashcard,swipe,scenario,match}.json` (+11 assets)
-- `content/aws-cloud-practitioner/asset_concepts.json` (+11 mappings)
+- `content/aws-cloud-practitioner/assets/{qcm,scenario}.json` (+10 assets)
+- `content/aws-cloud-practitioner/asset_concepts.json` (+10 mappings)
 - `claude/MISSION_LOG.md` (ce fichier), `claude/NEXT_MISSION.md` (mission suivante)
-- `content/aws-cloud-practitioner/concepts.json` : **non modifié** (0 nouveau concept).
+- `content/aws-cloud-practitioner/concepts.json` : **non modifié** (0 nouveau concept)
 
 ## Garde-fous vérifiés
 
-- §6.1 Aucun nouveau concept → pas de nouveau `source_url` requis. §6.2 Aucune certif hors roadmap.
-- §6.3 Contenu original pédagogique, aucun braindump. §6.4 Statut certif inchangé (`in_progress`).
-- §6.5 Aucune touche côté client (IndexedDB/exports). §6.6 Aucun secret. §6.7 Branche + PR draft, pas
-  de push sur `main`.
+- §6.1 Aucun nouveau concept → pas de nouveau `source_url` requis (les concepts ciblés existent déjà,
+  chacun avec sa source). §6.2 Aucune certif hors roadmap. §6.3 Contenu original pédagogique, aucun
+  braindump. §6.4 Statut certif inchangé (`in_progress`) tant que #7/#10 ne sont pas sur `main`.
+  §6.5 Aucune touche côté client. §6.6 Aucun secret. §6.7 Branche + PR draft, pas de push sur `main`.
 
 ## Questions ouvertes pour Shai (par priorité)
 
 1. **2 PR de contenu ouvertes à merger** : **PR #7** (Lot C — réseau/BdD) et **PR #10** (Domaine 4 —
-   billing). Elles appendent aux mêmes tableaux JSON que cette PR → **conflits d'append triviaux**
-   (garder tous les blocs). **Ordre de merge suggéré** : #7 → #10 → cette PR. Aucune collision d'id.
-2. **Statut certif** : une fois PR #7 + #10 mergées, les 4 domaines sont couverts → basculer vers
-   `needs_review` (garde-fou §6.4 ; exam guide PDF inaccessible au fetcher). Non fait cette session
-   pour ne pas surestimer le coverage tant que #7/#10 ne sont pas sur `main`.
-3. **Le pipeline produit plus vite que le merge** : le backlog est passé de 3 à 2 PR (PR #11 mergée),
-   mais cette PR le ramène à 3. **Résorber le backlog (merger #7/#10) est probablement plus utile que
-   de générer davantage.** Détail des options dans `NEXT_MISSION.md`.
+   billing). Une fois les deux mergées, les 4 domaines du blueprint sont sur `main`. Ordre suggéré :
+   #7 → #10. Conflits d'append JSON triviaux attendus (garder tous les blocs) ; **aucune collision d'id**
+   avec cette PR (préfixes/suites distincts).
+2. **Statut certif → `needs_review`** une fois #7 + #10 mergées (garde-fou §6.4 ; exam guide PDF
+   inaccessible au fetcher). Non modifié cette session pour ne pas surestimer le coverage.
+3. **Le pipeline produit plus vite que le merge.** L'enrichissement des planchers est fini ; cette
+   session a fait de la montée en difficulté (non-doublon, sûre) mais ajoute une 3ᵉ PR au backlog.
+   **Résorber le backlog (#7/#10) est probablement plus utile que de générer davantage.**
 4. Décisions produit anciennes toujours ouvertes (langue FR/bilingue ; granularité du champ `domain` ;
    critère de `complete` ; plans de support AWS en restructuration — soulevé par PR #10) — inchangées.
 
 ## Lien PR
 
-PR (draft) de cette session : https://github.com/S2K7x/MyLittleQuest/pull/12
+PR (draft) de cette session : voir NEXT_MISSION / description PR (numéro attribué à l'ouverture).
 Autres PR de contenu ouvertes : #7 (Lot C) et #10 (Domaine 4 — Billing).
