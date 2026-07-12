@@ -89,5 +89,5 @@ Assets ajoutés (tous difficulté 3) :
 
 ## Lien PR
 
-PR (draft) de cette session : voir NEXT_MISSION / description PR (numéro attribué à l'ouverture).
+PR (draft) de cette session : https://github.com/S2K7x/MyLittleQuest/pull/13
 Autres PR de contenu ouvertes : #7 (Lot C) et #10 (Domaine 4 — Billing).
