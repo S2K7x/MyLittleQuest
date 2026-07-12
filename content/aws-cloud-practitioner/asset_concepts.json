@@ -1134,5 +1134,69 @@
     "concept_ids": [
       "cloud-adoption-framework"
     ]
+  },
+  {
+    "asset_id": "qcm-comp-09",
+    "concept_ids": [
+      "comp-eks",
+      "comp-ecs"
+    ]
+  },
+  {
+    "asset_id": "qcm-comp-10",
+    "concept_ids": [
+      "comp-fargate"
+    ]
+  },
+  {
+    "asset_id": "qcm-comp-11",
+    "concept_ids": [
+      "svc-outposts"
+    ]
+  },
+  {
+    "asset_id": "qcm-infra-10",
+    "concept_ids": [
+      "infra-global-accelerator"
+    ]
+  },
+  {
+    "asset_id": "qcm-app-04",
+    "concept_ids": [
+      "app-eventbridge"
+    ]
+  },
+  {
+    "asset_id": "qcm-ana-03",
+    "concept_ids": [
+      "ana-glue"
+    ]
+  },
+  {
+    "asset_id": "qcm-ml-02",
+    "concept_ids": [
+      "ml-sagemaker"
+    ]
+  },
+  {
+    "asset_id": "scenario-comp-03",
+    "concept_ids": [
+      "comp-eks",
+      "comp-ecs",
+      "comp-fargate"
+    ]
+  },
+  {
+    "asset_id": "scenario-infra-03",
+    "concept_ids": [
+      "svc-outposts",
+      "infra-local-zones"
+    ]
+  },
+  {
+    "asset_id": "scenario-app-02",
+    "concept_ids": [
+      "app-eventbridge"
+    ]
   }
 ]
