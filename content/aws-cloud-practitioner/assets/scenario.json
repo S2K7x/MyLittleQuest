@@ -398,5 +398,125 @@
         }
       ]
     }
+  },
+  {
+    "id": "scenario-sec-03",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Une application tourne sur une instance Amazon EC2 et doit lire des fichiers dans un bucket Amazon S3. Un développeur propose de générer une clé d'accès permanente pour un utilisateur IAM et de la copier dans un fichier de configuration sur l'instance. Quelle approche est la plus sûre et recommandée par AWS ?",
+      "choices": [
+        {
+          "text": "Attacher un rôle IAM à l'instance EC2, avec une policy limitée à la lecture de ce bucket ; l'application obtient des identifiants temporaires renouvelés automatiquement.",
+          "is_correct": true,
+          "feedback": "Correct. Un rôle IAM fournit à l'application des identifiants de sécurité temporaires qui expirent et se renouvellent seuls : aucune clé permanente à stocker sur l'instance, et le moindre privilège est respecté (lecture seule sur ce seul bucket)."
+        },
+        {
+          "text": "Stocker la clé d'accès permanente de l'utilisateur IAM dans le fichier de configuration de l'instance.",
+          "is_correct": false,
+          "feedback": "Non. Une clé permanente stockée sur l'instance peut être exfiltrée et reste valable indéfiniment ; c'est précisément ce que les rôles IAM et leurs identifiants temporaires visent à éviter."
+        },
+        {
+          "text": "Utiliser les identifiants du compte root de l'application pour garantir que tous les accès fonctionnent.",
+          "is_correct": false,
+          "feedback": "Jamais. Le compte root a un accès illimité et ne doit pas servir aux tâches courantes ni être intégré à une application ; cela viole le moindre privilège et met tout le compte en danger."
+        },
+        {
+          "text": "Rendre le bucket public en lecture pour éviter d'avoir à gérer des permissions.",
+          "is_correct": false,
+          "feedback": "Non. Rendre le bucket public expose les données à tout Internet. Le besoin est un accès contrôlé depuis l'application, pas un accès anonyme : c'est le rôle qui répond au besoin."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-sec-04",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Dans le cadre du modèle de responsabilité partagée, une équipe se demande qui applique les correctifs du système d'exploitation. Elle exécute d'un côté une application sur des instances Amazon EC2, de l'autre une base de données managée Amazon RDS. Quelle répartition est correcte ?",
+      "choices": [
+        {
+          "text": "Sur EC2, le client applique les correctifs de l'OS invité ; sur RDS, AWS gère les correctifs du système d'exploitation et du moteur de base de données.",
+          "is_correct": true,
+          "feedback": "Correct. Le partage dépend du service : pour l'IaaS (EC2), le client gère l'OS invité, les correctifs et le pare-feu ; pour un service managé (RDS), AWS opère l'infrastructure et l'OS sous-jacent, le client se concentrant sur ses données et les accès."
+        },
+        {
+          "text": "AWS applique les correctifs de l'OS dans les deux cas, EC2 comme RDS.",
+          "is_correct": false,
+          "feedback": "Non. Sur EC2 (IaaS), l'OS invité relève de la responsabilité du client ; AWS ne touche pas au système d'exploitation de vos instances."
+        },
+        {
+          "text": "Le client applique les correctifs de l'OS dans les deux cas, EC2 comme RDS.",
+          "is_correct": false,
+          "feedback": "Non. RDS est un service managé : AWS prend en charge les correctifs de l'OS et du moteur de base de données ; le client ne les gère pas."
+        },
+        {
+          "text": "La responsabilité des correctifs ne dépend pas du service : elle est toujours identique quel que soit le produit AWS.",
+          "is_correct": false,
+          "feedback": "Non. Le point clé du modèle est justement que la frontière se déplace selon le service : plus le service est abstrait/managé, plus AWS prend en charge, y compris l'OS."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-stor-02",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Une entreprise doit conserver des archives réglementaires pendant 7 ans. Ces données ne seront quasiment jamais consultées (moins d'une fois par an), et une récupération en plusieurs heures est parfaitement acceptable le jour où elle serait nécessaire. L'objectif est le coût de stockage le plus bas possible. Quelle classe Amazon S3 choisir ?",
+      "choices": [
+        {
+          "text": "S3 Glacier Deep Archive.",
+          "is_correct": true,
+          "feedback": "Correct. Deep Archive est le stockage le moins cher d'AWS, conçu pour des données consultées moins d'une fois par an et conservées plusieurs années (conformité, archivage) ; le compromis est un délai de récupération de plusieurs heures, ici acceptable."
+        },
+        {
+          "text": "S3 Standard.",
+          "is_correct": false,
+          "feedback": "Non. S3 Standard est optimisé pour des données fréquemment consultées à faible latence : son coût de stockage est bien trop élevé pour des archives quasi jamais lues."
+        },
+        {
+          "text": "S3 Standard-IA (Infrequent Access).",
+          "is_correct": false,
+          "feedback": "Standard-IA vise des données peu consultées mais à accès immédiat en millisecondes ; pour une donnée lue moins d'une fois par an où plusieurs heures de récupération conviennent, Deep Archive coûte nettement moins cher."
+        },
+        {
+          "text": "S3 Glacier Instant Retrieval.",
+          "is_correct": false,
+          "feedback": "Instant Retrieval est fait pour des données rarement consultées mais nécessitant une récupération en millisecondes. Ici, la récupération en heures est acceptable : payer pour l'accès instantané est inutilement coûteux."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-cloud-03",
+    "game_type": "scenario",
+    "difficulty": 3,
+    "payload": {
+      "intro": "Lors d'une revue Well-Architected, une équipe constate qu'elle a déployé une seule instance, sans redondance, pour économiser. L'application est critique et une panne d'infrastructure la met hors service. Quel arbitrage entre piliers cette situation illustre-t-elle, et quelle correction va dans le bon sens ?",
+      "choices": [
+        {
+          "text": "C'est un arbitrage entre optimisation des coûts et fiabilité : ajouter de la redondance multi-AZ renforce la fiabilité, au prix d'un coût plus élevé mais justifié par la criticité.",
+          "is_correct": true,
+          "feedback": "Correct. Le Well-Architected Framework assume des arbitrages entre piliers selon les besoins métier. Ici, avoir privilégié le coût a dégradé la fiabilité (récupération après panne) ; pour une charge critique, on rééquilibre vers la fiabilité."
+        },
+        {
+          "text": "C'est un arbitrage entre sécurité et durabilité, à corriger en chiffrant les données.",
+          "is_correct": false,
+          "feedback": "Non. Le problème décrit est l'absence de redondance face à une panne d'infrastructure : cela relève de la fiabilité, pas de la sécurité ni de l'impact environnemental (durabilité)."
+        },
+        {
+          "text": "Il n'y a aucun arbitrage : une architecture bien conçue maximise tous les piliers en même temps sans compromis.",
+          "is_correct": false,
+          "feedback": "Non. Le framework reconnaît explicitement des arbitrages entre piliers ; on les pondère selon les besoins métier plutôt que de prétendre tout maximiser simultanément."
+        },
+        {
+          "text": "C'est un arbitrage entre efficacité des performances et excellence opérationnelle, à corriger en changeant de type d'instance.",
+          "is_correct": false,
+          "feedback": "Non. Le point faible est la capacité à survivre à une panne (fiabilité), pas la performance de calcul ni la façon d'exploiter la charge (excellence opérationnelle)."
+        }
+      ]
+    }
   }
 ]

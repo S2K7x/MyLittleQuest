@@ -1006,5 +1006,117 @@
       "correct_index": 0,
       "explanation": "SageMaker est la plateforme managée pour ceux qui créent leurs propres modèles : préparation des données, entraînement, réglage, déploiement derrière un endpoint. Les services pré-entraînés (Rekognition, Comprehend…) répondent à un besoin déjà résolu et s'appellent par API sans expertise ML."
     }
+  },
+  {
+    "id": "qcm-sec-14",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Dans un environnement AWS Organizations, une policy IAM d'un compte membre autorise l'action s3:DeleteBucket, mais une Service Control Policy (SCP) appliquée à l'unité organisationnelle ne l'inclut pas dans les actions permises. L'utilisateur peut-il supprimer le bucket ?",
+      "choices": [
+        "Non : une SCP définit un plafond de permissions ; si elle n'autorise pas l'action, celle-ci est impossible même si une policy IAM l'accorde.",
+        "Oui : la policy IAM accorde l'action, et une SCP ne fait que s'ajouter aux permissions IAM existantes.",
+        "Oui : les SCP ne s'appliquent qu'au compte de gestion, jamais aux comptes membres.",
+        "Non : une SCP accorde directement les permissions, et comme elle ne mentionne pas l'action, l'utilisateur n'a par défaut aucun droit du tout."
+      ],
+      "correct_index": 0,
+      "explanation": "Une SCP n'accorde jamais de permission : elle fixe la limite maximale des permissions disponibles pour les identités IAM d'un compte membre. L'action effective est l'intersection de ce qu'autorise la policy IAM et de ce que permet la SCP. Ici l'action est hors du plafond SCP, donc refusée malgré la policy IAM. (Les SCP n'affectent pas le compte de gestion.)"
+    }
+  },
+  {
+    "id": "qcm-sec-15",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Une équipe veut chiffrer ses données au repos tout en gardant la maîtrise du cycle de vie des clés et des permissions d'usage, sans jamais exposer le matériel des clés en clair. Quel service AWS répond directement à ce besoin ?",
+      "choices": [
+        "AWS Key Management Service (KMS), qui crée et contrôle les clés, s'intègre aux services AWS pour chiffrer/déchiffrer, et protège le matériel des clés dans des HSM (personne, pas même AWS, n'y accède en clair).",
+        "AWS WAF, qui chiffre automatiquement toutes les données au repos.",
+        "Amazon GuardDuty, qui gère les clés de chiffrement du compte.",
+        "AWS Artifact, qui génère et fait tourner les clés de chiffrement des données."
+      ],
+      "correct_index": 0,
+      "explanation": "KMS permet de créer et de contrôler les clés de chiffrement, laisse au client la maîtrise du cycle de vie et des permissions, et s'intègre à la plupart des services AWS pour chiffrer les données au repos ou en transit. Le matériel des clés est protégé dans des modules matériels de sécurité (HSM). WAF filtre le trafic web, GuardDuty détecte des menaces, et Artifact fournit des rapports de conformité : aucun n'est un service de gestion de clés."
+    }
+  },
+  {
+    "id": "qcm-sec-16",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Quelle affirmation distingue correctement un security group d'une network ACL (NACL) dans un VPC ?",
+      "choices": [
+        "Le security group agit au niveau de l'instance et est à état (le trafic de réponse est autorisé automatiquement) ; la NACL agit au niveau du sous-réseau, est sans état et accepte des règles d'autorisation ET de refus.",
+        "Le security group agit au niveau du sous-réseau et la NACL au niveau de l'instance ; les deux sont sans état.",
+        "Le security group accepte des règles allow et deny, tandis que la NACL n'accepte que des règles deny.",
+        "Les deux sont à état et fonctionnent exactement de la même manière ; le choix entre eux est purement cosmétique."
+      ],
+      "correct_index": 0,
+      "explanation": "Le security group filtre au niveau de l'instance, est stateful (la réponse au trafic autorisé est implicitement permise) et ne comporte que des règles allow. La NACL filtre au niveau du sous-réseau, est stateless (il faut autoriser explicitement le trafic de réponse) et accepte des règles allow et deny. AWS recommande les security groups comme mécanisme principal, la NACL servant de garde-fou secondaire."
+    }
+  },
+  {
+    "id": "qcm-stor-06",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Plusieurs instances EC2 réparties sur plusieurs Availability Zones doivent monter simultanément le même système de fichiers partagé, avec le protocole NFS standard de Linux. Quel service de stockage convient ?",
+      "choices": [
+        "Amazon EFS, un système de fichiers partagé, élastique, accessible en NFS depuis plusieurs AZ à la fois.",
+        "Amazon EBS, en attachant le même volume à toutes les instances des différentes AZ.",
+        "Amazon S3, monté directement comme système de fichiers NFS sur chaque instance.",
+        "Le stockage d'instance (instance store), partagé automatiquement entre toutes les instances."
+      ],
+      "correct_index": 0,
+      "explanation": "EFS fournit un stockage de fichiers serverless partageable simultanément par de nombreuses ressources (EC2, ECS, EKS, Lambda), via NFS, et accessible depuis plusieurs Availability Zones. Un volume EBS s'attache en général à une seule instance dans une seule AZ. S3 est du stockage objet (API web), pas un système de fichiers NFS. Le stockage d'instance est éphémère et local à une instance."
+    }
+  },
+  {
+    "id": "qcm-stor-07",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Une organisation veut centraliser et automatiser la sauvegarde de ressources hétérogènes (volumes EBS, systèmes de fichiers EFS, bases RDS et DynamoDB) avec des politiques de fréquence et de rétention communes, plutôt que de configurer chaque service séparément. Quelle est l'approche la plus adaptée ?",
+      "choices": [
+        "Utiliser AWS Backup et définir des backup plans (fréquence, rétention, chiffrement) appliqués à l'ensemble des ressources à protéger.",
+        "Écrire des scripts personnalisés qui déclenchent manuellement un snapshot de chaque service, chacun avec sa propre logique.",
+        "Activer le chiffrement KMS sur chaque ressource, ce qui déclenche automatiquement des sauvegardes.",
+        "Copier régulièrement toutes les données dans un unique volume EBS servant d'archive centrale."
+      ],
+      "correct_index": 0,
+      "explanation": "AWS Backup est un service managé qui centralise et automatise la protection des données à travers de nombreux services AWS. On définit des backup plans (fréquence, rétention, chiffrement) que l'on applique aux ressources, avec une console consolidée utile pour l'audit et la conformité. Cela supprime le besoin de scripts personnalisés et de processus manuels. Le chiffrement KMS ne crée pas de sauvegardes, et un volume EBS n'est pas un service de sauvegarde centralisé."
+    }
+  },
+  {
+    "id": "qcm-cloud-12",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Une organisation prépare sa migration vers le cloud et s'inquiète de la montée en compétences de ses équipes, de la conduite du changement et des nouveaux rôles à définir. À quelle perspective de l'AWS Cloud Adoption Framework (CAF) ce type de préoccupation se rattache-t-il le plus directement ?",
+      "choices": [
+        "La perspective People (personnes).",
+        "La perspective Platform (plateforme).",
+        "La perspective Security (sécurité).",
+        "La perspective Operations (opérations)."
+      ],
+      "correct_index": 0,
+      "explanation": "Le CAF organise ses conseils autour de six perspectives : Business, People, Governance, Platform, Security et Operations. Les questions de compétences, de culture, de conduite du changement et de rôles relèvent de la perspective People. Platform concerne l'architecture technique, Security la protection des actifs, et Operations l'exploitation des charges de travail."
+    }
+  },
+  {
+    "id": "qcm-cloud-13",
+    "game_type": "qcm",
+    "difficulty": 3,
+    "payload": {
+      "question": "Une entreprise conserve, pour des raisons réglementaires, une partie de ses systèmes dans son datacenter sur site, mais veut y ajouter de la capacité et de nouveaux services en les connectant à des ressources AWS. Quel modèle de déploiement décrit le mieux cette approche ?",
+      "choices": [
+        "Le déploiement hybride, qui relie des ressources cloud à une infrastructure existante sur site.",
+        "Le déploiement tout-cloud, où l'ensemble des composants de l'application tourne dans le cloud.",
+        "Le déploiement sur site (on-premises) uniquement, sans aucune ressource cloud.",
+        "Le modèle SaaS, qui remplace automatiquement toute infrastructure sur site."
+      ],
+      "correct_index": 0,
+      "explanation": "Le déploiement hybride relie des ressources cloud à des ressources hors du cloud, le plus souvent une infrastructure sur site, pour l'étendre et la faire croître — exactement le cas décrit. Le déploiement tout-cloud ferait tourner l'ensemble dans le cloud, et le déploiement sur site n'utiliserait aucune ressource cloud. SaaS est un modèle de service, pas un modèle de déploiement."
+    }
   }
 ]
