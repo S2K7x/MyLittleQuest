@@ -1198,5 +1198,80 @@
     "concept_ids": [
       "app-eventbridge"
     ]
+  },
+  {
+    "asset_id": "scenario-sec-03",
+    "concept_ids": [
+      "iam-roles-temp-credentials",
+      "iam-identities",
+      "iam-least-privilege"
+    ]
+  },
+  {
+    "asset_id": "scenario-sec-04",
+    "concept_ids": [
+      "shared-responsibility-model"
+    ]
+  },
+  {
+    "asset_id": "scenario-stor-02",
+    "concept_ids": [
+      "stor-s3-glacier",
+      "stor-s3-storage-classes"
+    ]
+  },
+  {
+    "asset_id": "scenario-cloud-03",
+    "concept_ids": [
+      "well-architected-pillars",
+      "well-architected-framework"
+    ]
+  },
+  {
+    "asset_id": "qcm-sec-14",
+    "concept_ids": [
+      "aws-organizations-scp",
+      "iam-least-privilege"
+    ]
+  },
+  {
+    "asset_id": "qcm-sec-15",
+    "concept_ids": [
+      "aws-kms",
+      "encryption-at-rest-in-transit"
+    ]
+  },
+  {
+    "asset_id": "qcm-sec-16",
+    "concept_ids": [
+      "security-groups-vs-nacl"
+    ]
+  },
+  {
+    "asset_id": "qcm-stor-06",
+    "concept_ids": [
+      "stor-efs",
+      "stor-ebs",
+      "stor-s3"
+    ]
+  },
+  {
+    "asset_id": "qcm-stor-07",
+    "concept_ids": [
+      "stor-aws-backup",
+      "stor-ebs"
+    ]
+  },
+  {
+    "asset_id": "qcm-cloud-12",
+    "concept_ids": [
+      "cloud-adoption-framework"
+    ]
+  },
+  {
+    "asset_id": "qcm-cloud-13",
+    "concept_ids": [
+      "cloud-deployment-models"
+    ]
   }
 ]
