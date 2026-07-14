@@ -1,112 +1,105 @@
-# MISSION LOG — Montée en difficulté 3 étendue (CLF-C02) : sécurité, stockage, Cloud Concepts
+# MISSION LOG — Robustesse du pipeline : audit CI des PR ouvertes + rapport de couverture dans `validate.py`
 
-**Date** : 2026-07-13 (session nocturne autonome)
-**Branche** : claude/loving-curie-mr770h
+**Date** : 2026-07-14 (session nocturne autonome)
+**Branche** : claude/loving-curie-mrc4c7
 **Statut** : Terminée — PR ouverte vers main (draft)
 
 ## ⚠️ À LIRE EN PREMIER (10 secondes)
 
-- **Le backlog de PR de contenu est le vrai point de blocage.** Le pipeline produit plus vite que Shai
-  ne merge. **3 PR de contenu restent OUVERTES et non mergées** :
-  - **PR #7** — Lot C (Domaine 3 : Networking & Databases, 14 concepts / 28 assets).
-  - **PR #10** — Domaine 4 (Billing, Pricing & Support, 14 concepts / 28 assets).
-  - **PR de cette session** — 11 assets de difficulté 3 (0 concept).
+- **Le backlog s'est réduit à 2 PR de contenu, pas 3.** La PR #14 (difficulté 3 étendue) **a été mergée**
+  depuis la dernière session. Restent OUVERTES et non mergées :
+  - **PR #7** — Lot C (Domaine 3 : Networking & Databases, 14 concepts / 28 assets). Base = 2026-07-06.
+  - **PR #10** — Domaine 4 (Billing, Pricing & Support, 14 concepts / 28 assets). Base = 2026-07-09.
   Une fois **#7 + #10** mergées, les **4 domaines du blueprint CCP sont sur `main`** → basculer la certif
-  en **`needs_review`** (garde-fou §6.4). Ordre de merge suggéré : **#7 → #10 → PR de cette session**
-  (rebaser chaque suivante). Conflits d'append JSON triviaux attendus (garder tous les blocs).
-  **Aucune collision d'id** entre ces PR (préfixes/suites distincts).
-- **Mission de la nuit exécutée** : 2ᵉ couche de difficulté 3, sur les familles **non couvertes** par la
-  session du 2026-07-12 (qui avait traité compute/edge/event-driven). Ajout de **11 assets de difficulté 3**
-  (7 QCM + 4 scénarios) sur des concepts **déjà sur `main`** (domaines 1 Cloud Concepts, 2 Sécurité,
-  3 Storage), angle arbitrage/comparaison fine. **Non-doublon vis-à-vis de #7 et #10** (aucun concept
-  réseau/BdD/billing touché). **+11 assets, +11 mappings, 0 concept.** `validate.py` → ✅ OK.
-  **307 insertions, 0 suppression.**
-- Nouveaux totaux sur cette branche (base = `main`) : **72 concepts / 198 assets / 198 mappings.**
+  en **`needs_review`** (garde-fou §6.4). Ordre suggéré : **#7 → #10** (rebaser #10 ; conflits d'append JSON
+  triviaux, garder tous les blocs). **Aucune collision d'id.**
+- **La décision de merge appartient à Shai** (une session nocturne ne merge jamais, §6.7). Générer davantage a
+  un **rendement décroissant** tant que ce backlog n'est pas résorbé (constat répété depuis plusieurs nuits).
+- **Mission de cette nuit : option (C) « robustesse du pipeline »** du `NEXT_MISSION` précédent — **aucun
+  contenu généré** (choix assumé, non-doublon, sans décision produit requise). Deux livrables :
+  1. **Audit** : la GitHub Action de validation tourne-t-elle sur les PR de contenu ouvertes ? (résultat ci-dessous).
+  2. **Amélioration `validate.py`** : ajout d'un **rapport de couverture** informatif (non bloquant).
+  `validate.py` → ✅ OK (exit 0). Chemin d'échec (exit 1) vérifié par test négatif. **Non-régression** de la
+  logique de validation (aucune règle modifiée, seulement du reporting ajouté).
 
 ## Ce qui a été fait
 
-La couverture difficulté 3 posée le 2026-07-12 se limitait au compute avancé / edge / event-driven / ML.
-Cette session l'étend aux trois familles restantes citées dans le `NEXT_MISSION` précédent : **Sécurité**
-(Domaine 2, 30 % du blueprint — priorité), **Storage** (Domaine 3) et **Cloud Concepts** (Domaine 1).
-Contenu 100 % original, ancré sur le `core_explanation` de chaque concept déjà présent sur `main`, aucune
-reproduction de question d'examen (§6.3). Le format **scénario** (le plus sous-représenté, 15 → **19**) a
-été privilégié autant que possible.
+### 1. Audit CI des PR de contenu ouvertes (constat)
 
-Assets ajoutés (tous difficulté 3) :
+- **La config du trigger de l'Action est correcte.** Sur **PR #10**, le check **`validate` a tourné et est
+  passé** (success) — le déclencheur `pull_request` sur `content/**` fonctionne pour toute PR récente.
+- **PR #7 n'a jamais été validée par la CI.** Ses seuls checks sont *Vercel* et *GitGuardian* — **pas de check
+  `validate`**. Cause : `scripts/validate.py` **et** le workflow sont nés dans le **même commit `ff4f1d2`
+  (2026-07-07)**, or la branche de #7 date du **2026-07-06** et n'a jamais été rebasée → son HEAD ne contient
+  pas le workflow, donc l'Action ne s'y attache pas. **Le trigger n'est pas en cause** ; c'est une PR antérieure
+  à la CI.
+- **Vérification manuelle de sûreté** : le contenu des deux PR passe `validate.py` (script courant, exécuté
+  localement sur chaque branche) :
+  - **#7** → 73 concepts / 132 assets / 132 mappings ✅
+  - **#10** → 86 concepts / 160 assets / 160 mappings ✅
+- **Aucune correction de workflow nécessaire.** Le correctif de #7 est mécanique et relève du merge : quand Shai
+  **met à jour / rebase** la branche de #7 (indispensable de toute façon pour résoudre les conflits d'append),
+  elle récupère le workflow et l'Action s'exécutera. Rien à changer côté `.yml`.
 
-**Scénarios (4)**
-- **scenario-sec-03** → iam-roles-temp-credentials / iam-identities / iam-least-privilege : app EC2 qui
-  doit lire S3 → rôle IAM (identifiants temporaires) plutôt que clé permanente stockée sur l'instance.
-- **scenario-sec-04** → shared-responsibility-model : qui applique les correctifs OS ? EC2 (IaaS, client)
-  vs RDS (managé, AWS) — la frontière se déplace selon le service.
-- **scenario-stor-02** → stor-s3-glacier / stor-s3-storage-classes : archive 7 ans, quasi jamais lue,
-  récupération en heures OK, coût mini → S3 Glacier Deep Archive (vs Standard / Standard-IA / Instant).
-- **scenario-cloud-03** → well-architected-pillars / well-architected-framework : instance unique « pour
-  économiser » sur charge critique = arbitrage coût ↔ fiabilité → rééquilibrer vers la fiabilité (multi-AZ).
+### 2. Rapport de couverture ajouté à `validate.py` (livrable code)
 
-**QCM (7)**
-- **qcm-sec-14** → aws-organizations-scp / iam-least-privilege : SCP = plafond, n'accorde jamais ;
-  action hors SCP refusée même si la policy IAM l'autorise.
-- **qcm-sec-15** → aws-kms / encryption-at-rest-in-transit : maîtrise des clés + HSM → KMS (vs WAF /
-  GuardDuty / Artifact, hors sujet).
-- **qcm-sec-16** → security-groups-vs-nacl : SG (instance, stateful, allow) vs NACL (sous-réseau,
-  stateless, allow+deny).
-- **qcm-stor-06** → stor-efs / stor-ebs / stor-s3 : système de fichiers partagé multi-AZ en NFS → EFS.
-- **qcm-stor-07** → stor-aws-backup / stor-ebs : sauvegarde centralisée multi-services via backup plans
-  → AWS Backup (vs scripts manuels).
-- **qcm-cloud-12** → cloud-adoption-framework : compétences / conduite du changement → perspective People
-  du CAF.
-- **qcm-cloud-13** → cloud-deployment-models : datacenter conservé + extension AWS → déploiement hybride.
+`scripts/validate.py` imprime désormais, **après** la validation et **sans influer sur le code retour**, un
+rapport par certification destiné à **objectiver le choix des prochaines missions** :
+- **Concepts par domaine** et **assets par domaine** (un asset multi-concepts compte pour chaque domaine touché).
+- **Répartition des assets par format** (qcm / flashcard / scenario / swipe / match) avec barres ASCII.
+- **Répartition des assets par difficulté** (1/2/3) globale **et** croisée **domaine × difficulté**.
+- **Concepts à couverture faible** (< 2 assets) listés comme candidats prioritaires (seuil purement indicatif).
+- Option `--no-report` pour une sortie CI concise. La logique de validation (schéma + intégrité) est **inchangée**.
+
+**Ce que le rapport révèle sur `main` aujourd'hui** (72 / 198 / 198) :
+- Formats les plus **sous-représentés** : **`match` (14)** et **`scenario` (19)** — loin derrière qcm (70),
+  swipe (50), flashcard (45).
+- Difficulté **1 « facile » (37)** relativement mince face à la difficulté 2 (123) — piste « rampe débutant ».
+- **0 concept à couverture faible** sur `main` (tous ont ≥ 2 assets). Bon signal de santé.
+- (Rappel : `main` ne contient encore ni le réseau/BdD de #7 ni le domaine Billing de #10 — pas de domaine
+  « Billing » dans le rapport, et « Cloud Technology and Services » est à 43 concepts en attendant #7.)
 
 ## Certification / domaine traités
 
-- **aws-cloud-practitioner** — enrichissement transverse en difficulté : Domaine 1 (Cloud Concepts),
-  Domaine 2 (Security and Compliance), Domaine 3 (Storage).
-- **11 assets créés** : qcm ×7, scénario ×4. **11 mappings** (0 orphelin). Ids sans collision (suites
-  continuées par préfixe/type : `qcm-sec-14..16`, `qcm-stor-06..07`, `qcm-cloud-12..13`,
-  `scenario-sec-03..04`, `scenario-stor-02`, `scenario-cloud-03`).
-
-## Répartition des difficultés (rappel)
-
-- La couverture difficulté 3 s'étend désormais aux 3 domaines majeurs (sécurité, stockage, cloud concepts),
-  en plus du compute/edge/event-driven traité le 2026-07-12. Format scénario passé de 15 à 19.
-- Reste extensible : monitoring/observabilité, IaC/CloudFormation, analytics — mais rendement décroissant ;
-  le point le plus utile est désormais **le merge du backlog** (#7, #10), pas plus de génération.
+- **Aucun contenu de certification généré ni modifié** cette session (mission d'outillage/robustesse).
+  `content/` intouché. **0 concept, 0 asset, 0 mapping** ajouté.
 
 ## Contrôle technique passé
 
-- `python3 scripts/validate.py` : ✅ OK (schéma par format + intégrité référentielle : 72 / 198 / 198).
-- Diff : **307 insertions, 0 suppression** (ajout strict, non-régression garantie).
-- Aucun secret / credential dans le diff (contenu 100 % pédagogique).
+- `python3 scripts/validate.py` → ✅ OK (exit 0) : 72 / 198 / 198, schéma + intégrité + rapport.
+- `python3 scripts/validate.py --no-report` → ✅ OK (exit 0), sortie concise.
+- **Test négatif** (correct_index hors bornes sur une copie jetable) → ❌ exit 1 correctement retourné : le
+  chemin d'échec dont dépend la CI est préservé.
+- Aucun secret / credential dans le diff (changement 100 % outillage Python, bibliothèque standard uniquement).
 
 ## Fichiers créés / modifiés
 
-- `content/aws-cloud-practitioner/assets/{qcm,scenario}.json` (+11 assets)
-- `content/aws-cloud-practitioner/asset_concepts.json` (+11 mappings)
-- `claude/MISSION_LOG.md` (ce fichier), `claude/NEXT_MISSION.md` (mission suivante)
-- `content/aws-cloud-practitioner/concepts.json` : **non modifié** (0 nouveau concept)
+- `scripts/validate.py` — ajout du rapport de couverture + option `--no-report` (validation inchangée).
+- `claude/MISSION_LOG.md` (ce fichier), `claude/NEXT_MISSION.md` (mission suivante).
+- `content/**` : **non modifié**. `.github/workflows/validate-content.yml` : **non modifié** (trigger correct).
 
 ## Garde-fous vérifiés
 
-- §6.1 Aucun nouveau concept → pas de nouveau `source_url` requis (les concepts ciblés existent déjà,
-  chacun avec sa source). §6.2 Aucune certif hors roadmap. §6.3 Contenu original pédagogique, aucun
-  braindump. §6.4 Statut certif inchangé (`in_progress`) tant que #7/#10 ne sont pas sur `main`.
-  §6.5 Aucune touche côté client. §6.6 Aucun secret. §6.7 Branche + PR draft, pas de push sur `main`.
+- §6.1 Aucun nouveau concept → pas de `source_url` requis. §6.2 Aucune certif hors roadmap (aucune touchée).
+  §6.3 Aucun contenu généré → pas de risque braindump. §6.4 Statut certif **inchangé** (`in_progress`) tant que
+  #7/#10 ne sont pas sur `main`. §6.5 Aucune touche côté client / IndexedDB. §6.6 Aucun secret. §6.7 Branche
+  `claude/...` + PR draft, pas de push sur `main`.
 
 ## Questions ouvertes pour Shai (par priorité)
 
-1. **Résorber le backlog est le point le plus utile.** 3 PR de contenu ouvertes : **#7** (Lot C —
-   réseau/BdD), **#10** (Domaine 4 — billing) et **la PR de cette session** (difficulté 3). Ordre suggéré :
-   **#7 → #10 → cette PR**. Une fois #7 + #10 sur `main`, les 4 domaines du blueprint sont couverts.
-2. **Statut certif → `needs_review`** une fois #7 + #10 mergées (garde-fou §6.4 ; exam guide PDF
-   inaccessible au fetcher). Non modifié cette session pour ne pas surestimer le coverage.
-3. **Le pipeline produit plus vite que le merge.** L'enrichissement des planchers est fini, la couverture
-   difficulté 3 est désormais large. Générer davantage a un rendement décroissant tant que le backlog n'est
-   pas résorbé.
-4. Décisions produit anciennes toujours ouvertes (langue FR/bilingue ; granularité du champ `domain` ;
-   critère de `complete` ; plans de support AWS en restructuration — soulevé par PR #10) — inchangées.
+1. **Résorber le backlog reste le point le plus utile.** 2 PR ouvertes : **#7** (réseau/BdD) puis **#10**
+   (billing). En mettant à jour la branche de #7 au moment du merge, la CI `validate` s'y exécutera enfin
+   (elle passe déjà en local). Une fois #7 + #10 sur `main`, les 4 domaines du blueprint sont couverts.
+2. **Statut certif → `needs_review`** une fois #7 + #10 mergées (garde-fou §6.4 ; exam guide PDF inaccessible
+   au fetcher). Non modifié cette session pour ne pas surestimer le coverage.
+3. **Faut-il durcir `validate.py` ?** Le rapport signale les concepts à < 2 assets ; le transformer en
+   **échec bloquant** (chaque concept doit avoir ≥ 2 assets) est une **décision de politique** — je ne l'ai pas
+   imposée seul (le seuil actuel est purement indicatif). À trancher par Shai.
+4. Décisions produit anciennes toujours ouvertes (langue FR/bilingue ; granularité du champ `domain` ; critère
+   de `complete` ; plans de support AWS en restructuration ; ajout d'une 2ᵉ certif OSCP/AZ-900 §6.2) —
+   inchangées.
 
 ## Lien PR
 
-PR (draft) de cette session : https://github.com/S2K7x/MyLittleQuest/pull/14
-Autres PR de contenu ouvertes : #7 (Lot C) et #10 (Domaine 4 — Billing).
+PR (draft) de cette session : https://github.com/S2K7x/MyLittleQuest/pull/15
+Autres PR de contenu ouvertes : **#7** (Lot C — réseau/BdD) et **#10** (Domaine 4 — Billing).
