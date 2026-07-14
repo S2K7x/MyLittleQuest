@@ -101,6 +101,5 @@ rapport par certification destiné à **objectiver le choix des prochaines missi
 
 ## Lien PR
 
-PR (draft) de cette session : voir la PR ouverte pour la branche `claude/loving-curie-mrc4c7` (lien ajouté au
-commit suivant).
+PR (draft) de cette session : https://github.com/S2K7x/MyLittleQuest/pull/15
 Autres PR de contenu ouvertes : **#7** (Lot C — réseau/BdD) et **#10** (Domaine 4 — Billing).
