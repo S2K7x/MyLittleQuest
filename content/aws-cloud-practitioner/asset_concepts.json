@@ -1273,5 +1273,56 @@
     "concept_ids": [
       "cloud-deployment-models"
     ]
+  },
+  {
+    "asset_id": "match-stor-02",
+    "concept_ids": [
+      "stor-s3-storage-classes",
+      "stor-s3-glacier"
+    ]
+  },
+  {
+    "asset_id": "match-comp-02",
+    "concept_ids": [
+      "comp-ec2-pricing"
+    ]
+  },
+  {
+    "asset_id": "match-cloud-05",
+    "concept_ids": [
+      "well-architected-pillars"
+    ]
+  },
+  {
+    "asset_id": "match-ml-01",
+    "concept_ids": [
+      "ml-ai-services"
+    ]
+  },
+  {
+    "asset_id": "scenario-comp-04",
+    "concept_ids": [
+      "comp-ec2-pricing"
+    ]
+  },
+  {
+    "asset_id": "scenario-stor-03",
+    "concept_ids": [
+      "stor-s3-storage-classes"
+    ]
+  },
+  {
+    "asset_id": "scenario-sec-05",
+    "concept_ids": [
+      "iam-least-privilege",
+      "iam-identities"
+    ]
+  },
+  {
+    "asset_id": "scenario-cloud-04",
+    "concept_ids": [
+      "cloud-right-sizing",
+      "cloud-economics-tco"
+    ]
   }
 ]

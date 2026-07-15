@@ -518,5 +518,125 @@
         }
       ]
     }
+  },
+  {
+    "id": "scenario-comp-04",
+    "game_type": "scenario",
+    "difficulty": 2,
+    "payload": {
+      "intro": "Une entreprise exploite une application de production qui tourne en continu (24h/24), avec une charge stable et prévisible pour au moins les 3 prochaines années. Elle cherche l'option d'achat EC2 qui minimise le coût.",
+      "choices": [
+        {
+          "text": "Rester en On-Demand pour ne prendre aucun engagement",
+          "is_correct": false,
+          "feedback": "L'On-Demand n'impose aucun engagement mais applique le tarif le plus élevé. Pour une charge permanente sur 3 ans, c'est l'option la plus coûteuse."
+        },
+        {
+          "text": "Utiliser des Spot Instances pour profiter du tarif le plus bas",
+          "is_correct": false,
+          "feedback": "Le Spot offre de fortes réductions mais les instances sont interruptibles par AWS. C'est inadapté à une charge de production permanente qui doit rester disponible."
+        },
+        {
+          "text": "Souscrire des Savings Plans (ou Reserved Instances) sur 3 ans",
+          "is_correct": true,
+          "feedback": "Un engagement sur 1 ou 3 ans offre jusqu'à environ 72 % de réduction. C'est exactement le cas d'usage : une charge stable et prévisible sur la durée."
+        },
+        {
+          "text": "Basculer sur des Dedicated Hosts pour réduire la facture",
+          "is_correct": false,
+          "feedback": "Les Dedicated Hosts répondent à des besoins de conformité ou de licences logicielles, pas à l'objectif de réduire le coût d'une charge stable ; ils sont généralement plus chers."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-stor-03",
+    "game_type": "scenario",
+    "difficulty": 2,
+    "payload": {
+      "intro": "Une application stocke des fichiers dont le profil d'accès est imprévisible : certains redeviennent très consultés, d'autres tombent en désuétude, sans règle claire. L'équipe veut réduire le coût de stockage sans gérer de règles de cycle de vie ni payer de frais de récupération sur de mauvaises hypothèses. Quelle classe S3 choisir ?",
+      "choices": [
+        {
+          "text": "S3 Standard",
+          "is_correct": false,
+          "feedback": "S3 Standard convient aux accès fréquents mais ne réduit pas le coût des objets devenus froids. Ce n'est pas optimal quand les accès sont imprévisibles."
+        },
+        {
+          "text": "S3 Intelligent-Tiering",
+          "is_correct": true,
+          "feedback": "Intelligent-Tiering déplace automatiquement les objets entre paliers selon l'usage réel, sans frais de récupération. C'est précisément la classe conçue pour des accès imprévisibles."
+        },
+        {
+          "text": "S3 Glacier Deep Archive",
+          "is_correct": false,
+          "feedback": "Deep Archive est le moins cher au stockage mais sa récupération est longue et coûteuse. Il est inadapté à des objets susceptibles de redevenir chauds à tout moment."
+        },
+        {
+          "text": "S3 One Zone-IA",
+          "is_correct": false,
+          "feedback": "One Zone-IA est moins cher mais stocké dans une seule AZ (moins durable) et facture des frais de récupération ; il ne s'adapte pas automatiquement à des accès qui varient."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-sec-05",
+    "game_type": "scenario",
+    "difficulty": 2,
+    "payload": {
+      "intro": "Un développeur doit seulement lire les objets d'un bucket S3 précis. Pressé, un administrateur lui attache une policy autorisant « s3:* » sur toutes les ressources (Resource: *). Une revue de sécurité signale le problème. Quelle action applique le mieux le moindre privilège ?",
+      "choices": [
+        {
+          "text": "Conserver la policy : elle fonctionne et le développeur peut travailler",
+          "is_correct": false,
+          "feedback": "Elle accorde bien plus que nécessaire. Si l'identifiant est compromis, c'est tout S3 qui est exposé — l'opposé du moindre privilège."
+        },
+        {
+          "text": "La remplacer par une policy autorisant uniquement s3:GetObject sur ce bucket précis",
+          "is_correct": true,
+          "feedback": "On n'accorde que l'action et la ressource strictement nécessaires. C'est exactement le principe du moindre privilège."
+        },
+        {
+          "text": "Supprimer l'utilisateur et lui faire utiliser le compte root",
+          "is_correct": false,
+          "feedback": "Le compte root ne doit jamais servir aux tâches quotidiennes ; cela aggrave nettement le risque de sécurité."
+        },
+        {
+          "text": "Lui donner des droits d'administrateur pour éviter de futures demandes",
+          "is_correct": false,
+          "feedback": "C'est à l'opposé du moindre privilège : cela maximise la surface d'attaque et l'impact d'une éventuelle compromission."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-cloud-04",
+    "game_type": "scenario",
+    "difficulty": 2,
+    "payload": {
+      "intro": "Après sa migration vers AWS, une entreprise constate une facture EC2 élevée. Cost Explorer montre de nombreuses instances tournant en permanence à environ 10 % d'utilisation CPU. Quelle est la première action d'optimisation des coûts la plus appropriée ?",
+      "choices": [
+        {
+          "text": "Basculer toutes les instances en Spot pour payer moins cher",
+          "is_correct": false,
+          "feedback": "Le Spot est interruptible et inadapté à des charges permanentes. Surtout, cela ne corrige pas la cause : une capacité largement surdimensionnée."
+        },
+        {
+          "text": "Appliquer le right-sizing : réduire ou arrêter les instances sous-utilisées d'après les recommandations de Cost Explorer",
+          "is_correct": true,
+          "feedback": "Ajuster la taille des ressources aux besoins réels attaque directement la sur-provision, cause de la facture élevée, et la réduit fortement."
+        },
+        {
+          "text": "Acheter des Reserved Instances pour les instances actuelles",
+          "is_correct": false,
+          "feedback": "S'engager sur des instances surdimensionnées verrouille le gaspillage. Il faut right-sizer avant d'envisager tout engagement long terme."
+        },
+        {
+          "text": "Ne rien faire : une faible utilisation CPU est normale dans le cloud",
+          "is_correct": false,
+          "feedback": "Une utilisation durablement basse signale une sur-provision. C'est un levier d'économie classique qu'il faut corriger, pas ignorer."
+        }
+      ]
+    }
   }
 ]
