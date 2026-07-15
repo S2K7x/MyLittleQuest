@@ -100,5 +100,5 @@ les `source_url` officiels des concepts ciblés (pas de braindump, §6.3).
 
 ## Lien PR
 
-PR (draft) de cette session : voir le lien ajouté ci-dessous après ouverture.
+PR (draft) de cette session : https://github.com/S2K7x/MyLittleQuest/pull/16
 Autres PR de contenu ouvertes : **#7** (Lot C — réseau/BdD) et **#10** (Domaine 4 — Billing).
