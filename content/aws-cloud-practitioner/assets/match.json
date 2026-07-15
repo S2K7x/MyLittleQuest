@@ -364,5 +364,129 @@
         }
       ]
     }
+  },
+  {
+    "id": "match-stor-02",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "S3 Standard",
+          "right": "Données fréquemment consultées nécessitant une faible latence (sites web, contenu actif)"
+        },
+        {
+          "left": "S3 Standard-IA",
+          "right": "Données peu consultées mais à accès immédiat, avec des frais de récupération"
+        },
+        {
+          "left": "S3 Intelligent-Tiering",
+          "right": "Accès imprévisibles : déplacement automatique entre paliers, sans frais de récupération"
+        },
+        {
+          "left": "S3 Glacier Flexible Retrieval",
+          "right": "Archives consultées une à deux fois par an, récupération en minutes à heures"
+        },
+        {
+          "left": "S3 Glacier Deep Archive",
+          "right": "Le stockage le moins cher, pour des données conservées des années et consultées moins d'une fois par an"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-comp-02",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "On-Demand",
+          "right": "Charges imprévisibles ou de courte durée, sans engagement"
+        },
+        {
+          "left": "Reserved Instances",
+          "right": "Charge stable et prévisible sur 1 ou 3 ans, sur un type d'instance précis"
+        },
+        {
+          "left": "Savings Plans",
+          "right": "Engagement sur un montant horaire (USD/h), plus flexible que les Reserved Instances"
+        },
+        {
+          "left": "Spot Instances",
+          "right": "Charges tolérantes aux interruptions (traitement par lots, tests) à prix très réduit"
+        },
+        {
+          "left": "Dedicated Hosts",
+          "right": "Serveur physique dédié pour des besoins de conformité ou de licences logicielles"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-cloud-05",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "Excellence opérationnelle",
+          "right": "Exécuter et superviser les charges de travail pour délivrer de la valeur métier"
+        },
+        {
+          "left": "Sécurité",
+          "right": "Protéger les informations, les systèmes et les actifs"
+        },
+        {
+          "left": "Fiabilité",
+          "right": "Récupérer après une perturbation d'infrastructure ou de service"
+        },
+        {
+          "left": "Efficacité des performances",
+          "right": "Utiliser efficacement les ressources de calcul selon l'évolution des besoins"
+        },
+        {
+          "left": "Optimisation des coûts",
+          "right": "Éviter les coûts inutiles et payer au plus juste"
+        },
+        {
+          "left": "Durabilité",
+          "right": "Réduire l'impact environnemental des charges de travail"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-ml-01",
+    "game_type": "match",
+    "difficulty": 2,
+    "payload": {
+      "pairs": [
+        {
+          "left": "Amazon Rekognition",
+          "right": "Analyse d'images et de vidéos (détection d'objets, de texte, de visages)"
+        },
+        {
+          "left": "Amazon Comprehend",
+          "right": "Traitement du langage naturel (entités, sentiments, langue) sur du texte"
+        },
+        {
+          "left": "Amazon Polly",
+          "right": "Synthèse vocale : conversion de texte en parole"
+        },
+        {
+          "left": "Amazon Transcribe",
+          "right": "Reconnaissance vocale : conversion de la parole en texte"
+        },
+        {
+          "left": "Amazon Translate",
+          "right": "Traduction automatique de texte d'une langue à une autre"
+        },
+        {
+          "left": "Amazon Lex",
+          "right": "Construction d'agents conversationnels (chatbots) vocaux et textuels"
+        }
+      ]
+    }
   }
 ]
