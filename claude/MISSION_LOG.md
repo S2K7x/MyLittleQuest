@@ -96,5 +96,5 @@ sur `main`) — 1 asset supplémentaire chacun suffirait.
 
 ## Lien PR
 
-PR (draft) de cette session : _(à compléter après ouverture)_
+PR (draft) de cette session : https://github.com/S2K7x/MyLittleQuest/pull/17
 Autres PR de contenu ouvertes : **#7** (Lot C — réseau/BdD) et **#10** (Domaine 4 — Billing).
