@@ -1324,5 +1324,132 @@
       "cloud-right-sizing",
       "cloud-economics-tco"
     ]
+  },
+  {
+    "asset_id": "qcm-cloud-14",
+    "concept_ids": [
+      "cloud-economies-of-scale"
+    ]
+  },
+  {
+    "asset_id": "qcm-cloud-15",
+    "concept_ids": [
+      "cloud-service-models"
+    ]
+  },
+  {
+    "asset_id": "qcm-cloud-16",
+    "concept_ids": [
+      "cloud-deployment-models"
+    ]
+  },
+  {
+    "asset_id": "qcm-cloud-17",
+    "concept_ids": [
+      "well-architected-pillars"
+    ]
+  },
+  {
+    "asset_id": "qcm-cloud-18",
+    "concept_ids": [
+      "cloud-benefits-six-advantages"
+    ]
+  },
+  {
+    "asset_id": "qcm-cloud-19",
+    "concept_ids": [
+      "cloud-capex-vs-opex"
+    ]
+  },
+  {
+    "asset_id": "flashcard-cloud-09",
+    "concept_ids": [
+      "cloud-capex-vs-opex"
+    ]
+  },
+  {
+    "asset_id": "flashcard-cloud-10",
+    "concept_ids": [
+      "cloud-service-models"
+    ]
+  },
+  {
+    "asset_id": "flashcard-cloud-11",
+    "concept_ids": [
+      "cloud-deployment-models"
+    ]
+  },
+  {
+    "asset_id": "flashcard-cloud-12",
+    "concept_ids": [
+      "well-architected-pillars"
+    ]
+  },
+  {
+    "asset_id": "flashcard-cloud-13",
+    "concept_ids": [
+      "cloud-economies-of-scale"
+    ]
+  },
+  {
+    "asset_id": "swipe-cloud-11",
+    "concept_ids": [
+      "cloud-capex-vs-opex"
+    ]
+  },
+  {
+    "asset_id": "swipe-cloud-12",
+    "concept_ids": [
+      "cloud-service-models"
+    ]
+  },
+  {
+    "asset_id": "swipe-cloud-13",
+    "concept_ids": [
+      "cloud-deployment-models"
+    ]
+  },
+  {
+    "asset_id": "swipe-cloud-14",
+    "concept_ids": [
+      "cloud-elasticity-agility-global"
+    ]
+  },
+  {
+    "asset_id": "swipe-cloud-15",
+    "concept_ids": [
+      "well-architected-pillars"
+    ]
+  },
+  {
+    "asset_id": "scenario-cloud-05",
+    "concept_ids": [
+      "cloud-capex-vs-opex",
+      "cloud-benefits-six-advantages"
+    ]
+  },
+  {
+    "asset_id": "scenario-cloud-06",
+    "concept_ids": [
+      "cloud-service-models"
+    ]
+  },
+  {
+    "asset_id": "match-cloud-06",
+    "concept_ids": [
+      "cloud-benefits-six-advantages"
+    ]
+  },
+  {
+    "asset_id": "match-cloud-07",
+    "concept_ids": [
+      "cloud-deployment-models"
+    ]
+  },
+  {
+    "asset_id": "match-cloud-08",
+    "concept_ids": [
+      "well-architected-pillars"
+    ]
   }
 ]

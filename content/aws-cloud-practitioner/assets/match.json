@@ -488,5 +488,80 @@
         }
       ]
     }
+  },
+  {
+    "id": "match-cloud-06",
+    "game_type": "match",
+    "difficulty": 1,
+    "payload": {
+      "pairs": [
+        {
+          "left": "Dépense variable",
+          "right": "Payer à l'usage au lieu d'investir en amont (CapEx → OpEx)"
+        },
+        {
+          "left": "Économies d'échelle",
+          "right": "Des prix plus bas grâce à l'usage mutualisé de nombreux clients"
+        },
+        {
+          "left": "Élasticité",
+          "right": "Arrêter de deviner sa capacité et l'ajuster en quelques minutes"
+        },
+        {
+          "left": "Portée mondiale",
+          "right": "Se déployer dans plusieurs régions du monde en quelques minutes"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-cloud-07",
+    "game_type": "match",
+    "difficulty": 1,
+    "payload": {
+      "pairs": [
+        {
+          "left": "Cloud",
+          "right": "Toutes les parties de l'application tournent dans le cloud"
+        },
+        {
+          "left": "Hybride",
+          "right": "Des ressources cloud reliées à une infrastructure hors cloud (souvent sur site)"
+        },
+        {
+          "left": "Sur site (on-premises)",
+          "right": "Infrastructure hébergée dans les propres locaux de l'organisation"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-cloud-08",
+    "game_type": "match",
+    "difficulty": 1,
+    "payload": {
+      "pairs": [
+        {
+          "left": "Sécurité",
+          "right": "Protéger les informations, les systèmes et les actifs"
+        },
+        {
+          "left": "Fiabilité",
+          "right": "Récupérer après une perturbation d'infrastructure ou de service"
+        },
+        {
+          "left": "Optimisation des coûts",
+          "right": "Éviter les coûts inutiles"
+        },
+        {
+          "left": "Efficacité des performances",
+          "right": "Utiliser efficacement les ressources de calcul"
+        },
+        {
+          "left": "Durabilité",
+          "right": "Réduire l'impact environnemental des charges de travail"
+        }
+      ]
+    }
   }
 ]

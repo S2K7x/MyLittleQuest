@@ -498,5 +498,55 @@
       "is_true": false,
       "explanation": "Faux. La Console web est idéale pour découvrir un service ou effectuer une tâche ponctuelle. Pour l'automatisation et les opérations répétitives, on privilégie la CLI, les SDK ou l'Infrastructure as Code."
     }
+  },
+  {
+    "id": "swipe-cloud-11",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "Avec le cloud, on paie généralement à l'usage : c'est une dépense variable (OpEx).",
+      "is_true": true,
+      "explanation": "Exact. Le cloud transforme la dépense fixe (CapEx) en dépense variable (OpEx) : on ne paie que ce que l'on consomme."
+    }
+  },
+  {
+    "id": "swipe-cloud-12",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "Dans le modèle SaaS, le fournisseur gère l'ensemble et livre un produit logiciel fini.",
+      "is_true": true,
+      "explanation": "Correct. Le SaaS (Software as a Service) fournit un produit fini entièrement géré par le fournisseur ; l'utilisateur s'en sert sans gérer l'infrastructure."
+    }
+  },
+  {
+    "id": "swipe-cloud-13",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "Le déploiement « sur site » (on-premises) signifie que l'application tourne entièrement dans le cloud.",
+      "is_true": false,
+      "explanation": "Faux. « Sur site » (on-premises) désigne une infrastructure hébergée dans les propres locaux de l'organisation. C'est le déploiement « cloud » qui fait tourner l'application dans le cloud."
+    }
+  },
+  {
+    "id": "swipe-cloud-14",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "L'un des avantages du cloud est d'arrêter de deviner sa capacité à l'avance.",
+      "is_true": true,
+      "explanation": "Vrai. Le cloud permet d'accéder à autant ou aussi peu de ressources que nécessaire et d'ajuster la capacité en quelques minutes, sans deviner à l'avance."
+    }
+  },
+  {
+    "id": "swipe-cloud-15",
+    "game_type": "swipe",
+    "difficulty": 1,
+    "payload": {
+      "statement": "L'AWS Well-Architected Framework repose sur six piliers.",
+      "is_true": true,
+      "explanation": "Vrai : excellence opérationnelle, sécurité, fiabilité, efficacité des performances, optimisation des coûts et durabilité."
+    }
   }
 ]
