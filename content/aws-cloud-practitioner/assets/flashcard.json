@@ -403,5 +403,50 @@
       "front": "Qu'est-ce que l'Infrastructure as Code (IaC) et quel est l'outil natif d'IaC sur AWS ?",
       "back": "L'IaC décrit et provisionne l'infrastructure (serveurs, réseaux, bases de données) à l'aide de fichiers de configuration versionnés plutôt que par des actions manuelles en console. Elle rend les déploiements reproductibles, traçables et automatisables, et réduit les erreurs de configuration manuelle. L'outil d'IaC natif sur AWS est AWS CloudFormation."
     }
+  },
+  {
+    "id": "flashcard-cloud-09",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "En une phrase : quelle est la différence entre CapEx et OpEx ?",
+      "back": "CapEx = investir en amont dans du matériel (serveurs, datacenters) avant l'usage ; OpEx = payer à la consommation, uniquement ce que l'on utilise. Le cloud fait passer de CapEx à OpEx."
+    }
+  },
+  {
+    "id": "flashcard-cloud-10",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Cite les trois modèles de service cloud et un exemple de chacun.",
+      "back": "IaaS — contrôle maximal des ressources (Amazon EC2) ; PaaS — on gère l'application, pas l'infrastructure (AWS Elastic Beanstalk) ; SaaS — produit fini entièrement géré par le fournisseur."
+    }
+  },
+  {
+    "id": "flashcard-cloud-11",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Quels sont les trois modèles de déploiement ?",
+      "back": "Cloud (tout dans le cloud), hybride (cloud relié à une infrastructure hors cloud, souvent sur site) et sur site / on-premises (tout hébergé dans ses propres locaux)."
+    }
+  },
+  {
+    "id": "flashcard-cloud-12",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Cite les six piliers de l'AWS Well-Architected Framework.",
+      "back": "Excellence opérationnelle, sécurité, fiabilité, efficacité des performances, optimisation des coûts et durabilité."
+    }
+  },
+  {
+    "id": "flashcard-cloud-13",
+    "game_type": "flashcard",
+    "difficulty": 1,
+    "payload": {
+      "front": "Pourquoi le cloud permet-il des prix plus bas grâce aux économies d'échelle ?",
+      "back": "En mutualisant l'usage de centaines de milliers de clients, AWS obtient des économies d'échelle inaccessibles à une seule organisation, ce qui réduit le prix « pay-as-you-go »."
+    }
   }
 ]

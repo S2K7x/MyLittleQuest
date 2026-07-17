@@ -1118,5 +1118,101 @@
       "correct_index": 0,
       "explanation": "Le déploiement hybride relie des ressources cloud à des ressources hors du cloud, le plus souvent une infrastructure sur site, pour l'étendre et la faire croître — exactement le cas décrit. Le déploiement tout-cloud ferait tourner l'ensemble dans le cloud, et le déploiement sur site n'utiliserait aucune ressource cloud. SaaS est un modèle de service, pas un modèle de déploiement."
     }
+  },
+  {
+    "id": "qcm-cloud-14",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Pourquoi AWS peut-il proposer des prix « pay-as-you-go » plus bas qu'une entreprise qui gère seule sa propre infrastructure ?",
+      "choices": [
+        "Grâce aux économies d'échelle : l'usage mutualisé de centaines de milliers de clients fait baisser les coûts.",
+        "Parce que le cloud est toujours gratuit pendant les six premiers mois.",
+        "Parce qu'AWS ne facture jamais le stockage des données.",
+        "Parce que chaque client possède physiquement ses propres serveurs."
+      ],
+      "correct_index": 0,
+      "explanation": "En mutualisant l'usage de très nombreux clients, AWS atteint des économies d'échelle qu'aucune organisation seule ne pourrait obtenir, ce qui se traduit par des prix plus bas."
+    }
+  },
+  {
+    "id": "qcm-cloud-15",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Amazon EC2 fournit des serveurs virtuels avec un contrôle maximal sur le système d'exploitation et les ressources. De quel modèle de service cloud s'agit-il ?",
+      "choices": [
+        "IaaS (Infrastructure as a Service)",
+        "SaaS (Software as a Service)",
+        "PaaS (Platform as a Service)",
+        "On-premises (sur site)"
+      ],
+      "correct_index": 0,
+      "explanation": "IaaS offre le plus haut niveau de flexibilité et de contrôle sur les ressources IT ; Amazon EC2 en est l'exemple type."
+    }
+  },
+  {
+    "id": "qcm-cloud-16",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Une entreprise relie les serveurs installés dans ses propres locaux à des ressources AWS pour étendre sa capacité. Comment appelle-t-on ce modèle de déploiement ?",
+      "choices": [
+        "Hybride",
+        "Tout-cloud",
+        "Sur site (on-premises)",
+        "SaaS"
+      ],
+      "correct_index": 0,
+      "explanation": "Le déploiement hybride relie des ressources cloud à une infrastructure existante hors cloud (le plus souvent sur site) pour l'étendre."
+    }
+  },
+  {
+    "id": "qcm-cloud-17",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Combien de piliers composent l'AWS Well-Architected Framework ?",
+      "choices": [
+        "Six",
+        "Trois",
+        "Quatre",
+        "Dix"
+      ],
+      "correct_index": 0,
+      "explanation": "Le framework repose sur six piliers : excellence opérationnelle, sécurité, fiabilité, efficacité des performances, optimisation des coûts et durabilité."
+    }
+  },
+  {
+    "id": "qcm-cloud-18",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Parmi ces propositions, laquelle fait partie des six avantages du cloud selon AWS ?",
+      "choices": [
+        "Arrêter de dépenser pour exploiter et entretenir des datacenters",
+        "Garantir zéro panne à vie",
+        "Supprimer tout besoin de sécurité",
+        "Rendre obligatoirement public le code source des applications"
+      ],
+      "correct_index": 0,
+      "explanation": "« Arrêter de dépenser pour exploiter et entretenir des datacenters » est l'un des six avantages : AWS prend en charge l'infrastructure physique à votre place."
+    }
+  },
+  {
+    "id": "qcm-cloud-19",
+    "game_type": "qcm",
+    "difficulty": 1,
+    "payload": {
+      "question": "Que désigne une dépense d'investissement (CapEx) dans le contexte de l'infrastructure informatique ?",
+      "choices": [
+        "Investir massivement en amont dans des serveurs et datacenters avant de connaître l'usage réel",
+        "Payer uniquement les ressources consommées, à l'heure ou à la seconde",
+        "Louer un logiciel fini au mois",
+        "Ne jamais rien payer pour l'informatique"
+      ],
+      "correct_index": 0,
+      "explanation": "Le CapEx est un investissement initial lourd (datacenters, serveurs) réalisé avant de savoir comment l'infrastructure sera utilisée. Le cloud le transforme en OpEx (dépense variable)."
+    }
   }
 ]

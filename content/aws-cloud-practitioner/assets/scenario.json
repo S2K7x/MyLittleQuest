@@ -638,5 +638,55 @@
         }
       ]
     }
+  },
+  {
+    "id": "scenario-cloud-05",
+    "game_type": "scenario",
+    "difficulty": 1,
+    "payload": {
+      "intro": "Une petite association veut lancer un site web mais dispose d'un budget serré et n'a aucune idée du trafic qu'elle recevra. Elle hésite à acheter un serveur puissant « au cas où ». Quel principe du cloud lui évite ce risque financier ?",
+      "choices": [
+        {
+          "text": "Payer à l'usage (OpEx) : ne dépenser que pour les ressources réellement consommées, sans investissement initial lourd.",
+          "is_correct": true,
+          "feedback": "Correct. Le cloud transforme la dépense fixe en dépense variable : l'association démarre petit et ne paie que ce qu'elle consomme."
+        },
+        {
+          "text": "Acheter tout de suite le serveur le plus puissant pour ne jamais manquer de capacité.",
+          "is_correct": false,
+          "feedback": "C'est un CapEx risqué : on paie en amont une capacité peut-être inutile. Le cloud sert justement à éviter cela."
+        },
+        {
+          "text": "Renoncer au site web, le cloud étant réservé aux grandes entreprises.",
+          "is_correct": false,
+          "feedback": "Faux : le modèle à l'usage rend le cloud particulièrement adapté aux petites structures au budget limité."
+        }
+      ]
+    }
+  },
+  {
+    "id": "scenario-cloud-06",
+    "game_type": "scenario",
+    "difficulty": 1,
+    "payload": {
+      "intro": "Une équipe de développeurs veut déployer son application web sans avoir à gérer les serveurs, le système d'exploitation ni les correctifs de sécurité de l'infrastructure. Quel modèle de service répond le mieux à ce besoin ?",
+      "choices": [
+        {
+          "text": "PaaS (Platform as a Service), par exemple AWS Elastic Beanstalk.",
+          "is_correct": true,
+          "feedback": "Correct. Le PaaS supprime la gestion de l'infrastructure sous-jacente pour se concentrer sur le déploiement de l'application."
+        },
+        {
+          "text": "IaaS, en louant des serveurs virtuels bruts à administrer soi-même.",
+          "is_correct": false,
+          "feedback": "L'IaaS offre le plus de contrôle mais laisse justement à la charge de l'équipe la gestion du système d'exploitation et de l'infrastructure."
+        },
+        {
+          "text": "SaaS, en s'abonnant à un logiciel déjà fini.",
+          "is_correct": false,
+          "feedback": "Le SaaS fournit un logiciel prêt à l'emploi ; il ne permet pas de déployer sa propre application."
+        }
+      ]
+    }
   }
 ]
