@@ -89,5 +89,5 @@ maxima actuels (qcm-cloud-14+, flashcard-cloud-09+, swipe-cloud-11+, scenario-cl
 
 ## Lien PR
 
-PR (draft) de cette session : voir NEXT_MISSION / la PR ouverte sur la branche `claude/loving-curie-lnodnc`.
+PR (draft) de cette session : https://github.com/S2K7x/MyLittleQuest/pull/18
 Autres PR de contenu ouvertes à résorber : **#7** (réseau/BdD) et **#10** (Billing).
